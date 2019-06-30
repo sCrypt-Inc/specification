@@ -12,6 +12,8 @@ Scrypt enables developers to define their own functions as examplified below:
         return a + b;
     }
 
+They are only visible within the contract, similar to ``private`` functions in Solidity.
+
 Return
 ------
 Due to the lack of native ``return`` symantics support in script, a function currently must end with a ``return`` statement and it is the only place for a ``return`` statement. ``OP_RETURN`` has a different meaning, at least for now.
@@ -62,8 +64,8 @@ bytes Operations
   Returns the length of ``data``.
 
 
-Type Constructors
-=================
+Type Casting
+============
 Explicit type cast is mandated to convert a general ``bytes`` type to a more specific type.
 
 * ``PubKey PubKey(bytes data)``
