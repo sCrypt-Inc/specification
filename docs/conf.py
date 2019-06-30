@@ -58,3 +58,6 @@ html_static_path = ['_static']
 from sphinx.highlighting import lexers
 from pygments_lexer_solidity import SolidityLexer
 lexers['solidity'] = SolidityLexer()
+
+# homepage
+master_doc = 'index'
