@@ -14,7 +14,6 @@ Formal Specification
     constructor &::= \mathrm{constructor}([formal[,\ formal]^*])\ \{\ [stmt]^*\ \}\\
     external &::= \mathrm{function}\ \mathrm{ID}(formal[,\ formal]^*)\ \mathrm{external}\ \{\ [stmt]^*\ \mathrm{require}(expr);\}\\
     stmt &::= \mathrm{TYPE}\ \mathrm{ID} = expr;\\
-            &\ \ \ |\ \ \mathrm{TYPE}\ (\mathrm{ID},\ \mathrm{ID}) = expr;\\
             &\ \ \ |\ \ \mathrm{ID} = expr;\\
             &\ \ \ |\ \ \mathrm{require}(expr);\\
             &\ \ \ |\ \ \mathrm{if}\ (expr)\ stmt\ [\mathrm{else}\ stmt]\\
@@ -23,6 +22,7 @@ Formal Specification
     expr &::= \mathsf{UnaryOp}\ expr\\
             &\ \ \ |\ \ expr\ \mathsf{BinaryOp}\ expr\\
             &\ \ \ |\ \ \mathrm{ID}(expr[,\ expr]^*)\\
+            &\ \ \ |\ \ \mathrm{ID}\mathbf{[}expr:expr\mathbf{]}\\
             &\ \ \ |\ \ (expr)\\
             &\ \ \ |\ \ \mathrm{ID}\\
             &\ \ \ |\ \ boolConst \\
@@ -145,10 +145,6 @@ Operators
     * - 11
       - ``||``
       - left-associative
-
-    * - 12
-      - ``@``
-      - non-associative
 ..
     explain ===,!==,.,@ meaning, and note &&,|| evaluates both sides regardless
 

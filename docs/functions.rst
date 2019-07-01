@@ -51,6 +51,10 @@ Signature Verification
 
 bytes Operations
 ----------------
+* ``bytes data[start:end]``
+
+  Returns subarray from index ``start`` inclusive to ``end`` exclusive.
+  
 * ``bytes num2bin(int num, int size)``
 
   Converts a number ``num`` into a bytes array of size ``size``.
