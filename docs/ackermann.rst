@@ -20,6 +20,14 @@ nCrypt has devised to way to cauculate the value of the Ackermann function using
 .. code-block:: solidity
 
     contract Ackermann {
+        int a;
+        int b;
+
+        constructor() {
+            a = 2;
+            b = 1;
+        }
+
         function ackermann(int m, int n) returns (int) {
             bytes stk = num2bin(m, 1);
 
@@ -27,11 +35,11 @@ nCrypt has devised to way to cauculate the value of the Ackermann function using
             // e.g., (2, 1) requires 14 loops, (3, 5) 42438
             loop (14) {
                 if (size(stk) > 0) {
-                    // pop
-                    bytes (top, tail) = stk @ 1;
-                    stk = tail;
-
+                    bytes top = stk[0:1];
                     m = bin2num(top);
+
+                    // pop
+                    stk = stk[1:size(stk)];
 
                     if (m == 0) {
                         n = n + m + 1;
@@ -52,8 +60,8 @@ nCrypt has devised to way to cauculate the value of the Ackermann function using
         }
 
         // y = 5
-        constructor(int y) {
-            require(y == ackermann(2, 1));
+        function unlock(int y) external {
+            require(y == ackermann(a, b));
         }
     }
 

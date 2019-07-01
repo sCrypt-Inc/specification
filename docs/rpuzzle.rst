@@ -10,17 +10,22 @@ One crucial in R-Puzzle is to extract ``r`` from `DER`_ encoded signature. The f
 .. code-block:: solidity
 
     contract RPuzzle {
+        Sig s;
+
+        constructor() {
+            s = Sig(0x3045022100948c67a95f856ae875a48a2d104df9d232189897a811178a715617d4b090a7e90220616f6ced5ab219fe1bfcf9802994b3ce72afbb2db0c4b653a74c9f03fb99323f01);
+        }
+
         function getSigR(Sig sig) returns (bytes) {
-            bytes (_, tail) = sig @ 3;
-            bytes (len, tail2) = tail @ 1;
-            bytes (r, _) = tail2 @ bin2num(len);
+            bytes lenBytes = sig[3:4];
+            int len = bin2num(lenBytes);
+            bytes r = sig[4:4+len];
             return r;
         }
 
         // r = 00948c67a95f856ae875a48a2d104df9d232189897a811178a715617d4b090a7e9
-        constructor(bytes r) {
-            Sig sig = Sig(0x3045022100948c67a95f856ae875a48a2d104df9d232189897a811178a715617d4b090a7e90220616f6ced5ab219fe1bfcf9802994b3ce72afbb2db0c4b653a74c9f03fb99323f01);
-            require(r == getSigR(sig));
+        function unlock(bytes r) external {
+            require(r == getSigR(s));
         }
     }
 
