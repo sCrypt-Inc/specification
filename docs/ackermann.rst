@@ -60,7 +60,7 @@ nCrypt has devised to way to cauculate the value of the Ackermann function using
         }
 
         // y = 5
-        function unlock(int y) external {
+        public function unlock(int y) {
             require(y == ackermann(a, b));
         }
     }

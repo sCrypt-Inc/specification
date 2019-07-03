@@ -7,12 +7,12 @@ Formal Specification
 .. math::
 
     \begin{align*}
-    contract &::= \mathrm{contract}\ \mathrm{ID}\ \{\ [var]^*\ constructor\ [function]^*\ [external]^+\ \}\\
+    contract &::= \mathrm{contract}\ \mathrm{ID}\ \{\ [var]^*\ constructor\ [function]^*\ [public]^+\ \}\\
     var &::= formal;\\
     formal &::= \mathrm{TYPE}\ \mathrm{ID}\\
     function &::= \mathrm{function}\ \mathrm{ID}(formal[,\ formal]^*)\ \mathrm{returns}\ (\mathrm{TYPE})\ \{\ [stmt]^*\ \mathrm{return}\ expr;\ \}\\
     constructor &::= \mathrm{constructor}([formal[,\ formal]^*])\ \{\ [stmt]^*\ \}\\
-    external &::= \mathrm{function}\ \mathrm{ID}(formal[,\ formal]^*)\ \mathrm{external}\ \{\ [stmt]^*\ \mathrm{require}(expr);\}\\
+    public &::= \mathrm{public}\ \mathrm{function}\ \mathrm{ID}(formal[,\ formal]^*)\ \{\ [stmt]^*\ \mathrm{require}(expr);\}\\
     stmt &::= \mathrm{TYPE}\ \mathrm{ID} = expr;\\
             &\ \ \ |\ \ \mathrm{ID} = expr;\\
             &\ \ \ |\ \ \mathrm{require}(expr);\\

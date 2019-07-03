@@ -24,7 +24,7 @@ One crucial in R-Puzzle is to extract ``r`` from `DER`_ encoded signature. The f
         }
 
         // r = 00948c67a95f856ae875a48a2d104df9d232189897a811178a715617d4b090a7e9
-        function unlock(bytes r) external {
+        public function unlock(bytes r) {
             require(r == getSigR(s));
         }
     }
