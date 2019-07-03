@@ -37,6 +37,7 @@ Script is designed to facilitate writing smart contract running on chain.
    p2pkh
    rpuzzle
    ackermann
+   rabin
 
 ..
     contributing: PR for example contracts
