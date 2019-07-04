@@ -55,6 +55,10 @@ bytes Operations
 
   Returns subarray from index ``start`` inclusive to ``end`` exclusive.
   
+* ``dataA ++ dataB``
+
+  Returns the concatenation of bytes ``dataA`` and bytes ``dataB``.
+  
 * ``bytes num2bin(int num, int size)``
 
   Converts a number ``num`` into a bytes array of size ``size``.

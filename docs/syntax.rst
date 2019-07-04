@@ -115,7 +115,7 @@ Operators
       - left-associative
 
     * - 4
-      - ``.``
+      - ``++``
       - left-associative
 
     * - 5

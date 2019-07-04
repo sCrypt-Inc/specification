@@ -23,8 +23,7 @@ Rabin Signature
             loop (12) {
                 // 256 bits is 32 bytes
                 bytes slice = y[32 * i : 32 * (i + 1)];
-                // concatenate
-                ret = ret . sha256(slice);
+                ret = ret ++ sha256(slice);
                 i = i + 1;
             }
 
@@ -35,7 +34,7 @@ Rabin Signature
         public function verifySig(int S, bytes U, bytes m, int lambda, bytes n) {
             require(hash160(n) == nHash);
 
-            int h = bin2num(hash3072(m . U));
+            int h = bin2num(hash3072(m ++ U));
             require(S * S == h + lambda * bin2num(n));
         }
     }
