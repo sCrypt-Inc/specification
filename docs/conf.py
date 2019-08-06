@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Scrypt'
+project = 'sCrypt'
 copyright = '2019, Xiaohui Liu'
 author = 'Xiaohui Liu'
 

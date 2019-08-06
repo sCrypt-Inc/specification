@@ -1,20 +1,20 @@
 =============================
-The Scrypt Language Reference
+The sCrypt Language Reference
 =============================
 
-Scrypt (pronounced “ess crypt”) is a high-level smart contract language for Bitcoin SV.
+sCrypt (pronounced “ess crypt”) is a high-level smart contract language for Bitcoin SV.
 Bitcoin supports smart contract with its Forth-like stack based Script language. 
 However writing smart contract in native Script is cumbersome and error-prone.
 It quickly becomes intractable when the contract size and complexity grow.
 
 Script is designed to facilitate writing smart contract running on chain.
 
-* It is easy to learn. Syntactically, Scrypt is similar to Solidity, making it easier to be adopted by existing smart contract developers. However, the resemblance is only superficial, since Scrypt is compiled into Bitcoin Script by the underlying compiler, instead of EVM bytecode.
+* It is easy to learn. Syntactically, sCrypt is similar to Solidity, making it easier to be adopted by existing smart contract developers. However, the resemblance is only superficial, since sCrypt is compiled into Bitcoin Script by the underlying compiler, instead of EVM bytecode.
 * It is statically typed. Type checking can help detect many errors at compile time.
 * It comes with a full-fledged IDE, including editor, compiler, and debugger. The first version is web based, no installation required to start playing immediately.
 
 
-.. Warning:: Scrypt is still in experimental phase and not ready for production use.
+.. Warning:: sCrypt is still in experimental phase and not ready for production use.
 
 .. toctree::
    :maxdepth: 2
@@ -32,7 +32,7 @@ Script is designed to facilitate writing smart contract running on chain.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Scrypt by Example
+   :caption: sCrypt by Example
 
    p2pkh
    rpuzzle

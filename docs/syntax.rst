@@ -30,7 +30,7 @@ Formal Specification
             &\ \ \ |\ \ bytesConst \\
     \end{align*}
 
-Most of the syntax is self explantory. Syntax unique to Scrypt will be covered later.
+Most of the syntax is self explantory. Syntax unique to sCrypt will be covered later.
 
 Line comment starts with ``//`` and block comment comes between ``/*`` and ``*/``.
 
@@ -56,7 +56,7 @@ Basic Types
 Domain-Spcecific Types
 ----------------------
 
-To increase safety, Scrypt introduces meaningful types that help with catching semantic errors at compile time.
+To increase safety, sCrypt introduces meaningful types that help with catching semantic errors at compile time.
 These types add meaning to a raw ``bytes``.
 They must be explicitly casted from ``bytes`` with a type constructor.
 
@@ -151,4 +151,4 @@ Operators
 
 Scoping
 =======
-Scoping in Scrypt follows the prevailing scoping rules of C99 and Solidity.
+Scoping in sCrypt follows the prevailing scoping rules of C99 and Solidity.

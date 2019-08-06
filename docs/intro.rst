@@ -20,7 +20,7 @@ A contract consists of two parts: locking script and unlocking script.
 
 Constructor
 ===========
-Each contract has one and only one constructor. It is where contract member variables are initantiated. 
+Each contract has one and only one constructor. It is where contract member variables are initialized. 
 For example, it can initialize the public key hash of a P2PHK contract, or the hash of a secret in a hash puzzle contract.
 
 require
