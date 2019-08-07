@@ -38,11 +38,12 @@ Math
 
 Hashing
 -------
-* ``Ripemd160 ripemd160(bytes bytes)``
-* ``Sha1 sha1(bytes bytes)``
-* ``Sha256 sha256(bytes bytes)``
-* ``Ripemd160 hash160(bytes bytes)``
-* ``Sha256 hash256(bytes bytes)``
+* ``Ripemd160 ripemd160(bytes b)``
+* ``Sha1 sha1(bytes b)``
+* ``Sha256 sha256(bytes b)``
+* ``Ripemd160 hash160(bytes b)``
+
+  ripemd160(sha256(b))
 
 Signature Verification
 ----------------------

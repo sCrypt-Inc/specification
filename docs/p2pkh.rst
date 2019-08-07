@@ -8,6 +8,7 @@ Pay to Public Key Hash
         Ripemd160 pubKeyHash;
 
         constructor() {
+            // type casting bytes literal to Ripemd160 explicitly
             pubKeyHash = Ripemd160(0x16475707a0c893698c82eb8d177a8164c0aa1e72);
         }
 
