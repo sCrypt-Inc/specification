@@ -39,6 +39,10 @@ Script is designed to facilitate writing smart contract running on chain.
    ackermann
    rabin
 
+Contact
+-------
+`Slack <https://scryptworkspace.slack.com/join/shared_invite/enQtNzExNjYyMDMyNTkzLTE5ZjZlZDVjOTE3MTFjNzhhMWRlMGE3NGMzMjBjZmUxNGRiNTFlZGI1YWUxZWI0NjQyN2MyZjM0NDBiNzI3MWQ>`_
+
 ..
     contributing: PR for example contracts
 
