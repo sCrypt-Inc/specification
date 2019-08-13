@@ -39,7 +39,7 @@ In the above example, ``scriptSig`` of ``10`` can fulfill the contract.
 Multiple Public Functions
 ---------------------------
 A contract can have multiple public functions, representing different ways to fulfill a contract. Only one of the public functions can be chosen at a time. In this case, the last operator of ``scriptSig`` has to be the index of the public function chosen, starting from 1.
-For example, if ``larger`` public function path is chosen, the ``scriptSig`` of ``10 3`` can fulfill the contract below, in which ``3`` is the public function index.
+For example, if ``larger`` public function path is chosen, the ``scriptSig`` of ``11 3`` can fulfill the contract below, in which ``3`` is the public function index.
 
 .. code-block:: solidity
 

@@ -58,7 +58,7 @@ Domain-Spcecific Types
 
 To increase safety, sCrypt introduces meaningful types that help with catching semantic errors at compile time.
 These types add meaning to a raw ``bytes``.
-They must be explicitly casted from ``bytes`` with a type constructor.
+They must be explicitly cast from ``bytes`` with a type constructor.
 
 * **PubKey** - represents a public key.
 
