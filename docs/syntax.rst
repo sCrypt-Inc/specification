@@ -7,7 +7,7 @@ Formal Specification
 .. math::
 
     \begin{align*}
-    contract &::= \mathrm{contract}\ \mathrm{ID}\ \{\ [var]^*\ constructor\ [function]^*\ [public]^+\ \}\\
+    contract &::= \mathrm{contract}\ \mathrm{ID}\ \{\ [var]^*\ [constructor]\ [function]^*\ [public]^+\ \}\\
     var &::= formal;\\
     formal &::= \mathrm{TYPE}\ \mathrm{ID}\\
     function &::= \mathrm{function}\ \mathrm{ID}(formal[,\ formal]^*)\ \mathrm{returns}\ (\mathrm{TYPE})\ \{\ [stmt]^*\ \mathrm{return}\ expr;\ \}\\
