@@ -38,6 +38,7 @@ Script is designed to facilitate writing smart contract running on chain.
    rpuzzle
    ackermann
    rabin
+   multipartyhashpuzzles
 
 Contact
 -------
