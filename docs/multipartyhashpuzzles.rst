@@ -29,7 +29,7 @@ extended to multiple parties so that multiple preimages have to be provided such
     }
 
 
-The above solution is problematic when ``N`` is large since all ``N`` preimages have to be included in the locking script, bloating the transaction. 
+The above solution is problematic when ``N`` is large since all ``N`` hashes have to be included in the locking script, bloating the transaction. 
 Instead, we can combine all ``y``'s into a single y such that ``y = H(H(y1 || y2) || y3)`` [#]_ as shown below.
 
 .. code-block:: solidity
