@@ -18,7 +18,7 @@ Formal Specification
             &\ \ \ |\ \ \mathrm{require}(expr);\\
             &\ \ \ |\ \ \mathrm{if}\ (expr)\ stmt\ [\mathrm{else}\ stmt]\\
             &\ \ \ |\ \ \mathrm{loop}\ (intConst)\ stmt\\
-            &\ \ \ |\ \ \{\ [stmt]^+\ \}\\
+            &\ \ \ |\ \ \{\ [stmt]^*\ \}\\
     expr &::= \mathsf{UnaryOp}\ expr\\
             &\ \ \ |\ \ expr\ \mathsf{BinaryOp}\ expr\\
             &\ \ \ |\ \ \mathrm{ID}(expr[,\ expr]^*)\\
