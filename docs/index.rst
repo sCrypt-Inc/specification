@@ -42,7 +42,7 @@ Script is designed to facilitate writing smart contract running on chain.
 
 Contact
 -------
-`Slack <https://scryptworkspace.slack.com/join/shared_invite/enQtNzExNjYyMDMyNTkzLTE5ZjZlZDVjOTE3MTFjNzhhMWRlMGE3NGMzMjBjZmUxNGRiNTFlZGI1YWUxZWI0NjQyN2MyZjM0NDBiNzI3MWQ>`_
+`Slack <https://join.slack.com/t/scryptworkspace/shared_invite/enQtNzQ1OTMyNDk1ODU3LTJmYjE5MGNmNDZhYmYxZWM4ZGY2MTczM2NiNTIxYmFhNTVjNjE5MGYwY2UwNDYxMTQyNGU2NmFkNTY5MmI1MWM>`_
 
 ..
     contributing: PR for example contracts
