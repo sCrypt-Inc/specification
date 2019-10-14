@@ -7,7 +7,7 @@ Bitcoin supports smart contract with its Forth-like stack based Script language.
 However writing smart contract in native Script is cumbersome and error-prone.
 It quickly becomes intractable when the contract size and complexity grow.
 
-Script is designed to facilitate writing smart contract running on chain.
+sCrypt is designed to facilitate writing smart contract running on chain.
 
 * It is easy to learn. Syntactically, sCrypt is similar to Solidity, making it easier to be adopted by existing smart contract developers. However, the resemblance is only superficial, since sCrypt is compiled into Bitcoin Script by the underlying compiler, instead of EVM bytecode.
 * It is statically typed. Type checking can help detect many errors at compile time.
