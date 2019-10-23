@@ -30,7 +30,7 @@ Formal Specification
             &\ \ \ |\ \ bytesConst \\
     \end{align*}
 
-Most of the syntax is self explantory. Syntax unique to sCrypt will be covered later.
+Most of the syntax is self explanatory. Syntax unique to sCrypt will be covered later.
 
 Line comment starts with ``//`` and block comment comes between ``/*`` and ``*/``.
 
@@ -53,7 +53,7 @@ Basic Types
 
         bytes arr = 0xffee1234;
 
-Domain-Spcecific Types
+Domain-Specific Types
 ----------------------
 
 To increase safety, sCrypt introduces meaningful types that help with catching semantic errors at compile time.

@@ -4,7 +4,7 @@ Functions
 
 User-Defined Functions
 ======================
-sCrypt enables developers to define their own functions as examplified below:
+sCrypt enables developers to define their own functions as exemplified below:
 
 .. code-block:: solidity
 
@@ -27,7 +27,7 @@ Recursion is disallowed. A function cannot call itself in its body.
 
 Library Functions
 =================
-The following functions come with sCrypt and are availabe globally.
+The following functions come with sCrypt and are available globally.
 
 Math
 ----
