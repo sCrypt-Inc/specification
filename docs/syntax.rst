@@ -39,8 +39,8 @@ Types
 Basic Types
 -----------
 
-* **bool** - a boolean value.
-* **int** - a 32-bit signed integer. Literals of this type can be specified in dec or hex.
+* **bool** - a boolean value ``true`` or ``false``.
+* **int** - a signed integer of arbitrary length. Literals of this type can be specified in dec or hex.
 
     .. code-block:: solidity
 
