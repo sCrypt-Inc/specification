@@ -15,7 +15,7 @@ It grows very quickly in value, as does the size of its call tree. The Ackermann
     \end{cases}
 
 
-nCrypt has devised to way to cauculate the value of the Ackermann function using `native scripts`_. But it is definitely non-trivial. Below we present a much simpler version. 
+nCrypt has devised to way to calculate the value of the Ackermann function using `native scripts`_. But it is definitely non-trivial. Below we present a much simpler version. 
 
 .. code-block:: solidity
 
