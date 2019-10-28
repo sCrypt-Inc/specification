@@ -45,6 +45,10 @@ Hashing
 
   ripemd160(sha256(b))
 
+* ``Sha256 hash256(bytes b)``
+
+  sha256(sha256(b))
+
 Signature Verification
 ----------------------
 * ``bool checkSig(Sig sig, PubKey pk)``
