@@ -44,6 +44,8 @@ Contact
 -------
 `Slack <https://join.slack.com/t/scryptworkspace/shared_invite/enQtNzQ1OTMyNDk1ODU3LTJmYjE5MGNmNDZhYmYxZWM4ZGY2MTczM2NiNTIxYmFhNTVjNjE5MGYwY2UwNDYxMTQyNGU2NmFkNTY5MmI1MWM>`_
 
+`Telegram <https://t.me/joinchat/GwaRAxKT16JjXyHt5PuhHw>`_
+
 ..
     contributing: PR for example contracts
 
