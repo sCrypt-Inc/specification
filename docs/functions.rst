@@ -56,34 +56,34 @@ Signature Verification
 
 bytes Operations
 ----------------
-* ``bytes data[start:end]``
+* ``bytes b[start:end]``
 
   Returns subarray from index ``start`` inclusive to ``end`` exclusive.
   
-* ``dataA ++ dataB``
+* ``b1 ++ b2``
 
-  Returns the concatenation of bytes ``dataA`` and bytes ``dataB``.
+  Returns the concatenation of bytes ``b1`` and bytes ``b2``.
   
 * ``bytes num2bin(int num, int size)``
 
   Converts a number ``num`` into a bytes array of size ``size``.
 
-* ``int bin2num(bytes data)``
+* ``int bin2num(bytes b)``
 
-  Converts a bytes array ``data`` to an integer. The array is treated as little-endian.
+  Converts a bytes array ``b`` to an integer. The array is treated as little-endian.
 
-* ``int size(bytes data)``
+* ``int size(bytes b)``
 
-  Returns the length of ``data``.
+  Returns the length of ``b``.
 
 
 Type Casting
 ============
 Explicit type cast is mandated to convert a general ``bytes`` type to a more specific type.
 
-* ``PubKey PubKey(bytes data)``
-* ``Ripemd160 Ripemd160(bytes data)``
-* ``Sha1 Sha1(bytes data)``
-* ``Sha256 Sha256(bytes data)``
-* ``Sig Sig(bytes data)``
+* ``PubKey PubKey(bytes b)``
+* ``Ripemd160 Ripemd160(bytes b)``
+* ``Sha1 Sha1(bytes b)``
+* ``Sha256 Sha256(bytes b)``
+* ``Sig Sig(bytes b)``
 
