@@ -31,7 +31,7 @@ Otherwise, the execution will resume.
 
 Public Function
 =================
-Each contract has at least one public function. It is denoted with the ``public`` keyword and does not return any value. The function body corresponds to unlocking script (commonly referred to as ``scriptPubKey``) and its arguments locking script (aka, ``scriptSig``).
+Each contract has at least one public function. It is denoted with the ``public`` keyword and does not return any value. The function body corresponds to locking script (commonly referred to as ``scriptPubKey``) and its arguments unlocking script (aka, ``scriptSig``).
 It is visible outside the contract and acts as the entry point into the contract (like ``main`` in ``C`` and ``Java``).
 
 A public function must end with a ``require()`` call. ``require()`` can also appear in other parts of a public function. A contract can only be fulfilled and succeed when its called public function runs to completion without violating any conditions in ``require()``.
