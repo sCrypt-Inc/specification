@@ -152,3 +152,4 @@ Operators
 Scoping
 =======
 Scoping in sCrypt follows the prevailing scoping rules of C99 and Solidity.
+The only exception is that we do not allow shadowing names, which may change in the future.
