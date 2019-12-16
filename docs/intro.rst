@@ -10,12 +10,12 @@ Each contract provides a template for a certain type of contracts (e.g., P2PHK o
     contract Test {
         int x;
 
-        constructor(int _x) {
-            x = _x;
+        constructor(int x) {
+            this.x = x;
         }
 
         public function equal(int y) {
-            require(y == x);
+            require(y == this.x);
         }
     }
 
@@ -47,19 +47,19 @@ For example, if public function ``larger`` is called, ``scriptSig`` of ``y 3`` c
     contract Test {
         int x;
 
-        constructor(int _x) {
-            x = _x;
+        constructor(int x) {
+            this.x = x;
         }
 
         public function equal(int y) {
-            require(y == x);
+            require(y == this.x);
         }
 
         public function smaller(int y) {
-            require(y < x);
+            require(y < this.x);
         }
 
         public function larger(int y) {
-            require(y > x);
+            require(y > this.x);
         }
     }

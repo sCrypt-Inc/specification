@@ -23,9 +23,10 @@ nCrypt has devised a way to calculate the value of the Ackermann function using 
         int a;
         int b;
 
-        constructor() {
-            a = 2;
-            b = 1;
+        // a = 2, b = 1
+        constructor(int a, int b) {
+            this.a = a;
+            this.b = b;
         }
 
         function ackermann(int m, int n) returns (int) {
@@ -61,7 +62,7 @@ nCrypt has devised a way to calculate the value of the Ackermann function using 
 
         // y = 5
         public function unlock(int y) {
-            require(y == ackermann(a, b));
+            require(y == this.ackermann(this.a, this.b));
         }
     }
 

@@ -9,8 +9,9 @@ Rabin Signature
     contract RabinSignature {
         Ripemd160 nHash;
 
-        constructor() {
-            nHash = Ripemd160(0x88d9931ea73d60eaf7e5671efc0552b912911f2a);
+        // nHash = 0x88d9931ea73d60eaf7e5671efc0552b912911f2a
+        constructor(Ripemd160 nHash) {
+            this.nHash = nHash;
         }
 
         function hash3072(bytes x) returns (bytes) {
@@ -32,9 +33,9 @@ Rabin Signature
         }
 
         public function verifySig(int S, bytes U, bytes m, int lambda, bytes n) {
-            require(hash160(n) == nHash);
+            require(hash160(n) == this.nHash);
 
-            int h = bin2num(hash3072(m ++ U));
+            int h = bin2num(this.hash3072(m ++ U));
             require(S * S == h + lambda * bin2num(n));
         }
     }
