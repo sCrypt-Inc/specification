@@ -76,14 +76,3 @@ bytes Operations
 
   Returns the length of ``b``.
 
-
-Type Casting
-============
-Explicit type cast is mandated to convert a general ``bytes`` type to a more specific type.
-
-* ``PubKey PubKey(bytes b)``
-* ``Ripemd160 Ripemd160(bytes b)``
-* ``Sha1 Sha1(bytes b)``
-* ``Sha256 Sha256(bytes b)``
-* ``Sig Sig(bytes b)``
-
