@@ -53,42 +53,41 @@ Basic Types
 
         bytes arr = 0xffee1234;
 
-Domain-Specific Types
+Subtypes of **bytes**
 ----------------------
 
-To increase safety, sCrypt introduces meaningful types that help with catching semantic errors at compile time.
-These types add meaning to a raw ``bytes``.
-They must be explicitly cast from ``bytes`` with a type constructor.
+These subtypes are more specific versions of ``bytes``, used to further improve type safety.
+To cast a supertype ``bytes`` to them, a constructor must be explicitly called.
 
-* **PubKey** - represents a public key.
+* **PubKey** - a public key type.
 
     .. code-block:: solidity
 
         PubKey pubKey = PubKey(0x123456789abcdeffedcba987654321);
 
-* **Sig** - represents a tx signature (which can be checked with ``checkSig``).
+* **Sig** - a signature type.
 
     .. code-block:: solidity
 
         Sig sig = Sig(0x123456789abcdeffedcba987654321);
 
-* **Ripemd160** - represents a result of RIPEMD-160 hash.
+* **Ripemd160** - a RIPEMD-160 hash type.
 
     .. code-block:: solidity
 
-        Ripemd160 h = hash160(pubKey);
+        Ripemd160 r = hash160(0x123456789abcdeffedcba987654321);
 
-* **Sha1** - represents a result of SHA-1 hash.
-
-    .. code-block:: solidity
-
-        Sha1 h = sha1(secret);
-
-* **Sha256** - represents a result of SHA-256 hash.
+* **Sha1** - a SHA-1 hash type.
 
     .. code-block:: solidity
 
-        Sha256 h = hash256(secret);
+        Sha1 s = sha1(0x123456789abcdeffedcba987654321);
+
+* **Sha256** - a SHA-256 hash type.
+
+    .. code-block:: solidity
+
+        Sha256 s = hash256(secr0x123456789abcdeffedcba987654321et);
 
 
 Operators
