@@ -40,14 +40,13 @@ Basic Types
 -----------
 
 * **bool** - a boolean value ``true`` or ``false``.
-* **int** - a signed integer of arbitrary length. Literals of this type can be specified in dec or hex.
+* **int** - a signed integer of arbitrary length, whose literals are in decimal format.
 
     .. code-block:: solidity
 
         int a = -42;
-        int b = 0xab12;
 
-* **bytes** - an array of bytes. Literals of this type are specified in hex.
+* **bytes** - a variable length array of bytes, whose literals are in hex format.
 
     .. code-block:: solidity
 
@@ -57,7 +56,7 @@ Subtypes of **bytes**
 ----------------------
 
 These subtypes are more specific versions of ``bytes``, used to further improve type safety.
-To cast a supertype ``bytes`` to them, a constructor must be explicitly called.
+To cast a supertype ``bytes`` to them, a function of the type name must be explicitly called.
 
 * **PubKey** - a public key type.
 
