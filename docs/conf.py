@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'sCrypt'
-copyright = '2019, Xiaohui Liu'
-author = 'Xiaohui Liu'
+copyright = '2019, sCrypt Inc'
+author = 'sCrypt Inc'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
