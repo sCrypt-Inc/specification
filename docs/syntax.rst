@@ -117,30 +117,34 @@ Operators
       - left-associative
 
     * - 5
-      - ``< <= > >=``
+      - ``<< >>``
       - left-associative
 
     * - 6
-      - ``== === != !==``
+      - ``< <= > >=``
       - left-associative
 
     * - 7
-      - ``&``
+      - ``== === != !==``
       - left-associative
 
     * - 8
-      - ``^``
+      - ``&``
       - left-associative
 
     * - 9
-      - ``|``
+      - ``^``
       - left-associative
 
     * - 10
-      - ``&&``
+      - ``|``
       - left-associative
 
     * - 11
+      - ``&&``
+      - left-associative
+
+    * - 12
       - ``||``
       - left-associative
 ..
