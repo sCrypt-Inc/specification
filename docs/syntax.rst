@@ -67,8 +67,8 @@ where the most significant bit indicates the sign (``0`` for positive, ``1`` for
         bytes b = bytes(a4);   // 0xe883
 
 
-Subtypes of **bytes**
-----------------------
+Subtypes of ``bytes``
+---------------------
 
 These subtypes are more specific versions of ``bytes``, used to further improve type safety.
 To cast a supertype ``bytes`` to them, a function of the type name must be explicitly called.
@@ -77,37 +77,37 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
 
     .. code-block:: solidity
 
-        PubKey pubKey = PubKey(0x123456789abcdeffedcba987654321);
+        PubKey pubKey = PubKey(0x0200112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100);
 
 * **PrivKey** - a private key type.
 
     .. code-block:: solidity
 
-        PrivKey privKey = PrivKey(0x123456789abcdeffedcba987654321);
+        PrivKey privKey = PrivKey(0x00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100);
 
-* **Sig** - a signature type.
+* **Sig** - a signature type in DER format, including hash type.
 
     .. code-block:: solidity
 
-        Sig sig = Sig(0x123456789abcdeffedcba987654321);
+        Sig sig = Sig(0x3045022100b71be3f1dc001e0a1ad65ed84e7a5a0bfe48325f2146ca1d677cf15e96e8b80302206d74605e8234eae3d4980fcd7b2fdc1c5b9374f0ce71dea38707fccdbd28cf7e41);
 
 * **Ripemd160** - a RIPEMD-160 hash type.
 
     .. code-block:: solidity
 
-        Ripemd160 r = hash160(0x123456789abcdeffedcba987654321);
+        Ripemd160 r = hash160(0x0011223344556677889999887766554433221100);
 
 * **Sha1** - a SHA-1 hash type.
 
     .. code-block:: solidity
 
-        Sha1 s = sha1(0x123456789abcdeffedcba987654321);
+        Sha1 s = sha1(0x0011223344556677889999887766554433221100);
 
 * **Sha256** - a SHA-256 hash type.
 
     .. code-block:: solidity
 
-        Sha256 s = hash256(0x123456789abcdeffedcba987654321);
+        Sha256 s = hash256(0x00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100);
 
 
 Operators
