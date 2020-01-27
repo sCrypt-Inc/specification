@@ -44,13 +44,28 @@ Basic Types
 
     .. code-block:: solidity
 
-        int a = -42;
+        int a1 = 42;
+        int a2 = -4242424242424242;
+        int a3 = 55066263022277343669578718895168534326250603453777594175500187360389116729240;
 
 * **bytes** - a variable length array of bytes, whose literals are in hex format.
 
     .. code-block:: solidity
 
-        bytes arr = 0xffee1234;
+        bytes b1 = 0xffee1234;
+        bytes b2 = 0x414136d08c5ed2bf3ba048afe6dcaebafeffffffffffffffffffffffffffffff00;
+
+``bytes`` can be explicitly cast to ``int`` using little-endian `sign-magnitude representation <https://www.tutorialspoint.com/sign-magnitude-notation>`_, 
+where the most significant bit indicates the sign (``0`` for positive, ``1`` for negative). ``int`` can also be explicitly cast to ``bytes``.
+
+    .. code-block:: solidity
+
+        int a1 = int(0x36);    // 54 decimal
+        int a2 = int(0xb6);    // -54
+        int a3 = int(0xe803);  // 1000
+        int a4 = int(0xe883);  // -1000
+        bytes b = bytes(a4);   // 0xe883
+
 
 Subtypes of **bytes**
 ----------------------
