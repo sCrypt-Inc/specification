@@ -64,6 +64,12 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
 
         PubKey pubKey = PubKey(0x123456789abcdeffedcba987654321);
 
+* **PrivKey** - a private key type.
+
+    .. code-block:: solidity
+
+        PrivKey privKey = PrivKey(0x123456789abcdeffedcba987654321);
+
 * **Sig** - a signature type.
 
     .. code-block:: solidity
@@ -86,7 +92,7 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
 
     .. code-block:: solidity
 
-        Sha256 s = hash256(secr0x123456789abcdeffedcba987654321et);
+        Sha256 s = hash256(0x123456789abcdeffedcba987654321);
 
 
 Operators
