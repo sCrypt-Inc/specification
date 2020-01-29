@@ -146,7 +146,7 @@ Operators
       - left-associative
 
     * - 7
-      - ``== === != !==``
+      - ``== !=``
       - left-associative
 
     * - 8
@@ -169,7 +169,7 @@ Operators
       - ``||``
       - left-associative
 ..
-    explain ===,!==,.,@ meaning, and note &&,|| evaluates both sides regardless
+    explain &&,|| evaluates both sides regardless
 
 
 Scoping
