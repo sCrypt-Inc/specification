@@ -40,31 +40,32 @@ Basic Types
 -----------
 
 * **bool** - a boolean value ``true`` or ``false``.
-* **int** - a signed integer of arbitrary length, whose literals are in decimal format.
+* **int** - a signed integer of arbitrary length, whose literals are in decimal or hexadecimal format.
 
     .. code-block:: solidity
 
         int a1 = 42;
         int a2 = -4242424242424242;
         int a3 = 55066263022277343669578718895168534326250603453777594175500187360389116729240;
+        int a4 = 0xFF8C;
 
-* **bytes** - a variable length array of bytes, whose literals are in hex format.
-
-    .. code-block:: solidity
-
-        bytes b1 = 0xffee1234;
-        bytes b2 = 0x414136d08c5ed2bf3ba048afe6dcaebafeffffffffffffffffffffffffffffff00;
-
-``bytes`` can be explicitly cast to ``int`` using little-endian `sign-magnitude representation <https://www.tutorialspoint.com/sign-magnitude-notation>`_, 
-where the most significant bit indicates the sign (``0`` for positive, ``1`` for negative). ``int`` can also be explicitly cast to ``bytes``.
+* **bytes** - a variable length array of bytes, whose literals are in quoted hexadecimal format prefixed by ``b``.
 
     .. code-block:: solidity
 
-        int a1 = int(0x36);    // 54 decimal
-        int a2 = int(0xb6);    // -54
-        int a3 = int(0xe803);  // 1000
-        int a4 = int(0xe883);  // -1000
-        bytes b = bytes(a4);   // 0xe883
+        bytes b1 = b"ffee1234";
+        bytes b2 = b"414136d08c5ed2bf3ba048afe6dcaebafeffffffffffffffffffffffffffffff00";
+
+``bytes`` can be converted to ``int`` using function ``unpack``. Little-endian `sign-magnitude representation <https://www.tutorialspoint.com/sign-magnitude-notation>`_ is used, 
+where the most significant bit indicates the sign (``0`` for positive, ``1`` for negative). ``int`` can be converted to ``bytes`` with ``pack``.
+
+    .. code-block:: solidity
+
+        int a1 = unpack(b"36");    // 54 decimal
+        int a2 = unpack(b"b6");    // -54
+        int a3 = unpack(b"e803");  // 1000
+        int a4 = unpack(b"e883");  // -1000
+        bytes b = pack(a4);        // b"e883"
 
 
 Subtypes of ``bytes``
@@ -77,37 +78,37 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
 
     .. code-block:: solidity
 
-        PubKey pubKey = PubKey(0x0200112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100);
+        PubKey pubKey = PubKey(b"0200112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100");
 
 * **PrivKey** - a private key type.
 
     .. code-block:: solidity
 
-        PrivKey privKey = PrivKey(0x00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100);
+        PrivKey privKey = PrivKey(b"00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100");
 
 * **Sig** - a signature type in DER format, including hash type.
 
     .. code-block:: solidity
 
-        Sig sig = Sig(0x3045022100b71be3f1dc001e0a1ad65ed84e7a5a0bfe48325f2146ca1d677cf15e96e8b80302206d74605e8234eae3d4980fcd7b2fdc1c5b9374f0ce71dea38707fccdbd28cf7e41);
+        Sig sig = Sig(b"3045022100b71be3f1dc001e0a1ad65ed84e7a5a0bfe48325f2146ca1d677cf15e96e8b80302206d74605e8234eae3d4980fcd7b2fdc1c5b9374f0ce71dea38707fccdbd28cf7e41");
 
 * **Ripemd160** - a RIPEMD-160 hash type.
 
     .. code-block:: solidity
 
-        Ripemd160 r = hash160(0x0011223344556677889999887766554433221100);
+        Ripemd160 r = hash160(b"0011223344556677889999887766554433221100");
 
 * **Sha1** - a SHA-1 hash type.
 
     .. code-block:: solidity
 
-        Sha1 s = sha1(0x0011223344556677889999887766554433221100);
+        Sha1 s = sha1(b"0011223344556677889999887766554433221100");
 
 * **Sha256** - a SHA-256 hash type.
 
     .. code-block:: solidity
 
-        Sha256 s = hash256(0x00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100);
+        Sha256 s = hash256(b"00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100");
 
 
 Operators

@@ -12,7 +12,7 @@ One crucial step in R-Puzzle is to extract ``r`` from `DER`_ encoded signature. 
     contract RPuzzle {
         Sig s;
 
-        // s = 0x3045022100948c67a95f856ae875a48a2d104df9d232189897a811178a715617d4b090a7e90220616f6ced5ab219fe1bfcf9802994b3ce72afbb2db0c4b653a74c9f03fb99323f01
+        // s = b"3045022100948c67a95f856ae875a48a2d104df9d232189897a811178a715617d4b090a7e90220616f6ced5ab219fe1bfcf9802994b3ce72afbb2db0c4b653a74c9f03fb99323f01"
         constructor(Sig s) {
             this.s = s;
         }
@@ -24,7 +24,7 @@ One crucial step in R-Puzzle is to extract ``r`` from `DER`_ encoded signature. 
             return r;
         }
 
-        // r = 00948c67a95f856ae875a48a2d104df9d232189897a811178a715617d4b090a7e9
+        // r = b"00948c67a95f856ae875a48a2d104df9d232189897a811178a715617d4b090a7e9"
         public function unlock(bytes r) {
             require(r == this.getSigR(this.s));
         }

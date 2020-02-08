@@ -9,7 +9,7 @@ Rabin Signature
     contract RabinSignature {
         Ripemd160 nHash;
 
-        // nHash = 0x88d9931ea73d60eaf7e5671efc0552b912911f2a
+        // nHash = b"88d9931ea73d60eaf7e5671efc0552b912911f2a"
         constructor(Ripemd160 nHash) {
             this.nHash = nHash;
         }
@@ -19,7 +19,7 @@ Rabin Signature
 
             int i = 0;
             // start with empty
-            bytes ret = 0x;
+            bytes ret = b"";
             // divide into 3072 / 256 = 12 slices
             loop (12) {
                 // 256 bits is 32 bytes
