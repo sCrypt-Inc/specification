@@ -72,7 +72,7 @@ bytes Operations
 
   Converts a bytes array ``b`` to an integer, including minimal encoding in signed magnitude format. 
 
-* ``int size(bytes b)``
+* ``int length(bytes b)``
 
   Returns the length of ``b``.
 
