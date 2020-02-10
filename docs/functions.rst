@@ -14,9 +14,34 @@ sCrypt enables developers to define their own functions as exemplified below:
 
 They are only visible within the contract, similar to ``private`` functions in Solidity.
 
-Return
-------
-Due to the lack of native ``return`` symantics support in script, a function currently must end with a ``return`` statement and it is the only place for a ``return`` statement. ``OP_RETURN`` has a different meaning, at least for now.
+``return``
+----------
+Due to the lack of native ``return`` symantics support in script, a function currently must end with a ``return`` statement and it is the only valid place for a ``return`` statement.
+This requirement may be relaxed in the future. This is usually not a problem since it can be circumvented as follows:
+
+.. code-block:: solidity
+
+    function abs(int a) returns (int) {
+        if (a > 0) {
+            return a;
+        } else {
+            return -a;
+        }
+    }
+can be rewritten as 
+
+.. code-block:: solidity
+
+    function abs(int a) returns (int) {
+        int ret = 0;
+
+        if (a > 0) {
+            ret = a;
+        } else {
+            ret = -a;
+        }
+        return ret;
+    }
 
 Recursion
 ---------
