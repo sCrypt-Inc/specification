@@ -58,7 +58,7 @@ bytes Operations
 ----------------
 * ``bytes b[start:end]``
 
-  Returns subarray from index ``start`` inclusive to ``end`` exclusive.
+  Returns subarray from index ``start`` (inclusive) to ``end`` (exclusive).
   
 * ``b1 ++ b2``
 
@@ -66,11 +66,11 @@ bytes Operations
   
 * ``bytes num2bin(int num, int size)``
 
-  Converts a number ``num`` into a bytes array of size ``size``.
+  Converts a number ``num`` into a byte array of certain size ``size``, including the sign bit. It fails if the number cannot be accommodated.
 
 * ``int bin2num(bytes b)``
 
-  Converts a bytes array ``b`` to an integer. The array is treated as little-endian.
+  Converts a bytes array ``b`` to an integer, including minimal encoding in signed magnitude format. 
 
 * ``int size(bytes b)``
 
