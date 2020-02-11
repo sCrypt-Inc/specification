@@ -16,6 +16,7 @@ Formal Specification
     stmt &::= \mathrm{TYPE}\ \mathrm{ID} = expr;\\
             &\ \ \ |\ \ \mathrm{ID} = expr;\\
             &\ \ \ |\ \ \mathrm{require}(expr);\\
+            &\ \ \ |\ \ \mathrm{exit}(expr);\\
             &\ \ \ |\ \ \mathrm{if}\ (expr)\ stmt\ [\mathrm{else}\ stmt]\\
             &\ \ \ |\ \ \mathrm{loop}\ (intConst)\ stmt\\
             &\ \ \ |\ \ \{\ [stmt]^*\ \}\\
@@ -109,6 +110,28 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
     .. code-block:: solidity
 
         Sha256 s = hash256(b"00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100");
+
+
+exit()
+======
+``exit(bool status);`` statement terminates contract execution. If ``status`` is ``true``, contract succeeds; otherwise, it fails.
+
+    .. code-block:: solidity
+
+      contract TestPositive {
+          int x;
+
+          constructor(int x) {
+              this.x = x;
+          }
+
+          public function equal(int y) {
+              if (y <= 0) {
+                exit(false);
+              }
+              require(y == this.x);
+          }
+      }
 
 
 Operators
