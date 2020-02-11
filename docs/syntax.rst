@@ -20,6 +20,7 @@ Formal Specification
             &\ \ \ |\ \ \mathrm{if}\ (expr)\ stmt\ [\mathrm{else}\ stmt]\\
             &\ \ \ |\ \ \mathrm{loop}\ (intConst)\ stmt\\
             &\ \ \ |\ \ \{\ [stmt]^*\ \}\\
+            &\ \ \ |\ \ \mathrm{CODESEPARATOR}\\
     expr &::= \mathsf{UnaryOp}\ expr\\
             &\ \ \ |\ \ expr\ \mathsf{BinaryOp}\ expr\\
             &\ \ \ |\ \ \mathrm{ID}(expr[,\ expr]^*)\\
@@ -118,7 +119,7 @@ exit()
 
     .. code-block:: solidity
 
-      contract TestPositive {
+      contract TestSeparator {
           int x;
 
           constructor(int x) {
@@ -130,6 +131,26 @@ exit()
                 exit(false);
               }
               require(y == this.x);
+          }
+      }
+
+
+Code Separator
+==============
+Three or more ``*`` in a line inserts an `OP_CODESEPARATOR <https://en.bitcoin.it/wiki/OP_CHECKSIG#How_it_works>`_. It is used to exclude what comes before (and including itself) it from being part of the signature.
+Note there is no ``;`` at the end.
+
+    .. code-block:: solidity
+
+      contract TestPositive {
+          public function equal(int y) {
+              int a = 0;
+              // separator 1
+              ***
+              int b = 2;
+              // separator 2
+              *****
+              require(y > 0);
           }
       }
 
