@@ -119,7 +119,7 @@ exit()
 
     .. code-block:: solidity
 
-      contract TestSeparator {
+      contract TestPositiveEqual {
           int x;
 
           constructor(int x) {
@@ -128,7 +128,7 @@ exit()
 
           public function equal(int y) {
               if (y <= 0) {
-                exit(false);
+                exit(true);
               }
               require(y == this.x);
           }
@@ -142,7 +142,7 @@ Note there is no ``;`` at the end.
 
     .. code-block:: solidity
 
-      contract TestPositive {
+      contract TestSeparator {
           public function equal(int y) {
               int a = 0;
               // separator 1
