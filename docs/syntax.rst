@@ -88,7 +88,7 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
 
         PrivKey privKey = PrivKey(b"00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100");
 
-* **Sig** - a signature type in DER format, including hash type.
+* **Sig** - a signature type in `DER <https://docs.moneybutton.com/docs/bsv-signature.html>`_ format, including `signature hash type <https://github.com/libbitcoin/libbitcoin-system/wiki/Sighash-and-TX-Signing>`_, which is ``SIGHASH_ALL | SIGHASH_FORKID`` (``0x41``) in the below example.
 
     .. code-block:: solidity
 
