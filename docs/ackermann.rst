@@ -37,7 +37,7 @@ nCrypt has devised a way to calculate the value of the Ackermann function using 
             loop (14) {
                 if (length(stk) > 0) {
                     bytes top = stk[0:1];
-                    m = bin2num(top);
+                    m = unpack(top);
 
                     // pop
                     stk = stk[1:length(stk)];

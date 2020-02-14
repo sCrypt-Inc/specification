@@ -19,7 +19,7 @@ One crucial step in R-Puzzle is to extract ``r`` from `DER`_ encoded signature. 
 
         function getSigR(Sig sig) returns (bytes) {
             bytes lenBytes = sig[3:4];
-            int len = bin2num(lenBytes);
+            int len = unpack(lenBytes);
             bytes r = sig[4:4+len];
             return r;
         }

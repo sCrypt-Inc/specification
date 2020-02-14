@@ -35,7 +35,7 @@ Rabin Signature
         public function verifySig(int S, bytes U, bytes m, int lambda, bytes n) {
             require(hash160(n) == this.nHash);
 
-            int h = bin2num(this.hash3072(m ++ U));
-            require(S * S == h + lambda * bin2num(n));
+            int h = unpack(this.hash3072(m ++ U));
+            require(S * S == h + lambda * unpack(n));
         }
     }

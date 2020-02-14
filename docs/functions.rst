@@ -93,10 +93,6 @@ bytes Operations
 
   Converts a number ``num`` into a byte array of certain size ``size``, including the sign bit. It fails if the number cannot be accommodated.
 
-* ``int bin2num(bytes b)``
-
-  Converts a bytes array ``b`` to an integer, including minimal encoding in signed magnitude format. 
-
 * ``int length(bytes b)``
 
   Returns the length of ``b``.
