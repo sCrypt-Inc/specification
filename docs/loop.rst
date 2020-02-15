@@ -7,19 +7,27 @@ Loop
         loopBody
 
 
-Bitcoin script does not provide looping natively. Script achieves looping by repeating the loop body by the specified ``maxLoopCount`` times.
-For example, 
+Bitcoin script does not provide looping constructs natively for security reasons.
+sCrypt achieves looping by repeating the loop body ``maxLoopCount`` times.
+For example, the loop
 
 .. code-block:: solidity
 
-    loop (3) {
+    loop (10) {
         x = x * 2;
     }
 
-is converted to
+is equivalently unrolled to
 
 .. code-block:: solidity
 
+    x = x * 2;
+    x = x * 2;
+    x = x * 2;
+    x = x * 2;
+    x = x * 2;
+    x = x * 2;
+    x = x * 2;
     x = x * 2;
     x = x * 2;
     x = x * 2;
