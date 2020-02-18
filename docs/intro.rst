@@ -26,8 +26,8 @@ For example, it can initialize the public key hash of a P2PHK contract, or the h
 
 require()
 =========
-The ``require()`` function specifies terms/conditions of a contract. It consumes a boolean condition and will abort the execution of a contract if the condition is not met.
-Otherwise, the execution will resume.
+The ``require()`` function specifies terms/conditions of a contract. It consumes a boolean condition. 
+If the condition is not met, the contract will abort execution and fail. Otherwise, the execution will resume.
 
 Public Function
 =================
