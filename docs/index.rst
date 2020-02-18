@@ -33,6 +33,7 @@ sCrypt is designed to facilitate writing smart contract running on chain.
    syntax
    loop
    functions
+   contracts
 
 .. toctree::
    :maxdepth: 1
