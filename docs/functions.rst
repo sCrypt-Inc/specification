@@ -14,6 +14,26 @@ sCrypt enables developers to define their own functions as exemplified below:
 
 They are only visible within the contract, similar to ``private`` functions in Solidity.
 
+public function
+---------------
+A public function returns ``true`` if it runs to completion and ``false`` otherwise. Its ``returns`` and ``return`` parts are omitted.
+In other words, 
+
+.. code-block:: solidity
+
+    public function sum(int a) returns (bool) {
+        require(a == 0);
+        return true;
+    }
+
+is shortened to
+
+.. code-block:: solidity
+
+    public function sum(int a) {
+        require(a == 0);
+    }
+
 ``return``
 ----------
 Due to the lack of native ``return`` symantics support in script, a function currently must end with a ``return`` statement and it is the only valid place for a ``return`` statement.
@@ -28,6 +48,7 @@ This requirement may be relaxed in the future. This is usually not a problem sin
             return -a;
         }
     }
+
 can be rewritten as 
 
 .. code-block:: solidity
