@@ -7,13 +7,15 @@ Formal Specification
 .. math::
 
     \begin{align*}
-    contract &::= \mathrm{contract}\ \mathrm{ID}\ \{\ [var]^*\ [constructor]\ [function]^*\ [public]^+\ \}\\
+    program &::= [importDirective]^*\ [contract]^+\\
+    importDirective &::= \mathrm{import}\ "\mathrm{ID}";\\
+    contract &::= \mathrm{contract}\ \mathrm{ID}\ \{\ [var]^*\ [constructor]\ [function]^+\ \}\\
     var &::= formal;\\
     formal &::= \mathrm{TYPE}\ \mathrm{ID}\\
-    function &::= \mathrm{function}\ \mathrm{ID}(formal[,\ formal]^*)\ \mathrm{returns}\ (\mathrm{TYPE})\ \{\ [stmt]^*\ \mathrm{return}\ expr;\ \}\\
     constructor &::= \mathrm{constructor}([formal[,\ formal]^*])\ \{\ [stmt]^*\ \}\\
-    public &::= \mathrm{public}\ \mathrm{function}\ \mathrm{ID}(formal[,\ formal]^*)\ \{\ [stmt]^*\ \mathrm{require}(expr);\}\\
+    function &::= \mathrm{[public]}\ \mathrm{function}\ \mathrm{ID}(formal[,\ formal]^*)\ \mathrm{[returns}\ (\mathrm{TYPE]})\ \{\ [stmt]^*\ \mathrm{[return}\ expr;]\ \}\\
     stmt &::= \mathrm{TYPE}\ \mathrm{ID} = expr;\\
+            &\ \ \ |\ \ \mathrm{ID}\ \mathrm{ID} = \mathrm{new}\ \mathrm{ID}(expr^*);\\
             &\ \ \ |\ \ \mathrm{ID} = expr;\\
             &\ \ \ |\ \ \mathrm{require}(expr);\\
             &\ \ \ |\ \ \mathrm{exit}(expr);\\
@@ -24,6 +26,8 @@ Formal Specification
     expr &::= \mathsf{UnaryOp}\ expr\\
             &\ \ \ |\ \ expr\ \mathsf{BinaryOp}\ expr\\
             &\ \ \ |\ \ \mathrm{ID}(expr[,\ expr]^*)\\
+            &\ \ \ |\ \ \mathrm{ID}.\mathrm{ID}\\
+            &\ \ \ |\ \ \mathrm{ID}.\mathrm{ID}(expr[,\ expr]^*)\\
             &\ \ \ |\ \ \mathrm{ID}\mathbf{[}expr:expr\mathbf{]}\\
             &\ \ \ |\ \ (expr)\\
             &\ \ \ |\ \ \mathrm{ID}\\
