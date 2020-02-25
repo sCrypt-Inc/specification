@@ -35,7 +35,7 @@ Each contract has at least one public function. It is denoted with the ``public`
 It is visible outside the contract and acts as the entry point into the contract (like ``main`` in ``C`` and ``Java``).
 
 A public function must end with a ``require()`` call. ``require()`` can also appear in other parts of a public function. A contract can only be fulfilled and succeed when its called public function runs to completion without violating any conditions in ``require()``.
-In the above example, only ``scriptSig`` (i.e., ``y``) equal to ``_x`` can fulfill the contract. 
+In the above example, only ``scriptSig`` (i.e., ``y``) equal to ``this.x`` can fulfill the contract. 
 
 Multiple Public Functions
 ---------------------------
