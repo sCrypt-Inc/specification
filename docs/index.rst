@@ -51,6 +51,8 @@ Contact
 
 `Telegram <https://t.me/joinchat/GwaRAxKT16JjXyHt5PuhHw>`_
 
-..
-    contributing: PR for example contracts
+Contributing
+------------
+See `CONTRIBUTING.md <https://github.com/scrypt-sv/specification/blob/master/docs/CONTRIBUTING.md>`_ for more information on what we're looking for and how to get started.
+
 
