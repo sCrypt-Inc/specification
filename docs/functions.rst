@@ -16,22 +16,22 @@ They are only visible within the contract, similar to ``private`` functions in S
 
 public function
 ---------------
-A public function returns ``true`` if it runs to completion and ``false`` otherwise. Its ``returns`` and ``return`` parts are omitted.
-In other words, 
+A public function returns ``true`` if it runs to completion and ``false`` otherwise. 
+It does not have ``returns`` and ``return`` parts, as they are included implicitly. In other words, 
+
+.. code-block:: solidity
+
+    public function sum(int a) {
+        require(a == 0);
+    }
+
+is functionally equivalent to
 
 .. code-block:: solidity
 
     public function sum(int a) returns (bool) {
         require(a == 0);
         return true;
-    }
-
-is shortened to
-
-.. code-block:: solidity
-
-    public function sum(int a) {
-        require(a == 0);
     }
 
 ``return``
