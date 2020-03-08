@@ -13,7 +13,7 @@ Formal Specification
     var &::= formal;\\
     formal &::= \mathrm{TYPE}\ \mathrm{ID}\\
     constructor &::= \mathrm{constructor}([formal[,\ formal]^*])\ \{\ [stmt]^*\ \}\\
-    function &::= \mathrm{[public]}\ \mathrm{function}\ \mathrm{ID}(formal[,\ formal]^*)\ \mathrm{[returns}\ (\mathrm{TYPE]})\ \{\ [stmt]^*\ \mathrm{[return}\ expr;]\ \}\\
+    function &::= \mathrm{[public]}\ \mathrm{function}\ \mathrm{ID}([formal[,\ formal]^*])\ \mathrm{[returns}\ (\mathrm{TYPE]})\ \{\ [stmt]^*\ \mathrm{[return}\ expr;]\ \}\\
     stmt &::= \mathrm{TYPE}\ \mathrm{ID} = expr;\\
             &\ \ \ |\ \ \mathrm{ID}\ \mathrm{ID} = \mathrm{new}\ \mathrm{ID}(expr^*);\\
             &\ \ \ |\ \ \mathrm{ID} = expr;\\
