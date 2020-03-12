@@ -104,7 +104,15 @@ bytes Operations
 ----------------
 * ``bytes b[start:end]``
 
-  Returns subarray from index ``start`` (inclusive) to ``end`` (exclusive).
+  Returns subarray from index ``start`` (inclusive) to ``end`` (exclusive). 
+  ``start`` is ``0`` if omitted, ``end`` is ``length(b)`` if omitted.
+
+.. code-block:: solidity
+
+        bytes b = b"0011223344556677";
+        // b[3:6] == b"334455"
+        // b[:4] == b"00112233"
+        // b[5:] = b"556677"
   
 * ``b1 ++ b2``
 
