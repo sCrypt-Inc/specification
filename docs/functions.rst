@@ -117,6 +117,15 @@ bytes Operations
 * ``b1 ++ b2``
 
   Returns the concatenation of bytes ``b1`` and bytes ``b2``.
+
+* ``reverseBytes20(bytes b)`` ``reverseBytes32(bytes b)``
+
+  Returns reversed bytes of ``b``, which is of 20/32 bytes. They are often userful when converting a number between little-endian and big-endian.
+
+.. code-block:: solidity
+
+        // returns b"6cfeea2d7a1d51249f0624ee98151bfa259d095642e253d8e2dce1e79df33f79"
+        reverseBytes32(b"793ff39de7e1dce2d853e24256099d25fa1b1598ee24069f24511d7a2deafe6c")
   
 * ``bytes num2bin(int num, int size)``
 
