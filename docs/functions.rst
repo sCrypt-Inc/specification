@@ -36,7 +36,7 @@ is functionally equivalent to
 
 ``return``
 ----------
-Due to the lack of native ``return`` symantics support in script, a function currently must end with a ``return`` statement and it is the only valid place for a ``return`` statement.
+Due to the lack of native ``return`` semantics support in script, a function currently must end with a ``return`` statement and it is the only valid place for a ``return`` statement.
 This requirement may be relaxed in the future. This is usually not a problem since it can be circumvented as follows:
 
 .. code-block:: solidity
@@ -68,7 +68,7 @@ Recursion
 ---------
 Recursion is disallowed. A function cannot call itself in its body.
 
-.. Warning:: Indirect recursion detection is currently not implemented. If function A calles function B, which in turn calls A, the compiltion process will hang. Care must be taken to avoid doing so.
+.. Warning:: Indirect recursion detection is currently not implemented. If function A calles function B, which in turn calls A, the compilation process will hang. Care must be taken to avoid doing so.
 
 
 Library Functions
@@ -120,7 +120,7 @@ bytes Operations
 
 * ``reverseBytes20(bytes b)`` ``reverseBytes32(bytes b)``
 
-  Returns reversed bytes of ``b``, which is of 20/32 bytes. They are often userful when converting a number between little-endian and big-endian.
+  Returns reversed bytes of ``b``, which is of 20/32 bytes. They are often useful when converting a number between little-endian and big-endian.
 
 .. code-block:: solidity
 
