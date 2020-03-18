@@ -20,14 +20,8 @@ nCrypt has devised a way to calculate the value of the Ackermann function using 
 .. code-block:: solidity
 
     contract Ackermann {
-        int a;
-        int b;
-
-        // a = 2, b = 1
-        constructor(int a, int b) {
-            this.a = a;
-            this.b = b;
-        }
+        int a;  // a = 2
+        int b;  // b = 1
 
         function ackermann(int m, int n) returns (int) {
             bytes stk = num2bin(m, 1);

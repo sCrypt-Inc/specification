@@ -12,10 +12,6 @@ In the following example, a standard P2PKH contract is rewritten using two other
     contract HashPuzzle {
         Ripemd160 hash;
 
-        constructor(Ripemd160 hash) {
-            this.hash = hash;
-        }
-
         public function spend(bytes preimage) {
             require(hash160(preimage) == this.hash);
         }
@@ -24,10 +20,6 @@ In the following example, a standard P2PKH contract is rewritten using two other
     contract Pay2PubKey {
         PubKey pubKey;
 
-        constructor(PubKey pubKey) {
-            this.pubKey = pubKey;
-        }
-
         public function spend(Sig sig) {
             require(checkSig(sig, this.pubKey));
         }
@@ -35,10 +27,6 @@ In the following example, a standard P2PKH contract is rewritten using two other
 
     contract Pay2PubKeyHash {
         Ripemd160 pubKeyHash;
-
-        constructor(Ripemd160 pubKeyHash) {
-            this.pubKeyHash = pubKeyHash;
-        }
 
         public function spend(Sig sig, PubKey pubKey) {
             HashPuzzle hp = new HashPuzzle(this.pubKeyHash);
@@ -65,10 +53,6 @@ A contract can be instantiated by ``new``. A ``public`` function can be called f
     contract Pay2PubKeyHash {
         Ripemd160 pubKeyHash;
 
-        constructor(Ripemd160 pubKeyHash) {
-            this.pubKeyHash = pubKeyHash;
-        }
-
         public function spend(Sig sig, PubKey pubKey) {
             HashPuzzle hp = new HashPuzzle(this.pubKeyHash);
             require(hp.spend(pubKey));
@@ -89,10 +73,6 @@ The following example shows usage of the standard contract ``P2PKH`` that corres
 
     contract P2PKHStdDemo {
         Ripemd160 pubKeyHash;
-
-        constructor(Ripemd160 pubKeyHash) {
-            this.pubKeyHash = pubKeyHash;
-        }
 
         public function unlock(Sig sig, PubKey pubKey) {
             P2PKH p2pkh = new P2PKH(this.pubKeyHash);

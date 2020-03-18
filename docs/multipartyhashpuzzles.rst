@@ -8,19 +8,10 @@ extended to multiple parties so that multiple preimages have to be provided such
 .. code-block:: solidity
 
     contract MultiPartyHashPuzzles {
-        Sha256 hash1;
-        Sha256 hash2;
-        Sha256 hash3;
-
-        // hash1 = b"136523B9FEA2B7321817B28E254A81A683D319D715CEE2360D051360A272DD4C"
-        // hash2 = b"E222E30CF5C982E5F6251D755B0B16F608ACE631EB3BA9BDAF624FF1651ABF98"
-        // hash3 = b"2A79F5D9F8B3770A59F91E0E9B4C379F7C7A32353AA6450065E43A8616EF5722"
-        constructor(Sha256 hash1, Sha256 hash2, Sha256 hash3) {
-            this.hash1 = Sha256(hash1);
-            this.hash2 = Sha256(hash2);
-            this.hash3 = Sha256(hash3);
-        }
-
+        Sha256 hash1;   // hash1 = b"136523B9FEA2B7321817B28E254A81A683D319D715CEE2360D051360A272DD4C"
+        Sha256 hash2;   // hash2 = b"E222E30CF5C982E5F6251D755B0B16F608ACE631EB3BA9BDAF624FF1651ABF98"
+        Sha256 hash3;   // hash3 = b"2A79F5D9F8B3770A59F91E0E9B4C379F7C7A32353AA6450065E43A8616EF5722"
+        
         // preimage1: e.g., "bsv" -> b"627376"
         // preimage2: e.g., "sCrypt" -> b"734372797074"
         // preimage3: e.g., "IDE" -> b"494445"
@@ -39,12 +30,7 @@ Instead, we can combine all ``y``'s into a single y such that ``y = H(H(y1 || y2
 
     contract MultiPartyHashPuzzlesCompact {
         // only 1 hash needs to go into the locking script, saving space
-        Sha256 combinedHash;
-
-        // combinedHash = b"C9392767AB23CEFF09D207B9223C0C26F01A7F81F8C187A821A4266F8020064D"
-        constructor(Sha256 combinedHash) {
-            this.combinedHash = combinedHash;
-        }
+        Sha256 combinedHash; // combinedHash = b"C9392767AB23CEFF09D207B9223C0C26F01A7F81F8C187A821A4266F8020064D"
 
         // preimage1: e.g., "bsv" -> b"627376"
         // preimage2: e.g., "sCrypt" -> b"734372797074"

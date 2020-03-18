@@ -24,6 +24,39 @@ Constructor
 Each contract has at most one constructor. It is where contract member variables are initialized. 
 For example, it can initialize the public key hash of a P2PHK contract, or the hash of a secret in a hash puzzle contract.
 
+Default Constructor
+-------------------
+When no constructor is provided, the compiler will automatically generate a default constructor that initializes every member variable in the order they are declared.
+For example,
+
+.. code-block:: solidity
+    
+    contract Test {
+        int x1;
+        bytes x2;
+        bool x3;
+
+        public function equal(int y) {}
+    }
+
+is functionally equivalent to
+
+.. code-block:: solidity
+    
+    contract Test {
+        int x1;
+        bytes x2;
+        bool x3;
+
+        constructor(int x1, bytes x2, bool x3) {
+            this.x1 = x1;
+            this.x2 = x2;
+            this.x3 = x3;
+        }
+
+        public function equal(int y) {}
+    }
+
 require()
 =========
 The ``require()`` function specifies terms/conditions of a contract. It consumes a boolean condition. 
@@ -38,7 +71,7 @@ A public function must end with a ``require()`` call. ``require()`` can also app
 In the above example, only ``scriptSig`` (i.e., ``y``) equal to ``this.x`` can fulfill the contract. 
 
 Multiple Public Functions
----------------------------
+-------------------------
 A contract can have multiple public functions, representing different ways to fulfill a contract. Only one of the public functions can be called at a time. In this case, the last operator of ``scriptSig`` has to be the index of the public function called, starting from ``1``.
 For example, if public function ``larger`` is called, ``scriptSig`` of ``y 3`` can fulfill the contract below, in which ``3`` is the public function index.
 
@@ -46,10 +79,6 @@ For example, if public function ``larger`` is called, ``scriptSig`` of ``y 3`` c
 
     contract Test {
         int x;
-
-        constructor(int x) {
-            this.x = x;
-        }
 
         public function equal(int y) {
             require(y == this.x);

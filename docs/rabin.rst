@@ -7,12 +7,7 @@ Rabin Signature
 .. code-block:: solidity
 
     contract RabinSignature {
-        Ripemd160 nHash;
-
-        // nHash = b"88d9931ea73d60eaf7e5671efc0552b912911f2a"
-        constructor(Ripemd160 nHash) {
-            this.nHash = nHash;
-        }
+        Ripemd160 nHash;    // nHash = b"88d9931ea73d60eaf7e5671efc0552b912911f2a"
 
         function hash3072(bytes x) returns (bytes) {
             Sha256 y = sha256(x);
