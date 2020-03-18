@@ -81,6 +81,51 @@ The following example shows usage of the standard contract ``P2PKH`` that corres
     }
 
 
+Contract "OP_PUSH_TX"
+---------------------
+sCrypt comes with a powerful contract called ``Tx`` that allows inspection of the transaction containing the contract itself.
+More precisely, it enables inspection of the preimage used in signature verification defined in `BIP143`_.
+The format of the preimage is as follows:
+
+    1. nVersion of the transaction (4-byte little endian)
+    2. hashPrevouts (32-byte hash)
+    3. hashSequence (32-byte hash)
+    4. outpoint (32-byte hash + 4-byte little endian) 
+    5. scriptCode of the input (serialized as scripts inside CTxOuts)
+    6. value of the output spent by this input (8-byte little endian)
+    7. nSequence of the input (4-byte little endian)
+    8. hashOutputs (32-byte hash)
+    9. nLocktime of the transaction (4-byte little endian)
+    10. sighash type of the signature (4-byte little endian)
+
+As an example, contract ``CheckLockTimeVerify`` ensures coins are timelocked and cannot be spent before ``matureTime`` is reached, similar to `OP_CLTV`_.
+
+.. code-block:: solidity
+
+    contract CheckLockTimeVerify {
+        int matureTime;
+
+        public function spend(bytes sighashPreimage) {
+            Tx tx = new Tx();
+            // this ensures the preimage is for the current tx
+            require(tx.validate(sighashPreimage));
+            
+            // parse nLocktime
+            int len = length(sighashPreimage);
+            int nLocktime = this.fromLEUnsigned(sighashPreimage[len - 8 : len - 4]);
+
+            require(nLocktime >= this.matureTime);
+        }
+        
+        function fromLEUnsigned(bytes b) returns (int) {
+            // append positive sign byte. This does not hurt even when sign bit is already positive
+            return unpack(b ++ b"00");
+        }
+    }
+
+Full List
+---------
+
 .. list-table::
     :header-rows: 1
     :widths: 20 20 20
@@ -101,5 +146,12 @@ The following example shows usage of the standard contract ``P2PKH`` that corres
       - Y [#]_ hash
       - spend(bytes preimage)
 
+    * - Tx
+      - None
+      - validate(bytes sighashPreimage)
+
 .. [#] ``X`` is hashing function and can be Ripemd160/Sha1/Sha256/Hash160
 .. [#] ``Y`` is hashing function return type and can be Ripemd160/Sha1/Sha256/Ripemd160
+
+.. _BIP143: https://github.com/bitcoin-sv/bitcoin-sv/blob/master/doc/abc/replay-protected-sighash.md
+.. _OP_CLTV: https://en.bitcoin.it/wiki/Timelock#CheckLockTimeVerify
