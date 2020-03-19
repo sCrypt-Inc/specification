@@ -116,6 +116,26 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
 
         Sha256 s = hash256(b"00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100");
 
+``if`` statement
+================
+``if`` condition can be of type ``int`` and ``bytes``, besides ``bool``. They are implicitly converted to ``bool`` as in C and Javascript.
+An ``int`` expression is evaluated to ``false`` if and only if it is ``0`` (including negative ``0``).
+A ``bytes`` expression is evaluated to ``false`` if and only if every of its byte is ``b"00"`` (including empty ``bytes`` ``b""``).
+
+    .. code-block:: solidity
+
+      int cond = 25; // true
+      int cond = 0;  // false
+      int cond = unpack(b"80") // false since it is negative 0
+      int cond = unpack(b"000080") // false since it is negative 0
+      if (cond) {} // equivalent to if (cond != 0) {}
+      
+      bytes cond = b"00"; // false
+      bytes cond = b""; // false
+      bytes cond = b"80"; // true. Note b"80" is treated as false if converted to int
+      bytes cond = b"10" & b"73"; // true since it evaluates to b"10"
+      if (cond) {}
+
 
 exit()
 ======
