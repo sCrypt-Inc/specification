@@ -81,12 +81,13 @@ The following example shows usage of the standard contract ``P2PKH`` that corres
     }
 
 
-Contract "OP_PUSH_TX"
----------------------
+Contract ``OP_PUSH_TX``
+-----------------------
 One grave misconception regarding bitcoin script is that its access is only limited to the data provided in the locking script and corresponding unlocking script.
 Thus, its scope and capability are greatly underestimated.
 
 sCrypt comes with a powerful contract called ``Tx`` that allows inspection of the **ENTIRE TRANSACTION** containing the contract itself, besides the locking script and unlocking script.
+It can be regarded as a pseudo opcode ``OP_PUSH_TX`` that pushes the current transaction into the stack, which can be inspected at runtime.
 More precisely, it enables inspection of the preimage used in signature verification defined in `BIP143`_.
 The format of the preimage is as follows:
 
