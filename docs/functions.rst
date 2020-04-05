@@ -34,6 +34,28 @@ is functionally equivalent to
         return true;
     }
 
+static function
+---------------
+A static function can be called with contract name without an instantiated contract, similar to a static function in Javascript or C++.
+
+.. code-block:: solidity
+
+    contract Foo {
+        static function sum(int a, int b) returns (int) {
+                return a + b;
+        }
+
+        function double(int x) returns (int) {
+            return this.sum(x, x);
+        }
+    }
+
+    contract Bar {
+        public function unlock(int y) {
+            require(y == Foo.sum(1, 2));
+        }
+    }
+
 ``return``
 ----------
 Due to the lack of native ``return`` semantics support in script, a function currently must end with a ``return`` statement and it is the only valid place for a ``return`` statement.
