@@ -17,7 +17,7 @@ sCrypt is designed to facilitate writing smart contract running on chain.
 * It is statically typed. Type checking can help detect many errors at compile time.
 
 
-.. Warning:: sCrypt is still in experimental phase and not ready for production use.
+.. Warning:: sCrypt is still in experimental phase and is currently only intended for small amount usage.
 
 .. toctree::
    :maxdepth: 2
