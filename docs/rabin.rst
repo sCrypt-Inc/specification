@@ -21,6 +21,6 @@ Rabin Signature
 
         function fromLEUnsigned(bytes b) returns (int) {
             // append positive sign byte. This does not hurt even when sign bit is already positive
-            return unpack(b ++ b"00");
+            return unpack(b ++ b'00');
         }
     }

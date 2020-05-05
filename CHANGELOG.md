@@ -1,4 +1,7 @@
 ## sCrypt 0.1.0
+#### 05/05/20
+* Change `b""` for `bytes` literal to `b''`
+
 #### 02/14/20
 
 * JavaScript bindings for the compiler: [scryptc @npm](https://www.npmjs.com/package/scryptc)

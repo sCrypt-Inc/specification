@@ -59,19 +59,19 @@ Basic Types
 
     .. code-block:: solidity
 
-        bytes b1 = b"ffee1234";
-        bytes b2 = b"414136d08c5ed2bf3ba048afe6dcaebafeffffffffffffffffffffffffffffff00";
+        bytes b1 = b'ffee1234';
+        bytes b2 = b'414136d08c5ed2bf3ba048afe6dcaebafeffffffffffffffffffffffffffffff00';
 
 ``bytes`` can be converted to ``int`` using function ``unpack``. Little-endian `sign-magnitude representation <https://www.tutorialspoint.com/sign-magnitude-notation>`_ is used, 
 where the most significant bit indicates the sign (``0`` for positive, ``1`` for negative). ``int`` can be converted to ``bytes`` with ``pack``.
 
     .. code-block:: solidity
 
-        int a1 = unpack(b"36");    // 54 decimal
-        int a2 = unpack(b"b6");    // -54
-        int a3 = unpack(b"e803");  // 1000
-        int a4 = unpack(b"e883");  // -1000
-        bytes b = pack(a4);        // b"e883"
+        int a1 = unpack(b'36');    // 54 decimal
+        int a2 = unpack(b'b6');    // -54
+        int a3 = unpack(b'e803');  // 1000
+        int a4 = unpack(b'e883');  // -1000
+        bytes b = pack(a4);        // b'e883'
 
 
 Subtypes of ``bytes``
@@ -84,56 +84,56 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
 
     .. code-block:: solidity
 
-        PubKey pubKey = PubKey(b"0200112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100");
+        PubKey pubKey = PubKey(b'0200112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100');
 
 * **PrivKey** - a private key type.
 
     .. code-block:: solidity
 
-        PrivKey privKey = PrivKey(b"00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100");
+        PrivKey privKey = PrivKey(b'00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100');
 
 * **Sig** - a signature type in `DER <https://docs.moneybutton.com/docs/bsv-signature.html>`_ format, including `signature hash type <https://github.com/libbitcoin/libbitcoin-system/wiki/Sighash-and-TX-Signing>`_, which is ``SIGHASH_ALL | SIGHASH_FORKID`` (``0x41``) in the below example.
 
     .. code-block:: solidity
 
-        Sig sig = Sig(b"3045022100b71be3f1dc001e0a1ad65ed84e7a5a0bfe48325f2146ca1d677cf15e96e8b80302206d74605e8234eae3d4980fcd7b2fdc1c5b9374f0ce71dea38707fccdbd28cf7e41");
+        Sig sig = Sig(b'3045022100b71be3f1dc001e0a1ad65ed84e7a5a0bfe48325f2146ca1d677cf15e96e8b80302206d74605e8234eae3d4980fcd7b2fdc1c5b9374f0ce71dea38707fccdbd28cf7e41');
 
 * **Ripemd160** - a RIPEMD-160 hash type.
 
     .. code-block:: solidity
 
-        Ripemd160 r = hash160(b"0011223344556677889999887766554433221100");
+        Ripemd160 r = hash160(b'0011223344556677889999887766554433221100');
 
 * **Sha1** - a SHA-1 hash type.
 
     .. code-block:: solidity
 
-        Sha1 s = sha1(b"0011223344556677889999887766554433221100");
+        Sha1 s = sha1(b'0011223344556677889999887766554433221100');
 
 * **Sha256** - a SHA-256 hash type.
 
     .. code-block:: solidity
 
-        Sha256 s = hash256(b"00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100");
+        Sha256 s = hash256(b'00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100');
 
 ``if`` statement
 ================
 ``if`` condition can be of type ``int`` and ``bytes``, besides ``bool``. They are implicitly converted to ``bool`` as in C and Javascript.
 An ``int`` expression is evaluated to ``false`` if and only if it is ``0`` (including negative ``0``).
-A ``bytes`` expression is evaluated to ``false`` if and only if every of its byte is ``b"00"`` (including empty ``bytes`` ``b""``).
+A ``bytes`` expression is evaluated to ``false`` if and only if every of its byte is ``b'00'`` (including empty ``bytes`` ``b''``).
 
     .. code-block:: solidity
 
       int cond = 25; // true
       int cond = 0;  // false
-      int cond = unpack(b"80") // false since it is negative 0
-      int cond = unpack(b"000080") // false since it is negative 0
+      int cond = unpack(b'80') // false since it is negative 0
+      int cond = unpack(b'000080') // false since it is negative 0
       if (cond) {} // equivalent to if (cond != 0) {}
       
-      bytes cond = b"00"; // false
-      bytes cond = b""; // false
-      bytes cond = b"80"; // true. Note b"80" is treated as false if converted to int
-      bytes cond = b"10" & b"73"; // true since it evaluates to b"10"
+      bytes cond = b'00'; // false
+      bytes cond = b''; // false
+      bytes cond = b'80'; // true. Note b'80' is treated as false if converted to int
+      bytes cond = b'10' & b'73'; // true since it evaluates to b'10'
       if (cond) {}
 
 

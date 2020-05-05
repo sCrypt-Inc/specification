@@ -131,10 +131,10 @@ bytes Operations
 
 .. code-block:: solidity
 
-        bytes b = b"0011223344556677";
-        // b[3:6] == b"334455"
-        // b[:4] == b"00112233"
-        // b[5:] = b"556677"
+        bytes b = b'0011223344556677';
+        // b[3:6] == b'334455'
+        // b[:4] == b'00112233'
+        // b[5:] = b'556677'
   
 * ``b1 ++ b2``
 
@@ -146,8 +146,8 @@ bytes Operations
 
 .. code-block:: solidity
 
-        // returns b"6cfeea2d7a1d51249f0624ee98151bfa259d095642e253d8e2dce1e79df33f79"
-        reverseBytes32(b"793ff39de7e1dce2d853e24256099d25fa1b1598ee24069f24511d7a2deafe6c")
+        // returns b'6cfeea2d7a1d51249f0624ee98151bfa259d095642e253d8e2dce1e79df33f79'
+        reverseBytes32(b'793ff39de7e1dce2d853e24256099d25fa1b1598ee24069f24511d7a2deafe6c')
   
 * ``bytes num2bin(int num, int size)``
 
