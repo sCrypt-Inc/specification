@@ -53,6 +53,6 @@ Contact
 
 Contributing
 ------------
-See `CONTRIBUTING.md <https://github.com/scrypt-sv/specification/blob/master/docs/CONTRIBUTING.md>`_ for more information on what we're looking for and how to get started.
+See `CONTRIBUTING.md <https://github.com/scrypt-sv/specification/blob/master/docs/CONTRIBUTING.md>`_ at our `GitHub <https://github.com/scrypt-sv>`_ for more information on what we're looking for and how to get started.
 
 
