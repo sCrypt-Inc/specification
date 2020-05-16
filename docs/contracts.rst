@@ -127,6 +127,9 @@ As an example, contract ``CheckLockTimeVerify`` ensures coins are timelocked and
         }
     }
 
+More details can be found in `this article <https://medium.com/@xiaohuiliu/op-push-tx-3d3d279174c1>`_.
+To customize ECDSA signing, such as choosing ephemeral key, there is a more general version called `TxAdvanced <https://medium.com/@xiaohuiliu/advanced-op-push-tx-78ce84f69a66>`_.
+
 Full List
 ---------
 
