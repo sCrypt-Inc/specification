@@ -1,7 +1,9 @@
 ==================
-Multiple Contracts
+Standard Contracts
 ==================
 
+Multiple Contracts
+==================
 A single file can define multiple contracts. In this case, the last contract acts as the main contract and is what gets compiled.
 Other contracts are dependencies.
 
