@@ -96,19 +96,19 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
 
     .. code-block:: solidity
 
-        Ripemd160 r = hash160(b'0011223344556677889999887766554433221100');
+        Ripemd160 r = Ripemd160(b'0011223344556677889999887766554433221100');
 
 * **Sha1** - a SHA-1 hash type.
 
     .. code-block:: solidity
 
-        Sha1 s = sha1(b'0011223344556677889999887766554433221100');
+        Sha1 s = Sha1(b'0011223344556677889999887766554433221100');
 
 * **Sha256** - a SHA-256 hash type.
 
     .. code-block:: solidity
 
-        Sha256 s = hash256(b'00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100');
+        Sha256 s = Sha256(b'00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100');
 
 ``if`` statement
 ================
