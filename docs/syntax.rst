@@ -110,6 +110,15 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
 
         Sha256 s = Sha256(b'00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100');
 
+Subtypes of ``int``
+---------------------
+
+* **PrivKey** - a private key type.
+
+    .. code-block:: solidity
+
+        PrivKey privKey = PrivKey(0x00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100);
+
 ``if`` statement
 ================
 ``if`` condition can be of type ``int`` and ``bytes``, besides ``bool``. They are implicitly converted to ``bool`` as in C and Javascript.
