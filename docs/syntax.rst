@@ -110,6 +110,19 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
 
         Sha256 s = Sha256(b'00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100');
 
+* **SigHashType** - a sighash type.
+
+    .. code-block:: solidity
+
+        SigHashType s = SigHashType(b'01');
+        SigHashType s = SigHash.ALL | SigHash.ANYONECANPAY;
+
+* **OpCodeType** - a OpCode type.
+
+    .. code-block:: solidity
+
+        OpCodeType s = OpCode.OP_DUP ++ OpCode.OP_ADD;
+
 Subtypes of ``int``
 ---------------------
 
