@@ -207,7 +207,7 @@ Operators
       - Associativity 
 
     * - 1
-      - ``- !``
+      - ``- ! ~``
       - right-associative
 
     * - 2
@@ -219,38 +219,34 @@ Operators
       - left-associative
 
     * - 4
-      - ``++``
-      - left-associative
-
-    * - 5
       - ``<< >>``
       - left-associative
 
-    * - 6
+    * - 5
       - ``< <= > >=``
       - left-associative
 
-    * - 7
+    * - 6
       - ``== !=``
       - left-associative
 
-    * - 8
+    * - 7
       - ``&``
       - left-associative
 
-    * - 9
+    * - 8
       - ``^``
       - left-associative
 
-    * - 10
+    * - 9
       - ``|``
       - left-associative
 
-    * - 11
+    * - 10
       - ``&&``
       - left-associative
 
-    * - 12
+    * - 11
       - ``||``
       - left-associative
 ..
