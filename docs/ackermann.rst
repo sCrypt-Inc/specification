@@ -42,10 +42,10 @@ nCrypt has devised a way to calculate the value of the Ackermann function using 
                         n = n + 1;
                         m = m - 1;
                         // push
-                        stk = num2bin(m, 1) ++ stk;
+                        stk = num2bin(m, 1) + stk;
                     } else {
-                        stk = num2bin(m - 1, 1) ++ stk;
-                        stk = num2bin(m, 1) ++ stk;
+                        stk = num2bin(m - 1, 1) + stk;
+                        stk = num2bin(m, 1) + stk;
                         n = n - 1;
                     }
                 }

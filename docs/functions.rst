@@ -34,19 +34,22 @@ is functionally equivalent to
         return true;
     }
 
-static function
----------------
-A static function can be called with contract name without an instantiated contract, similar to a static function in Javascript or C++.
+static function and property
+----------------------------
+A static function/property can be referenced with contract name without an instantiated contract, similar to a static function/property in Javascript or C+.
 
 .. code-block:: solidity
 
     contract Foo {
-        static function sum(int a, int b) returns (int) {
-                return a + b;
+        int i;
+        static int N = 0;
+
+        static function incByN(int a) returns (int) {
+                return a + Foo.N;
         }
 
         function double(int x) returns (int) {
-            return this.sum(x, x);
+            return Foo.incByN(x) + this.i;
         }
     }
 
@@ -136,7 +139,7 @@ bytes Operations
         // b[:4] == b'00112233'
         // b[5:] = b'556677'
   
-* ``b1 ++ b2``
+* ``b1 + b2``
 
   Returns the concatenation of bytes ``b1`` and bytes ``b2``.
 

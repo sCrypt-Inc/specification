@@ -39,8 +39,8 @@ Instead, we can combine all ``y``'s into a single y such that ``y = H(H(y1 || y2
             Sha256 hash1 = sha256(preimage1);
             Sha256 hash2 = sha256(preimage2);
             Sha256 hash3 = sha256(preimage3);
-            Sha256 hash12 = sha256(hash1 ++ hash2);
-            Sha256 hash123 = sha256(hash12 ++ hash3);
+            Sha256 hash12 = sha256(hash1 + hash2);
+            Sha256 hash123 = sha256(hash12 + hash3);
 
             require(hash123 == this.combinedHash);
         }

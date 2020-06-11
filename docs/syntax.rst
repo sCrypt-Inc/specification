@@ -73,6 +73,12 @@ where the most significant bit indicates the sign (``0`` for positive, ``1`` for
         int a4 = unpack(b'e883');  // -1000
         bytes b = pack(a4);        // b'e883'
 
+* **auto** keyword - The ``auto`` keyword specifies that the type of the variable, of basic type, declared will be automatically deducted from its initializer.
+
+    .. code-block:: solidity
+
+        auto a1 = b'36';      // bytes a1 = b'36';
+        auto a2 = 1 + 5 * 3;  // int a2 = 1 + 5 * 3;
 
 Subtypes of ``bytes``
 ---------------------
@@ -121,7 +127,7 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
 
     .. code-block:: solidity
 
-        OpCodeType s = OpCode.OP_DUP ++ OpCode.OP_ADD;
+        OpCodeType s = OpCode.OP_DUP + OpCode.OP_ADD;
 
 Subtypes of ``int``
 ---------------------

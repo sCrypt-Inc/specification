@@ -112,9 +112,8 @@ As an example, contract ``CheckLockTimeVerify`` ensures coins are timelocked and
         int matureTime;
 
         public function spend(bytes sighashPreimage) {
-            Tx tx = new Tx();
             // this ensures the preimage is for the current tx
-            require(tx.validate(sighashPreimage));
+            require(Tx.checkPreimage(txPreimage));
             
             // parse nLocktime
             int len = length(sighashPreimage);
@@ -125,7 +124,7 @@ As an example, contract ``CheckLockTimeVerify`` ensures coins are timelocked and
         
         function fromLEUnsigned(bytes b) returns (int) {
             // append positive sign byte. This does not hurt even when sign bit is already positive
-            return unpack(b ++ b'00');
+            return unpack(b + b'00');
         }
     }
 
@@ -157,7 +156,7 @@ Full List
 
     * - Tx
       - None
-      - validate(bytes sighashPreimage)
+      - checkPreimage(bytes sighashPreimage)
 
 .. [#] ``X`` is hashing function and can be Ripemd160/Sha1/Sha256/Hash160
 .. [#] ``Y`` is hashing function return type and can be Ripemd160/Sha1/Sha256/Ripemd160

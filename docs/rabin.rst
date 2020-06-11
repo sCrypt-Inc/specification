@@ -8,7 +8,7 @@ Rabin Signature
 
     contract RabinSignature {
         public function verifySig(int sig, bytes msg, bytes padding, int n) {
-            int h = this.fromLEUnsigned(this.hash(msg ++ padding));
+            int h = this.fromLEUnsigned(this.hash(msg + padding));
             require((sig * sig) % n == h % n);
         }
 
@@ -16,11 +16,11 @@ Rabin Signature
             // expand into 512 bit hash
             bytes hx = sha256(x);
             int idx = length(hx) / 2;
-            return sha256(hx[:idx]) ++ sha256(hx[idx:]);
+            return sha256(hx[:idx]) + sha256(hx[idx:]);
         }
 
         function fromLEUnsigned(bytes b) returns (int) {
             // append positive sign byte. This does not hurt even when sign bit is already positive
-            return unpack(b ++ b'00');
+            return unpack(b + b'00');
         }
     }
