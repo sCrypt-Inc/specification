@@ -54,36 +54,76 @@ Basic Types
         int a2 = -4242424242424242;
         int a3 = 55066263022277343669578718895168534326250603453777594175500187360389116729240;
         int a4 = 0xFF8C;
-
-* **bytes** - a variable length array of bytes, whose literals are in quoted hexadecimal format prefixed by ``b``.
+* **byte** - a single byte, whose literals are in single-quoted hexadecimal format.
 
     .. code-block:: solidity
 
-        bytes b1 = b'ffee1234';
+        byte a1 = 'FF';
+
+Array Types
+-----------
+An array is a list of values of the same type. 
+* **Array Literals** - a comma-separated list of expressions, enclosed in square brackets
+
+    .. code-block:: solidity
+
+        byte[] a = ['ff', 'ee', '11', '22'];
+        bool[] b = [false, false && true || false, true || (1 > 2)];
+        int[] c = [72, -4 - 1 - 40, 833 * (99 + 9901) + 8888];
+        int[] empty = [];
+        
+* **Index Operator** - index starting from 0. Out of bound access will immediately fail contract execution.
+
+    .. code-block:: solidity
+
+        int a = [1, 4, 2]
+        int d = a[2];
+        a[1] = -4;
+
+* **Slicing Opeartor** - ``b[start:end]`` returns subarray of ``b`` from index ``start`` (inclusive) to ``end`` (exclusive). 
+  ``start`` is ``0`` if omitted, ``end`` is length of array if omitted.
+
+    .. code-block:: solidity
+
+        // see "bytes" type below
+        bytes b = b'0011223344556677';
+        // b[3:6] == b'334455'
+        // b[:4] == b'00112233'
+        // b[5:] = b'556677'
+
+* **Concatenation**
+
+    .. code-block:: solidity
+
+        int s = [3, 2] + [1, 4];  // s = [3, 2, 1, 4]
+
+``bytes`` Type
+--------------
+``byte[]`` is used so often that it demands its own synonym ``bytes``.
+It is a variable length array of bytes, whose literals are in quoted hexadecimal format prefixed by ``b``.
+
+    .. code-block:: solidity
+
+        bytes b0 = ['ff', 'ee', '12', '34'];
+        bytes b1 = b'ffee1234'; // b0 and b1 are equivalent
         bytes b2 = b'414136d08c5ed2bf3ba048afe6dcaebafeffffffffffffffffffffffffffffff00';
+        bytes b3 = b'1122' + b'eeff'; // b3 is b'1122eeff'
 
-``bytes`` can be converted to ``int`` using function ``unpack``. Little-endian `sign-magnitude representation <https://www.tutorialspoint.com/sign-magnitude-notation>`_ is used, 
-where the most significant bit indicates the sign (``0`` for positive, ``1`` for negative). ``int`` can be converted to ``bytes`` with ``pack``.
-
-    .. code-block:: solidity
-
-        int a1 = unpack(b'36');    // 54 decimal
-        int a2 = unpack(b'b6');    // -54
-        int a3 = unpack(b'e803');  // 1000
-        int a4 = unpack(b'e883');  // -1000
-        bytes b = pack(a4);        // b'e883'
-
-* **auto** keyword - The ``auto`` keyword specifies that the type of the variable, of basic type, declared will be automatically deducted from its initializer.
+Type Inference
+--------------
+The ``auto`` keyword specifies that the type of the variable, of basic type, declared will be automatically deducted from its initializer.
 
     .. code-block:: solidity
 
         auto a1 = b'36';      // bytes a1 = b'36';
         auto a2 = 1 + 5 * 3;  // int a2 = 1 + 5 * 3;
 
+Domain Subtypes
+===============
+There are several subtypes, specific to the Bitcoin context, used to further improve type safety.
+
 Subtypes of ``bytes``
 ---------------------
-
-These subtypes are more specific versions of ``bytes``, used to further improve type safety.
 To cast a supertype ``bytes`` to them, a function of the type name must be explicitly called.
 
 * **PubKey** - a public key type.
@@ -130,7 +170,7 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
         OpCodeType s = OpCode.OP_DUP + OpCode.OP_ADD;
 
 Subtypes of ``int``
----------------------
+-------------------
 
 * **PrivKey** - a private key type.
 

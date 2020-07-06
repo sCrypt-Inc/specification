@@ -125,23 +125,26 @@ Signature Verification
 * ``bool checkSig(Sig sig, PubKey pk)``
 * ``bool checkMultiSig(Sig[] sigs, PubKey[] pks)``
 
-bytes Operations
-----------------
-* ``bytes b[start:end]``
+``bytes`` Operations
+--------------------
+* Convert to and from ``int``
 
-  Returns subarray from index ``start`` (inclusive) to ``end`` (exclusive). 
-  ``start`` is ``0`` if omitted, ``end`` is ``length(b)`` if omitted.
+``bytes`` can be converted to ``int`` using function ``unpack``.
+Little-endian `sign-magnitude representation <https://www.tutorialspoint.com/sign-magnitude-notation>`_ is used, 
+where the most significant bit indicates the sign (``0`` for positive, ``1`` for negative).
+``int`` can be converted to ``bytes`` with ``pack``.
 
-.. code-block:: solidity
+    .. code-block:: solidity
 
-        bytes b = b'0011223344556677';
-        // b[3:6] == b'334455'
-        // b[:4] == b'00112233'
-        // b[5:] = b'556677'
-  
-* ``b1 + b2``
+        int a1 = unpack(b'36');    // 54 decimal
+        int a2 = unpack(b'b6');    // -54
+        int a3 = unpack(b'e803');  // 1000
+        int a4 = unpack(b'e883');  // -1000
+        bytes b = pack(a4);        // b'e883'
 
-  Returns the concatenation of bytes ``b1`` and bytes ``b2``.
+* ``bytes num2bin(int num, int size)``
+
+  Converts a number ``num`` into a byte array of certain size ``size``, including the sign bit. It fails if the number cannot be accommodated.
 
 * ``reverseBytes20(bytes b)`` ``reverseBytes32(bytes b)``
 
@@ -151,12 +154,3 @@ bytes Operations
 
         // returns b'6cfeea2d7a1d51249f0624ee98151bfa259d095642e253d8e2dce1e79df33f79'
         reverseBytes32(b'793ff39de7e1dce2d853e24256099d25fa1b1598ee24069f24511d7a2deafe6c')
-  
-* ``bytes num2bin(int num, int size)``
-
-  Converts a number ``num`` into a byte array of certain size ``size``, including the sign bit. It fails if the number cannot be accommodated.
-
-* ``int length(bytes b)``
-
-  Returns the length of ``b``.
-
