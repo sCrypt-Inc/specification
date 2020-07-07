@@ -72,11 +72,17 @@ An array is a list of values of the same type.
         int[] c = [72, -4 - 1 - 40, 833 * (99 + 9901) + 8888];
         int[] empty = [];
         
+* **length()** - returns the length of an array.
+
+    .. code-block:: solidity
+
+        int a = length([1, 4, 2]); // a == 3
+
 * **Index Operator** - index starting from 0. Out of bound access will immediately fail contract execution.
 
     .. code-block:: solidity
 
-        int a = [1, 4, 2]
+        int a = [1, 4, 2];
         int d = a[2];
         a[1] = -4;
 
