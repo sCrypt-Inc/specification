@@ -8,7 +8,7 @@ sCrypt enables developers to define their own functions as exemplified below:
 
 .. code-block:: solidity
 
-    function sum(int a, int b) returns (int) {
+    function sum(int a, int b): int {
         return a + b;
     }
 
@@ -29,7 +29,7 @@ is functionally equivalent to
 
 .. code-block:: solidity
 
-    public function sum(int a) returns (bool) {
+    public function sum(int a): bool {
         require(a == 0);
         return true;
     }
@@ -44,11 +44,11 @@ A static function/property can be referenced with contract name without an insta
         int i;
         static int N = 0;
 
-        static function incByN(int a) returns (int) {
+        static function incByN(int a): int {
                 return a + Foo.N;
         }
 
-        function double(int x) returns (int) {
+        function double(int x): int {
             return Foo.incByN(x) + this.i;
         }
     }
@@ -66,7 +66,7 @@ This requirement may be relaxed in the future. This is usually not a problem sin
 
 .. code-block:: solidity
 
-    function abs(int a) returns (int) {
+    function abs(int a): int {
         if (a > 0) {
             return a;
         } else {
@@ -78,7 +78,7 @@ can be rewritten as
 
 .. code-block:: solidity
 
-    function abs(int a) returns (int) {
+    function abs(int a): int {
         int ret = 0;
 
         if (a > 0) {

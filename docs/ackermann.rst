@@ -23,7 +23,7 @@ nCrypt has devised a way to calculate the value of the Ackermann function using 
         int a;  // a = 2
         int b;  // b = 1
 
-        function ackermann(int m, int n) returns (int) {
+        function ackermann(int m, int n): int {
             bytes stk = num2bin(m, 1);
 
             // run this function off chain to get the loop count and set it here

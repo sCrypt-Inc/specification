@@ -12,14 +12,14 @@ Rabin Signature
             require((sig * sig) % n == h % n);
         }
 
-        function hash(bytes x) returns (bytes) {
+        function hash(bytes x): bytes {
             // expand into 512 bit hash
             bytes hx = sha256(x);
             int idx = length(hx) / 2;
             return sha256(hx[:idx]) + sha256(hx[idx:]);
         }
 
-        function fromLEUnsigned(bytes b) returns (int) {
+        function fromLEUnsigned(bytes b): int {
             // append positive sign byte. This does not hurt even when sign bit is already positive
             return unpack(b + b'00');
         }
