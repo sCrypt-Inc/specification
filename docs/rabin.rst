@@ -15,7 +15,7 @@ Rabin Signature
         function hash(bytes x): bytes {
             // expand into 512 bit hash
             bytes hx = sha256(x);
-            int idx = length(hx) / 2;
+            int idx = len(hx) / 2;
             return sha256(hx[:idx]) + sha256(hx[idx:]);
         }
 

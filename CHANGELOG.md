@@ -34,7 +34,7 @@
 
 * Change `0x` prefix to denote `int` literal in hex and `b""` for `bytes` literal
 
-* Rename `size()` to `length()`
+* Rename `size()` to `len()`
 
 * Add type `PrivKey`
 

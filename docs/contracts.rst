@@ -116,8 +116,8 @@ As an example, contract ``CheckLockTimeVerify`` ensures coins are timelocked and
             require(Tx.checkPreimage(txPreimage));
             
             // parse nLocktime
-            int len = length(sighashPreimage);
-            int nLocktime = this.fromLEUnsigned(sighashPreimage[len - 8 : len - 4]);
+            int l = len(sighashPreimage);
+            int nLocktime = this.fromLEUnsigned(sighashPreimage[l - 8 : l - 4]);
 
             require(nLocktime >= this.matureTime);
         }

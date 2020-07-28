@@ -29,12 +29,12 @@ nCrypt has devised a way to calculate the value of the Ackermann function using 
             // run this function off chain to get the loop count and set it here
             // e.g., (2, 1) requires 14 loops, (3, 5) 42438
             loop (14) {
-                if (length(stk) > 0) {
+                if (len(stk) > 0) {
                     bytes top = stk[0:1];
                     m = unpack(top);
 
                     // pop
-                    stk = stk[1:length(stk)];
+                    stk = stk[1:len(stk)];
 
                     if (m == 0) {
                         n = n + m + 1;
