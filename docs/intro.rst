@@ -72,8 +72,8 @@ In the above example, only ``scriptSig`` (i.e., ``y``) equal to ``this.x`` can f
 
 Multiple Public Functions
 -------------------------
-A contract can have multiple public functions, representing different ways to fulfill a contract. Only one of the public functions can be called at a time. In this case, the last operator of ``scriptSig`` has to be the index of the public function called, starting from ``1``.
-For example, if public function ``larger`` is called, ``scriptSig`` of ``y 3`` can fulfill the contract below, in which ``3`` is the public function index.
+A contract can have multiple public functions, representing different ways to fulfill a contract. Only one of the public functions can be called at a time. In this case, the last operator of ``scriptSig`` has to be the index of the public function called, starting from ``0``.
+For example, if public function ``larger`` is called, ``scriptSig`` of ``y 2`` can fulfill the contract below, in which ``2`` is the public function index.
 
 .. code-block:: solidity
 
