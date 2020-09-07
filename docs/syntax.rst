@@ -260,51 +260,51 @@ Operators
 
     * - 1
       - ``- ! ~``
-      - right-associative
+      - right
 
     * - 2
       - ``* / %``
-      - left-associative
+      - left
 
     * - 3
       - ``+ -``
-      - left-associative
+      - left
 
     * - 4
       - ``<< >>``
-      - left-associative
+      - left
 
     * - 5
       - ``< <= > >=``
-      - left-associative
+      - left
 
     * - 6
       - ``== !=``
-      - left-associative
+      - left
 
     * - 7
       - ``&``
-      - left-associative
+      - left
 
     * - 8
       - ``^``
-      - left-associative
+      - left
 
     * - 9
       - ``|``
-      - left-associative
+      - left
 
     * - 10
       - ``&&``
-      - left-associative
+      - left
 
     * - 11
       - ``||``
-      - left-associative
+      - left
 
     * - 12
       - ``? : ``
-      - right-associative
+      - right
 ..
     explain &&,|| evaluates both sides regardless
 
