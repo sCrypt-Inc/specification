@@ -301,6 +301,10 @@ Operators
     * - 11
       - ``||``
       - left-associative
+
+    * - 12
+      - ``? : ``
+      - right-associative
 ..
     explain &&,|| evaluates both sides regardless
 
