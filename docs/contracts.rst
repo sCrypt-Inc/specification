@@ -113,7 +113,7 @@ As an example, contract ``CheckLockTimeVerify`` ensures coins are timelocked and
 
         public function spend(bytes sighashPreimage) {
             // this ensures the preimage is for the current tx
-            require(Tx.checkPreimage(txPreimage));
+            require(Tx.checkPreimage(sighashPreimage));
             
             // parse nLocktime
             int l = len(sighashPreimage);
