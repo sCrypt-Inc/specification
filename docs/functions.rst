@@ -36,7 +36,7 @@ is functionally equivalent to
 
 static function and property
 ----------------------------
-A static function/property can be referenced with contract name without an instantiated contract, similar to a static function/property in Javascript or C+.
+A static function/property can be referenced with contract name without an instantiated contract, similar to a static function/property in Javascript or C++.
 
 .. code-block:: solidity
 
@@ -55,7 +55,7 @@ A static function/property can be referenced with contract name without an insta
 
     contract Bar {
         public function unlock(int y) {
-            require(y == Foo.sum(1, 2));
+            require(y == Foo.double(2));
         }
     }
 
