@@ -45,6 +45,12 @@ sCrypt is designed to facilitate writing smart contract running on chain.
    rabin
    multipartyhashpuzzles
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Advanced
+
+   asm
+
 Contact
 -------
 `scrypt.io <https://scrypt.io>`_
