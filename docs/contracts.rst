@@ -42,7 +42,7 @@ In the following example, a standard P2PKH contract is rewritten using two other
 
 import
 ======
-Alternatively, the contact above can be broken into three files. The ``Pay2PubKeyHash`` contact ``import``\s other two contracts as dependencies.
+Alternatively, the contract above can be broken into three files. The ``Pay2PubKeyHash`` contact ``import``\s other two contracts as dependencies.
 This allows reusing contracts written by others and forms the basis of contract libraries.
 
 A contract can be instantiated by ``new``. A ``public`` function can be called from ``require``, which takes boolean expression as input.
