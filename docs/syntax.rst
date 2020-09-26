@@ -169,6 +169,12 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
         SigHashType s = SigHashType(b'01');
         SigHashType s = SigHash.ALL | SigHash.ANYONECANPAY;
 
+* **SigHashPreimage** - a sighash preimage type.
+
+    .. code-block:: solidity
+
+        SigHashPreimage s = SigHashPreimage(b'0100000028bcef7e73248aa273db19d73');
+
 * **OpCodeType** - a OpCode type.
 
     .. code-block:: solidity
