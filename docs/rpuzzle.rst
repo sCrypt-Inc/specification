@@ -2,7 +2,7 @@
 R-Puzzle
 ========
 
-In R-puzzle, an ephemeral key ``k`` is never revealed. Instead ``r``, the x coordinate its its corresponding public key, 
+In R-puzzle, an ephemeral key ``k`` is never revealed. Instead ``r``, the x coordinate of its corresponding public key, 
 is revealed and from ``r`` along with the signature, the knowledge of ``k`` can be proved using existing ``checkSig``.
 
 One crucial step in R-Puzzle is to extract ``r`` from `DER`_ encoded signature. The following is much easier than what is presented in the `R-Puzzle`_ talk.
