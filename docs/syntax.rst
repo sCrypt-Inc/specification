@@ -82,7 +82,7 @@ An array is a list of values of the same type.
 
     .. code-block:: solidity
 
-        int a = [1, 4, 2];
+        int[] a = [1, 4, 2];
         int d = a[2];
         a[1] = -4;
 
