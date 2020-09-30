@@ -309,7 +309,7 @@ Operators
       - left
 
     * - 12
-      - ``? : ``
+      - ``? :``
       - right
 ..
     explain &&,|| evaluates both sides regardless
