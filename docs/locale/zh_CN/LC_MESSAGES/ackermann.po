@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, sCrypt Inc
+# This file is distributed under the same license as the sCrypt package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Edward Liu <574228@qq.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sCrypt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-30 16:42-0700\n"
+"PO-Revision-Date: 2020-10-01 00:49+0000\n"
+"Last-Translator: Edward Liu <574228@qq.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/scrypt/teams/113667/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 912f11d9500f4d9382a96b92ae6fc810
+#: ../../ackermann.rst:3
+msgid "Ackermann Function"
+msgstr "阿克曼函数（Ackermann Function）"
+
+# 976f79eac8324ef3b2911d380accb49e
+#: ../../ackermann.rst:5
+msgid ""
+"The Ackermann function is a classic example of a recursive function, notable"
+" especially because it is not a primitive recursive function. It grows very "
+"quickly in value, as does the size of its call tree. The Ackermann function "
+"is usually defined as follows:"
+msgstr ""
+"阿克曼函数是递归函数的经典示例，特别值得注意的是它并不是一个原始递归函数。它的值增长得非常快，调用树也增长得非常快。阿克曼函数通常定义如下："
+
+# b14b4ded3a6c436e85f1848bc13645d5
+#: ../../ackermann.rst:8
+msgid ""
+"A(m, n) = \\begin{cases} n+1 & \\mbox{if } m = 0 \\\\ A(m-1, 1) & \\mbox{if "
+"} m > 0 \\mbox{ and } n = 0 \\\\ A(m-1, A(m, n-1)) & \\mbox{if } m > 0 "
+"\\mbox{ and } n > 0. \\end{cases}"
+msgstr ""
+"A(m, n) = \\begin{cases} n+1 & \\mbox{if } m = 0 \\\\ A(m-1, 1) & \\mbox{if "
+"} m > 0 \\mbox{ and } n = 0 \\\\ A(m-1, A(m, n-1)) & \\mbox{if } m > 0 "
+"\\mbox{ and } n > 0. \\end{cases}"
+
+# c380afc23c554d4bbb98953a0ce9b66b
+#: ../../ackermann.rst:18
+msgid ""
+"nCrypt has devised a way to calculate the value of the Ackermann function "
+"using `native scripts`_. But it is definitely non-trivial. Below we present "
+"a much simpler version."
+msgstr "nCrypt设计了一种使用 `原生脚本`_ 计算阿克曼函数值的方法，该方法是非常复杂的。下面我们给出了一个简单得多的版本。"

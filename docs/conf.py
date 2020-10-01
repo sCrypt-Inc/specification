@@ -61,3 +61,8 @@ lexers['solidity'] = SolidityLexer()
 
 # homepage
 master_doc = 'index'
+
+# i19n
+gettext_uuid = True
+gettext_compact = False
+locale_dirs = ['locale/']

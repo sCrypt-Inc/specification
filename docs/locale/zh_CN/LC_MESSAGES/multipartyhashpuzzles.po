@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, sCrypt Inc
+# This file is distributed under the same license as the sCrypt package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Edward Liu <574228@qq.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sCrypt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-30 16:42-0700\n"
+"PO-Revision-Date: 2020-10-01 00:49+0000\n"
+"Last-Translator: Edward Liu <574228@qq.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/scrypt/teams/113667/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 5da66254a726431f9fe2f9250b29a4a8
+#: ../../multipartyhashpuzzles.rst:3
+msgid "Multiparty Hash Puzzles"
+msgstr "多方哈希谜题（Multiparty Hash Puzzles）"
+
+# bd8e8eaf76ae4b23a0978a4decc47a6e
+#: ../../multipartyhashpuzzles.rst:5
+msgid ""
+"In a hash puzzle contract, the spender has to provide a preimage ``x`` that "
+"hashes to a predefined value ``y`` to unlock a UTXO. It can be extended to "
+"multiple parties so that multiple preimages have to be provided such that "
+"``y1 = H(x1)``, ``y2 = H(x2)``, ..., ``yN = H(xN)`` [#]_. Below shows an "
+"examples of three parties."
+msgstr ""
+"在哈希谜题（hash puzzle）合约中，花费方必须提供一个原像（preimage） ``x`` ，让 ``x`` 的哈希值等于预先定义好的值 "
+"``y`` ，才可以解锁UTXO。这种合约可以扩展到多方，提供多个原像来满足 ``y1 = H(x1)`` ， ``y2 = H(x2)`` ， "
+"...， ``yN = H(xN)`` [#]_ 。下面展示了一个三方的例子。"
+
+# 1778a8d8e8834046ac3898b09508263f
+#: ../../multipartyhashpuzzles.rst:26
+msgid ""
+"The above solution is problematic when ``N`` is large since all ``N`` hashes"
+" have to be included in the locking script, bloating the transaction. "
+"Instead, we can combine all ``y``'s into a single y such that ``y = H(H(y1 "
+"|| y2) || y3)`` [#]_ as shown below."
+msgstr ""
+"上面的方案在当 ``N`` 比较大时会有问题，因为在锁定脚本里要把 ``N`` 个哈希值都包含进去，这会让交易变大。有个替代方案，我们可以把所有的 "
+"``y`` 值放到一个里面： ``y = H(H(y1 || y2) || y3)`` [#]_ ，如下所示。"
+
+# 1ab1b06dda4b48bb9867fb95089a068f
+#: ../../multipartyhashpuzzles.rst:50
+msgid ""
+"``H`` is a hash function. An online hash calculator can be found `here "
+"<https://www.pelock.com/products/hash-calculator>`_."
+msgstr ""
+"``H`` 哈希函数。 `这里 <https://www.pelock.com/products/hash-calculator>`_ "
+"有个在线的哈希计算器。"
+
+# ef64ca6788cf4c3fb208e285847d52e6
+#: ../../multipartyhashpuzzles.rst:51
+msgid "``||`` is concatenation."
+msgstr "``||`` 表示连接。"

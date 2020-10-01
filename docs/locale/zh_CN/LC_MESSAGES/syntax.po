@@ -1,0 +1,504 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, sCrypt Inc
+# This file is distributed under the same license as the sCrypt package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Edward Liu <574228@qq.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sCrypt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-30 16:42-0700\n"
+"PO-Revision-Date: 2020-10-01 00:49+0000\n"
+"Last-Translator: Edward Liu <574228@qq.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/scrypt/teams/113667/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# b11fd59ca5b54f56885085d6485ee5ec
+#: ../../syntax.rst:3
+msgid "Syntax Specification"
+msgstr "语法规范"
+
+# 46cd55b7faf541c4a0c99ad6c95ed631
+#: ../../syntax.rst:6
+msgid "Formal Specification"
+msgstr "形式规范"
+
+# f99f9f6cd71f4729bcba0fc82e2d70c3
+#: ../../syntax.rst:7
+msgid ""
+"\\begin{align*} program &::= [importDirective]^*\\ [contract]^+\\\\ "
+"importDirective &::= \\mathrm{import}\\ \"\\mathrm{ID}\";\\\\ contract &::= "
+"\\mathrm{contract}\\ \\mathrm{ID}\\ \\{\\ [var]^*\\ [constructor]\\ "
+"[function]^+\\ \\}\\\\ var &::= formal;\\\\ formal &::= \\mathrm{TYPE}\\ "
+"\\mathrm{ID}\\\\ constructor &::= \\mathrm{constructor}([formal[,\\ "
+"formal]^*])\\ \\{\\ [stmt]^*\\ \\}\\\\ function &::= "
+"\\mathrm{[public|static]}\\ \\mathrm{function}\\ \\mathrm{ID}([formal[,\\ "
+"formal]^*])\\ \\mathrm{[returns}\\ (\\mathrm{TYPE]})\\ \\{\\ [stmt]^*\\ "
+"\\mathrm{[return}\\ expr;]\\ \\}\\\\ stmt &::= \\mathrm{TYPE}\\ \\mathrm{ID}"
+" = expr;\\\\         &\\ \\ \\ |\\ \\ \\mathrm{ID}\\ \\mathrm{ID} = "
+"\\mathrm{new}\\ \\mathrm{ID}(expr^*);\\\\         &\\ \\ \\ |\\ \\ "
+"\\mathrm{ID} = expr;\\\\         &\\ \\ \\ |\\ \\ "
+"\\mathrm{require}(expr);\\\\         &\\ \\ \\ |\\ \\ "
+"\\mathrm{exit}(expr);\\\\         &\\ \\ \\ |\\ \\ \\mathrm{if}\\ (expr)\\ "
+"stmt\\ [\\mathrm{else}\\ stmt]\\\\         &\\ \\ \\ |\\ \\ \\mathrm{loop}\\"
+" (intConst)\\ stmt\\\\         &\\ \\ \\ |\\ \\ \\{\\ [stmt]^*\\ \\}\\\\"
+"         &\\ \\ \\ |\\ \\ \\mathrm{CODESEPARATOR}\\\\ expr &::= "
+"\\mathsf{UnaryOp}\\ expr\\\\         &\\ \\ \\ |\\ \\ expr\\ "
+"\\mathsf{BinaryOp}\\ expr\\\\         &\\ \\ \\ |\\ \\ \\mathrm{ID}(expr[,\\"
+" expr]^*)\\\\         &\\ \\ \\ |\\ \\ \\mathrm{ID}.\\mathrm{ID}\\\\"
+"         &\\ \\ \\ |\\ \\ \\mathrm{ID}.\\mathrm{ID}(expr[,\\ expr]^*)\\\\"
+"         &\\ \\ \\ |\\ \\ \\mathrm{ID}\\mathbf{[}expr:expr\\mathbf{]}\\\\"
+"         &\\ \\ \\ |\\ \\ (expr)\\\\         &\\ \\ \\ |\\ \\ "
+"\\mathrm{ID}\\\\         &\\ \\ \\ |\\ \\ boolConst \\\\         &\\ \\ \\ "
+"|\\ \\ intConst \\\\         &\\ \\ \\ |\\ \\ bytesConst \\\\ \\end{align*}"
+msgstr ""
+"\\begin{align*} program &::= [importDirective]^*\\ [contract]^+\\\\ "
+"importDirective &::= \\mathrm{import}\\ \"\\mathrm{ID}\";\\\\ contract &::= "
+"\\mathrm{contract}\\ \\mathrm{ID}\\ \\{\\ [var]^*\\ [constructor]\\ "
+"[function]^+\\ \\}\\\\ var &::= formal;\\\\ formal &::= \\mathrm{TYPE}\\ "
+"\\mathrm{ID}\\\\ constructor &::= \\mathrm{constructor}([formal[,\\ "
+"formal]^*])\\ \\{\\ [stmt]^*\\ \\}\\\\ function &::= "
+"\\mathrm{[public|static]}\\ \\mathrm{function}\\ \\mathrm{ID}([formal[,\\ "
+"formal]^*])\\ \\mathrm{[returns}\\ (\\mathrm{TYPE]})\\ \\{\\ [stmt]^*\\ "
+"\\mathrm{[return}\\ expr;]\\ \\}\\\\ stmt &::= \\mathrm{TYPE}\\ \\mathrm{ID}"
+" = expr;\\\\         &\\ \\ \\ |\\ \\ \\mathrm{ID}\\ \\mathrm{ID} = "
+"\\mathrm{new}\\ \\mathrm{ID}(expr^*);\\\\         &\\ \\ \\ |\\ \\ "
+"\\mathrm{ID} = expr;\\\\         &\\ \\ \\ |\\ \\ "
+"\\mathrm{require}(expr);\\\\         &\\ \\ \\ |\\ \\ "
+"\\mathrm{exit}(expr);\\\\         &\\ \\ \\ |\\ \\ \\mathrm{if}\\ (expr)\\ "
+"stmt\\ [\\mathrm{else}\\ stmt]\\\\         &\\ \\ \\ |\\ \\ \\mathrm{loop}\\"
+" (intConst)\\ stmt\\\\         &\\ \\ \\ |\\ \\ \\{\\ [stmt]^*\\ \\}\\\\"
+"         &\\ \\ \\ |\\ \\ \\mathrm{CODESEPARATOR}\\\\ expr &::= "
+"\\mathsf{UnaryOp}\\ expr\\\\         &\\ \\ \\ |\\ \\ expr\\ "
+"\\mathsf{BinaryOp}\\ expr\\\\         &\\ \\ \\ |\\ \\ \\mathrm{ID}(expr[,\\"
+" expr]^*)\\\\         &\\ \\ \\ |\\ \\ \\mathrm{ID}.\\mathrm{ID}\\\\"
+"         &\\ \\ \\ |\\ \\ \\mathrm{ID}.\\mathrm{ID}(expr[,\\ expr]^*)\\\\"
+"         &\\ \\ \\ |\\ \\ \\mathrm{ID}\\mathbf{[}expr:expr\\mathbf{]}\\\\"
+"         &\\ \\ \\ |\\ \\ (expr)\\\\         &\\ \\ \\ |\\ \\ "
+"\\mathrm{ID}\\\\         &\\ \\ \\ |\\ \\ boolConst \\\\         &\\ \\ \\ "
+"|\\ \\ intConst \\\\         &\\ \\ \\ |\\ \\ bytesConst \\\\ \\end{align*}"
+
+# baeff7b648944c61ac747d7bf53c8071
+#: ../../syntax.rst:39
+msgid ""
+"Most of the syntax is self explanatory. Syntax unique to sCrypt will be "
+"covered later."
+msgstr "大部分语法含义都是显而易见的。sCrypt特有的语法会在后面介绍。"
+
+# e4a9b030db0644b1a002447b7e2b45db
+#: ../../syntax.rst:41
+msgid ""
+"Line comment starts with ``//`` and block comment comes between ``/*`` and "
+"``*/``."
+msgstr "行注释用 ``//`` 开头，在 ``/*`` 和 ``*/`` 之间的是块注释。"
+
+# 189af6caf1134ea9b356aab669af9497
+#: ../../syntax.rst:44
+msgid "Types"
+msgstr "类型"
+
+# ef73e53fe74b4e6b8f4638e449bc68ae
+#: ../../syntax.rst:46
+msgid "Basic Types"
+msgstr "基本类型"
+
+# 9e3f4a4dcf8d4a36b224949111e49d9d
+#: ../../syntax.rst:48
+msgid "**bool** - a boolean value ``true`` or ``false``."
+msgstr "**bool** - 布尔类型，值为 ``true`` 或 ``false`` 。"
+
+# afacc225df2b4701bdae49ef89a7734f
+#: ../../syntax.rst:49
+msgid ""
+"**int** - a signed integer of arbitrary length, whose literals are in "
+"decimal or hexadecimal format."
+msgstr "**int** - 有符号的任意长度整数类型，字面量（literals）有十进制和十六进制两种格式。"
+
+# 9ff65d8a1eb64b7aa0701a99b6fd76f0
+#: ../../syntax.rst:57
+msgid ""
+"**byte** - a single byte, whose literals are in single-quoted hexadecimal "
+"format."
+msgstr "**byte** - 单字节，字面量（literals）为单引号引起来的十六进制格式。"
+
+# c0e6ec1e75544014b78baf2db8752cfa
+#: ../../syntax.rst:64
+msgid "Array Types"
+msgstr "数组类型"
+
+# 6fbed2f5ad2a40ef9a5e34c089170183
+#: ../../syntax.rst:65
+msgid ""
+"An array is a list of values of the same type. * **Array Literals** - a "
+"comma-separated list of expressions, enclosed in square brackets"
+msgstr "数组是类型相同的值的列表。* **数组字面量** - 用逗号分隔的表达式列表，用方括号扩起来。"
+
+# c32cb7bde16141c697438383b9ef02de
+#: ../../syntax.rst:75
+msgid "**len()** - returns the length of an array."
+msgstr "**len()** - 返回数组的长度。"
+
+# 3457bfc120b34fc5bcd3ebe9d6cd25f3
+#: ../../syntax.rst:81
+msgid ""
+"**Index Operator** - index starting from 0. Out of bound access will "
+"immediately fail contract execution."
+msgstr "**下标操作** - 下标从0开始。下标越界会立即导致合约执行失败。"
+
+# 5c15c399f07240c3bc57a0f359d7ca2b
+#: ../../syntax.rst:89
+msgid ""
+"**Slicing Opeartor** - ``b[start:end]`` returns subarray of ``b`` from index"
+" ``start`` (inclusive) to ``end`` (exclusive). ``start`` is ``0`` if "
+"omitted, ``end`` is length of array if omitted."
+msgstr ""
+"**分片操作** - ``b[start:end]`` 返回 ``b`` 的子数组，从 ``start`` （包括）开始，到 ``end`` "
+"（不包括）结束。如果 ``start`` 被省略，则从 ``0`` 开始。如果 ``end`` 省略，则到数组最后一个元素（包括）结束。"
+
+# 5378115d7ca549b99e35145ce3a884fd
+#: ../../syntax.rst:100
+msgid "**Concatenation**"
+msgstr "**连接**"
+
+# 6cbe6be60cdf41e6b26a5348585204ce
+#: ../../syntax.rst:107
+msgid "``bytes`` Type"
+msgstr "``bytes`` 类型"
+
+# 5f1c205087d34731ab5bbaeb50b2370c
+#: ../../syntax.rst:108
+msgid ""
+"``byte[]`` is used so often that it demands its own synonym ``bytes``. It is"
+" a variable length array of bytes, whose literals are in quoted hexadecimal "
+"format prefixed by ``b``."
+msgstr ""
+"``byte[]`` 类型经常被使用，所以定义了一个它的别名 ``bytes`` 。它是变长的字节数组，字面量以 ``b`` "
+"开头，后面跟用单引号引起来的十六进制。"
+
+# fabd7f1888144d9fa14984ef89136fff
+#: ../../syntax.rst:119
+msgid "Type Inference"
+msgstr "类型接口"
+
+# 087b778287be47cabf343f8391f528eb
+#: ../../syntax.rst:120
+msgid ""
+"The ``auto`` keyword specifies that the type of the variable, of basic type,"
+" declared will be automatically deducted from its initializer."
+msgstr "``auto`` 关键字表示变量的类型由变量的初始值自动推导出来。"
+
+# 69fa200c985844f390ea0b42c4bde04a
+#: ../../syntax.rst:128
+msgid "Domain Subtypes"
+msgstr "领域子类型"
+
+# d8c858bbc6354e57aa3aebf1be38b3f0
+#: ../../syntax.rst:129
+msgid ""
+"There are several subtypes, specific to the Bitcoin context, used to further"
+" improve type safety."
+msgstr "如下是一些在比特币语境中特定的子类型，用于进一步提高类型安全性。"
+
+# 08810d1fc1d34ad4a861263d9949e5bc
+#: ../../syntax.rst:132
+msgid "Subtypes of ``bytes``"
+msgstr "``bytes`` 的子类型"
+
+# 9ba20434268a4a0e81c79b21c90f9775
+#: ../../syntax.rst:133
+msgid ""
+"To cast a supertype ``bytes`` to them, a function of the type name must be "
+"explicitly called."
+msgstr "要把 ``bytes`` 类型强制转换成某个子类型，必须显式调用与该子类型同名的函数。"
+
+# 01dd5e74b141424d8b05e34cbcb47219
+#: ../../syntax.rst:135
+msgid "**PubKey** - a public key type."
+msgstr "**PubKey** - 公钥类型。"
+
+# 77f647cf1dfe4270869f2e1798b3bcd3
+#: ../../syntax.rst:141
+msgid ""
+"**Sig** - a signature type in `DER <https://docs.moneybutton.com/docs/bsv-"
+"signature.html>`_ format, including `signature hash type "
+"<https://github.com/libbitcoin/libbitcoin-system/wiki/Sighash-and-TX-"
+"Signing>`_, which is ``SIGHASH_ALL | SIGHASH_FORKID`` (``0x41``) in the "
+"below example."
+msgstr ""
+"**Sig** - `DER <https://docs.moneybutton.com/docs/bsv-signature.html>`_ "
+"格式的签名类型。 包含 `签名哈希类型 <https://github.com/libbitcoin/libbitcoin-system/wiki"
+"/Sighash-and-TX-Signing>`_ ，如下例子中的签名哈希类型是 ``SIGHASH_ALL | SIGHASH_FORKID`` "
+"(``0x41``)。"
+
+# 957c67930a774d00ba3f22caef0e4d74
+#: ../../syntax.rst:147
+msgid "**Ripemd160** - a RIPEMD-160 hash type."
+msgstr "**Ripemd160** - RIPEMD-160哈希类型。"
+
+# eb0060456ddf4700a5b14cde6e31ff04
+#: ../../syntax.rst:153
+msgid "**Sha1** - a SHA-1 hash type."
+msgstr "**Sha1** - SHA-1哈希类型。"
+
+# 58996400769a4b76b4e5f8d9598ad750
+#: ../../syntax.rst:159
+msgid "**Sha256** - a SHA-256 hash type."
+msgstr "**Sha256** - SHA-256哈希类型。"
+
+# 00547188cc49463a935d46e48e45c7fd
+#: ../../syntax.rst:165
+msgid "**SigHashType** - a sighash type."
+msgstr "**SigHashType** - 签名哈希类型。"
+
+# a1cf16337d2a4707b63e35cdaeab607b
+#: ../../syntax.rst:172
+msgid "**SigHashPreimage** - a sighash preimage type."
+msgstr "**SigHashPreimage** - 签名哈希原像类型（a sighash preimage type）。"
+
+# 9a5ea4dd54d84b05ad7c658ee6c8f597
+#: ../../syntax.rst:178
+msgid "**OpCodeType** - a OpCode type."
+msgstr "**OpCodeType** - 操作码类型"
+
+# 4df438eec13e4d7bb33351ea48752028
+#: ../../syntax.rst:185
+msgid "Subtypes of ``int``"
+msgstr "``int`` 的子类型"
+
+# a34b1d835c1347898de5673cb8b18123
+#: ../../syntax.rst:187
+msgid "**PrivKey** - a private key type."
+msgstr "**PrivKey** - 私钥类型"
+
+# f9cbe195a3d44c6893e319e53ef3d839
+#: ../../syntax.rst:194
+msgid "``if`` statement"
+msgstr "``if`` 语句"
+
+# 97b9496014794c368f7670ca12ec86d2
+#: ../../syntax.rst:195
+msgid ""
+"``if`` condition can be of type ``int`` and ``bytes``, besides ``bool``. "
+"They are implicitly converted to ``bool`` as in C and Javascript. An ``int``"
+" expression is evaluated to ``false`` if and only if it is ``0`` (including "
+"negative ``0``). A ``bytes`` expression is evaluated to ``false`` if and "
+"only if every of its byte is ``b'00'`` (including empty ``bytes`` ``b''``)."
+msgstr ""
+"除了 ``bool`` 类型， ``if`` 条件还可以是 ``int`` 和 ``bytes`` 。这些类型会被隐式转换为 ``bool`` 类型，与"
+" C 和 Javascript 语言中的处理方式一样。当且仅当 ``int`` 为 ``0`` （包括负 ``0`` ）时，为 ``false`` "
+"。当且仅当 ``bytes`` 的每个字节都是 ``b'00'`` （包括空 ``bytes`` ``b''`` ）时，为 ``false`` 。"
+
+# ee28621292bc41abaf1c5d935581f8a2
+#: ../../syntax.rst:215
+msgid "exit()"
+msgstr "exit()"
+
+# 5e02498ff1954439a1c6ce2b0c9d1e8e
+#: ../../syntax.rst:216
+msgid ""
+"``exit(bool status);`` statement terminates contract execution. If "
+"``status`` is ``true``, contract succeeds; otherwise, it fails."
+msgstr ""
+"``exit(bool status);`` 语句用于结束合约的执行。 如果 ``status`` 参数是 ``true``， 合约执行成功； "
+"否则执行失败。"
+
+# 8ab840c6f94d4850ad726c034f43816a
+#: ../../syntax.rst:237
+msgid "Code Separator"
+msgstr "代码分隔符"
+
+# 3666b93faae54c8c990a89e378b0e407
+#: ../../syntax.rst:238
+msgid ""
+"Three or more ``*`` in a line inserts an `OP_CODESEPARATOR "
+"<https://en.bitcoin.it/wiki/OP_CHECKSIG#How_it_works>`_. It is used to "
+"exclude what comes before (and including itself) it from being part of the "
+"signature. Note there is no ``;`` at the end."
+msgstr ""
+"一行中三个或更多 ``*`` 表示插入一个 `OP_CODESEPARATOR "
+"<https://en.bitcoin.it/wiki/OP_CHECKSIG#How_it_works>`_ 。 "
+"该操作符之前的内容（包括操作符本身）不参与签名计算。注意，该语句行末没有 ``;`` 。"
+
+# ac968579296e4de89e69fc41e9f67f0c
+#: ../../syntax.rst:257
+msgid "Operators"
+msgstr "操作符"
+
+# f140b180d60c4c0b822db9467c335ab3
+#: ../../syntax.rst:263
+msgid "Precedence"
+msgstr "优先级"
+
+# 865705787b2f41a2ad735d4739c15170
+#: ../../syntax.rst:264
+msgid "Operator"
+msgstr "操作符"
+
+# 7c291845c7dc42829003ddea982b85b2
+#: ../../syntax.rst:265
+msgid "Associativity"
+msgstr "关联性"
+
+# 47e5b72eb6b64779811e9d2435197497
+#: ../../syntax.rst:267
+msgid "1"
+msgstr "1"
+
+# ead188aa89c8448aba3768886914fb64
+#: ../../syntax.rst:268
+msgid "``- ! ~``"
+msgstr "``- ! ~``"
+
+# 3990b5cd14ec4568b7f2c90b59185696
+# 515e7f20fa934b04ba8a3471a75400a8
+#: ../../syntax.rst:269 ../../syntax.rst:313
+msgid "right"
+msgstr "右"
+
+# c4f901609a214181887c6f59d85f1b42
+#: ../../syntax.rst:271
+msgid "2"
+msgstr "2"
+
+# 9b7011c59b3a4bd6b23d726283012c6f
+#: ../../syntax.rst:272
+msgid "``* / %``"
+msgstr "``* / %``"
+
+# da6bbf1974244318a4f5b536830c1209
+# 22acdbfbc89f48c0895b7c7dfa320c75
+# d8d9d1b09a97483f8e950014895c9318
+# 275e86b8f4b8492892e6ff07e7b882ef
+# 16cd90e8aee141bab07cf5c53ede5ab5
+# 56f37f0734874e9d84958919b576d79c
+# cb56c558a34a4bc5ba09206e99ac91dc
+# f240d2dc8a5d4c0097d921bc92d0b4e4
+# 9e63ecaf14364556b441b2acd300093c
+# f2293c344d5149eba3573266995474ae
+#: ../../syntax.rst:273 ../../syntax.rst:277 ../../syntax.rst:281
+#: ../../syntax.rst:285 ../../syntax.rst:289 ../../syntax.rst:293
+#: ../../syntax.rst:297 ../../syntax.rst:301 ../../syntax.rst:305
+#: ../../syntax.rst:309
+msgid "left"
+msgstr "左"
+
+# 708cda251055444ba56b3d0d35574c1f
+#: ../../syntax.rst:275
+msgid "3"
+msgstr "3"
+
+# 938cb2ddd8864966af2a698783ce937e
+#: ../../syntax.rst:276
+msgid "``+ -``"
+msgstr "``+ -``"
+
+# 3b69e37f4aa24a0683ef9f175dd02ee8
+#: ../../syntax.rst:279
+msgid "4"
+msgstr "4"
+
+# 448549e5cc9a4f9aa6fc877d1636b8c3
+#: ../../syntax.rst:280
+msgid "``<< >>``"
+msgstr "``<< >>``"
+
+# 232a8f9c85424a37a533ad9e649ed918
+#: ../../syntax.rst:283
+msgid "5"
+msgstr "5"
+
+# 2e12b120f8a94d94b8c9ad2ff1e4c5e2
+#: ../../syntax.rst:284
+msgid "``< <= > >=``"
+msgstr "``< <= > >=``"
+
+# 403a2ff4823948b588343da5cee1d4b6
+#: ../../syntax.rst:287
+msgid "6"
+msgstr "6"
+
+# 1719b1acb6794ff89fbc2eb2a215e898
+#: ../../syntax.rst:288
+msgid "``== !=``"
+msgstr "``== !=``"
+
+# 0571e19fe6bf449aa8732f09052e96ef
+#: ../../syntax.rst:291
+msgid "7"
+msgstr "7"
+
+# 04e93eb37a9048d5bad22917498744ed
+#: ../../syntax.rst:292
+msgid "``&``"
+msgstr "``&``"
+
+# 0f5adfda95f84cbdb961cf14742a0f36
+#: ../../syntax.rst:295
+msgid "8"
+msgstr "8"
+
+# b4a61467cde2401ab8c8860f07d97052
+#: ../../syntax.rst:296
+msgid "``^``"
+msgstr "``^``"
+
+# b6cfb258f20a41639f65efbd7cbe1395
+#: ../../syntax.rst:299
+msgid "9"
+msgstr "9"
+
+# 1aa5d5b87477438babb5b9fdc3cffa7c
+#: ../../syntax.rst:300
+msgid "``|``"
+msgstr "``|``"
+
+# 8ed1e1fcd3fd4c498091716fba36de46
+#: ../../syntax.rst:303
+msgid "10"
+msgstr "10"
+
+# 187ffcd967fd4376ae3d849257d55c94
+#: ../../syntax.rst:304
+msgid "``&&``"
+msgstr "``&&``"
+
+# 3b8d0e8a1c3d4f429a61ab8db4cef203
+#: ../../syntax.rst:307
+msgid "11"
+msgstr "11"
+
+# 72d3871218384c008904336a8b702339
+#: ../../syntax.rst:308
+msgid "``||``"
+msgstr "``||``"
+
+# 8b65d77d06d9428ba965e8cd52056e85
+#: ../../syntax.rst:311
+msgid "12"
+msgstr "12"
+
+# f1ff0a12d5dd435ba617b7b4a038b7bf
+#: ../../syntax.rst:312
+msgid "``? :``"
+msgstr "``? :``"
+
+# 7aa13c30a0db4e3382b7a3ccf2759ced
+#: ../../syntax.rst:319
+msgid "Scoping"
+msgstr "作用域"
+
+# 9e8b5e17e3454b549c17368e54300ed6
+#: ../../syntax.rst:320
+msgid ""
+"Scoping in sCrypt follows the prevailing scoping rules of C99 and Solidity. "
+"Outer scope variable is shadowed by the inner scope variable of the same "
+"name."
+msgstr "sCrypt的作用域遵循C99和Solidity的现行作用域规则。外部作用域的变量会被内部作用域的同名变量覆盖。"

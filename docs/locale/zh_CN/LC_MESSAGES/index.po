@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, sCrypt Inc
+# This file is distributed under the same license as the sCrypt package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Xiaohui Liu <x.liu@scrypt.io>, 2020
+# Edward Liu <574228@qq.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sCrypt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-30 16:42-0700\n"
+"PO-Revision-Date: 2020-10-01 00:49+0000\n"
+"Last-Translator: Edward Liu <574228@qq.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/scrypt/teams/113667/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 3c561e7a5b724b058d21b4bd6442339b
+#: ../../index.rst:22 ../../index.rst:22
+msgid "Introduction"
+msgstr "简介"
+
+# 805595e8c50e416eb12126a798077e33
+#: ../../index.rst:29 ../../index.rst:29
+msgid "Language Specification"
+msgstr "语言规范"
+
+# 1556d427cff64ac2bb34449b28bff62a
+#: ../../index.rst:38 ../../index.rst:38
+msgid "sCrypt by Example"
+msgstr "sCrypt示例"
+
+# 7ae2e67519d94fc0b1f8da4a6e6b11a7
+#: ../../index.rst:48 ../../index.rst:48
+msgid "Advanced"
+msgstr "高级用法"
+
+# 7d81a21122054c08bd022ff00c7016f5
+#: ../../index.rst:3
+msgid "The sCrypt Language Reference"
+msgstr "sCrypt语言参考"
+
+# 49e85db619d84cfc88cbf10061b2d54e
+#: ../../index.rst:9
+msgid ""
+"sCrypt (pronounced “ess crypt”) is a high-level smart contract language for "
+"Bitcoin SV. Bitcoin supports smart contract with its Forth-like stack based "
+"Script language. However writing smart contract in native Script is "
+"cumbersome and error-prone. It quickly becomes intractable when the contract"
+" size and complexity grow."
+msgstr ""
+"sCrypt (发音为 “ess crypt”) 是Bitcoin SV的智能合约高级语言。 "
+"Bitcoin通过基于栈的类Forth脚本语言来支持智能合约功能。 但是，用原生脚本语言写智能合约既麻烦又容易出错。 "
+"随着合约规模和复杂度的上升，很快就变得不可行了。"
+
+# 073eb72df30147fd940280bcde72f42c
+#: ../../index.rst:14
+msgid ""
+"sCrypt is designed to facilitate writing smart contract running on chain."
+msgstr "sCrypt会让开发链上运行的智能合约变得轻松。"
+
+# 6ab1939f45524e1699379ca82b8aa568
+#: ../../index.rst:16
+msgid ""
+"It is easy to learn. Syntactically, sCrypt is similar to Solidity, making it"
+" easier to be adopted by existing smart contract developers. However, the "
+"resemblance is only superficial, since sCrypt is compiled into Bitcoin "
+"Script by the underlying compiler, instead of EVM bytecode."
+msgstr ""
+"容易学习。语法上，sCrypt与Solidity类似，这让现有的智能合约开发人员更容易接受。但是，这种相似仅限于语法上，因为编译器会把sCrypt编译成Bitcoin脚本，而不是EVM字节码。"
+
+# 7c74e004564e4a89803ea659b1e9b252
+#: ../../index.rst:17
+msgid ""
+"It is statically typed. Type checking can help detect many errors at compile"
+" time."
+msgstr "静态类型。类型检查可以在编译时就帮助检查出很多错误。"
+
+# 55b207819cb24b258b2d1be9f82ec489
+#: ../../index.rst:20
+msgid ""
+"sCrypt is still in experimental phase and is currently only intended for "
+"small amount usage."
+msgstr "sCrypt仍处于试验阶段，仅用于小规模使用。"
+
+# dd8cad9d4ed4474fb205f1471b38e972
+#: ../../index.rst:55
+msgid "Contact"
+msgstr "联系方式"
+
+# b69d4baea6e24f21b54dba64d0bb46d6
+#: ../../index.rst:56
+msgid "`scrypt.io <https://scrypt.io>`_"
+msgstr "`scrypt.io <https://scrypt.io>`_"
+
+# 5f4f9c8abb124fc79a48eb0ead24940c
+#: ../../index.rst:58
+msgid ""
+"`Slack "
+"<https://join.slack.com/t/scryptworkspace/shared_invite/enQtNzQ1OTMyNDk1ODU3LTJmYjE5MGNmNDZhYmYxZWM4ZGY2MTczM2NiNTIxYmFhNTVjNjE5MGYwY2UwNDYxMTQyNGU2NmFkNTY5MmI1MWM>`_"
+msgstr ""
+"`Slack "
+"<https://join.slack.com/t/scryptworkspace/shared_invite/enQtNzQ1OTMyNDk1ODU3LTJmYjE5MGNmNDZhYmYxZWM4ZGY2MTczM2NiNTIxYmFhNTVjNjE5MGYwY2UwNDYxMTQyNGU2NmFkNTY5MmI1MWM>`_"
+
+# 3f39ac9f49dd45868355ef583a3e6e3b
+#: ../../index.rst:60
+msgid "`Telegram <https://t.me/joinchat/GwaRAxKT16JjXyHt5PuhHw>`_"
+msgstr "`Telegram <https://t.me/joinchat/GwaRAxKT16JjXyHt5PuhHw>`_"
+
+# caceeb456f3044d1b809fba1633c6ab0
+#: ../../index.rst:63
+msgid "Contributing"
+msgstr "贡献"
+
+# a045f64fac3e4be8b681ea75df64e17a
+#: ../../index.rst:64
+msgid ""
+"See `CONTRIBUTING.md <https://github.com/scrypt-"
+"sv/specification/blob/master/docs/CONTRIBUTING.md>`_ at our `GitHub "
+"<https://github.com/scrypt-sv>`_ for more information on what we're looking "
+"for and how to get started."
+msgstr ""
+"有关我们需要什么以及如何上手的更多信息，请参见我们 `GitHub <https://github.com/scrypt-sv>`_ 上的 "
+"`CONTRIBUTING.md <https://github.com/scrypt-"
+"sv/specification/blob/master/docs/CONTRIBUTING.md>`_ 。"

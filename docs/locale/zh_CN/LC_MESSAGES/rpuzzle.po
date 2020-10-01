@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, sCrypt Inc
+# This file is distributed under the same license as the sCrypt package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Edward Liu <574228@qq.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sCrypt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-30 16:42-0700\n"
+"PO-Revision-Date: 2020-10-01 00:49+0000\n"
+"Last-Translator: Edward Liu <574228@qq.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/scrypt/teams/113667/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 400a3ff513564a5f863c9ce863e0d14b
+#: ../../rpuzzle.rst:3
+msgid "R-Puzzle"
+msgstr "R-Puzzle"
+
+# a162769cbe24481fa3c4dca5965e1381
+#: ../../rpuzzle.rst:5
+msgid ""
+"In R-puzzle, an ephemeral key ``k`` is never revealed. Instead ``r``, the x "
+"coordinate of its corresponding public key, is revealed and from ``r`` along"
+" with the signature, the knowledge of ``k`` can be proved using existing "
+"``checkSig``."
+msgstr ""
+"在R-puzzle中，临时私钥 ``k`` 不会被公开，而对应的公钥的横坐标 ``r`` 会被公开。通过 ``r`` 和签名，就可以用 "
+"``checkSig`` 检验是否知道 ``k`` 。"
+
+# fce9c8b20cb845be8b36795bf6241aaa
+#: ../../rpuzzle.rst:8
+msgid ""
+"One crucial step in R-Puzzle is to extract ``r`` from `DER`_ encoded "
+"signature. The following is much easier than what is presented in the "
+"`R-Puzzle`_ talk."
+msgstr ""
+"R-Puzzle的一个关键步骤就是从 `DER`_ 编码的签名中提取 ``r`` 。用如下代码，比在 `R-Puzzle`_ "
+"的讨论中展示的方法容易多了。"

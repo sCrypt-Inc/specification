@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, sCrypt Inc
+# This file is distributed under the same license as the sCrypt package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Edward Liu <574228@qq.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sCrypt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-30 16:42-0700\n"
+"PO-Revision-Date: 2020-10-01 00:49+0000\n"
+"Last-Translator: Edward Liu <574228@qq.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/scrypt/teams/113667/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 71e95022903f4690a8d559da284506da
+#: ../../functions.rst:3
+msgid "Functions"
+msgstr "函数"
+
+# 8fcc25791b0e49b893ebfbd05703fa10
+#: ../../functions.rst:6
+msgid "User-Defined Functions"
+msgstr "用户自定义函数"
+
+# 1a42b62d04bc4bcdbfeca7ed82bfdab3
+#: ../../functions.rst:7
+msgid ""
+"sCrypt enables developers to define their own functions as exemplified "
+"below:"
+msgstr "sCrypt允许开发者定义自己的函数，如下所示："
+
+# 9820b3ea3d3d43c3b34d977562853533
+#: ../../functions.rst:15
+msgid ""
+"They are only visible within the contract, similar to ``private`` functions "
+"in Solidity."
+msgstr "这些函数只在合约内可见，类似Solidity里的 ``private`` 函数。"
+
+# 841fd4b1071241238e6d7d47bd7cbe1c
+#: ../../functions.rst:18
+msgid "public function"
+msgstr "公有函数"
+
+# 06bc485396504c0b94daae82433cf6da
+#: ../../functions.rst:19
+msgid ""
+"A public function returns ``true`` if it runs to completion and ``false`` "
+"otherwise. It does not have ``returns`` and ``return`` parts, as they are "
+"included implicitly. In other words,"
+msgstr ""
+"如果公有函数可以运行完，则返回 ``true`` ，否则返回 ``false`` 。公有函数没有 ``return`` "
+"，返回语句是隐式包含其中的。也就是说，"
+
+# f0164d574a4f42c4b4d6fb97ff80fb13
+#: ../../functions.rst:28
+msgid "is functionally equivalent to"
+msgstr "功能上等同于"
+
+# 00270587b5b74ff18b664f1fd2cd4f03
+#: ../../functions.rst:38
+msgid "static function and property"
+msgstr "静态函数和静态属性"
+
+# 6d5a0666fb564acdb1a0f5cf158cd6f2
+#: ../../functions.rst:39
+msgid ""
+"A static function/property can be referenced with contract name without an "
+"instantiated contract, similar to a static function/property in Javascript "
+"or C++."
+msgstr "可以通过合约名来直接引用静态函数/方法，而不必创建合约实例，就像Javascript或C++中的静态函数/方法一样。"
+
+# 628fb9f3217f42b89f47b9c59a7120a8
+#: ../../functions.rst:63
+msgid "``return``"
+msgstr "``return``"
+
+# a1250dd10a98490b8e8ace78f4e63864
+#: ../../functions.rst:64
+msgid ""
+"Due to the lack of native ``return`` semantics support in script, a function"
+" currently must end with a ``return`` statement and it is the only valid "
+"place for a ``return`` statement. This requirement may be relaxed in the "
+"future. This is usually not a problem since it can be circumvented as "
+"follows:"
+msgstr ""
+"由于比特币脚本缺乏对 ``return`` 语义的支持，所以函数必须以 ``return`` 语句结尾，并且 ``return`` "
+"语句只能放在函数末尾，不能放在其他位置。将来可能会放松这个限制。一般来说这不是问题，可以用如下方式避免在其他位置返回："
+
+# 1e7564f8bc94445e856e8b0b7b554122
+#: ../../functions.rst:77
+msgid "can be rewritten as"
+msgstr "可以改写成"
+
+# ce9fd538b94f43ca9eec09317003c313
+#: ../../functions.rst:93
+msgid "Recursion"
+msgstr "递归"
+
+# 6b5f9981c3b34089a46fe864032f66f6
+#: ../../functions.rst:94
+msgid "Recursion is disallowed. A function cannot call itself in its body."
+msgstr "不允许递归。函数体内不允许调用自己。"
+
+# b006c2af04d5475aaad11893904e2a34
+#: ../../functions.rst:96
+msgid ""
+"Indirect recursion detection is currently not implemented. If function A "
+"calles function B, which in turn calls A, the compilation process will hang."
+" Care must be taken to avoid doing so."
+msgstr "当前还没有实现对间接递归的检测。如果函数A调用了函数B，函数B又调用了函数A，那么编译进程会被挂起。需要小心以避免引起间接递归。"
+
+# 234c4d9954244009b36243eddd12c399
+#: ../../functions.rst:100
+msgid "Library Functions"
+msgstr "库函数"
+
+# 16ceae6556964b84be6b5c881f715ced
+#: ../../functions.rst:101
+msgid "The following functions come with sCrypt and are available globally."
+msgstr "sCrypt实现了如下库函数，在全局可见。"
+
+# 7c0c2ccafe7f4a24bc2baf6b28d51f93
+#: ../../functions.rst:104
+msgid "Math"
+msgstr "数学"
+
+# 5135d1bba8ca4ff79ca2fd5ec8489ede
+#: ../../functions.rst:105
+msgid "``int abs(int a)``"
+msgstr "``int abs(int a)``"
+
+# d1ff69942cd940739f923aa695d783a9
+#: ../../functions.rst:106
+msgid "``int min(int a, int b)``"
+msgstr "``int min(int a, int b)``"
+
+# cbc53a5b5cda4b089570422f1121f78b
+#: ../../functions.rst:107
+msgid "``int max(int a, int b)``"
+msgstr "``int max(int a, int b)``"
+
+# 856664a428b84b38a86d36fa21801dd8
+#: ../../functions.rst:108
+msgid "``bool within(int x, int min, int max)``"
+msgstr "``bool within(int x, int min, int max)``"
+
+# 273e36d7ab524b3dae2a3aa2d5d269b9
+#: ../../functions.rst:111
+msgid "Hashing"
+msgstr "哈希"
+
+# 89da2ee898994589b235e3d4c214a9ab
+#: ../../functions.rst:112
+msgid "``Ripemd160 ripemd160(bytes b)``"
+msgstr "``Ripemd160 ripemd160(bytes b)``"
+
+# 3a3e871c4a234f0ea0dc0997829ed170
+#: ../../functions.rst:113
+msgid "``Sha1 sha1(bytes b)``"
+msgstr "``Sha1 sha1(bytes b)``"
+
+# dc6dafd0ae1e42e5adc9b93a6b537e16
+#: ../../functions.rst:114
+msgid "``Sha256 sha256(bytes b)``"
+msgstr "``Sha256 sha256(bytes b)``"
+
+# 6bb2a36de9d04c48b388e4acd5ef6335
+#: ../../functions.rst:115
+msgid "``Ripemd160 hash160(bytes b)``"
+msgstr "``Ripemd160 hash160(bytes b)``"
+
+# f4f9e64d9b4344c7b1decfbde7d218ac
+#: ../../functions.rst:117
+msgid "ripemd160(sha256(b))"
+msgstr "ripemd160(sha256(b))"
+
+# e8d76edcb4914c0ab191c28145505f61
+#: ../../functions.rst:119
+msgid "``Sha256 hash256(bytes b)``"
+msgstr "``Sha256 hash256(bytes b)``"
+
+# a6c354c3e7084567b7105c106167af0f
+#: ../../functions.rst:121
+msgid "sha256(sha256(b))"
+msgstr "sha256(sha256(b))"
+
+# 549f14e3b899452d900d15bbbda7f1dd
+#: ../../functions.rst:124
+msgid "Signature Verification"
+msgstr "签名校验"
+
+# ac00a4f6a7594f81b7c1012f74089a16
+#: ../../functions.rst:125
+msgid "``bool checkSig(Sig sig, PubKey pk)``"
+msgstr "``bool checkSig(Sig sig, PubKey pk)``"
+
+# 51c5eb18566e484f8b45cf527458edb7
+#: ../../functions.rst:126
+msgid "``bool checkMultiSig(Sig[] sigs, PubKey[] pks)``"
+msgstr "``bool checkMultiSig(Sig[] sigs, PubKey[] pks)``"
+
+# 073cf4f2e78442a79621437eab5bb8b3
+#: ../../functions.rst:129
+msgid "``bytes`` Operations"
+msgstr "``字节数组`` 操作"
+
+# 0b109b9b6abb4907b98145c14a1f934f
+#: ../../functions.rst:130
+msgid "Convert to and from ``int``"
+msgstr "与 ``int`` 互相转换"
+
+# c4c984cceb9b4a67a45291fcd9d45f69
+#: ../../functions.rst:132
+msgid ""
+"``bytes`` can be converted to ``int`` using function ``unpack``. Little-"
+"endian `sign-magnitude representation <https://www.tutorialspoint.com/sign-"
+"magnitude-notation>`_ is used, where the most significant bit indicates the "
+"sign (``0`` for positive, ``1`` for negative). ``int`` can be converted to "
+"``bytes`` with ``pack``."
+msgstr ""
+"用函数 ``unpack`` 可以把 ``bytes`` 类型转换为 ``int`` 类型。采用小端格式的 `符号-值 表示法 "
+"<https://www.tutorialspoint.com/sign-magnitude-notation>`_ ，最高位比特表示符号（ ``0``"
+" 为正， ``1`` 为负）。 用函数 ``pack`` 可以把 ``int`` 类型转换为 ``bytes`` 类型。"
+
+# a0ed8a62b4fa4b559aa8c726ca25ff54
+#: ../../functions.rst:145
+msgid "``bytes num2bin(int num, int size)``"
+msgstr "``bytes num2bin(int num, int size)``"
+
+# 7e5a3cc513d145ccbaa6b83ca6f79afb
+#: ../../functions.rst:147
+msgid ""
+"Converts a number ``num`` into a byte array of certain size ``size``, "
+"including the sign bit. It fails if the number cannot be accommodated."
+msgstr "把数字 ``num`` 转换为字节数为 ``size`` 的字节数组，包括符号比特。如果字节数组无法容纳被转换的数字，则会转换失败。"
+
+# 53059af65aae4ae7ba086838f3983f2c
+#: ../../functions.rst:149
+msgid "``reverseBytes20(bytes b)`` ``reverseBytes32(bytes b)``"
+msgstr "``reverseBytes20(bytes b)`` ``reverseBytes32(bytes b)``"
+
+# 12e64b8b750d437ca38ab6e4e784ec63
+#: ../../functions.rst:151
+msgid ""
+"Returns reversed bytes of ``b``, which is of 20/32 bytes. They are often "
+"useful when converting a number between little-endian and big-endian."
+msgstr "反转长度为20或32的字节数组。当对数字进行大小端转换时很有用。"

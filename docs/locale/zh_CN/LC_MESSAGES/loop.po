@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, sCrypt Inc
+# This file is distributed under the same license as the sCrypt package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Edward Liu <574228@qq.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sCrypt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-30 16:42-0700\n"
+"PO-Revision-Date: 2020-10-01 00:49+0000\n"
+"Last-Translator: Edward Liu <574228@qq.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/scrypt/teams/113667/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# 376e9c207f044fa5a5b14661a89ee54f
+#: ../../loop.rst:3
+msgid "Loop"
+msgstr "循环"
+
+# ff6a86caf25c484a8b2d1e1ca5c3c81f
+#: ../../loop.rst:10
+msgid ""
+"Bitcoin script does not provide looping constructs natively for security "
+"reasons. sCrypt achieves looping by repeating the loop body ``maxLoopCount``"
+" times. For example, the loop"
+msgstr "因为安全原因，比特币脚本没有提供循环结构。sCrypt通过重复循环体 ``maxLoopCount`` 次来实现循环。例如，下面的循环"
+
+# 018a86d10a604299aa01e39dcf36801f
+#: ../../loop.rst:20
+msgid "is equivalently unrolled to"
+msgstr "相当于展开成如下形式"
+
+# 90e7a58cf85a49e5bc0983e4bfd3a52a
+#: ../../loop.rst:36
+msgid ""
+"Because `loop unrolling <https://en.wikipedia.org/wiki/Loop_unrolling>`_ is "
+"done at compile time, the compiler must know ``maxLoopCount``, which has to "
+"be a constant number."
+msgstr ""
+"因为 `循环展开 <https://en.wikipedia.org/wiki/Loop_unrolling>`_ 是在编译时进行的，编译器需要知道 "
+"``maxLoopCount`` 的值，所以 ``maxLoopCount`` 必须是一个常数。"
+
+# 38c9e4af84a94b91a8cf83cef89e3e36
+#: ../../loop.rst:39
+msgid ""
+"If ``maxLoopCount`` is set too small, the contract may not work correctly. "
+"If ``maxLoopCount`` is set too large, the resulting script is bloated "
+"unnecessarily and costs more to execute. There are a number of ways to "
+"choose the right ``maxLoopCount`` judiciously. One way is to simulate the "
+"contract off chain and find the number of loops. Another way is to exploit "
+"the characteristics of the looping itself. For example, if a loop iterates "
+"over each bit of a ``sha256`` hash, ``maxLoopCount`` is ``256``."
+msgstr ""
+"如果 ``maxLoopCount`` 设置得太小，合约可能无法正常运行。如果 ``maxLoopCount`` "
+"设置得太大，那么生成的脚本大小会不必要地膨胀，增加执行成本。有一些方法可以把 ``maxLoopCount`` "
+"的值设置得更合理。其中一个方法是在链下模拟运行合约以找到合理的循环次数。另一种方法是利用循环自身的特征。比如，如果一个循环需要遍历 ``sha256``"
+" 哈希值的每个比特，那么 ``maxLoopCount`` 就应该设置为 ``256`` 。"
+
+# 9179c9c9a8df4731a5bea30bfdce40e6
+#: ../../loop.rst:44
+msgid "Access loop index"
+msgstr "访问循环变量"
+
+# d8afdeabc2e24ad9a0547b024b440cba
+#: ../../loop.rst:55
+msgid "Conditional loop"
+msgstr "有条件的循环"
+
+# 8748e94bd86c458db7bd718ad1cff504
+#: ../../loop.rst:66
+msgid "break"
+msgstr "跳出循环"
