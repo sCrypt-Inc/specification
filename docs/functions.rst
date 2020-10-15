@@ -48,7 +48,7 @@ A static function/property can be referenced with contract name without an insta
                 return a + Foo.N;
         }
 
-        function double(int x): int {
+        static function double(int x): int {
             return Foo.incByN(x) + this.i;
         }
     }
