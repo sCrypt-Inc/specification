@@ -311,9 +311,8 @@ Operators
     * - 12
       - ``? :``
       - right
-..
-    explain &&,|| evaluates both sides regardless
 
+Operator ``&&``, ``||``, and ``? :`` use `short-circuit evaluation <https://en.wikipedia.org/wiki/Short-circuit_evaluation>`_.
 
 Scoping
 =======
