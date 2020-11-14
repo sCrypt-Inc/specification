@@ -146,6 +146,29 @@ where the most significant bit indicates the sign (``0`` for positive, ``1`` for
 
   Converts a number ``num`` into a byte array of certain size ``size``, including the sign bit. It fails if the number cannot be accommodated.
 
+* ``len()``
+  Returns the length.
+
+    .. code-block:: solidity
+
+        int a = len(b'ffee11'); // a == 3
+
+* **Slicing Opeartor** - ``b[start:end]`` returns subarray of ``b`` from index ``start`` (inclusive) to ``end`` (exclusive). 
+  ``start`` is ``0`` if omitted, ``end`` is length of array if omitted.
+
+    .. code-block:: solidity
+
+        bytes b = b'0011223344556677';
+        // b[3:6] == b'334455'
+        // b[:4] == b'00112233'
+        // b[5:] = b'556677'
+
+* **Concatenation**
+
+    .. code-block:: solidity
+
+        bytes b = b'00112233' + b'334455'  // b == b'00112233334455'
+
 * ``reverseBytes20(bytes b)`` ``reverseBytes32(bytes b)``
 
   Returns reversed bytes of ``b``, which is of 20/32 bytes. They are often useful when converting a number between little-endian and big-endian.

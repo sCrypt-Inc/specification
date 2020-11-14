@@ -54,59 +54,8 @@ Basic Types
         int a2 = -4242424242424242;
         int a3 = 55066263022277343669578718895168534326250603453777594175500187360389116729240;
         int a4 = 0xFF8C;
-* **byte** - a single byte, whose literals are in single-quoted hexadecimal format.
 
-    .. code-block:: solidity
-
-        byte a1 = 'FF';
-
-Array Types
------------
-An array is a list of values of the same type. 
-* **Array Literals** - a comma-separated list of expressions, enclosed in square brackets
-
-    .. code-block:: solidity
-
-        byte[] a = ['ff', 'ee', '11', '22'];
-        bool[] b = [false, false && true || false, true || (1 > 2)];
-        int[] c = [72, -4 - 1 - 40, 833 * (99 + 9901) + 8888];
-        int[] empty = [];
-        
-* **len()** - returns the length of an array.
-
-    .. code-block:: solidity
-
-        int a = len([1, 4, 2]); // a == 3
-
-* **Index Operator** - index starting from 0. Out of bound access will immediately fail contract execution.
-
-    .. code-block:: solidity
-
-        int[] a = [1, 4, 2];
-        int d = a[2];
-        a[1] = -4;
-
-* **Slicing Opeartor** - ``b[start:end]`` returns subarray of ``b`` from index ``start`` (inclusive) to ``end`` (exclusive). 
-  ``start`` is ``0`` if omitted, ``end`` is length of array if omitted.
-
-    .. code-block:: solidity
-
-        // see "bytes" type below
-        bytes b = b'0011223344556677';
-        // b[3:6] == b'334455'
-        // b[:4] == b'00112233'
-        // b[5:] = b'556677'
-
-* **Concatenation**
-
-    .. code-block:: solidity
-
-        int s = [3, 2] + [1, 4];  // s = [3, 2, 1, 4]
-
-``bytes`` Type
---------------
-``byte[]`` is used so often that it demands its own synonym ``bytes``.
-It is a variable length array of bytes, whose literals are in quoted hexadecimal format prefixed by ``b``.
+* **bytes** - a variable length array of bytes, whose literals are in quoted hexadecimal format prefixed by ``b``.
 
     .. code-block:: solidity
 
@@ -114,6 +63,31 @@ It is a variable length array of bytes, whose literals are in quoted hexadecimal
         bytes b1 = b'ffee1234'; // b0 and b1 are equivalent
         bytes b2 = b'414136d08c5ed2bf3ba048afe6dcaebafeffffffffffffffffffffffffffffff00';
         bytes b3 = b'1122' + b'eeff'; // b3 is b'1122eeff'
+
+Array Types
+-----------
+An array is a fixed-size list of values of the same basic type.
+
+* **Array Literals** - a comma-separated list of expressions, enclosed in square brackets.
+Array size must be an integer constant greater than zero.
+
+    .. code-block:: solidity
+
+        bool[3] b = [false, false && true || false, true || (1 > 2)];
+        int[3] c = [72, -4 - 1 - 40, 833 * (99 + 9901) + 8888];
+        bytes[3] a = [b'ffee', b'11', b'22'];
+        
+* **Index Operator** - index starting from 0. Out of bound access is undefined.
+
+    .. code-block:: solidity
+
+        int[3] a = [1, 4, 2];
+        int d = a[2];
+        a[1] = -4;
+        int idx = 2;
+        d = a[idx]; // allowed
+        a[idx] = 2; // disallowed as only const int index is allowed when writing to an array
+
 
 Type Inference
 --------------
