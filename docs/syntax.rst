@@ -59,8 +59,7 @@ Basic Types
 
     .. code-block:: solidity
 
-        bytes b0 = ['ff', 'ee', '12', '34'];
-        bytes b1 = b'ffee1234'; // b0 and b1 are equivalent
+        bytes b1 = b'ffee1234';
         bytes b2 = b'414136d08c5ed2bf3ba048afe6dcaebafeffffffffffffffffffffffffffffff00';
         bytes b3 = b'1122' + b'eeff'; // b3 is b'1122eeff'
 
