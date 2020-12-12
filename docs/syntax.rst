@@ -65,7 +65,7 @@ Basic Types
 
 Array Types
 -----------
-An array is a fixed-size list of values of the same basic type.
+An array is a fixed-size list of values of the same basic type [#]_.
 
 * **Array Literals** - a comma-separated list of expressions, enclosed in square brackets.
 Array size must be an integer constant greater than zero.
@@ -86,7 +86,33 @@ Array size must be an integer constant greater than zero.
         int idx = 2;
         d = a[idx]; // allowed
         a[idx] = 2; // disallowed as only const int index is allowed when writing to an array
+        // b is a new copy and the same as a
+        int[3] b = a;
+        // two arrays are equal if and only if they are of the same size and all elements are equal
+        require(a == b);
 
+Struct Types
+------------
+A struct (or structure) is a collection of variables (can be of different basic types) under a single name [#]_.
+
+* **Define Struct**
+
+    .. code-block:: solidity
+
+        struct Point {
+          int x;
+          int y;
+        }
+
+* **Use Struct**
+    .. code-block:: solidity
+        
+        Point p = {10, -10};
+        int x = p.x;
+        p.y = 20;
+        // Define a variable q of type Point, and set members to the same values as those of p
+        Point q = p;
+        require(p == q); // true
 
 Type Inference
 --------------
@@ -291,3 +317,6 @@ Scoping
 =======
 Scoping in sCrypt follows the prevailing scoping rules of C99 and Solidity.
 Outer scope variable is shadowed by the inner scope variable of the same name.
+
+.. [#] Currently, only one dimensional array is supported.
+.. [#] Currently, nested struct is not supported.
