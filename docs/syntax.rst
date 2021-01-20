@@ -67,8 +67,7 @@ Array Types
 -----------
 An array is a fixed-size list of values of the same basic type [#]_.
 
-* **Array Literals** - a comma-separated list of expressions, enclosed in square brackets.
-Array size must be an integer constant greater than zero.
+* **Array Literals** - a comma-separated list of expressions, enclosed in square brackets. Array size must be an integer constant greater than zero.
 
     .. code-block:: solidity
 
@@ -122,6 +121,29 @@ The ``auto`` keyword specifies that the type of the variable, of basic type, dec
 
         auto a1 = b'36';      // bytes a1 = b'36';
         auto a2 = 1 + 5 * 3;  // int a2 = 1 + 5 * 3;
+
+``const`` Variables
+===================
+Variables declared const cannot be changed once initialized.
+
+.. code-block:: solidity
+
+    contract Test {
+        const int x;
+
+        constructor(int x) {
+            this.x = x; // good, since this is initialization
+        }
+
+        public function equal(const int y) {
+            y = 1; // <-- error
+            
+            const int a = 36;
+            a = 11; // <-- error
+            
+            require(y == this.x);
+        }
+    }
 
 Domain Subtypes
 ===============
