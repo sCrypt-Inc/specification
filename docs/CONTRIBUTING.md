@@ -1,7 +1,7 @@
 # Contributing to sCrypt
 Loving sCrypt and want to contribute? Thanks! There are many ways you can help sCrypt and Bitcoin.
 
-Below are guidelines to help you get some ideas on where to start. They aim to making the contribution process straightforward and effective. If you need more ideas on what to contribute, please reach out at [Slack](https://join.slack.com/t/scryptworkspace/shared_invite/enQtNzQ1OTMyNDk1ODU3LTJmYjE5MGNmNDZhYmYxZWM4ZGY2MTczM2NiNTIxYmFhNTVjNjE5MGYwY2UwNDYxMTQyNGU2NmFkNTY5MmI1MWM).
+Below are guidelines to help you get some ideas on where to start. They aim to making the contribution process straightforward and effective. If you need more ideas on what to contribute, please reach out at [Slack](https://scryptworkspace.slack.com).
 
 ## Repo Descriptions
 All repositories are listed at [scrypt-sv](https://github.com/scrypt-sv).

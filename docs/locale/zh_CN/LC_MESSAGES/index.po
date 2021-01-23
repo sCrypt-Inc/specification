@@ -104,10 +104,10 @@ msgstr "`scrypt.io <https://scrypt.io>`_"
 #: ../../index.rst:58
 msgid ""
 "`Slack "
-"<https://join.slack.com/t/scryptworkspace/shared_invite/enQtNzQ1OTMyNDk1ODU3LTJmYjE5MGNmNDZhYmYxZWM4ZGY2MTczM2NiNTIxYmFhNTVjNjE5MGYwY2UwNDYxMTQyNGU2NmFkNTY5MmI1MWM>`_"
+"<https://scryptworkspace.slack.com>`_"
 msgstr ""
 "`Slack "
-"<https://join.slack.com/t/scryptworkspace/shared_invite/enQtNzQ1OTMyNDk1ODU3LTJmYjE5MGNmNDZhYmYxZWM4ZGY2MTczM2NiNTIxYmFhNTVjNjE5MGYwY2UwNDYxMTQyNGU2NmFkNTY5MmI1MWM>`_"
+"<https://scryptworkspace.slack.com>`_"
 
 # 3f39ac9f49dd45868355ef583a3e6e3b
 #: ../../index.rst:60

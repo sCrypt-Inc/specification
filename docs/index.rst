@@ -55,7 +55,7 @@ Contact
 -------
 `scrypt.io <https://scrypt.io>`_
 
-`Slack <https://join.slack.com/t/scryptworkspace/shared_invite/enQtNzQ1OTMyNDk1ODU3LTJmYjE5MGNmNDZhYmYxZWM4ZGY2MTczM2NiNTIxYmFhNTVjNjE5MGYwY2UwNDYxMTQyNGU2NmFkNTY5MmI1MWM>`_
+`Slack <https://scryptworkspace.slack.com>`_
 
 `Telegram <https://t.me/joinchat/GwaRAxKT16JjXyHt5PuhHw>`_
 
