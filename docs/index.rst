@@ -13,7 +13,7 @@ It quickly becomes intractable when the contract size and complexity grow.
 
 sCrypt is designed to facilitate writing smart contract running on chain.
 
-* It is easy to learn. Syntactically, sCrypt is similar to Solidity, making it easier to be adopted by existing smart contract developers. However, the resemblance is only superficial, since sCrypt is compiled into Bitcoin Script by the underlying compiler, instead of EVM bytecode.
+* It is easy to learn. Syntactically, sCrypt is similar to Javascript and Solidity, making it easier to be adopted by existing web and smart contract developers.
 * It is statically typed. Type checking can help detect many errors at compile time.
 
 

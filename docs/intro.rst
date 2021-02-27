@@ -64,16 +64,24 @@ If the condition is not met, the contract will abort execution and fail. Otherwi
 
 Public Function
 =================
-Each contract has at least one public function. It is denoted with the ``public`` keyword and does not return any value. The function body corresponds to locking script (commonly referred to as ``scriptPubKey``) and its arguments unlocking script (aka, ``scriptSig``).
+Each contract has at least one public function. It is denoted with the ``public`` keyword and does not return any value. The function body corresponds to locking script and its arguments unlocking script.
 It is visible outside the contract and acts as the entry point into the contract (like ``main`` in ``C`` and ``Java``).
 
 A public function must end with a ``require()`` call. ``require()`` can also appear in other parts of a public function. A contract can only be fulfilled and succeed when its called public function runs to completion without violating any conditions in ``require()``.
-In the above example, only ``scriptSig`` (i.e., ``y``) equal to ``this.x`` can fulfill the contract. 
+In the above example, only ``unlockingScript`` (i.e., ``y``) equal to ``this.x`` can fulfill the contract. 
+
+A public function can be regarded as a mathematical boolean function. ``f`` is the function body and ``x`` the function arguments.
+A contract call succeeds if and only if ``f(x)`` returns true.
+
+.. image::  _static/images/fx.png
+    :width: 120px
+    :alt: sCrypt logo
+    :align: center
 
 Multiple Public Functions
 -------------------------
-A contract can have multiple public functions, representing different ways to fulfill a contract. Only one of the public functions can be called at a time. In this case, the last operator of ``scriptSig`` has to be the index of the public function called, starting from ``0``.
-For example, if public function ``larger`` is called, ``scriptSig`` of ``y 2`` can fulfill the contract below, in which ``2`` is the public function index.
+A contract can have multiple public functions, representing different ways to fulfill a contract. Only one of the public functions can be called at a time. In this case, the last operator of ``unlockingScript`` has to be the index of the public function called, starting from ``0``.
+For example, if public function ``larger`` is called, ``unlockingScript`` of ``y 2`` can fulfill the contract below, in which ``2`` is the public function index.
 
 .. code-block:: solidity
 
