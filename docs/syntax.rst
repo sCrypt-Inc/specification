@@ -74,17 +74,27 @@ An array is a fixed-size list of values of the same basic type [#]_.
         bool[3] b = [false, false && true || false, true || (1 > 2)];
         int[3] c = [72, -4 - 1 - 40, 833 * (99 + 9901) + 8888];
         bytes[3] a = [b'ffee', b'11', b'22'];
+        int[2][3] d = [[11, 12, 13], [21, 22, 23]];
+        // array demension can be omitted when declared
+        int[] e = [1, 4, 2];  // e is of type int[3]
+        int[][] f = [[11, 12, 13], [21, 22, 23]]; // f is of type int[2][3]
         
-* **Index Operator** - index starting from 0. Out of bound access is undefined.
+* **Index Operator** - index starting from 0. Out of bound access fails contract execution immediately.
 
     .. code-block:: solidity
 
         int[3] a = [1, 4, 2];
+        int[2][3] arr2D = [[11, 12, 13], [21, 22, 23]];
         int d = a[2];
         a[1] = -4;
         int idx = 2;
-        d = a[idx]; // allowed
-        a[idx] = 2; // disallowed as only const int index is allowed when writing to an array
+        // variable index is allowed when reading an array
+        d = a[idx];
+        d = arr2D[idx][1];
+        // variable index is disallowed when writing into an array
+        a[idx] = 2;
+        // assign to an array variable
+        a = arr2D[1];
         // b is a new copy and the same as a
         int[3] b = a;
         // two arrays are equal if and only if they are of the same size and all elements are equal
@@ -103,6 +113,12 @@ A struct (or structure) is a collection of variables (can be of different basic 
           int y;
         }
 
+        struct Line {
+          // nested struct
+          Point start;
+          Point end;
+        }
+
 * **Use Struct**
     .. code-block:: solidity
         
@@ -112,6 +128,9 @@ A struct (or structure) is a collection of variables (can be of different basic 
         // Define a variable q of type Point, and set members to the same values as those of p
         Point q = p;
         require(p == q); // true
+        // nested
+        Line l = {p, q};
+        l.start.x = l.end.y + 1;
 
 Type Inference
 --------------
