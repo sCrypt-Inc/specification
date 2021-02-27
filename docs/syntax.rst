@@ -114,6 +114,12 @@ A struct (or structure) is a collection of variables (can be of different basic 
           int y;
         }
 
+        struct Line {
+          // nested struct
+          Point start;
+          Point end;
+        }
+
 * **Use Struct**
     .. code-block:: solidity
         
@@ -123,6 +129,9 @@ A struct (or structure) is a collection of variables (can be of different basic 
         // Define a variable q of type Point, and set members to the same values as those of p
         Point q = p;
         require(p == q); // true
+        // nested
+        Line l = {p, q};
+        l.start.x = l.end.y + 1;
 
 Type Inference
 --------------
