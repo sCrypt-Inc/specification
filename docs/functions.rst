@@ -37,6 +37,7 @@ is functionally equivalent to
 static function and property
 ----------------------------
 A static function/property can be referenced with contract name without an instantiated contract, similar to a static function/property in Javascript or C++.
+A static property can also be referenced without the contract prefix, but only in the contract it is defined in.
 
 .. code-block:: solidity
 
@@ -45,17 +46,22 @@ A static function/property can be referenced with contract name without an insta
         static int N = 0;
 
         static function incByN(int a): int {
-                return a + Foo.N;
+                // N is used without Foo prefix
+                return a + N;
         }
 
         static function double(int x): int {
-            return Foo.incByN(x) + this.i;
+            // N is used with Foo prefix
+            return Foo.incByN(x) + this.i + Foo.N;
         }
     }
 
     contract Bar {
         public function unlock(int y) {
             require(y == Foo.double(2));
+            require(y == Foo.N);
+            // N cannot be referenced without Foo prefix
+            // require(y == N);
         }
     }
 
