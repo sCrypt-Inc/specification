@@ -12,14 +12,21 @@ Calling Convention
 ==================
 For a function to be written in Script, its entire body must be enclosed by ``asm`` mode. Function parameters are on top of the stack, in reverse order as declared.
 For example, for a function with signature ``function foo(int p0, bytes p1, bool p2): int``, ``p2`` will be top of the stack, ``p1`` second from top, and ``p0`` third from top
-when entering ``asm`` mode. When exiting ``asm`` mode, all parameters must be poped and replaced with a single returned result on top of the stack.
-All other items in the stack must remain intact.
+when entering ``asm`` mode. When exiting ``asm`` mode, the return value is on top of the stack.
+All other items in the stack before the call must remain intact.
 
-Two assembly functions are shown below.
+Three assembly functions are shown below.
 
 .. code-block:: solidity
 
     // compute length of "b" in bytes
+    function len(bytes b): int {
+        asm {
+            op_size
+        }
+    }
+
+    // this is also fine since the return is on top and none in the old stack is changed
     function len(bytes b): int {
         asm {
             op_size
@@ -28,8 +35,9 @@ Two assembly functions are shown below.
     }
 
     function lenFail(bytes b): int {
-        // this is wrong since there are TWO elements on stack upon return
+        // this is wrong since the original top of stack is dropped
         asm {
+            op_drop
             op_size
         }
     }
