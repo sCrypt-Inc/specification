@@ -97,9 +97,7 @@ can be rewritten as
 
 Recursion
 ---------
-Recursion is disallowed. A function cannot call itself in its body.
-
-.. Warning:: Indirect recursion detection is currently not implemented. If function A calles function B, which in turn calls A, the compilation process will hang. Care must be taken to avoid doing so.
+Recursion is disallowed. A function cannot call itself in its body, either directly or indirectly.
 
 
 Library Functions
