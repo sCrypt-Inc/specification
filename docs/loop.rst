@@ -3,7 +3,7 @@ Loop
 ====
 .. code-block:: solidity
 
-    loop (maxLoopCount)
+    loop (maxLoopCount) [: loopIndex]
         loopBody
 
 
@@ -40,15 +40,22 @@ If ``maxLoopCount`` is set too small, the contract may not work correctly. If ``
 There are a number of ways to choose the right ``maxLoopCount`` judiciously. One way is to simulate the contract off chain and find the number of loops. Another way is to exploit the 
 characteristics of the looping itself. For example, if a loop iterates over each bit of a ``sha256`` hash, ``maxLoopCount`` is ``256``.
 
-Access loop index
-=================
+.. _induction-var-label:
+
+Induction variable
+==================
+`Induction variable <https://en.wikipedia.org/wiki/Induction_variable>`_ can be defined when loop index is needed.
+
 .. code-block:: solidity
 
-    int i = 0;
-    loop (3) {
-        // i becomes the loop index
-        i = i + 1;
-        x = x * 2;
+    // int[3][4] matrix;
+    // i & j are induction variables
+    loop (3) : i {
+        // i is the outer loop index
+        loop (4) : j {
+            // j is the inner loop index
+            matrix[i][j] = i + j;
+        }
     }
 
 Conditional loop
