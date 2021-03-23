@@ -292,6 +292,39 @@ Note there is no ``;`` at the end.
           }
       }
 
+Access Modifiers
+================
+There are three types of access modifiers available to help restrict the scope of properties and functions of a contract:
+
+* Default: no keyword required
+* Private
+* Public: only applies to functions
+
+Only public functions can be called externally by Bitcoin transactions.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 20 20 20 20
+
+    * - 
+      - default 
+      - private
+      - public
+
+    * - Same contract
+      - Yes
+      - Yes
+      - Yes
+
+    * - Other contract
+      - Yes
+      - No
+      - Yes
+
+    * - Externally
+      - No
+      - No
+      - Yes
 
 Operators
 =========
