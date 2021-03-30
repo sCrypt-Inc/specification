@@ -173,11 +173,12 @@ where the most significant bit indicates the sign (``0`` for positive, ``1`` for
 
         bytes b = b'00112233' + b'334455'  // b == b'00112233334455'
 
-* ``reverseBytes20(bytes b)`` ``reverseBytes32(bytes b)``
+* ``reverseBytes(bytes b, int size)``
 
-  Returns reversed bytes of ``b``, which is of 20/32 bytes. They are often useful when converting a number between little-endian and big-endian.
+  Returns reversed bytes of ``b``, which is of ``size`` bytes. Note ``size`` must be a :ref:`compile time constant<ctc-label>`.
+  It is often useful when converting a number between little-endian and big-endian.
 
-.. code-block:: solidity
+    .. code-block:: solidity
 
         // returns b'6cfeea2d7a1d51249f0624ee98151bfa259d095642e253d8e2dce1e79df33f79'
         reverseBytes32(b'793ff39de7e1dce2d853e24256099d25fa1b1598ee24069f24511d7a2deafe6c')

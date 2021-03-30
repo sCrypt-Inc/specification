@@ -1,3 +1,5 @@
+.. _ctc-label:
+
 =====================
 Compile Time Constant
 =====================
@@ -11,6 +13,8 @@ There are two cases where only compile time constants are allowed.
 
 * loop bound
 * array size
+* ``size`` in ``reverseBytes(bytes b, int size)``
+* ``size`` in ``repeat(T e, int size)``
 
 .. code-block:: solidity
     
