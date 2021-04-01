@@ -65,7 +65,7 @@ Basic Types
 
 Array Types
 -----------
-An array is a fixed-size list of values of the same basic type [#]_.
+An array is a fixed-size list of values of the same basic type.
 
 * **Array Literals** - a comma-separated list of expressions, enclosed in square brackets. Array size must be an integer constant greater than zero.
 
@@ -116,7 +116,7 @@ An array is a fixed-size list of values of the same basic type [#]_.
 
 Struct Types
 ------------
-A struct (or structure) is a collection of variables (can be of different basic types) under a single name [#]_.
+A struct (or structure) is a collection of variables (can be of different basic types) under a single name.
 
 * **Define Struct**
 
@@ -405,6 +405,3 @@ Scoping
 =======
 Scoping in sCrypt follows the prevailing scoping rules of C99 and Solidity.
 Outer scope variable is shadowed by the inner scope variable of the same name.
-
-.. [#] Currently, only one dimensional array is supported.
-.. [#] Currently, nested struct is not supported.
