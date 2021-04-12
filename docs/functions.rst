@@ -129,6 +129,11 @@ Signature Verification
 * ``bool checkSig(Sig sig, PubKey pk)``
 * ``bool checkMultiSig(Sig[] sigs, PubKey[] pks)``
 
+repeat()
+--------
+* ``T[size] repeat(T e, int size)``
+  returns an array with all ``size`` elements set to ``e``, where T can be any type.
+
 ``bytes`` Operations
 --------------------
 * Convert to and from ``int``
