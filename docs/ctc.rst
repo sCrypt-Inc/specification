@@ -3,13 +3,13 @@
 =====================
 Compile Time Constant
 =====================
-A compile time constant (CTC) is a value that can be computed at compile time. There are two types of compile time constants.
+A compile time constant (CTC) is a value that can be computed at compile time. There are three types of compile time constants.
 
 * literals
 * static constants which are initialized with a literal
 * :ref:`induction variables<induction-var-label>`
 
-There are two cases where only compile time constants are allowed.
+There are four cases where only compile time constants are allowed.
 
 * loop bound
 * array size
