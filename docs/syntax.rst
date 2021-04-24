@@ -155,6 +155,15 @@ The ``auto`` keyword specifies that the type of the variable, of basic type, dec
         auto a1 = b'36';      // bytes a1 = b'36';
         auto a2 = 1 + 5 * 3;  // int a2 = 1 + 5 * 3;
 
+Type Aliases
+------------
+Type aliases create a new name for a type. It does not actually create a new type, it merely creates a new name to refer to that type.
+
+    .. code-block:: solidity
+
+        type Age = int;
+        type Coordinate = int[2];
+
 ``const`` Variables
 ===================
 Variables declared const cannot be changed once initialized.
