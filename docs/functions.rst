@@ -186,4 +186,4 @@ where the most significant bit indicates the sign (``0`` for positive, ``1`` for
     .. code-block:: solidity
 
         // returns b'6cfeea2d7a1d51249f0624ee98151bfa259d095642e253d8e2dce1e79df33f79'
-        reverseBytes32(b'793ff39de7e1dce2d853e24256099d25fa1b1598ee24069f24511d7a2deafe6c')
+        reverseBytes(b'793ff39de7e1dce2d853e24256099d25fa1b1598ee24069f24511d7a2deafe6c', 32)
