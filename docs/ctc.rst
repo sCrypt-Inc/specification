@@ -7,7 +7,7 @@ A compile time constant (CTC) is a value that can be computed at compile time. T
 
 * literals
 * static constants which are declared as contract properties and initialized with a literal
-* static constants which are declared as function parameters and initialized with a literal in function call
+* static constants which are declared as function parameters and initialized with another CTC in a function call
 * :ref:`induction variables<induction-var-label>`
 
 There are four cases where only compile time constants are allowed.
@@ -28,7 +28,8 @@ There are four cases where only compile time constants are allowed.
         // B is not a CTC because it is not static
         const int B;
 
-        // FC is a CTC declared in function parameters, it can be used within this function(parameters after it & return type included)
+        // FC is a CTC declared in function parameters
+        // it can be used within this function, including parameters after it & return type
         function incArr(static const int FC, int[FC] x) : int[FC] {
             loop(FC): i {
                 x[i] += i; // induction variable CTC
@@ -38,7 +39,8 @@ There are four cases where only compile time constants are allowed.
 
         public function unlock(int y) {
             int[N] arr0 = [1, 2, 3, 4];
-            int[N] arr1 = this.incArr(N, repeat(1, N)); // use `N` to initialize CTC parameter `FC` of function `incArr`
+            // use `N` to initialize CTC parameter `FC` of function `incArr`
+            int[N] arr1 = this.incArr(N, repeat(1, N));
             loop(N) : i {
                 require(arr0[i] == arr1[i]);
             }
