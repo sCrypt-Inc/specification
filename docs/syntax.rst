@@ -164,29 +164,6 @@ Type aliases create a new name for a type. It does not actually create a new typ
         type Age = int;
         type Coordinate = int[2];
 
-``const`` Variables
-===================
-Variables declared const cannot be changed once initialized.
-
-.. code-block:: solidity
-
-    contract Test {
-        const int x;
-
-        constructor(int x) {
-            this.x = x; // good, since this is initialization
-        }
-
-        public function equal(const int y) {
-            y = 1; // <-- error
-            
-            const int a = 36;
-            a = 11; // <-- error
-            
-            require(y == this.x);
-        }
-    }
-
 Domain Subtypes
 ===============
 There are several subtypes, specific to the Bitcoin context, used to further improve type safety.
@@ -253,6 +230,31 @@ Subtypes of ``int``
 
         PrivKey privKey = PrivKey(0x00112233445566778899aabbccddeeffffeeddccbbaa99887766554433221100);
 
+        
+``const`` Variables
+===================
+Variables declared const cannot be changed once initialized.
+
+.. code-block:: solidity
+
+    contract Test {
+        const int x;
+
+        constructor(int x) {
+            this.x = x; // good, since this is initialization
+        }
+
+        public function equal(const int y) {
+            y = 1; // <-- error
+            
+            const int a = 36;
+            a = 11; // <-- error
+            
+            require(y == this.x);
+        }
+    }
+
+    
 ``if`` statement
 ================
 ``if`` condition can be of type ``int`` and ``bytes``, besides ``bool``. They are implicitly converted to ``bool`` as in C and Javascript.
