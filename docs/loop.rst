@@ -33,7 +33,7 @@ is equivalently unrolled to
     x = x * 2;
 
 
-Because `loop unrolling <https://en.wikipedia.org/wiki/Loop_unrolling>`_ is done at compile time, the compiler must know ``maxLoopCount``, which has to be a constant number.
+Because `loop unrolling <https://en.wikipedia.org/wiki/Loop_unrolling>`_ is done at compile time, the compiler must know ``maxLoopCount``. That is, it must be a :ref:`compile time constant<ctc-label>`.
 
 
 If ``maxLoopCount`` is set too small, the contract may not work correctly. If ``maxLoopCount`` is set too large, the resulting script is bloated unnecessarily and costs more to execute.
