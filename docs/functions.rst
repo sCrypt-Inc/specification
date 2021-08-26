@@ -17,7 +17,7 @@ They are only visible within the contract, similar to ``private`` functions in S
 public function
 ---------------
 A public function returns ``true`` if it runs to completion and ``false`` otherwise. 
-It does not have ``returns`` and ``return`` parts, as they are included implicitly. In other words, 
+It does not have return type and ``return`` parts, as they are included implicitly. In other words, 
 
 .. code-block:: solidity
 
