@@ -21,7 +21,7 @@ It does not have return type and ``return`` parts, as they are included implicit
 
 .. code-block:: solidity
 
-    public function sum(int a) {
+    public function isZero(int a) {
         require(a == 0);
     }
 
@@ -29,7 +29,7 @@ is functionally equivalent to
 
 .. code-block:: solidity
 
-    public function sum(int a): bool {
+    public function isZero(int a): bool {
         require(a == 0);
         return true;
     }
