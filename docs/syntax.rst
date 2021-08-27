@@ -79,7 +79,7 @@ An array is a fixed-size list of values of the same basic type.
         int[] e = [1, 4, 2];  // e is of type int[3]
         int[][] f = [[11, 12, 13], [21, 22, 23]]; // f is of type int[2][3]
 
-* **Initialize/set an array to the same value** - Function ``T[size] repeat(T e, int size)`` returns an array with all ``size`` elements set to ``e``, where T can be any type.
+* **Initialize/set an array to the same value** - Function ``T[size] repeat(T e, static const int size)`` returns an array with all ``size`` elements set to ``e``, where T can be any type.
   Note ``size`` must be a :ref:`compile time constant<ctc-label>`.
 
     .. code-block:: solidity
@@ -92,7 +92,8 @@ An array is a fixed-size list of values of the same basic type.
         // set all flags to be false
         flags = repeat(false, 4);
 
-      
+.. _array-index-label:
+
 * **Index Operator** - index starting from 0. Out of bound access fails contract execution immediately.
 
     .. code-block:: solidity
@@ -107,6 +108,9 @@ An array is a fixed-size list of values of the same basic type.
         d = arr2D[idx][1];
         // variable index is disallowed when writing into an array
         a[idx] = 2;
+        // only a compile-time constant (CTC) can be used as an index when writing
+        a[2] = 2;
+        a[N] = 3; // N is a CTC
         // assign to an array variable
         a = arr2D[1];
         // b is a new copy and the same as a

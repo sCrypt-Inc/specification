@@ -128,11 +128,6 @@ Signature Verification
 * ``bool checkSig(Sig sig, PubKey pk)``
 * ``bool checkMultiSig(Sig[] sigs, PubKey[] pks)``
 
-repeat()
---------
-* ``T[size] repeat(T e, int size)``
-  returns an array with all ``size`` elements set to ``e``, where T can be any type.
-
 ``bytes`` Operations
 --------------------
 * Convert to and from ``int``
@@ -177,7 +172,7 @@ where the most significant bit indicates the sign (``0`` for positive, ``1`` for
 
         bytes b = b'00112233' + b'334455'  // b == b'00112233334455'
 
-* ``reverseBytes(bytes b, int size)``
+* ``reverseBytes(bytes b, static const int size)``
 
   Returns reversed bytes of ``b``, which is of ``size`` bytes. Note ``size`` must be a :ref:`compile time constant<ctc-label>`.
   It is often useful when converting a number between little-endian and big-endian.

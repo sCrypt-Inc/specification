@@ -6,16 +6,16 @@ Compile Time Constant
 A compile time constant (CTC) is a value that can be computed at compile time. There are four types of compile time constants.
 
 * literals
-* static constants which are declared as contract properties and initialized with a literal
-* static constants which are declared as function parameters and initialized with another CTC in a function call
 * :ref:`induction variables<induction-var-label>`
+* static constant properties of a contract, initialized with a literal
+* static constant function parameters
 
-There are four cases where only compile time constants are allowed.
+There are several cases where only compile time constants are allowed.
 
 * loop bound
 * array size
-* ``size`` in ``reverseBytes(bytes b, static const int size)``
-* ``size`` in ``repeat(T e, static const int size)``
+* write to an array element using :ref:`index operator<array-index-label>`
+* function parameters that are declared as ``static const`` [#]_ such as ``size`` in ``reverseBytes(bytes b, static const int size)`` and ``repeat(T e, static const int size)``
 
 .. code-block:: solidity
     
@@ -53,3 +53,5 @@ There are four cases where only compile time constants are allowed.
             require(y == 1);
         }
     }
+
+.. [#] Note: the order is important: ``const static`` is not allowed when declaring a function parameter, but allowed when declaring a property.
