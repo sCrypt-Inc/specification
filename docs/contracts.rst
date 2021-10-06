@@ -103,6 +103,7 @@ The following example shows usage of the standard contract ``P2PKH`` that corres
         }
     }
 
+.. _pushtx-label:
 
 Contract ``OP_PUSH_TX``
 -----------------------
