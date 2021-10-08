@@ -4,40 +4,36 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Edward Liu <574228@qq.com>, 2020
+# qtom zheng <zhfnjust@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-30 16:42-0700\n"
-"PO-Revision-Date: 2020-10-01 00:49+0000\n"
-"Last-Translator: Edward Liu <574228@qq.com>, 2020\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/scrypt/teams/113667/zh_CN/)\n"
+"POT-Creation-Date: 2021-10-08 12:13+0800\n"
+"PO-Revision-Date: 2021-10-07 06:10+0000\n"
+"Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-# cb7ba7ae30af419fb0a7c2dc26de82b1
-#: ../../ide.rst:3
+#: ../../ide.rst:3 6620bb57069f4c92aefdc9c395e890f5
 msgid "IDEs"
-msgstr "IDE"
+msgstr "集成开发环境"
 
-# ac076cf640f8437da92b9d9a65a607aa
-#: ../../ide.rst:5
+#: ../../ide.rst:5 34d81c80908b4bebaf194472b25fa1ab
 msgid "There are currently two IDEs available."
-msgstr "目前有两种IDE可供使用。"
+msgstr "目前有两种 IDE 可用。"
 
-# 09ea83b4857f4c1d86752cc41bd85095
-#: ../../ide.rst:8
+#: ../../ide.rst:8 15fbc8a777b643e195cc493fd37014ce
 msgid "Desktop IDE"
 msgstr "桌面IDE"
 
-# aecbeab1e7764aeca5dd2aeb4c4ce0c7
-#: ../../ide.rst:9
+#: ../../ide.rst:9 d849da7942ad417389e99bfc25a72756
 msgid ""
 "A desktop version is available as a `Visual Studio Code Extension "
 "<https://marketplace.visualstudio.com/items?itemName=bsv-scrypt.sCrypt>`_. "
@@ -47,18 +43,16 @@ msgid ""
 "/scrypt-sv/boilerplate>`_ is a good base to kickstart your own sCrypt "
 "project."
 msgstr ""
-"桌面版是一个 `Visual Studio Code插件 "
-"<https://marketplace.visualstudio.com/items?itemName=bsv-scrypt.sCrypt>`_ "
-"。在插件市场中搜索 ``sCrypt`` 就可以找到。这个IDE具有高级的功能，可用于专业开发。你可以以 `样板项目 "
-"<https://github.com/scrypt-sv/boilerplate>`_ 为基础开始构建你自己的sCrypt项目。"
+"桌面版本是一个 Visual Studio Code 插件 `Visual Studio Code Extension "
+"<https://marketplace.visualstudio.com/items?itemName=bsv-"
+"scrypt.sCrypt>`_。通过在扩展市场中搜索``sCrypt`` 可以很容易地找到它。此 IDE 具有高级语言功能，适用于专业开发。你可以以 "
+"`样板项目 <https://github.com/scrypt-sv/boilerplate>`_ 为基础开始构建你自己的sCrypt项目。"
 
-# da30c480a7e44c10b9f08c902522025e
-#: ../../ide.rst:14
+#: ../../ide.rst:14 23ea08233293479886f800d4d6ca1867
 msgid "Web IDE"
-msgstr "网页IDE"
+msgstr "Web IDE"
 
-# 9fb979d15b734115b645764a88189c00
-#: ../../ide.rst:15
+#: ../../ide.rst:15 8c884462b4f547bc9038dc02908a4295
 msgid ""
 "A browser-based IDE can be found at `scrypt.studio <http://scrypt.studio>`_."
 " It is for quick learning of sCrypt immediately without any installation and"
@@ -66,4 +60,4 @@ msgid ""
 " contracts."
 msgstr ""
 "`scrypt.studio <http://scrypt.studio>`_ "
-"是一个基于浏览器的IDE。无需任何安装就可以立即快速学习sCrypt。此IDE仅适用于小型合约的开发。目前，它还不支持导入合约功能。"
+"是一个基于浏览器的IDE。无需任何安装即可快速学习sCrypt，仅适用于小型合约。目前不支持导入合约功能。"

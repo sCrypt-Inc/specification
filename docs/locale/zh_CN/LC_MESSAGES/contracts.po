@@ -4,44 +4,40 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Edward Liu <574228@qq.com>, 2020
+# qtom zheng <zhfnjust@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-30 16:42-0700\n"
-"PO-Revision-Date: 2020-10-01 00:48+0000\n"
-"Last-Translator: Edward Liu <574228@qq.com>, 2020\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/scrypt/teams/113667/zh_CN/)\n"
+"POT-Creation-Date: 2021-10-08 12:13+0800\n"
+"PO-Revision-Date: 2021-10-07 06:10+0000\n"
+"Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-# 05b97bbe32804c10a6783b583ebd98f7
-# 54c959dffac94168b69a7bfdcc20127a
-#: ../../contracts.rst:3 ../../contracts.rst:69
+#: ../../contracts.rst:3 ../../contracts.rst:90
+#: 134728ec8b6046b6bb8bdfee69be6f51 b0ddadacffb24a658040cca2222d3811
 msgid "Standard Contracts"
 msgstr "标准合约"
 
-# 229396c8512d46079e1eb74eca78f468
-#: ../../contracts.rst:6
+#: ../../contracts.rst:6 25d5e619c2ab44539201c6b8f1948cee
 msgid "Multiple Contracts"
 msgstr "多个合约"
 
-# 11a2c34d6a87492aa4df554faac174f7
-#: ../../contracts.rst:7
+#: ../../contracts.rst:7 8d95b90f59c14935b39e6bad84899e58
 msgid ""
 "A single file can define multiple contracts. In this case, the last contract"
 " acts as the main contract and is what gets compiled. Other contracts are "
 "dependencies."
-msgstr "一个文件中可以定义多个合约。在这种情况下，最后一个合约是主合约，这个合约会被编译。其他合约都被主合约依赖。"
+msgstr "一个文件可以定义多个合约。在这种情况下，最后一个合约作为主合约并且被编译。其他合约是依赖项。"
 
-# 77cf0be27d9547d3b06bed3e3dff299e
-#: ../../contracts.rst:10
+#: ../../contracts.rst:10 10c7afe45d5741dbb37f26c85cee7976
 msgid ""
 "In the following example, a standard P2PKH contract is rewritten using two "
 "other contracts: a hash puzzle contract that checks the public key matches "
@@ -51,13 +47,11 @@ msgstr ""
 "在下面这个例子中，标准的P2PKH合约被改写为两个其他合约：一个用来检查公钥和公钥哈希是否匹配的哈希谜题（hash puzzle）合约"
 "，还有一个检查签名和公钥是否匹配的Pay-to-PubKey（P2PK）合约。"
 
-# ff06fb6c27e94f65986838f0ba59bf01
-#: ../../contracts.rst:44
+#: ../../contracts.rst:44 15a402754ac041198d6ad6e746c460bf
 msgid "import"
 msgstr "导入（import）"
 
-# a53267fdaa5f42dc877abe207c8c7246
-#: ../../contracts.rst:45
+#: ../../contracts.rst:45 8f939f4bcf3341958e0fb755e89dcb2b
 msgid ""
 "Alternatively, the contract above can be broken into three files. The "
 "``Pay2PubKeyHash`` contact ``import``\\s other two contracts as "
@@ -67,45 +61,50 @@ msgstr ""
 "或者，可以将上述合约分到三个文件中。 ``Pay2PubKeyHash`` 合约 ``import`` "
 "其他两个合约作为依赖。这就可以重用其他人写的合约，成为构建合约库的基础。"
 
-# 8cd4d38da97f44b395e6cc31de9a5c64
-#: ../../contracts.rst:48
+#: ../../contracts.rst:48 e0a4eea317f4487e92c3f83578c19113
 msgid ""
 "A contract can be instantiated by ``new``. A ``public`` function can be "
 "called from ``require``, which takes boolean expression as input."
 msgstr ""
-"可以通过 ``new`` 来实例化一个合约。 ``require`` 函数的参数是条件表达式， 在条件表达式里可以调用合约的 ``public`` "
-"函数。"
+"合约可以通过 ``new`` 来实例化。``require`` 函数的参数是条件表达式， 调用合约的 ``public`` 函数可以作为条件表达式传入。"
 
-# 0a813c1df4ba492f95efd2bd406569d6
-#: ../../contracts.rst:70
+#: ../../contracts.rst:68 366f714b888d4f9b9f7301d37a08cae0
+msgid "Library"
+msgstr "Library 库"
+
+#: ../../contracts.rst:69 4fc6664e9799410991499937dd4d0ba5
+msgid ""
+"A library is the same with a contract, except it does not contain any public"
+" function. It is only intended to be imported by a contract or other "
+"libraries. It thus cannot be independently deployed and called. It is "
+"frequently used to group related constants and static functions."
+msgstr "库与合约相同，只是它不包含任何公共函数。它仅用于由合约或其他库导入。因此它不能被独立部署和调用。它经常用于对相关常量和静态函数进行分组。"
+
+#: ../../contracts.rst:91 1210614e82c1489fa0d59dbb640ad071
 msgid ""
 "sCrypt comes with standard libraries that define many commonly used "
 "contracts. They are included by default and do not require explicit "
 "``import`` to be used."
 msgstr "sCrypt自带标准库，里面定义了许多常用的合约。标准库是默认就导入的，不需要写 ``import`` 语句。"
 
-# a6a64cf003ab41acb5e32bceb13a28a0
-#: ../../contracts.rst:72
+#: ../../contracts.rst:93 bc6237b311de4b37acfe38eaef89a52f
 msgid ""
 "The following example shows usage of the standard contract ``P2PKH`` that "
 "corresponds to Pay-to-PubKey-Hash contract."
 msgstr "如下例子展示了对标准合约 ``P2PKH`` 的使用。"
 
-# f832a234d9b2476a9833510eda62999a
-#: ../../contracts.rst:87
+#: ../../contracts.rst:109 6ad4e49c77af43ee8ce63ba77493e187
 msgid "Contract ``OP_PUSH_TX``"
 msgstr "``OP_PUSH_TX`` 合约"
 
-# 96689548559645d892b85495796774c9
-#: ../../contracts.rst:88
+#: ../../contracts.rst:110 e11f82af44c54a17bab571543ec0b436
 msgid ""
 "One grave misconception regarding bitcoin script is that its access is only "
 "limited to the data provided in the locking script and corresponding "
 "unlocking script. Thus, its scope and capability are greatly underestimated."
 msgstr "对比特币脚本的一个严重误解是，脚本只能访问锁定脚本以及对应的解锁脚本中提供的数据。因此，脚本的范围和能力被大大低估了。"
 
-# 99fcab5663a14b6abc64019fa402a016
-#: ../../contracts.rst:91
+#: ../../contracts.rst:113 54c66a7a35694efba0b1384559f7b617
 msgid ""
 "sCrypt comes with a powerful contract called ``Tx`` that allows inspection "
 "of the **ENTIRE TRANSACTION** containing the contract itself, besides the "
@@ -115,171 +114,141 @@ msgid ""
 "preimage used in signature verification defined in `BIP143`_. The format of "
 "the preimage is as follows:"
 msgstr ""
-"sCrypt提供了一个强大的合约叫做 ``Tx``，它允许合约访问合约所在的 **整个交易** ，包括锁定脚本和解锁脚本。我们把这种方法当成一个伪操作码"
-" ``OP_PUSH_TX`` "
-"，它可以把当前交易压到栈里，这样就可以在运行时访问了。更准确地说，可以访问的是在签名校验时用到的原像（preimage）， 在 `BIP143`_ "
-"中有原像的详细定义。原像的数据格式如下："
+"sCrypt提供了一个强大的合约叫做 ``Tx``。 它允许合约访问合约所在的 整个交易 ，包括锁定脚本和解锁脚本。我们把这种方法当成一个伪操作码 "
+"``OP_PUSH_TX`` ，它可以把当前交易压到栈里，这样就可以在运行时访问了。 更准确地说，可以访问的是在签名校验时用到的原像 preimage "
+"， 在 `BIP143`_. 中有原像的详细定义。原像的数据格式如下："
 
-# b662e3bf90b3428ea5389d89881dee1b
-#: ../../contracts.rst:96
+#: ../../contracts.rst:118 ac9831805b294d35a5cf6d05d8020923
 msgid "nVersion of the transaction (4-byte little endian)"
-msgstr "交易的版本号（nVersion of the transaction）（4字节小端）"
+msgstr " nVersion of the transaction  (交易的版本号,  4字节小端)"
 
-# 1ba4443ff4e54a0b84d317e71cbaa2d2
-#: ../../contracts.rst:97
+#: ../../contracts.rst:119 3b6f1370506340429d2491aac7c126e8
 msgid "hashPrevouts (32-byte hash)"
-msgstr "输入的输出点哈希（hashPrevouts） （32字节哈希值）"
+msgstr "hashPrevouts (输入的输出点哈希 32字节哈希值)"
 
-# bca5ee31a15f4d6696eb5e2fbfdcbc9b
-#: ../../contracts.rst:98
+#: ../../contracts.rst:120 ca1174f437dd460698c5c2d263f2a31f
 msgid "hashSequence (32-byte hash)"
-msgstr "序列号哈希（hashSequence） （32字节哈希值）"
+msgstr "hashSequence (序列号哈希 32字节哈希值)"
 
-# af19c1f4c69c43ccab47fff53d8a7915
-#: ../../contracts.rst:99
+#: ../../contracts.rst:121 049d8341f97f40aaa162e325c0ebd6a5
 msgid "outpoint (32-byte hash + 4-byte little endian)"
-msgstr "此输入的输出点（outpoint） （32字节哈希值 + 4字节小端） "
+msgstr "outpoint (此输入的输出点 32字节哈希值 + 4字节小端）"
 
-# 4888c736f85841b38f0f4f1a9f1a953b
-#: ../../contracts.rst:100
+#: ../../contracts.rst:122 8c6be3064ec04604ba4041c3705b8523
 msgid "scriptCode of the input (serialized as scripts inside CTxOuts)"
-msgstr "此输入的锁定脚本（scriptCode of the input）（在CTxOuts中序列化为脚本）"
+msgstr "scriptCode of the input (输入对应的UTXO的锁定脚本)"
 
-# fad3c7f2f8fe43f48b2baa31f785eb94
-#: ../../contracts.rst:101
+#: ../../contracts.rst:123 7d708ed958884cab8553f3a4f9e22718
 msgid "value of the output spent by this input (8-byte little endian)"
-msgstr "此输入对应的输出中包含的聪数（value of the output spent by this input） (8字节小端)"
+msgstr "value of the output spent by this input (此输入对应的输出中包含的聪数 8字节小端)"
 
-# ab9777d86d9b414692dc93639950b4d6
-#: ../../contracts.rst:102
+#: ../../contracts.rst:124 4f8a172c99e4447c8e3f8593c13a1474
 msgid "nSequence of the input (4-byte little endian)"
-msgstr "此输入的序列号（nSequence of the input） （4字节小端）"
+msgstr "nSequence of the input (此输入的序列号 4字节小端)"
 
-# d90743b7ee854b32999583f3ef43dae3
-#: ../../contracts.rst:103
+#: ../../contracts.rst:125 2b4c7575216b4eacaf62fc78c86ca034
 msgid "hashOutputs (32-byte hash)"
-msgstr "输出的哈希（hashOutputs）（32字节哈希值）"
+msgstr "hashOutputs (输出的哈希 32字节哈希值)"
 
-# a72fc2d9b10642eea883043db4a6a118
-#: ../../contracts.rst:104
+#: ../../contracts.rst:126 5c2a9b4152e0481292579f4de6c8b1cf
 msgid "nLocktime of the transaction (4-byte little endian)"
-msgstr "交易的nLocktime（nLocktime of the transaction）（4字节小端）"
+msgstr "nLocktime of the transaction (交易的nLocktime 4字节小端)"
 
-# a072aaf04b22490f83f166beb0fce5db
-#: ../../contracts.rst:105
+#: ../../contracts.rst:127 5403c63d369c42daa7f4a4bd66877722
 msgid "sighash type of the signature (4-byte little endian)"
-msgstr "交易的签名哈希类型（sighash type of the signature）（4字节小端）"
+msgstr "sighash type of the signature (签名类型 4字节小端)"
 
-# f45bd2dd3b4c47b19fc712e42424c8b3
-#: ../../contracts.rst:107
+#: ../../contracts.rst:129 d0e8952d29e441f08def46a75a8e4096
 msgid ""
 "As an example, contract ``CheckLockTimeVerify`` ensures coins are timelocked"
 " and cannot be spent before ``matureTime`` is reached, similar to "
 "`OP_CLTV`_."
 msgstr ""
-"举个例子，合约 ``CheckLockTimeVerify`` 确保合约中的币是时间锁定的，在 ``matureTime`` "
-"这个时间点之前不能被花掉。其功能类似 `OP_CLTV`_。"
+"例如，合约 ``CheckLockTimeVerify`` 确保合约中的币是时间锁定的，并且不能在时间达到 ``matureTime`` "
+"之前花费，类似于 `OP_CLTV`_。"
 
-# 6cefb53df20b4dc49b21283801cd2d31
-#: ../../contracts.rst:131
+#: ../../contracts.rst:153 c6d73b9e75434d659cbb472b88f657d4
 msgid ""
 "More details can be found in `this article <https://medium.com/@xiaohuiliu"
 "/op-push-tx-3d3d279174c1>`_. To customize ECDSA signing, such as choosing "
-"ephemeral key, there is a more general version called `TxAdvanced "
-"<https://medium.com/@xiaohuiliu/advanced-op-push-tx-78ce84f69a66>`_."
+"ephemeral key, there is a more general version called "
+"`Tx.checkPreimageAdvanced() <https://medium.com/@xiaohuiliu/advanced-op-"
+"push-tx-78ce84f69a66>`_."
 msgstr ""
-"更多细节参见 `这篇文章 <https://blog.csdn.net/freedomhero/article/details/107306604>`_"
-" 。为了可以定制ECDSA签名，比如选择临时密钥，可以使用一个更加通用的版本 `TxAdvanced "
-"<https://blog.csdn.net/freedomhero/article/details/107333738>`_。"
+"更多细节可以在 `这篇文章 <https://medium.com/@xiaohuiliu/op-push-tx-3d3d279174c1>`_ "
+"中找到。要自定义 ECDSA 签名，比如选择临时密钥，可以使用一个更加通用的版本 `Tx.checkPreimageAdvanced() "
+"<https://medium.com/@xiaohuiliu/advanced-op-push-tx-78ce84f69a66>`_。"
 
-# 6a818e62d32b4c15a8d38429db91f644
-#: ../../contracts.rst:135
+#: ../../contracts.rst:157 f1531513074247cc87f1ff92ced9c248
 msgid "Full List"
 msgstr "完整列表"
 
-# 794949d953e044748e1670caf6658da6
-#: ../../contracts.rst:141
+#: ../../contracts.rst:163 9509bbd63ad64b8b90f60f6ef3b65737
 msgid "Contract"
 msgstr "合约"
 
-# 4a03ba5e29124437bdf8f0242bea6e6e
-#: ../../contracts.rst:142
+#: ../../contracts.rst:164 1c404092032e4a89a09aeb899841b3c6
 msgid "Constructor parameters"
-msgstr "构造参数"
+msgstr "构造函数参数"
 
-# 7f1b3481f18c4e5e8cb5c2f7802e3a52
-#: ../../contracts.rst:143
+#: ../../contracts.rst:165 2ab447f59b874d65b7fc6f6bdef0da67
 msgid "Public function"
-msgstr "公有函数"
+msgstr "公共函数"
 
-# 8e22619f85954190a128a048bbc2f804
-#: ../../contracts.rst:145
+#: ../../contracts.rst:167 da54e077bd6c46fd93949e6d496a69c3
 msgid "P2PKH"
 msgstr "P2PKH"
 
-# 37b8b6a4716749c0aa8b2ed982cff667
-#: ../../contracts.rst:146
+#: ../../contracts.rst:168 c806a07acb244e6d8dc02be17d1e7d3e
 msgid "Ripemd160 pubKeyHash"
 msgstr "Ripemd160 pubKeyHash"
 
-# afb795143cb8424a8f236d13ed7413dc
-#: ../../contracts.rst:147
+#: ../../contracts.rst:169 bb2c0cdd4b074474b7bb3e97493acfad
 msgid "spend(Sig sig, PubKey pubKey)"
 msgstr "spend(Sig sig, PubKey pubKey)"
 
-# c613f9dc0dd14df3a5a23cbfeee4b527
-#: ../../contracts.rst:149
+#: ../../contracts.rst:171 ba18b60de41e403cb31ae5e48ebfa00f
 msgid "P2PK"
 msgstr "P2PK"
 
-# 08e4567a9eeb4552b63861590914969b
-#: ../../contracts.rst:150
+#: ../../contracts.rst:172 f78899d539eb4425be483659352954e7
 msgid "PubKey pubKey"
 msgstr "PubKey pubKey"
 
-# 4d2d3f09caec417f9d61dca9c537f068
-#: ../../contracts.rst:151
+#: ../../contracts.rst:173 8caae54f32a64dd7b0d4358f94496d53
 msgid "spend(Sig sig)"
 msgstr "spend(Sig sig)"
 
-# ee16e469d61743b59800ca4aef7d5d11
-#: ../../contracts.rst:153
+#: ../../contracts.rst:175 418193a79b0348f5bc4fda04573b12a3
 msgid "HashPuzzleX [#]_"
 msgstr "HashPuzzleX [#]_"
 
-# 771e4b8f2aec43e4b0b0b378e47a1fb3
-#: ../../contracts.rst:154
+#: ../../contracts.rst:176 9737cef6d28d437a8157ae5aa7be84c0
 msgid "Y [#]_ hash"
 msgstr "Y [#]_ hash"
 
-# 79dcb94bae3b4585a25b7e3d0c61949f
-#: ../../contracts.rst:155
+#: ../../contracts.rst:177 20966d76f04d40429febd711d4cdfadf
 msgid "spend(bytes preimage)"
 msgstr "spend(bytes preimage)"
 
-# 75f230aa5a4a439e8f20e568eed2cb4e
-#: ../../contracts.rst:157
+#: ../../contracts.rst:179 a6995085c8d847fcaa277f2d87c8e008
 msgid "Tx"
 msgstr "Tx"
 
-# 29e2ad0efa61443baa998b9b1ee5e054
-#: ../../contracts.rst:158
+#: ../../contracts.rst:180 c66b62308ad1476db8793bfe9e9146ce
 msgid "None"
 msgstr "None"
 
-# 2757a5d11d894a59b10c439eb695b7a1
-#: ../../contracts.rst:159
+#: ../../contracts.rst:181 167e552e074a46f4b0c0f4b6e3c78349
 msgid "checkPreimage(bytes sighashPreimage)"
 msgstr "checkPreimage(bytes sighashPreimage)"
 
-# 608b17d684ef4a06b0bae2568adad833
-#: ../../contracts.rst:161
+#: ../../contracts.rst:183 a0587126d99c4c489485b762d6a7646e
 msgid "``X`` is hashing function and can be Ripemd160/Sha1/Sha256/Hash160"
-msgstr "``X`` 是哈希函数，可以是Ripemd160/Sha1/Sha256/Hash160"
+msgstr "``X`` 是散列函数，可以是 ``Ripemd160/Sha1/Sha256/Hash160``"
 
-# 1573f2eaddd64beda3ccb792857f6821
-#: ../../contracts.rst:162
+#: ../../contracts.rst:184 82acf4fc588a4c76b1b0c3321536b066
 msgid ""
 "``Y`` is hashing function return type and can be "
 "Ripemd160/Sha1/Sha256/Ripemd160"
-msgstr "``Y`` 是哈希函数的返回值类型，可以是Ripemd160/Sha1/Sha256/Ripemd160"
+msgstr "``Y`` 是哈希函数返回类型，可以是 ``Ripemd160/Sha1/Sha256/Ripemd160``"

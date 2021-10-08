@@ -4,34 +4,29 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Edward Liu <574228@qq.com>, 2020
+# qtom zheng <zhfnjust@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-30 16:42-0700\n"
-"PO-Revision-Date: 2020-10-01 00:49+0000\n"
-"Last-Translator: Edward Liu <574228@qq.com>, 2020\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/scrypt/teams/113667/zh_CN/)\n"
+"POT-Creation-Date: 2021-10-08 12:13+0800\n"
+"PO-Revision-Date: 2021-10-07 06:10+0000\n"
+"Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-# d884e2d211684fc0b294cc06533e8a44
-#: ../../rabin.rst:3
+#: ../../rabin.rst:3 b8f45b2ae7d2410e8f464c17af6c1f13
 msgid "Rabin Signature"
-msgstr "拉宾签名（Rabin Signature）"
+msgstr "拉宾签名 (Rabin Signature)"
 
-# c5d65a7a35d14a74862e9e9d5f50dba7
-#: ../../rabin.rst:5
+#: ../../rabin.rst:5 1a0a8388e31143628e644689038736c0
 msgid ""
-"`Rabin signature <https://medium.com/@xiaohuiliu/access-external-data-from-"
-"bitcoin-smart-contracts-2ecdc7448c43>`_ is an alternative form of digital "
-"signature to ECDSA used in Bitcoin."
-msgstr ""
-"`拉宾签名 <https://blog.csdn.net/freedomhero/article/details/107237537>`_ "
-"是比特币中使用的ECDSA数字签名的一种替代形式。"
+"`Rabin Signature`_ is an alternative form of digital signature to ECDSA used"
+" in Bitcoin."
+msgstr "`拉宾签名`_ 是比特币中使用的 ECDSA 的另一种数字签名形式。"

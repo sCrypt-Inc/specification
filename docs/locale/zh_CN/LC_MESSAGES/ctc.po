@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2019, sCrypt Inc
+# This file is distributed under the same license as the sCrypt package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# qtom zheng <zhfnjust@qq.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sCrypt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-08 12:13+0800\n"
+"PO-Revision-Date: 2021-10-07 06:10+0000\n"
+"Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../ctc.rst:5 299c59a4dc7e45fead0f4e1303be8bb9
+msgid "Compile Time Constant"
+msgstr "编译时常量"
+
+#: ../../ctc.rst:6 28a5b448ae5c43d8a379be2990214253
+msgid ""
+"A compile time constant (CTC) is a value that can be computed at compile "
+"time. There are four types of compile time constants."
+msgstr "编译时常量 (Compile Time Constant) 是可以在编译时计算的值。编译时常量有四种类型。"
+
+#: ../../ctc.rst:8 aa0ebe087f294704a3f93d4e22465f0f
+msgid "literals"
+msgstr "常量，比如数字、布尔值、`bytes` 值"
+
+#: ../../ctc.rst:9 ea3f6178d8ec45d68b703b1988a52c42
+msgid ":ref:`induction variables<induction-var-label>`"
+msgstr ":ref:`归纳变量<induction-var-label>`"
+
+#: ../../ctc.rst:10 3b12ffa9a4c54348919d131b3b3566b9
+msgid "static constant properties of a contract, initialized with a literal"
+msgstr "合约的静态常量属性，用常量初始化"
+
+#: ../../ctc.rst:11 57e7c73d051946939617eeb37a3dadc7
+msgid "static constant function parameters"
+msgstr "静态常量函数参数"
+
+#: ../../ctc.rst:13 7cb925a5245849818456af73821cad88
+msgid "There are several cases where only compile time constants are allowed."
+msgstr "有几种情况只允许使用编译时常量。"
+
+#: ../../ctc.rst:15 8a303cdd00a943b38f8045f8c1a0a695
+msgid "loop bound"
+msgstr "循环限制"
+
+#: ../../ctc.rst:16 ca3f87c9765c4fc996568ce1bf926da8
+msgid "array size"
+msgstr "数组大小"
+
+#: ../../ctc.rst:17 504cb578904844a880eaa3bbe618984c
+msgid ""
+"write to an array element using :ref:`index operator<array-index-label>`"
+msgstr "使用 :ref:`索引运算符<array-index-label>` 写入数组元素"
+
+#: ../../ctc.rst:18 faf752cc76bf430986414e8aec137f1c
+msgid ""
+"function parameters that are declared as ``static const`` [#]_ such as "
+"``size`` in ``reverseBytes(bytes b, static const int size)`` and ``repeat(T "
+"e, static const int size)``"
+msgstr ""
+"声明为 ``static const`` [#]_ 的函数参数，例如``reverseBytes(bytes b, static const int "
+"size)`` 和 ``repeat(T e, static const int size)`` 中的 ``size``"
+
+#: ../../ctc.rst:57 65b892ce81d24dababcc4487a2ab8eb0
+msgid ""
+"Note: the order is important: ``const static`` is not allowed when declaring"
+" a function parameter, but allowed when declaring a property."
+msgstr "注意：顺序很重要：声明函数参数时不允许使用 ``const static``，但在声明属性时允许。"
