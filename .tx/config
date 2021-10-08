@@ -1,0 +1,93 @@
+[main]
+host = https://www.transifex.com
+
+[scrypt-language-reference.contractspot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/contracts.po
+source_file = docs/_build/gettext/contracts.pot
+source_lang = en
+type = PO
+
+
+[scrypt-language-reference.idepot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/ide.po
+source_file = docs/_build/gettext/ide.pot
+source_lang = en
+type = PO
+
+[scrypt-language-reference.looppot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/loop.po
+source_file = docs/_build/gettext/loop.pot
+source_lang = en
+type = PO
+
+[scrypt-language-reference.ackermannpot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/ackermann.po
+source_file = docs/_build/gettext/ackermann.pot
+source_lang = en
+type = PO
+
+[scrypt-language-reference.p2pkhpot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/p2pkh.po
+source_file = docs/_build/gettext/p2pkh.pot
+source_lang = en
+type = PO
+
+[scrypt-language-reference.rpuzzlepot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/rpuzzle.po
+source_file = docs/_build/gettext/rpuzzle.pot
+source_lang = en
+type = PO
+
+[scrypt-language-reference.intropot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/intro.po
+source_file = docs/_build/gettext/intro.pot
+source_lang = en
+type = PO
+
+[scrypt-language-reference.multipartyhashpuzzlespot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/multipartyhashpuzzles.po
+source_file = docs/_build/gettext/multipartyhashpuzzles.pot
+source_lang = en
+type = PO
+
+[scrypt-language-reference.indexpot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/index.po
+source_file = docs/_build/gettext/index.pot
+source_lang = en
+type = PO
+
+[scrypt-language-reference.rabinpot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/rabin.po
+source_file = docs/_build/gettext/rabin.pot
+source_lang = en
+type = PO
+
+[scrypt-language-reference.asmpot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/asm.po
+source_file = docs/_build/gettext/asm.pot
+source_lang = en
+type = PO
+
+[scrypt-language-reference.syntaxpot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/syntax.po
+source_file = docs/_build/gettext/syntax.pot
+source_lang = en
+type = PO
+
+[scrypt-language-reference.functionspot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/functions.po
+source_file = docs/_build/gettext/functions.pot
+source_lang = en
+type = PO
+
+[scrypt-language-reference.statepot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/state.po
+source_file = docs/_build/gettext/state.pot
+source_lang = en
+type = PO
+
+[scrypt-language-reference.ctcpot]
+file_filter = docs/locale/<lang>/LC_MESSAGES/ctc.po
+source_file = docs/_build/gettext/ctc.pot
+source_lang = en
+type = PO

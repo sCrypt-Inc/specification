@@ -2,7 +2,7 @@
 Rabin Signature
 ===============
 
-`Rabin signature <https://medium.com/@xiaohuiliu/access-external-data-from-bitcoin-smart-contracts-2ecdc7448c43>`_ is an alternative form of digital signature to ECDSA used in Bitcoin.
+`Rabin Signature`_ is an alternative form of digital signature to ECDSA used in Bitcoin.
 
 .. code-block:: solidity
 
@@ -24,3 +24,7 @@ Rabin Signature
             return unpack(b + b'00');
         }
     }
+
+
+.. _Rabin Signature: https://medium.com/@xiaohuiliu/access-external-data-from-bitcoin-smart-contracts-2ecdc7448c43
+.. _拉宾签名: https://blog.csdn.net/freedomhero/article/details/107237537

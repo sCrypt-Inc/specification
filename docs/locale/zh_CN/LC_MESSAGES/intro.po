@@ -4,78 +4,69 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Edward Liu <574228@qq.com>, 2020
+# qtom zheng <zhfnjust@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-30 16:42-0700\n"
-"PO-Revision-Date: 2020-10-01 00:49+0000\n"
-"Last-Translator: Edward Liu <574228@qq.com>, 2020\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/scrypt/teams/113667/zh_CN/)\n"
+"POT-Creation-Date: 2021-10-08 12:13+0800\n"
+"PO-Revision-Date: 2021-10-07 06:10+0000\n"
+"Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-# 5dd0990598b24f2d94491c15e7d64ace
-#: ../../intro.rst:3
+#: ../../intro.rst:3 475d64f07ad34345857827c371041892
 msgid "A Simple Smart Contract"
 msgstr "一个简单的智能合约示例"
 
-# 8b743a350465414c89574d7b36a25298
-#: ../../intro.rst:5
+#: ../../intro.rst:5 46612efc903b42d7af5a9f8c4b8a84f1
 msgid ""
 "Contract in sCrypt is conceptually similar to class in Object Oriented "
 "Programming. Each contract provides a template for a certain type of "
 "contracts (e.g., P2PHK or multisig), which can be instantiated into concrete"
 " runnable contract objects."
 msgstr ""
-"sCrypt中的合约（contract）在概念上类似于面向对象编程中的类（class）。每个contract都为特定类型的合约（如：P2PKH或多重签名）提供了模板，可被实例化为可运行的合约对象。"
+"sCrypt 中的合约在概念上类似于面向对象编程中的类。每个合约都为某种类型的合约（例如 P2PHK 或 "
+"multisig）提供了一个模板，可以将其实例化为具体的可运行合约对象。"
 
-# 6909e029442743668033d8e4097bc6f8
-#: ../../intro.rst:23
+#: ../../intro.rst:23 0ec481f9fa4747debaab50864f5cd3cf
 msgid "Constructor"
 msgstr "构造函数（constructor）"
 
-# d64aba271ce9481c9a671ff4772f177b
-#: ../../intro.rst:24
+#: ../../intro.rst:24 8e8468cb12b94f67aa5ae439fd2ee2c0
 msgid ""
 "Each contract has at most one constructor. It is where contract member "
 "variables are initialized. For example, it can initialize the public key "
 "hash of a P2PHK contract, or the hash of a secret in a hash puzzle contract."
 msgstr ""
-"每个合约最多只能有一个构造函数。用于初始化合约的成员变量。例如，初始化P2PKH合约的公钥哈希，或者哈希谜题（hash puzzle）合约的secret"
-" hash。"
+"每个合约最多只能有一个构造函数。用于初始化合约的成员变量。例如，初始化P2PKH合约的公钥哈希，或者哈希谜题（hash puzzle）合约的哈希秘密。"
 
-# 0459755d29624d27a59241a9c6e1c8dd
-#: ../../intro.rst:28
+#: ../../intro.rst:28 63fd20c05e054cae90f1567642e4d92b
 msgid "Default Constructor"
 msgstr "默认构造函数"
 
-# 1dafa2e2b1c9419c81d4d105d6d78a59
-#: ../../intro.rst:29
+#: ../../intro.rst:29 4ee8d3bbea36440aab6419bbc9b677f8
 msgid ""
 "When no constructor is provided, the compiler will automatically generate a "
 "default constructor that initializes every member variable in the order they"
 " are declared. For example,"
-msgstr "当没有构造函数时，编译器会生成一个默认的构造函数，按照声明顺序初始化每一个成员变量。例如："
+msgstr "当没有提供构造函数时，编译器将自动生成一个默认构造函数，它按照声明的顺序初始化每个成员变量。例如，"
 
-# 34559c9b8a1d46c3b7a08c973563af53
-#: ../../intro.rst:42
+#: ../../intro.rst:42 b8f2eb9bc7b343609827016d3c217efc
 msgid "is functionally equivalent to"
 msgstr "在功能上等同于"
 
-# 3eec74be97b448019170deeb5bb91ca7
-#: ../../intro.rst:61
+#: ../../intro.rst:61 7351acd9292c459cb17da2e5a1e2791b
 msgid "require()"
-msgstr "require()"
+msgstr "require() 语句"
 
-# 9e8d92b9d9fe4cef965e374cd877c685
-#: ../../intro.rst:62
+#: ../../intro.rst:62 2b57805c2c9042a2bf452714f10124d9
 msgid ""
 "The ``require()`` function specifies terms/conditions of a contract. It "
 "consumes a boolean condition. If the condition is not met, the contract will"
@@ -83,26 +74,23 @@ msgid ""
 msgstr ""
 "``require()`` 函数指定合约的限制条款/条件。它的参数是一个布尔条件表达式。如果条件表达式的值为假，合约将终止执行并失败。否则，将继续执行。"
 
-# 13e2372e504e41f8ab072d339db3135b
-#: ../../intro.rst:66
+#: ../../intro.rst:66 85f3f77022a841d09b4bd9ff13e5e414
 msgid "Public Function"
-msgstr "公有函数"
+msgstr "公共函数"
 
-# dd1945e41f344cacb6391e791c01ab9f
-#: ../../intro.rst:67
+#: ../../intro.rst:67 2a83b6f28aa24e48baa548e31e8dbaea
 msgid ""
 "Each contract has at least one public function. It is denoted with the "
 "``public`` keyword and does not return any value. The function body "
-"corresponds to locking script and"
-" its arguments unlocking script. It is visible outside "
-"the contract and acts as the entry point into the contract (like ``main`` in"
-" ``C`` and ``Java``)."
+"corresponds to locking script and its arguments unlocking script. It is "
+"visible outside the contract and acts as the entry point into the contract "
+"(like ``main`` in ``C`` and ``Java``)."
 msgstr ""
-"每个合约至少要有一个公有函数。用 ``public`` 关键字修饰，并且不返回任何值。函数体对应锁定脚本，函数参数为解锁脚本。公有函数在合约外部是可见的，是合约的入口（就像 "
-"``C`` 和 ``Java`` 的 ``main`` 函数）。"
+"每个合约至少有一个公共函数。它用 ``public`` "
+"关键字表示并且不返回任何值。函数体对应锁定脚本，函数参数对应解锁脚本。公共函数在合约之外是可见的，并作为合约的入口点（就像 C 和 Java 中的 "
+"main 一样）。"
 
-# 3d91fd25596646abb5d0047e50ac813e
-#: ../../intro.rst:70
+#: ../../intro.rst:70 67509dbfda234d08b3668784979f9c94
 msgid ""
 "A public function must end with a ``require()`` call. ``require()`` can also"
 " appear in other parts of a public function. A contract can only be "
@@ -116,21 +104,27 @@ msgstr ""
 "中的条件全部被满足时，合约才算执行成功。在上面的例子中，只有 ``unlockingScript`` （即 ``y`` ）等于 ``this.x`` "
 "时合约才能执行成功。"
 
-# 2d7fe4f73f39469da0cc6b132acb4d29
-#: ../../intro.rst:74
-msgid "Multiple Public Functions"
-msgstr "多个公有函数"
+#: ../../intro.rst:73 c0d8a1cc3df547b1bc9c54d90eebac21
+msgid ""
+"A public function can be regarded as a mathematical boolean function. ``f`` "
+"is the function body and ``x`` the function arguments. A contract call "
+"succeeds if and only if ``f(x)`` returns true."
+msgstr "公共函数可以被视为布尔数学函数。 ``f`` 是函数体，``x`` 是函数参数。当且仅当 f(x) 返回 true 时，合约调用才会成功。"
 
-# e67ece3c9f1d421aa236a9c7ad3a03c3
-#: ../../intro.rst:75
+#: ../../intro.rstNone ce8dec4931c64aaf8288e6b456442217
+msgid "sCrypt logo"
+msgstr "sCrypt logo"
+
+#: ../../intro.rst:82 9a50be64afbc4e2cb19d4715b88acb47
+msgid "Multiple Public Functions"
+msgstr "多个公共函数"
+
+#: ../../intro.rst:83 d8a98ac4b4e441d78e39bed4762922dd
 msgid ""
 "A contract can have multiple public functions, representing different ways "
 "to fulfill a contract. Only one of the public functions can be called at a "
-"time. In this case, the last operator of ``unlockingScript`` has to be the index "
-"of the public function called, starting from ``0``. For example, if public "
-"function ``larger`` is called, ``unlockingScript`` of ``y 2`` can fulfill the "
-"contract below, in which ``2`` is the public function index."
-msgstr ""
-"一个合约可以有多个公有函数，表示有多种方式可以满足合约。但一次只能调用其中一个。在这种情况下， ``unlockingScript`` "
-"的最后一个操作符必须是被调用的公有函数的索引，公有函数索引按照定义顺序从 ``0`` 开始。举例如下，要调用公有函数 ``larger`` ， "
-"``unlockingScript`` 要用 ``y 2`` ，其中 ``2`` 是被调用的公有函数的索引。"
+"time. In this case, the last operator of ``unlockingScript`` has to be the "
+"index of the public function called, starting from ``0``. For example, if "
+"public function ``larger`` is called, ``unlockingScript`` of ``y 2`` can "
+"fulfill the contract below, in which ``2`` is the public function index."
+msgstr "一个合约可以有多个公共函数，代表解锁合约的不同方式。一次只能调用一个公共函数。"

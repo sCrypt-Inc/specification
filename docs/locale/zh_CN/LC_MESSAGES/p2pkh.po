@@ -4,36 +4,34 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Edward Liu <574228@qq.com>, 2020
+# qtom zheng <zhfnjust@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-30 16:42-0700\n"
-"PO-Revision-Date: 2020-10-01 00:49+0000\n"
-"Last-Translator: Edward Liu <574228@qq.com>, 2020\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/scrypt/teams/113667/zh_CN/)\n"
+"POT-Creation-Date: 2021-10-07 22:30+0800\n"
+"PO-Revision-Date: 2021-10-07 06:10+0000\n"
+"Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-# 26cc3d9dc0784d8b922a77736348a475
-#: ../../p2pkh.rst:3
+#: ../../p2pkh.rst:3 38dd4323c3a94d1c875923e5355349e3
 msgid "Pay to Public Key Hash"
 msgstr "支付到公钥哈希（Pay to Public Key Hash）"
 
-# d27054f75fdc457f903bab7f76b291d4
-#: ../../p2pkh.rst:4
+#: ../../p2pkh.rst:4 e6aa23d0903a4373b0afaf5707f04dd8
 msgid ""
 "Pay-to-PubKey-Hash (`P2PKH <https://learnmeabitcoin.com/guide/p2pkh>`_) "
 "contract is used to send bitcoins to a bitcoin address. It is the most "
 "common contract on the Bitcoin network. Such contracts are unlocked by the "
 "public key and a signature created by the corresponding private key."
 msgstr ""
-"支付到公钥哈希（Pay-to-PubKey-Hash） （`P2PKH "
-"<https://learnmeabitcoin.com/guide/p2pkh>`_） "
+"支付到公钥哈希（Pay-to-PubKey-Hash） (`P2PKH "
+"<https://learnmeabitcoin.com/guide/p2pkh>`_) "
 "合约被用来把比特币发送到比特币地址。是比特币网络中最常见的合约。这种合约可以用两个参数来解锁：公钥和对应私钥创建的签名。"

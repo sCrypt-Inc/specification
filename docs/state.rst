@@ -6,7 +6,7 @@ Bitcoin/sCrypt contract uses Unspent Transaction Output (UTXO) model: a contract
 When a UTXO is spent (i.e., an sCrypt contract public function is called successfully), the contract is terminated.
 For a contract to keep state and able to be called multiple times while carrying the mutable state, these steps have to be followed.
 
-1. state decorator
+State Decorator
 ==================
 Declare any property that is part of the state with a decorator ``@state``.
 The state property can be used the same way as a regular property.
@@ -22,7 +22,7 @@ The state property can be used the same way as a regular property.
         }
     }
 
-2. Propogate the state
+Propogate the State
 ======================
 A contract can keep state across chained transactions by storing it in the locking script.
 In the following example, a contract goes from ``state0`` to ``state1``, and then to ``state2``.
