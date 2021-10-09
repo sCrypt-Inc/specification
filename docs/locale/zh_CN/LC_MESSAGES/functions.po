@@ -73,7 +73,7 @@ msgstr ""
 
 #: ../../functions.rst:68 0a2c7977c0764e79aa523909df84c296
 msgid "``return``"
-msgstr "``return``"
+msgstr "``return`` 语句"
 
 #: ../../functions.rst:69 3e1efc037760406b8ed3efc6e7f83c91
 msgid ""
@@ -188,9 +188,9 @@ msgid ""
 "sign (``0`` for positive, ``1`` for negative). ``int`` can be converted to "
 "``bytes`` with ``pack``."
 msgstr ""
-"``bytes`` 可以使用函数 ``unpack`` 转换为``int`` 。使用采用小端格式的 `符号-值 表示法 "
-"<https://www.tutorialspoint.com/sign-magnitude-notation> "
-"`_，其中最高有效位表示符号（``0``表示正，``1``表示负）。 ``int`` 可以使用 ``pack`` 转换为``bytes``。"
+"``bytes`` 可以使用函数 ``unpack`` 转换为 ``int`` 。使用采用小端格式的 `符号-值 表示法 "
+"<https://www.tutorialspoint.com/sign-magnitude-notation>`_，其中最高有效位表示符号（ "
+"``0`` 表示正， ``1`` 表示负）。 ``int`` 可以使用 ``pack`` 转换为 ``bytes``。"
 
 #: ../../functions.rst:148 faabf0ccebdf4aa6bf760dcc1e2d7f2f
 msgid "``bytes num2bin(int num, int size)``"
@@ -212,12 +212,12 @@ msgid ""
 " ``start`` (inclusive) to ``end`` (exclusive). ``start`` is ``0`` if "
 "omitted, ``end`` is length of array if omitted."
 msgstr ""
-"**切片操作符** - ``b[start:end]`` 返回 ``b`` 的子数组，从索引 ``start``（包含）到 ``end``（不包含）。 "
-"``start`` 如果省略则为 ``0`` ， ``end`` 如果省略则为数组的长度。"
+"**切片操作符** - ``b[start:end]`` 返回 ``b`` 的子数组，从索引 ``start`` （包含）到 ``end`` "
+"（不包含）。 ``start`` 如果省略则为 ``0`` ， ``end`` 如果省略则为数组的长度。"
 
 #: ../../functions.rst:169 c3c44a55274c4528ab69b283a18baf7b
 msgid "**Concatenation**"
-msgstr "**串联**"
+msgstr "**拼接**"
 
 #: ../../functions.rst:175 e0a07f5a4b564b548969810852fe5b37
 msgid "``reverseBytes(bytes b, static const int size)``"

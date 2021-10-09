@@ -313,8 +313,8 @@ msgid ""
 "signature. Note there is no ``;`` at the end."
 msgstr ""
 "一行中三个或更多 ``*`` 表示插入一个 `OP_CODESEPARATOR "
-"<https://en.bitcoin.it/wiki/OP_CHECKSIG#How_it_works> "
-"`_。它用于将其之前的内容（包括其自身）排除在签名的一部分之外。注意末尾没有 ``;``。"
+"<https://en.bitcoin.it/wiki/OP_CHECKSIG#How_it_works>`_。它用于将其之前的内容（包括其自身）排除在签名的一部分之外。注意末尾没有"
+" ``;``。"
 
 #: ../../syntax.rst:325 c4448f96c24342faa5d354f591d70eda
 msgid "Access Modifiers"

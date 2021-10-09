@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-07 22:30+0800\n"
+"POT-Creation-Date: 2021-10-08 12:13+0800\n"
 "PO-Revision-Date: 2021-10-07 06:10+0000\n"
 "Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
@@ -21,31 +21,31 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../../loop.rst:3 986685fcfc1749ff84f3d2ebb75b6bb4
+#: ../../loop.rst:3 c60c6c86379e486e85010a898cdd8f4c
 msgid "Loop"
 msgstr "循环"
 
-#: ../../loop.rst:10 1ee647ebadaf4287b823960da120c9d7
+#: ../../loop.rst:10 be86973054c4442d89ed4342b448d00d
 msgid ""
 "Bitcoin script does not provide looping constructs natively for security "
 "reasons. sCrypt achieves looping by repeating the loop body ``maxLoopCount``"
 " times. For example, the loop"
 msgstr "出于安全原因，比特币脚本本身不提供循环结构。 sCrypt 通过重复循环体 ``maxLoopCount`` 次来实现循环。例如，循环"
 
-#: ../../loop.rst:20 11a6cdfa329d4ba695223e26fbea24c0
+#: ../../loop.rst:20 3f1f3ebf4e3e46a09ee6a9e8e27bfe0f
 msgid "is equivalently unrolled to"
 msgstr "等效地展开为"
 
-#: ../../loop.rst:36 443ea9186a8743058abf984b4f5dad8f
+#: ../../loop.rst:36 eee6576194694bcda3444f16bbe5b706
 msgid ""
 "Because `loop unrolling <https://en.wikipedia.org/wiki/Loop_unrolling>`_ is "
 "done at compile time, the compiler must know ``maxLoopCount``. That is, it "
 "must be a :ref:`compile time constant<ctc-label>`."
 msgstr ""
-"因为`循环展开 <https://en.wikipedia.org/wiki/Loop_unrolling>`_ "
-"是在编译时完成的，编译器必须知道``maxLoopCount``。也就是说，它必须是一个 :ref:`编译时常量 <ctc-label>`。"
+"因为 `循环展开 <https://en.wikipedia.org/wiki/Loop_unrolling>`_ 是在编译时完成的，编译器必须知道 "
+"``maxLoopCount``。也就是说，它必须是一个 :ref:`编译时常量 <ctc-label>`。"
 
-#: ../../loop.rst:39 3793e55162674f2082792ea8aa64a1ef
+#: ../../loop.rst:39 14e5014941fc41e58f2f2ae53b1e64b4
 msgid ""
 "If ``maxLoopCount`` is set too small, the contract may not work correctly. "
 "If ``maxLoopCount`` is set too large, the resulting script is bloated "
@@ -60,21 +60,21 @@ msgstr ""
 "``maxLoopCount``。一种方法是模拟链下合约并找到循环次数。另一种方法是利用循环本身的特性。例如，如果循环遍历``sha256`` "
 "散列的每一位，``maxLoopCount`` 就是 ``256``。"
 
-#: ../../loop.rst:46 5c82b1ca19744676a87305cba0b9874c
+#: ../../loop.rst:46 951a7dec60db452da13e83b1932f7fbc
 msgid "Induction variable"
 msgstr "归纳变量 (Induction Variable)"
 
-#: ../../loop.rst:47 057fdc9e1942419cb56dc64a601daddc
+#: ../../loop.rst:47 3ed59c66d5224b31a8b11c228567d312
 msgid ""
 "`Induction variable <https://en.wikipedia.org/wiki/Induction_variable>`_ can"
 " be defined when loop index is needed."
 msgstr ""
 "`归纳变量 <https://en.wikipedia.org/wiki/Induction_variable>`_ 可以在需要循环索引时定义。"
 
-#: ../../loop.rst:62 87e0cdd9a0cd4bcfb7a441288e621f04
+#: ../../loop.rst:62 79240b139d37449896d81ac40a52a309
 msgid "Conditional loop"
 msgstr "条件循环"
 
-#: ../../loop.rst:73 b8554f420278429cb186f6e75cf540b7
+#: ../../loop.rst:73 06d7a9d40d40408794564856b56665e4
 msgid "break"
 msgstr "跳出循环"

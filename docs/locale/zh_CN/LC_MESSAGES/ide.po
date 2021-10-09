@@ -45,8 +45,8 @@ msgid ""
 msgstr ""
 "桌面版本是一个 Visual Studio Code 插件 `Visual Studio Code Extension "
 "<https://marketplace.visualstudio.com/items?itemName=bsv-"
-"scrypt.sCrypt>`_。通过在扩展市场中搜索``sCrypt`` 可以很容易地找到它。此 IDE 具有高级语言功能，适用于专业开发。你可以以 "
-"`样板项目 <https://github.com/scrypt-sv/boilerplate>`_ 为基础开始构建你自己的sCrypt项目。"
+"scrypt.sCrypt>`_。通过在扩展市场中搜索 ``sCrypt`` 可以很容易地找到它。此 IDE 具有高级语言功能，适用于专业开发。你可以以"
+" `样板项目 <https://github.com/scrypt-sv/boilerplate>`_ 为基础开始构建你自己的sCrypt项目。"
 
 #: ../../ide.rst:14 23ea08233293479886f800d4d6ca1867
 msgid "Web IDE"

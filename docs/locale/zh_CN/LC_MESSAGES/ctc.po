@@ -70,7 +70,7 @@ msgid ""
 "``size`` in ``reverseBytes(bytes b, static const int size)`` and ``repeat(T "
 "e, static const int size)``"
 msgstr ""
-"声明为 ``static const`` [#]_ 的函数参数，例如``reverseBytes(bytes b, static const int "
+"声明为 ``static const`` [#]_ 的函数参数，例如 ``reverseBytes(bytes b, static const int "
 "size)`` 和 ``repeat(T e, static const int size)`` 中的 ``size``"
 
 #: ../../ctc.rst:57 65b892ce81d24dababcc4487a2ab8eb0

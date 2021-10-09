@@ -39,8 +39,8 @@ msgid ""
 msgstr ""
 "脚本是一种低级语言，可以看作是 `比特币虚拟机 <https://medium.com/@xiaohuiliu/introduction-to-"
 "bitcoin-smart-contracts-9c0ea37dc757>`_ "
-"的汇编语言。通常，开发人员不用直接使用它，而是用像sCrypt这样的高级语言。但有些情况下用脚本语言更合适。例如，直接写出更优化的脚本，比用sCrypt生成的更高效。或者脚本是用外部工具（如`MiniForth"
-" "
+"的汇编语言。通常，开发人员不用直接使用它，而是用像sCrypt这样的高级语言。但有些情况下用脚本语言更合适。例如，直接写出更优化的脚本，比用sCrypt生成的更高效。或者脚本是用外部工具（如"
+" `MiniForth "
 "<https://powping.com/posts/95e53a7305ad9d333d072575946d0cfd0d6321f40af40f9c66c70955ada94e58>`_）生成的，需要集成到sCrypt中。"
 
 #: ../../asm.rst:9 ccbc29af4fa54a85a87ccf41eadd9e3c
