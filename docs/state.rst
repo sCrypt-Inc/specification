@@ -46,8 +46,8 @@ The following is an example contract that records the number of times ``mutate()
         @state
         int counter;
 
-        constructor() {
-            this.counter = 0;
+        constructor(int counter) {
+            this.counter = counter;
         }
         
         public function mutate(SigHashPreimage txPreimage, int amount) {
