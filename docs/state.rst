@@ -22,7 +22,7 @@ The state property can be used the same way as a regular property.
         }
     }
 
-Propogate the State
+Propagate the State
 ======================
 A contract can keep state across chained transactions by storing it in the locking script.
 In the following example, a contract goes from ``state0`` to ``state1``, and then to ``state2``.
@@ -50,7 +50,7 @@ The following is an example contract that records the number of times ``mutate()
             this.counter = counter;
         }
         
-        public function mutate(SigHashPreimage txPreimage, int amount) {
+        public function increment(SigHashPreimage txPreimage, int amount) {
             require(Tx.checkPreimage(txPreimage));
     
             // mutate state
