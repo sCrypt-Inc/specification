@@ -126,7 +126,15 @@ Hashing
 Signature Verification
 ----------------------
 * ``bool checkSig(Sig sig, PubKey pk)``
-* ``bool checkMultiSig(Sig[] sigs, PubKey[] pks)``
+  
+  Returns true if the signature matches the public key. Returns false if the signature is an empty byte array.
+  Otherwise, the entire contract fails immediately, due to the `NULLFAIL rule <https://github.com/bitcoin/bips/blob/master/bip-0146.mediawiki#NULLFAIL>`_.
+
+* ``bool checkMultiSig(Sig[M] sigs, PubKey[N] pks)``
+  
+  Returns true if and only M signatures match M out of N public keys. M and N can be any number as long as M <= N.
+  Returns false if all signatures are an empty byte array.
+  Otherwise, the entire contract fails immediately.
 
 ``bytes`` Operations
 --------------------
