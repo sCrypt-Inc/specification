@@ -153,6 +153,69 @@ As an example, contract ``CheckLockTimeVerify`` ensures coins are timelocked and
 More details can be found in this article `OP_PUSH_TX`_.
 To customize ECDSA signing, such as choosing ephemeral key, there is a more general version called ``Tx.checkPreimageAdvanced()``. see `Advanced OP_PUSH_TX`_.
 
+Library ``HashedMap``
+-----------------------
+
+The `HashedMap` library provides a Map-like data structure, in which unique keys and their corresponding values are stored after applying hash function `sha256` on both sides. Unlike other languages, most of the interfaces of `HashedMap` require not only the `key` value, but also the `keyIndex` value when accessing specific data. (The `keyIndex` is calculated according to the hash value of all `key` in increasing order.)
+
+**Constructor**
+
+* ``HashedMap(bytes data)``
+  Instantiate an instance of ``HashedMap`` with the initial `data` as its storage.
+
+    .. code-block:: solidity
+
+        HashedMap<bytes, int> map = new HashedMap<bytes, int>(b'');
+        HashedMap<int, bool> map1 = new HashedMap(b'');
+        auto map2 = new HashedMap<int, int>(b'');
+
+**Instance methods**
+
+* ``set(K key, V val, int keyIndex)``
+  Insert or update a (`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` if succecced, else returns `false`.
+
+    .. code-block:: solidity
+
+        require(map.set(b'1234', 1, 0)); // insert
+        require(map.set(b'1234', 2, 0)); // update
+
+* ``canGet(K key, V val, int keyIndex)``
+  Check whether can get a (`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` if succecced, else returns `false`.
+
+    .. code-block:: solidity
+
+        require(map.canGet(b'1234', 2, 0));
+
+* ``has(K key, int keyIndex)``
+  Insert or update a (`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` if succecced, else returns `false`.
+
+    .. code-block:: solidity
+
+        require(map.has(b'1234', 0));
+
+* ``delete(K key, int keyIndex)``
+  Delete the entry with the `key` and the key index given by `keyIndex`. Returns `true` if succecced, else returns `false`.
+
+    .. code-block:: solidity
+
+        require(map.delete(b'1234', 0));
+
+* ``size()``
+  Returns the size of the instance's entires, i.e. the count of the (`key`, `val`) pairs it contains.
+
+    .. code-block:: solidity
+
+        int s = map.size();
+
+
+* ``data()``
+  Returns the internal data storage of the instance.
+
+    .. code-block:: solidity
+
+        bytes b = map.data();
+
+
 Full List
 ---------
 
@@ -179,6 +242,15 @@ Full List
     * - Tx
       - None
       - checkPreimage(bytes sighashPreimage)
+
+    * - HashedMap<K, V>
+      - bytes data
+      - set(K key, V val, int keyIndex)
+        canGet(K key, V val, int keyIndex)
+        delete(K key, int keyIndex)
+        has(K key, int keyIndex)
+        size()
+        data()
 
 .. [#] ``X`` is hashing function and can be Ripemd160/Sha1/Sha256/Hash160
 .. [#] ``Y`` is hashing function return type and can be Ripemd160/Sha1/Sha256/Ripemd160
