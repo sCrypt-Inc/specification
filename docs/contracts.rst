@@ -156,64 +156,70 @@ To customize ECDSA signing, such as choosing ephemeral key, there is a more gene
 Library ``HashedMap``
 -----------------------
 
-The `HashedMap` library provides a Map-like data structure, in which unique keys and their corresponding values are stored after applying hash function `sha256` on both sides. Unlike other languages, most of the interfaces of `HashedMap` require not only the `key` value, but also the `keyIndex` value when accessing specific data. (The `keyIndex` is calculated according to the hash value of all `key` in increasing order.)
+The `HashedMap` library provides a map/hashtable-like data structure.
+Unique keys and their corresponding values are hashed before being stored.
+Most functions of `HashedMap` require not only a key, but also its index, ranked by key hash in ascending order.
 
 **Constructor**
 
 * ``HashedMap(bytes data)``
-  Instantiate an instance of ``HashedMap`` with the initial `data` as its storage.
+  Create an instance of ``HashedMap`` with some initial data.
 
     .. code-block:: solidity
 
         HashedMap<bytes, int> map = new HashedMap<bytes, int>(b'');
+        // key and value types can be omitted
         HashedMap<int, bool> map1 = new HashedMap(b'');
+        // key and value types cannot be omitted since they cannot be inferred
         auto map2 = new HashedMap<int, int>(b'');
 
 **Instance methods**
 
-* ``set(K key, V val, int keyIndex)``
-  Insert or update a (`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` if succecced, else returns `false`.
+* ``set(K key, V val, int keyIndex) : bool``
+  Insert or update a (`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` if successful; otherwise returns `false`.
 
     .. code-block:: solidity
 
         require(map.set(b'1234', 1, 0)); // insert
-        require(map.set(b'1234', 2, 0)); // update
+        require(map.set(b'1234', 2, 0)); // update it
 
-* ``canGet(K key, V val, int keyIndex)``
-  Check whether can get a (`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` if succecced, else returns `false`.
+* ``canGet(K key, V val, int keyIndex): bool``
+  Check whether we can get a (`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` if successful; otherwise returns `false`.
 
     .. code-block:: solidity
 
         require(map.canGet(b'1234', 2, 0));
 
-* ``has(K key, int keyIndex)``
-  Insert or update a (`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` if succecced, else returns `false`.
+* ``has(K key, int keyIndex) : bool``
+  Check whether `key` exists in the map and its index is `keyIndex`. Returns `true` if both conditions are met; otherwise returns `false`.
 
     .. code-block:: solidity
 
         require(map.has(b'1234', 0));
 
-* ``delete(K key, int keyIndex)``
-  Delete the entry with the `key` and the key index given by `keyIndex`. Returns `true` if succecced, else returns `false`.
+* ``delete(K key, int keyIndex) : bool``
+  Delete the entry with given `key` and the key index is `keyIndex`. Returns `true` if successful; otherwise returns `false`.
 
     .. code-block:: solidity
 
         require(map.delete(b'1234', 0));
 
-* ``size()``
-  Returns the size of the instance's entires, i.e. the count of the (`key`, `val`) pairs it contains.
+* ``size() : int``
+  Returns the size of map, i.e. the number of the keys it contains.
 
     .. code-block:: solidity
 
         int s = map.size();
 
 
-* ``data()``
-  Returns the internal data storage of the instance.
+* ``data() : bytes``
+  Returns the internal data representation of the map.
 
     .. code-block:: solidity
 
         bytes b = map.data();
+        // this creates a deep copy of the map
+        HashedMap<int, bool> mapCopy = new HashedMap(b);
 
 
 Full List
