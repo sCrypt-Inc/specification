@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-09 11:17+0800\n"
+"POT-Creation-Date: 2021-11-22 08:29+0800\n"
 "PO-Revision-Date: 2021-10-07 06:10+0000\n"
 "Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
@@ -176,75 +176,166 @@ msgstr ""
 "更多细节可以在这篇文章 `OP_PUSH_TX 技术`_ 中找到。要自定义 ECDSA 签名，例如选择临时密钥，有一个更通用的版本，称为 "
 "``Tx.checkPreimageAdvanced()`` 。请参阅 `高级 OP_PUSH_TX 技术`_。"
 
-#: ../../contracts.rst:157 f1531513074247cc87f1ff92ced9c248
+#: ../../contracts.rst:157 159ed79c4e984e26b14a738f51677411
+msgid "Library ``HashedMap``"
+msgstr "``HashedMap`` 库"
+
+#: ../../contracts.rst:159 ea592b8df43548e1b3558e99fd3cf220
+msgid ""
+"The `HashedMap` library provides a map/hashtable-like data structure. Unique"
+" keys and their corresponding values are hashed before being stored. Most "
+"functions of `HashedMap` require not only a key, but also its index, ranked "
+"by key hash in ascending order."
+msgstr ""
+"`HashedMap` 库提供了一种类似于哈希表的数据结构。唯一键和它们对应的值在存储之前被散列。 `HashedMap` "
+"的大多数函数不仅需要一个键，还需要它的索引，按键的哈希升序排列。"
+
+#: ../../contracts.rst:163 1c404092032e4a89a09aeb899841b3c6
+msgid "**Constructor**"
+msgstr "**构造函数**"
+
+#: ../../contracts.rst:165 61dba7e8b0b84439b5a4b75ddb269623
+msgid ""
+"``HashedMap(bytes data)`` Create an instance of ``HashedMap`` with some "
+"initial data."
+msgstr "``HashedMap(bytes data)`` 使用一些初始数据创建一个 ``HashedMap`` 实例。"
+
+#: ../../contracts.rst:176 53d63e8f03844b7a9d22d29baa820e4c
+msgid "**Instance methods**"
+msgstr "**实例方法**"
+
+#: ../../contracts.rst:178 5a1c6582f1ab4f7ebabbba38d215ef52
+msgid ""
+"``set(K key, V val, int keyIndex) : bool`` Insert or update a (`key`, `val`)"
+" pair with the key index given by `keyIndex`. Returns `true` if successful; "
+"otherwise returns `false`."
+msgstr ""
+"``set(K key, V val, int keyIndex) : bool`` 使用给出的键索引 `keyIndex` 插入或更新 (`key`,"
+" `val`) 对。如果成功则返回  `true` ；否则返回 `false` 。"
+
+#: ../../contracts.rst:186 84067550dec0414ca47403837ce276d6
+msgid ""
+"``canGet(K key, V val, int keyIndex): bool`` Check whether we can get a "
+"(`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` "
+"if successful; otherwise returns `false`."
+msgstr ""
+"``canGet(K key, V val, int keyIndex): bool``  通过键索引 `keyIndex` 检查我们是否可以得到一个 "
+"(`key`, `val`) 对。如果成功则返回 `true` ；否则返回 `false`。"
+
+#: ../../contracts.rst:193 d506e5928f5341cb9f852bf90673e2a1
+msgid ""
+"``has(K key, int keyIndex) : bool`` Check whether `key` exists in the map "
+"and its index is `keyIndex`. Returns `true` if both conditions are met; "
+"otherwise returns `false`."
+msgstr ""
+"``has(K key, int keyIndex) : bool`` 检查 HashedMap 中是否存在 `key`，其索引为 "
+"`keyIndex`。如果两个条件都满足，则返回 `true`；否则返回 `false`。"
+
+#: ../../contracts.rst:200 516472437d144395ab12eeca47a9ea09
+msgid ""
+"``delete(K key, int keyIndex) : bool`` Delete the entry with given `key` and"
+" the key index is `keyIndex`. Returns `true` if successful; otherwise "
+"returns `false`."
+msgstr ""
+"``delete(K key, int keyIndex) : bool`` 删除给定 `key` 的条目，并且键索引是 `keyIndex` "
+"。如果成功则返回`true`；否则返回 `false`。"
+
+#: ../../contracts.rst:207 d96e445186ce4e338ea3d105c37c82a9
+msgid ""
+"``size() : int`` Returns the size of map, i.e. the number of the keys it "
+"contains."
+msgstr "``size() : int`` 返回 HashedMap 的大小，比如它包含的键的数量。"
+
+#: ../../contracts.rst:215 21d9c29ff361427088e170a9bbef1fba
+msgid ""
+"``data() : bytes`` Returns the internal data representation of the map."
+msgstr "``data() : bytes`` 返回 HashedMap 的序列化数据表示。"
+
+#: ../../contracts.rst:226 f1531513074247cc87f1ff92ced9c248
 msgid "Full List"
 msgstr "完整列表"
 
-#: ../../contracts.rst:163 9509bbd63ad64b8b90f60f6ef3b65737
+#: ../../contracts.rst:232 9509bbd63ad64b8b90f60f6ef3b65737
 msgid "Contract"
 msgstr "合约"
 
-#: ../../contracts.rst:164 1c404092032e4a89a09aeb899841b3c6
+#: ../../contracts.rst:233 1c404092032e4a89a09aeb899841b3c6
 msgid "Constructor parameters"
 msgstr "构造函数参数"
 
-#: ../../contracts.rst:165 2ab447f59b874d65b7fc6f6bdef0da67
+#: ../../contracts.rst:234 2ab447f59b874d65b7fc6f6bdef0da67
 msgid "Public function"
 msgstr "公共函数"
 
-#: ../../contracts.rst:167 da54e077bd6c46fd93949e6d496a69c3
+#: ../../contracts.rst:236 da54e077bd6c46fd93949e6d496a69c3
 msgid "P2PKH"
 msgstr "P2PKH"
 
-#: ../../contracts.rst:168 c806a07acb244e6d8dc02be17d1e7d3e
+#: ../../contracts.rst:237 c806a07acb244e6d8dc02be17d1e7d3e
 msgid "Ripemd160 pubKeyHash"
 msgstr "Ripemd160 pubKeyHash"
 
-#: ../../contracts.rst:169 bb2c0cdd4b074474b7bb3e97493acfad
+#: ../../contracts.rst:238 bb2c0cdd4b074474b7bb3e97493acfad
 msgid "spend(Sig sig, PubKey pubKey)"
 msgstr "spend(Sig sig, PubKey pubKey)"
 
-#: ../../contracts.rst:171 ba18b60de41e403cb31ae5e48ebfa00f
+#: ../../contracts.rst:240 ba18b60de41e403cb31ae5e48ebfa00f
 msgid "P2PK"
 msgstr "P2PK"
 
-#: ../../contracts.rst:172 f78899d539eb4425be483659352954e7
+#: ../../contracts.rst:241 f78899d539eb4425be483659352954e7
 msgid "PubKey pubKey"
 msgstr "PubKey pubKey"
 
-#: ../../contracts.rst:173 8caae54f32a64dd7b0d4358f94496d53
+#: ../../contracts.rst:242 8caae54f32a64dd7b0d4358f94496d53
 msgid "spend(Sig sig)"
 msgstr "spend(Sig sig)"
 
-#: ../../contracts.rst:175 418193a79b0348f5bc4fda04573b12a3
+#: ../../contracts.rst:244 418193a79b0348f5bc4fda04573b12a3
 msgid "HashPuzzleX [#]_"
 msgstr "HashPuzzleX [#]_"
 
-#: ../../contracts.rst:176 9737cef6d28d437a8157ae5aa7be84c0
+#: ../../contracts.rst:245 9737cef6d28d437a8157ae5aa7be84c0
 msgid "Y [#]_ hash"
 msgstr "Y [#]_ hash"
 
-#: ../../contracts.rst:177 20966d76f04d40429febd711d4cdfadf
+#: ../../contracts.rst:246 20966d76f04d40429febd711d4cdfadf
 msgid "spend(bytes preimage)"
 msgstr "spend(bytes preimage)"
 
-#: ../../contracts.rst:179 a6995085c8d847fcaa277f2d87c8e008
+#: ../../contracts.rst:248 a6995085c8d847fcaa277f2d87c8e008
 msgid "Tx"
 msgstr "Tx"
 
-#: ../../contracts.rst:180 c66b62308ad1476db8793bfe9e9146ce
+#: ../../contracts.rst:249 c66b62308ad1476db8793bfe9e9146ce
 msgid "None"
 msgstr "None"
 
-#: ../../contracts.rst:181 167e552e074a46f4b0c0f4b6e3c78349
+#: ../../contracts.rst:250 167e552e074a46f4b0c0f4b6e3c78349
 msgid "checkPreimage(bytes sighashPreimage)"
 msgstr "checkPreimage(bytes sighashPreimage)"
 
-#: ../../contracts.rst:183 a0587126d99c4c489485b762d6a7646e
+#: ../../contracts.rst:252 55cf5fdf26734d4ba761d3992dc29e75
+msgid "HashedMap<K, V>"
+msgstr "HashedMap<K, V>"
+
+#: ../../contracts.rst:253 4cf3a5efbed14713a88e8a9fb394a5c7
+msgid "bytes data"
+msgstr "bytes data"
+
+#: ../../contracts.rst:254 a380a7629fab4e799c60564ed526d05a
+msgid ""
+"set(K key, V val, int keyIndex) canGet(K key, V val, int keyIndex) delete(K "
+"key, int keyIndex) has(K key, int keyIndex) size() data()"
+msgstr ""
+"set(K key, V val, int keyIndex) canGet(K key, V val, int keyIndex) delete(K "
+"key, int keyIndex) has(K key, int keyIndex) size() data()"
+
+#: ../../contracts.rst:261 a0587126d99c4c489485b762d6a7646e
 msgid "``X`` is hashing function and can be Ripemd160/Sha1/Sha256/Hash160"
 msgstr "``X`` 是散列函数，可以是 ``Ripemd160/Sha1/Sha256/Hash160``"
 
-#: ../../contracts.rst:184 82acf4fc588a4c76b1b0c3321536b066
+#: ../../contracts.rst:262 82acf4fc588a4c76b1b0c3321536b066
 msgid ""
 "``Y`` is hashing function return type and can be "
 "Ripemd160/Sha1/Sha256/Ripemd160"

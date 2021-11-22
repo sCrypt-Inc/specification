@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-08 12:13+0800\n"
+"POT-Creation-Date: 2021-11-22 08:29+0800\n"
 "PO-Revision-Date: 2021-10-07 06:10+0000\n"
 "Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
@@ -48,8 +48,8 @@ msgid ""
 msgstr "使用装饰器 ``@state`` 声明属于状态的任何属性。 状态属性可以像普通属性一样使用。"
 
 #: ../../state.rst:26 ff89e8dde1e14d42ad02681b0bae7b78
-msgid "Propogate the State"
-msgstr "传递状态"
+msgid "Propagate the State"
+msgstr "传播状态"
 
 #: ../../state.rst:27 8fc2b39a16b04bd1a6adc782debdc58a
 msgid ""
@@ -62,8 +62,8 @@ msgstr ""
 "``state2``。交易 ``tx1`` 的输入花费了 在 ``tx0`` 中的 UTXO，而 ``tx2`` 花费了 ``tx1`` 的 UTXO。"
 
 #: ../../state.rstNone ccc5a434c6e241a594c554ec13f11a88
-msgid "保持状态"
-msgstr ""
+msgid "keep state"
+msgstr "保持状态"
 
 #: ../../state.rst:36 6228b2299d874f6e8f459afc7e62a7c6
 msgid ""
