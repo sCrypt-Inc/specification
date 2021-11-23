@@ -168,18 +168,19 @@ Type aliases create a new name for a type. It does not actually create a new typ
         type Age = int;
         type Coordinate = int[2];
 
-Generic Types
--------------
-A generic type is a special type that is parameterized over types, it allows a library to work over a variety of types rather than a single one. Users can consume these libraries and use their own types.
+Generics/Generic Types
+----------------------
+A generic type is a parameterized type. It allows a library to work over a variety of types rather than a single one.
+Users can consume these libraries and use their own concrete types.
 
 * **Declare Generic Types**
 
-Generic types can only be declared in a library, and used within the library's scope. 
+Generic types can only be declared at library level and used within the library's scope. 
 
     .. code-block:: solidity
 
-        // declare two generic types: K & V
-        library HashedMap<K,V> {
+        // declare two generic type variables: K & V
+        library HashedMap<K, V> {
 
           // use them as function parameters' type
           function set(K k, V v, int idx) { 

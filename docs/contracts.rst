@@ -225,6 +225,7 @@ Library ``HashedSet``
 -----------------------
 
 The `HashedSet` library provides a set-like data structure.
+It can be regarded as a special `HashedMap` where a value is the same with its key and is thus omitted.
 Unique values are hashed before being stored.
 Most functions of `HashedSet` require an index, ranked by the value's sha256 hash in ascending order.
 
