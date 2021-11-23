@@ -221,6 +221,71 @@ Most functions of `HashedMap` require not only a key, but also its index, ranked
         // this creates a deep copy of the map
         HashedMap<int, bool> mapCopy = new HashedMap(b);
 
+Library ``HashedSet``
+-----------------------
+
+The `HashedSet` library provides a set-like data structure.
+Unique values are hashed before being stored.
+Most functions of `HashedSet` require an index, ranked by the value's sha256 hash in ascending order.
+
+**Constructor**
+
+* ``HashedSet(bytes data)``
+  Create an instance of ``HashedSet`` with some initial data.
+
+    .. code-block:: solidity
+
+        HashedSet<bytes, int> set = new HashedSet<bytes, int>(b'');
+        // key and value types can be omitted
+        HashedSet<int, bool> set1 = new HashedSet(b'');
+        // key and value types cannot be omitted since they cannot be inferred
+        auto set2 = new HashedSet<int, int>(b'');
+
+**Instance methods**
+
+* ``add(V val, int index) : bool``
+  Add `val` to set with the key index given by `index`. Returns `true` if successful; otherwise returns `false`.
+
+    .. code-block:: solidity
+
+        require(set.add(b'1234', 0));
+
+* ``has(V val, int index) : bool``
+  Check whether `val` exists in the set and its index is `index`. Returns `true` if both conditions are met; otherwise returns `false`.
+
+    .. code-block:: solidity
+
+        require(set.has(b'1234', 0));
+
+* ``delete(V val, int index) : bool``
+  Delete the entry with given `val` and the index is `index`. Returns `true` if successful; otherwise returns `false`.
+
+    .. code-block:: solidity
+
+        require(set.delete(b'1234', 0));
+
+* ``clear() : bool``
+  Delete all entries of the set.
+
+    .. code-block:: solidity
+
+        set.clear();
+
+* ``size() : int``
+  Returns the size of set, i.e. the number of the entries it contains.
+
+    .. code-block:: solidity
+
+        int s = set.size();
+
+* ``data() : bytes``
+  Returns the internal data representation of the set.
+
+    .. code-block:: solidity
+
+        bytes b = set.data();
+        // this creates a deep copy of the set
+        HashedSet<int, bool> setCopy = new HashedSet(b);
 
 Full List
 ---------
@@ -251,12 +316,21 @@ Full List
 
     * - HashedMap<K, V>
       - bytes data
-      - set(K key, V val, int keyIndex)
-        canGet(K key, V val, int keyIndex)
-        delete(K key, int keyIndex)
-        has(K key, int keyIndex)
-        size()
-        data()
+      - | set(K key, V val, int keyIndex)
+        | canGet(K key, V val, int keyIndex)
+        | delete(K key, int keyIndex)
+        | has(K key, int keyIndex)
+        | size()
+        | data()
+
+    * - HashedSet<V>
+      - bytes data
+      - | add(V val, int index)
+        | delete(V val, int index)
+        | has(V val, int index)
+        | clear()
+        | size()
+        | data()
 
 .. [#] ``X`` is hashing function and can be Ripemd160/Sha1/Sha256/Hash160
 .. [#] ``Y`` is hashing function return type and can be Ripemd160/Sha1/Sha256/Ripemd160
