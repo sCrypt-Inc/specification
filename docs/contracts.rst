@@ -235,31 +235,35 @@ Most functions of `HashedSet` require an index, ranked by the value's sha256 has
   Create an instance of ``HashedSet`` with some initial data.
 
     .. code-block:: solidity
+        struct ST {
+          int x;
+          bool y;
+        }
 
-        HashedSet<bytes, int> set = new HashedSet<bytes, int>(b'');
+        HashedSet<ST> set = new HashedSet<ST>(b'');
         // key and value types can be omitted
-        HashedSet<int, bool> set1 = new HashedSet(b'');
+        HashedSet<ST> set1 = new HashedSet(b'');
         // key and value types cannot be omitted since they cannot be inferred
-        auto set2 = new HashedSet<int, int>(b'');
+        auto set2 = new HashedSet<ST>(b'');
 
 **Instance methods**
 
-* ``add(V val, int index) : bool``
-  Add `val` to set with the key index given by `index`. Returns `true` if successful; otherwise returns `false`.
+* ``add(E entry, int index) : bool``
+  Add `entry` to set with the key index given by `index`. Returns `true` if successful; otherwise returns `false`.
 
     .. code-block:: solidity
 
         require(set.add(b'1234', 0));
 
-* ``has(V val, int index) : bool``
-  Check whether `val` exists in the set and its index is `index`. Returns `true` if both conditions are met; otherwise returns `false`.
+* ``has(E entry, int index) : bool``
+  Check whether `entry` exists in the set and its index is `index`. Returns `true` if both conditions are met; otherwise returns `false`.
 
     .. code-block:: solidity
 
         require(set.has(b'1234', 0));
 
-* ``delete(V val, int index) : bool``
-  Delete the entry with given `val` and the index is `index`. Returns `true` if successful; otherwise returns `false`.
+* ``delete(E entry, int index) : bool``
+  Delete the entry with given `entry` and the index is `index`. Returns `true` if successful; otherwise returns `false`.
 
     .. code-block:: solidity
 
@@ -286,7 +290,7 @@ Most functions of `HashedSet` require an index, ranked by the value's sha256 has
 
         bytes b = set.data();
         // this creates a deep copy of the set
-        HashedSet<int, bool> setCopy = new HashedSet(b);
+        HashedSet<ST> setCopy = new HashedSet(b);
 
 Full List
 ---------
