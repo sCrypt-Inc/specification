@@ -204,6 +204,13 @@ Most functions of `HashedMap` require not only a key, but also its index, ranked
 
         require(map.delete(b'1234', 0));
 
+* ``clear() : bool``
+  Delete all entries of the map.
+
+    .. code-block:: solidity
+
+        map.clear();
+
 * ``size() : int``
   Returns the size of map, i.e. the number of the keys it contains.
 
@@ -325,6 +332,7 @@ Full List
         | canGet(K key, V val, int keyIndex)
         | delete(K key, int keyIndex)
         | has(K key, int keyIndex)
+        | clear()
         | size()
         | data()
 
