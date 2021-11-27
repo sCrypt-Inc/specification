@@ -123,6 +123,12 @@ Hashing
 
   sha256(sha256(b))
 
+* ``Sha256 flattenSha256(T a)``
+
+  Returns Sha256 for the given argument a of any type.
+  If ``T`` is a basic type, like ``bool / int / bytes``, the return is the same as ``sha256(a)``.
+  If ``T`` is a composite type (i.e., array and struct), it concatenates all the sha256 values for each flattened fields of a to form a joint bytes, and then call ``sha256`` on it to get the final result.
+
 Signature Verification
 ----------------------
 * ``bool checkSig(Sig sig, PubKey pk)``
