@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-08 12:13+0800\n"
+"POT-Creation-Date: 2021-11-29 09:04+0800\n"
 "PO-Revision-Date: 2021-10-07 06:10+0000\n"
 "Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
@@ -196,31 +196,56 @@ msgid ""
 " type, it merely creates a new name to refer to that type."
 msgstr "类型别名为类型创建一个新名称。它实际上并不创建新类型，它只是创建一个新名称来引用该类型。"
 
-#: ../../syntax.rst:172 732ad951b35244129cd4edcf76c7bb77
+#: ../../syntax.rst:172 c0ed8af78d5644b68a162f9db4f082ca
+msgid "Generics/Generic Types"
+msgstr "泛型/泛型类型"
+
+#: ../../syntax.rst:173 10e70b12ff6a4495899b06870fa7d4a8
+msgid ""
+"A generic type is a parameterized type. It allows a library to work over a "
+"variety of types rather than a single one. Users can consume these libraries"
+" and use their own concrete types."
+msgstr "泛型类型是参数化类型。它允许库处理多种类型而不是单一类型。用户可以使用这些库并使用他们自己的具体类型。"
+
+#: ../../syntax.rst:176 66de77ff2eec43d7ac20a59237edad04
+msgid "**Declare Generic Types**"
+msgstr "**声明泛型类型**"
+
+#: ../../syntax.rst:178 756d3594d9c3427b981934fc32be4b0f
+msgid ""
+"Generic types can only be declared at library level and used within the "
+"library's scope."
+msgstr "泛型类型只能在库级别声明并在库的范围内使用。"
+
+#: ../../syntax.rst:192 d84ab07fa55a4721b509489674c9ea9d
+msgid "**Instantiate Generic Types**"
+msgstr "**实例化泛型类型**"
+
+#: ../../syntax.rst:201 732ad951b35244129cd4edcf76c7bb77
 msgid "Domain Subtypes"
 msgstr "子类型"
 
-#: ../../syntax.rst:173 314d5119cc9844eeb025022a822b634a
+#: ../../syntax.rst:202 314d5119cc9844eeb025022a822b634a
 msgid ""
 "There are several subtypes, specific to the Bitcoin context, used to further"
 " improve type safety."
 msgstr "有几个特定于比特币上下文的子类型，用于进一步提高类型安全性。"
 
-#: ../../syntax.rst:176 7f37a66033f64b9c861d7429c9d6755e
+#: ../../syntax.rst:205 7f37a66033f64b9c861d7429c9d6755e
 msgid "Subtypes of ``bytes``"
 msgstr "``bytes`` 的子类型"
 
-#: ../../syntax.rst:177 ac12a5b12df7492abe281ff3c514cfef
+#: ../../syntax.rst:206 ac12a5b12df7492abe281ff3c514cfef
 msgid ""
 "To cast a supertype ``bytes`` to them, a function of the type name must be "
 "explicitly called."
 msgstr "要把 ``bytes`` 类型强制转换成某个子类型，必须显式调用与该子类型同名的函数。"
 
-#: ../../syntax.rst:179 311fe262b7a146b095d832abe0dc7157
+#: ../../syntax.rst:208 311fe262b7a146b095d832abe0dc7157
 msgid "**PubKey** - a public key type."
 msgstr "**PubKey** - 一种公钥类型。"
 
-#: ../../syntax.rst:185 d50a9e3440db4ab7a36a1c1c809cc029
+#: ../../syntax.rst:214 d50a9e3440db4ab7a36a1c1c809cc029
 msgid ""
 "**Sig** - a signature type in `DER <https://docs.moneybutton.com/docs/bsv-"
 "signature.html>`_ format, including `signature hash type "
@@ -233,51 +258,51 @@ msgstr ""
 "/Sighash-and-TX-Signing>`_，如下例子中的签名哈希类型是 ``SIGHASH_ALL | SIGHASH_FORKID`` "
 "(``0x41``) 。"
 
-#: ../../syntax.rst:191 804cdcabf86a42f3a7378a2c08c41655
+#: ../../syntax.rst:220 804cdcabf86a42f3a7378a2c08c41655
 msgid "**Ripemd160** - a RIPEMD-160 hash type."
 msgstr "**Ripemd160** - RIPEMD-160 哈希类型。"
 
-#: ../../syntax.rst:197 7c5173997bf54e598b98bfb585981f60
+#: ../../syntax.rst:226 7c5173997bf54e598b98bfb585981f60
 msgid "**Sha1** - a SHA-1 hash type."
 msgstr "**Sha1** - SHA-1 哈希类型。"
 
-#: ../../syntax.rst:203 43a465c4f8d241b9929c8452d65c8c8a
+#: ../../syntax.rst:232 43a465c4f8d241b9929c8452d65c8c8a
 msgid "**Sha256** - a SHA-256 hash type."
 msgstr "**Sha256** - SHA-256 哈希类型。"
 
-#: ../../syntax.rst:209 88f551b68e634aed890645404afcb26d
+#: ../../syntax.rst:238 88f551b68e634aed890645404afcb26d
 msgid "**SigHashType** - a sighash type."
 msgstr "**SigHashType** - 签名哈希类型。"
 
-#: ../../syntax.rst:216 a9286795e0db43f89198169f546555a5
+#: ../../syntax.rst:245 a9286795e0db43f89198169f546555a5
 msgid "**SigHashPreimage** - a sighash preimage type."
 msgstr "**SigHashPreimage** - sighash 原像类型。"
 
-#: ../../syntax.rst:222 f0d49d91ef3d4ee5aec3c3986f242450
+#: ../../syntax.rst:251 f0d49d91ef3d4ee5aec3c3986f242450
 msgid "**OpCodeType** - a OpCode type."
 msgstr "**OpCodeType** - 操作码类型。"
 
-#: ../../syntax.rst:229 794694073f0d4b109876fff218f722c2
+#: ../../syntax.rst:258 794694073f0d4b109876fff218f722c2
 msgid "Subtypes of ``int``"
 msgstr "``int`` 的子类型"
 
-#: ../../syntax.rst:231 f3e06bb835544312a88035e2e86a7e3d
+#: ../../syntax.rst:260 f3e06bb835544312a88035e2e86a7e3d
 msgid "**PrivKey** - a private key type."
 msgstr "**PrivKey** - 私钥类型。"
 
-#: ../../syntax.rst:239 5f39ac97c8f649f183b59c3c19d56de5
+#: ../../syntax.rst:268 5f39ac97c8f649f183b59c3c19d56de5
 msgid "``const`` Variables"
 msgstr "``const`` 变量"
 
-#: ../../syntax.rst:240 38d0e9d2f17c4c4b8deef8ea5d1bb253
+#: ../../syntax.rst:269 38d0e9d2f17c4c4b8deef8ea5d1bb253
 msgid "Variables declared const cannot be changed once initialized."
 msgstr "声明为 ``const`` 的变量一旦初始化就不能更改。"
 
-#: ../../syntax.rst:263 9d5f4e334da64baaa698a0e2c365b459
+#: ../../syntax.rst:292 9d5f4e334da64baaa698a0e2c365b459
 msgid "``if`` statement"
 msgstr "``if`` 语句"
 
-#: ../../syntax.rst:264 7e19ea43cc7e4a77ba9941db5fba43f2
+#: ../../syntax.rst:293 7e19ea43cc7e4a77ba9941db5fba43f2
 msgid ""
 "``if`` condition can be of type ``int`` and ``bytes``, besides ``bool``. "
 "They are implicitly converted to ``bool`` as in C and Javascript. An ``int``"
@@ -290,22 +315,22 @@ msgstr ""
 "``bytes`` 表达式被评估为 ``false`` 当且仅当它的每个字节都是 ``b'00'`` （包括空的 ``bytes``  "
 "``b''``）。"
 
-#: ../../syntax.rst:284 3794a2daa1f7474485e4e73b6bd932e0
+#: ../../syntax.rst:313 3794a2daa1f7474485e4e73b6bd932e0
 msgid "exit()"
-msgstr "``exit`` 语句"
+msgstr "``exit()`` 语句"
 
-#: ../../syntax.rst:285 7d3bd554e2184472bb024a38f3a3a593
+#: ../../syntax.rst:314 7d3bd554e2184472bb024a38f3a3a593
 msgid ""
 "``exit(bool status);`` statement terminates contract execution. If "
 "``status`` is ``true``, contract succeeds; otherwise, it fails."
 msgstr ""
 "``exit(bool status);`` 语句终止合约执行。如果 ``status`` 为 ``true`` ，则合约执行成功；否则合约执行失败。"
 
-#: ../../syntax.rst:306 3ffb81ee53c54a19b6f591f7477d4a55
+#: ../../syntax.rst:335 3ffb81ee53c54a19b6f591f7477d4a55
 msgid "Code Separator"
 msgstr "Code Separator 代码分隔符"
 
-#: ../../syntax.rst:307 c47d05e239fd4175ac1d67cdef82c5a9
+#: ../../syntax.rst:336 c47d05e239fd4175ac1d67cdef82c5a9
 msgid ""
 "Three or more ``*`` in a line inserts an `OP_CODESEPARATOR "
 "<https://en.bitcoin.it/wiki/OP_CHECKSIG#How_it_works>`_. It is used to "
@@ -316,201 +341,201 @@ msgstr ""
 "<https://en.bitcoin.it/wiki/OP_CHECKSIG#How_it_works>`_。它用于将其之前的内容（包括其自身）排除在签名的一部分之外。注意末尾没有"
 " ``;``。"
 
-#: ../../syntax.rst:325 c4448f96c24342faa5d354f591d70eda
+#: ../../syntax.rst:354 c4448f96c24342faa5d354f591d70eda
 msgid "Access Modifiers"
 msgstr "访问修饰符"
 
-#: ../../syntax.rst:326 a0a73fbd97d2415ea0199cca625df8d3
+#: ../../syntax.rst:355 a0a73fbd97d2415ea0199cca625df8d3
 msgid ""
 "There are three types of access modifiers available to help restrict the "
 "scope of properties and functions of a contract:"
 msgstr "可以使用三种类型的访问修饰符来帮助限制合约的属性和函数的范围："
 
-#: ../../syntax.rst:328 f9d3595421c44bc4906e59d1f524010c
+#: ../../syntax.rst:357 f9d3595421c44bc4906e59d1f524010c
 msgid "Default: no keyword required"
 msgstr "默认：不需要关键字"
 
-#: ../../syntax.rst:329 d74aa60081144eb1b9ff8afa6ce199de
+#: ../../syntax.rst:358 d74aa60081144eb1b9ff8afa6ce199de
 msgid "Private"
 msgstr "私有的"
 
-#: ../../syntax.rst:330 60a55c2aa0014b98a21207358136269e
+#: ../../syntax.rst:359 60a55c2aa0014b98a21207358136269e
 msgid "Public: only applies to functions"
 msgstr "公共：仅适用于函数"
 
-#: ../../syntax.rst:332 3912f52d68974d12ade78a832c58a750
+#: ../../syntax.rst:361 3912f52d68974d12ade78a832c58a750
 msgid ""
 "Only public functions can be called externally by Bitcoin transactions."
 msgstr "比特币交易只能从外部调用公共函数。"
 
-#: ../../syntax.rst:339 20b1cdaa42a14cc18082ce08420b04fd
+#: ../../syntax.rst:368 20b1cdaa42a14cc18082ce08420b04fd
 msgid "default"
 msgstr "default"
 
-#: ../../syntax.rst:340 b9e72d11dc354cd58d2e0d5949a68986
+#: ../../syntax.rst:369 b9e72d11dc354cd58d2e0d5949a68986
 msgid "private"
 msgstr "private"
 
-#: ../../syntax.rst:341 feafa8fd9cd64ef4b73b722c12b2579f
+#: ../../syntax.rst:370 feafa8fd9cd64ef4b73b722c12b2579f
 msgid "public"
 msgstr "public"
 
-#: ../../syntax.rst:343 5d2d4da3f68945c2aa84176e9c1f3baa
+#: ../../syntax.rst:372 5d2d4da3f68945c2aa84176e9c1f3baa
 msgid "Same contract"
 msgstr "合约内"
 
-#: ../../syntax.rst:344 ../../syntax.rst:345 ../../syntax.rst:346
-#: ../../syntax.rst:349 ../../syntax.rst:351 ../../syntax.rst:356
-#: 190f257c8626475e986a9c226f7776e4 410ddc104522485591baeab68e1dbe17
-#: 3ed1a975c5bc480d8d9a40d6d8d8e8b7 5419f923830d4373879947a4ded365e7
-#: 95c717aaaca84cfb897757dfe29ecaf6 2b50a3582907476996b95d95c38d7586
+#: ../../syntax.rst:373 ../../syntax.rst:374 ../../syntax.rst:375
+#: ../../syntax.rst:378 ../../syntax.rst:380 ../../syntax.rst:385
+#: 190f257c8626475e986a9c226f7776e4 95c717aaaca84cfb897757dfe29ecaf6
+#: 190f257c8626475e986a9c226f7776e4 190f257c8626475e986a9c226f7776e4
+#: 190f257c8626475e986a9c226f7776e4 190f257c8626475e986a9c226f7776e4
 msgid "Yes"
 msgstr "Yes"
 
-#: ../../syntax.rst:348 8f55d1719ab04fabb57817f8470fb69b
+#: ../../syntax.rst:377 8f55d1719ab04fabb57817f8470fb69b
 msgid "Other contract"
 msgstr "其他合约"
 
-#: ../../syntax.rst:350 ../../syntax.rst:354 ../../syntax.rst:355
-#: 60c30f328e954e6a85d1371562775eaa 827b7799ad7d4bdeb493f4b135143570
-#: 62ea5d53f249465ca80775c657f44ab6
+#: ../../syntax.rst:379 ../../syntax.rst:383 ../../syntax.rst:384
+#: 60c30f328e954e6a85d1371562775eaa 60c30f328e954e6a85d1371562775eaa
+#: 60c30f328e954e6a85d1371562775eaa
 msgid "No"
 msgstr "No"
 
-#: ../../syntax.rst:353 5b4d3f43d6a84a7283b914cb47a43420
+#: ../../syntax.rst:382 5b4d3f43d6a84a7283b914cb47a43420
 msgid "Externally"
 msgstr "外部"
 
-#: ../../syntax.rst:359 0517fea4ab5f4ffb85023682759f392f
+#: ../../syntax.rst:388 0517fea4ab5f4ffb85023682759f392f
 msgid "Operators"
 msgstr "运算符"
 
-#: ../../syntax.rst:365 4ae0ed1cb25843d88211ba601042f018
+#: ../../syntax.rst:394 4ae0ed1cb25843d88211ba601042f018
 msgid "Precedence"
 msgstr "优先级"
 
-#: ../../syntax.rst:366 a84232484adb49cca460de65ba7fa6c1
+#: ../../syntax.rst:395 a84232484adb49cca460de65ba7fa6c1
 msgid "Operator"
 msgstr "运算符"
 
-#: ../../syntax.rst:367 94527c887dd549f99598d14ee2fb86e6
+#: ../../syntax.rst:396 94527c887dd549f99598d14ee2fb86e6
 msgid "Associativity"
 msgstr "关联性"
 
-#: ../../syntax.rst:369 0e70873ebc3b4b8194a51e030bdae844
+#: ../../syntax.rst:398 0e70873ebc3b4b8194a51e030bdae844
 msgid "1"
 msgstr "1"
 
-#: ../../syntax.rst:370 510c75e6f5a64ab2a633a7ed27b4827e
+#: ../../syntax.rst:399 510c75e6f5a64ab2a633a7ed27b4827e
 msgid "``- ! ~``"
 msgstr "``- ! ~``"
 
-#: ../../syntax.rst:371 ../../syntax.rst:415 6bfa283ccd754cbf8e8ea2335e792fa3
-#: b000f0db4f194691be8508e4f098e294
+#: ../../syntax.rst:400 ../../syntax.rst:444 6bfa283ccd754cbf8e8ea2335e792fa3
+#: 6bfa283ccd754cbf8e8ea2335e792fa3
 msgid "right"
 msgstr "右"
 
-#: ../../syntax.rst:373 8f3c2b0771854fdbba89cdaaf5441551
+#: ../../syntax.rst:402 8f3c2b0771854fdbba89cdaaf5441551
 msgid "2"
 msgstr "2"
 
-#: ../../syntax.rst:374 e8dc186f65f345749de0a99c5369e2d6
+#: ../../syntax.rst:403 e8dc186f65f345749de0a99c5369e2d6
 msgid "``* / %``"
 msgstr "``* / %``"
 
-#: ../../syntax.rst:375 ../../syntax.rst:379 ../../syntax.rst:383
-#: ../../syntax.rst:387 ../../syntax.rst:391 ../../syntax.rst:395
-#: ../../syntax.rst:399 ../../syntax.rst:403 ../../syntax.rst:407
-#: ../../syntax.rst:411 81a1c158c193406ebbd692f2b6bd2aa3
-#: a40c0324ed044566a405ed83d2469f5a 69fa166ba1ec4e70b4735d74a899dee9
-#: a70e1d08edbe47e2b340f0fd33c98247 0a11a206126446e4aa3581d3f997947c
-#: 9e01323cd12b41de8579669f31a9ab67 c5bf565ff351487bb0b67c21a040d46f
-#: ff5f649e3bb64b3ca5f1125372ee41ca 3b5af960387245a9ab0ee75e81e6b69d
-#: 93c8e232956946a28dba349d2c052599
+#: ../../syntax.rst:404 ../../syntax.rst:408 ../../syntax.rst:412
+#: ../../syntax.rst:416 ../../syntax.rst:420 ../../syntax.rst:424
+#: ../../syntax.rst:428 ../../syntax.rst:432 ../../syntax.rst:436
+#: ../../syntax.rst:440 81a1c158c193406ebbd692f2b6bd2aa3
+#: 81a1c158c193406ebbd692f2b6bd2aa3 81a1c158c193406ebbd692f2b6bd2aa3
+#: 81a1c158c193406ebbd692f2b6bd2aa3 81a1c158c193406ebbd692f2b6bd2aa3
+#: 81a1c158c193406ebbd692f2b6bd2aa3 81a1c158c193406ebbd692f2b6bd2aa3
+#: 81a1c158c193406ebbd692f2b6bd2aa3 81a1c158c193406ebbd692f2b6bd2aa3
+#: 81a1c158c193406ebbd692f2b6bd2aa3
 msgid "left"
 msgstr "左"
 
-#: ../../syntax.rst:377 887fe6a55ce749bbb2d4e961765765af
+#: ../../syntax.rst:406 887fe6a55ce749bbb2d4e961765765af
 msgid "3"
 msgstr "3"
 
-#: ../../syntax.rst:378 c304ad2933f34aec87e9033d3a6a7cd2
+#: ../../syntax.rst:407 c304ad2933f34aec87e9033d3a6a7cd2
 msgid "``+ -``"
 msgstr "``+ -``"
 
-#: ../../syntax.rst:381 f4f0f4abf910491fb8555fd089baa9c7
+#: ../../syntax.rst:410 f4f0f4abf910491fb8555fd089baa9c7
 msgid "4"
 msgstr "4"
 
-#: ../../syntax.rst:382 be025ba33fb34ac5bcdc6903a5585cef
+#: ../../syntax.rst:411 be025ba33fb34ac5bcdc6903a5585cef
 msgid "``<< >>``"
 msgstr "``<< >>``"
 
-#: ../../syntax.rst:385 5487eb49be254136ac2ec792a58d363f
+#: ../../syntax.rst:414 5487eb49be254136ac2ec792a58d363f
 msgid "5"
 msgstr "5"
 
-#: ../../syntax.rst:386 e268366628ef42eeab08127aac425577
+#: ../../syntax.rst:415 e268366628ef42eeab08127aac425577
 msgid "``< <= > >=``"
 msgstr "``< <= > >=``"
 
-#: ../../syntax.rst:389 73f99b6c42294a5c8c3d97994a4fdd23
+#: ../../syntax.rst:418 73f99b6c42294a5c8c3d97994a4fdd23
 msgid "6"
 msgstr "6"
 
-#: ../../syntax.rst:390 4858332839e64c5bb37d399111c98efe
+#: ../../syntax.rst:419 4858332839e64c5bb37d399111c98efe
 msgid "``== !=``"
 msgstr "``== !=``"
 
-#: ../../syntax.rst:393 9cfb8ec7665d44409106890cbe0b60f1
+#: ../../syntax.rst:422 9cfb8ec7665d44409106890cbe0b60f1
 msgid "7"
 msgstr "7"
 
-#: ../../syntax.rst:394 6d526f22af534e8abb6b9c2b07156947
+#: ../../syntax.rst:423 6d526f22af534e8abb6b9c2b07156947
 msgid "``&``"
 msgstr "``&``"
 
-#: ../../syntax.rst:397 4f6dd3b33ae14e5d9a56500853393c8e
+#: ../../syntax.rst:426 4f6dd3b33ae14e5d9a56500853393c8e
 msgid "8"
 msgstr "8"
 
-#: ../../syntax.rst:398 14fca5d2805945b8851d54b1cc2255e5
+#: ../../syntax.rst:427 14fca5d2805945b8851d54b1cc2255e5
 msgid "``^``"
 msgstr "``^``"
 
-#: ../../syntax.rst:401 4ca978b5d375498991d4f50e8ae8e3e3
+#: ../../syntax.rst:430 4ca978b5d375498991d4f50e8ae8e3e3
 msgid "9"
 msgstr "9"
 
-#: ../../syntax.rst:402 babc131b91bd4bbd932f07a06578b370
+#: ../../syntax.rst:431 babc131b91bd4bbd932f07a06578b370
 msgid "``|``"
 msgstr "``|``"
 
-#: ../../syntax.rst:405 df359fc483a348828d0e78a3374b18e6
+#: ../../syntax.rst:434 df359fc483a348828d0e78a3374b18e6
 msgid "10"
 msgstr "10"
 
-#: ../../syntax.rst:406 6ca2638f91bc4d8b939d446603662a38
+#: ../../syntax.rst:435 6ca2638f91bc4d8b939d446603662a38
 msgid "``&&``"
 msgstr "``&&``"
 
-#: ../../syntax.rst:409 cb3f219481df4bfebe4ff28c991761e6
+#: ../../syntax.rst:438 cb3f219481df4bfebe4ff28c991761e6
 msgid "11"
 msgstr "11"
 
-#: ../../syntax.rst:410 16754c462fcc477ca346abee086ae3ca
+#: ../../syntax.rst:439 16754c462fcc477ca346abee086ae3ca
 msgid "``||``"
 msgstr "``||``"
 
-#: ../../syntax.rst:413 9b16b7310590436b8c052565984e83fb
+#: ../../syntax.rst:442 9b16b7310590436b8c052565984e83fb
 msgid "12"
 msgstr "12"
 
-#: ../../syntax.rst:414 43e62fa9e90c41b4aac27b81b1e2c5eb
+#: ../../syntax.rst:443 43e62fa9e90c41b4aac27b81b1e2c5eb
 msgid "``? :``"
 msgstr "``? :``"
 
-#: ../../syntax.rst:417 735c350e94e44ae0ba3da585f87bebc6
+#: ../../syntax.rst:446 735c350e94e44ae0ba3da585f87bebc6
 msgid ""
 "Operator ``&&``, ``||``, and ``? :`` use `short-circuit evaluation "
 "<https://en.wikipedia.org/wiki/Short-circuit_evaluation>`_."
@@ -518,11 +543,11 @@ msgstr ""
 "运算符 ``&&``、``||`` 和 ``? :`` 使用 `短路评估 <https://en.wikipedia.org/wiki/Short-"
 "circuit_evaluation>`_."
 
-#: ../../syntax.rst:420 5fed1232248c42b2b0c6e1c9cb3d8e97
+#: ../../syntax.rst:449 5fed1232248c42b2b0c6e1c9cb3d8e97
 msgid "Scoping"
 msgstr "作用域"
 
-#: ../../syntax.rst:421 82b7f8cb592a48dd93b8b992db0e78a5
+#: ../../syntax.rst:450 82b7f8cb592a48dd93b8b992db0e78a5
 msgid ""
 "Scoping in sCrypt follows the prevailing scoping rules of C99 and Solidity. "
 "Outer scope variable is shadowed by the inner scope variable of the same "

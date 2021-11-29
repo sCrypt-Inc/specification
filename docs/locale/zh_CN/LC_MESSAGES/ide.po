@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-08 12:13+0800\n"
+"POT-Creation-Date: 2021-11-29 09:54+0800\n"
 "PO-Revision-Date: 2021-10-07 06:10+0000\n"
 "Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
@@ -48,11 +48,15 @@ msgstr ""
 "scrypt.sCrypt>`_。通过在扩展市场中搜索 ``sCrypt`` 可以很容易地找到它。此 IDE 具有高级语言功能，适用于专业开发。你可以以"
 " `样板项目 <https://github.com/scrypt-sv/boilerplate>`_ 为基础开始构建你自己的sCrypt项目。"
 
-#: ../../ide.rst:14 23ea08233293479886f800d4d6ca1867
+#: ../../ide.rst:13 58491ccc1c784003826001ef5cd7dbc3
+msgid "Here is a `document`_ on how to use this IDE."
+msgstr "这是关于如何使用此 IDE 的 `文档`_ 。"
+
+#: ../../ide.rst:16 23ea08233293479886f800d4d6ca1867
 msgid "Web IDE"
 msgstr "Web IDE"
 
-#: ../../ide.rst:15 8c884462b4f547bc9038dc02908a4295
+#: ../../ide.rst:17 8c884462b4f547bc9038dc02908a4295
 msgid ""
 "A browser-based IDE can be found at `scrypt.studio <http://scrypt.studio>`_."
 " It is for quick learning of sCrypt immediately without any installation and"

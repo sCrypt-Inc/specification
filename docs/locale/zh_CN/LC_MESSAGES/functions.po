@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 08:29+0800\n"
+"POT-Creation-Date: 2021-11-29 09:04+0800\n"
 "PO-Revision-Date: 2021-10-07 06:10+0000\n"
 "Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
@@ -160,15 +160,31 @@ msgstr "``Sha256 hash256(bytes b)``"
 msgid "sha256(sha256(b))"
 msgstr "sha256(sha256(b))"
 
-#: ../../functions.rst:127 d26ccde9d4134dcb9ba72a974a43694d
+#: ../../functions.rst:126 eb6b440e4ce54fabb86c988f6f94bc41
+msgid "``Sha256 flattenSha256(T a)``"
+msgstr "``Sha256 flattenSha256(T a)``"
+
+#: ../../functions.rst:128 c4c4ff26ff5b4efdad3730be0149161f
+msgid ""
+"Returns Sha256 for the given argument a of any type. If ``T`` is a basic "
+"type, like ``bool / int / bytes``, the return is the same as ``sha256(a)``. "
+"If ``T`` is a composite type (i.e., array and struct), it concatenates all "
+"the sha256 values for each flattened fields of a to form a joint bytes, and "
+"then call ``sha256`` on it to get the final result."
+msgstr ""
+"为任何类型的给定参数 a 返回 Sha256。如果 ``T`` 是基本类型，如 ``bool / int / bytes`` ，则返回与 "
+"``sha256(a)`` 相同。如果 ``T`` 是复合类型（即数组和结构体），它将 a 的每个展平字段的所有 sha256 "
+"值连接起来形成一个联合字节，然后对其调用 ``sha256`` 以获得最终的结果。"
+
+#: ../../functions.rst:133 d26ccde9d4134dcb9ba72a974a43694d
 msgid "Signature Verification"
 msgstr "签名验证"
 
-#: ../../functions.rst:128 c9a36cc5acb542f58870230b579983a9
+#: ../../functions.rst:134 c9a36cc5acb542f58870230b579983a9
 msgid "``bool checkSig(Sig sig, PubKey pk)``"
 msgstr "``bool checkSig(Sig sig, PubKey pk)``"
 
-#: ../../functions.rst:130 292bfaa33f0c439e969c19fd1f7eda59
+#: ../../functions.rst:136 292bfaa33f0c439e969c19fd1f7eda59
 msgid ""
 "Returns true if the signature matches the public key. Returns false if the "
 "signature is an empty byte array. Otherwise, the entire contract fails "
@@ -178,11 +194,11 @@ msgstr ""
 "如果签名与公钥匹配，则返回 true。如果签名是空字节数组，则返回 false。否则，由于 `NULLFAIL 规则 "
 "<https://github.com/bitcoin/bips/blob/master/bip-0146.mediawiki#NULLFAIL>`_，整个合约立即失败。"
 
-#: ../../functions.rst:133 5b2af10debbe4e5086e9ba37303aba36
+#: ../../functions.rst:139 5b2af10debbe4e5086e9ba37303aba36
 msgid "``bool checkMultiSig(Sig[M] sigs, PubKey[N] pks)``"
 msgstr "``bool checkMultiSig(Sig[M] sigs, PubKey[N] pks)``"
 
-#: ../../functions.rst:135 b730ad15950e45ffa9a16e6a705a9304
+#: ../../functions.rst:141 b730ad15950e45ffa9a16e6a705a9304
 msgid ""
 "Returns true if and only M signatures match M out of N public keys. M and N "
 "can be any number as long as M <= N. Returns false if all signatures are an "
@@ -191,15 +207,15 @@ msgstr ""
 "如果有且仅有 M 个签名与 N 个公钥中的 M 个匹配，则返回 true。 M 和 N 可以是任意数字，只要 M <= "
 "N。如果所有签名都是空字节数组，则返回 false。否则，整个合约立即失效。"
 
-#: ../../functions.rst:140 992ee444778b4598bae4945b546dc49a
+#: ../../functions.rst:146 992ee444778b4598bae4945b546dc49a
 msgid "``bytes`` Operations"
 msgstr "``bytes`` 操作"
 
-#: ../../functions.rst:141 329d8472fb6c4be3a8f0d68bea31448f
+#: ../../functions.rst:147 329d8472fb6c4be3a8f0d68bea31448f
 msgid "Convert to and from ``int``"
 msgstr "与 ``int`` 之间的转换"
 
-#: ../../functions.rst:143 4071cc8384c346e68082421a455aea83
+#: ../../functions.rst:149 4071cc8384c346e68082421a455aea83
 msgid ""
 "``bytes`` can be converted to ``int`` using function ``unpack``. Little-"
 "endian `sign-magnitude representation <https://www.tutorialspoint.com/sign-"
@@ -211,21 +227,21 @@ msgstr ""
 "<https://www.tutorialspoint.com/sign-magnitude-notation>`_，其中最高有效位表示符号（ "
 "``0`` 表示正， ``1`` 表示负）。 ``int`` 可以使用 ``pack`` 转换为 ``bytes``。"
 
-#: ../../functions.rst:156 faabf0ccebdf4aa6bf760dcc1e2d7f2f
+#: ../../functions.rst:162 faabf0ccebdf4aa6bf760dcc1e2d7f2f
 msgid "``bytes num2bin(int num, int size)``"
 msgstr "``bytes num2bin(int num, int size)``"
 
-#: ../../functions.rst:158 f55ed9c7457c4af5a4b51b06afc63a87
+#: ../../functions.rst:164 f55ed9c7457c4af5a4b51b06afc63a87
 msgid ""
 "Converts a number ``num`` into a byte array of certain size ``size``, "
 "including the sign bit. It fails if the number cannot be accommodated."
 msgstr "把数字 ``num`` 转换为字节数为 ``size`` 的字节数组，包括符号比特。如果字节数组无法容纳被转换的数字，则会转换失败。"
 
-#: ../../functions.rst:160 21a663be96e74d528efd3abdce02f682
+#: ../../functions.rst:166 21a663be96e74d528efd3abdce02f682
 msgid "``len()`` Returns the length."
 msgstr "``len()`` 返回长度。"
 
-#: ../../functions.rst:167 3f086c05c87042358727b0015d4d258e
+#: ../../functions.rst:173 3f086c05c87042358727b0015d4d258e
 msgid ""
 "**Slicing Opeartor** - ``b[start:end]`` returns subarray of ``b`` from index"
 " ``start`` (inclusive) to ``end`` (exclusive). ``start`` is ``0`` if "
@@ -234,15 +250,15 @@ msgstr ""
 "**切片操作符** - ``b[start:end]`` 返回 ``b`` 的子数组，从索引 ``start`` （包含）到 ``end`` "
 "（不包含）。 ``start`` 如果省略则为 ``0`` ， ``end`` 如果省略则为数组的长度。"
 
-#: ../../functions.rst:177 c3c44a55274c4528ab69b283a18baf7b
+#: ../../functions.rst:183 c3c44a55274c4528ab69b283a18baf7b
 msgid "**Concatenation**"
 msgstr "**拼接**"
 
-#: ../../functions.rst:183 e0a07f5a4b564b548969810852fe5b37
+#: ../../functions.rst:189 e0a07f5a4b564b548969810852fe5b37
 msgid "``reverseBytes(bytes b, static const int size)``"
 msgstr "``reverseBytes(bytes b, static const int size)``"
 
-#: ../../functions.rst:185 0ed5eb0c5c5744a8afe02c343b6d9ab2
+#: ../../functions.rst:191 0ed5eb0c5c5744a8afe02c343b6d9ab2
 msgid ""
 "Returns reversed bytes of ``b``, which is of ``size`` bytes. Note ``size`` "
 "must be a :ref:`compile time constant<ctc-label>`. It is often useful when "
