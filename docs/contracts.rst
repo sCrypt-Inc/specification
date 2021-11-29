@@ -242,6 +242,7 @@ Most functions of `HashedSet` require an index, ranked by the value's sha256 has
   Create an instance of ``HashedSet`` with some initial data.
 
     .. code-block:: solidity
+      
         struct ST {
           int x;
           bool y;
