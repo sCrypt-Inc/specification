@@ -90,27 +90,39 @@ Standard Contracts
 ==================
 sCrypt comes with standard libraries that define many commonly used contracts. They are included by default and do not require explicit ``import`` to be used.
 
-The following example shows usage of the standard contract ``P2PKH`` that corresponds to Pay-to-PubKey-Hash contract.
+Library ``Utils``
+-----------------
+
+The ``Utils`` library provides a set of commonly used utility functions, such as function ``Utils.fromLEUnsigned`` 
+converts signed integer ``n`` to unsigned integer of ``l`` bytes, in little endian. And function ``buildOutput(bytes outputScript, int outputSatoshis) : bytes``
+to build a tx output from its script and satoshi amount.
+
+The following example shows usage of the standard library ``Utils`` that corresponds to ``RabinSignature`` contract.
 
 .. code-block:: solidity
 
-    contract P2PKHStdDemo {
-        Ripemd160 pubKeyHash;
+  library RabinSignature {
+      static function checkSig(bytes msg, RabinSig sig, RabinPubKey pubKey) : bool {
+          int h = Utils.fromLEUnsigned(hash(msg + sig.padding));
+          return (sig.s * sig.s) % pubKey == h % pubKey;
+      }
 
-        public function unlock(Sig sig, PubKey pubKey) {
-            P2PKH p2pkh = new P2PKH(this.pubKeyHash);
-            require(p2pkh.spend(sig, pubKey));
-        }
-    }
+      static function hash(bytes x) : bytes {
+          // expand into 512 bit hash
+          bytes hx = sha256(x);
+          int idx = len(hx) / 2;
+          return sha256(hx[: idx]) + sha256(hx[idx :]);
+      }
+  }
 
 .. _pushtx-label:
 
-Contract ``OP_PUSH_TX``
+Library ``Tx``
 -----------------------
 One grave misconception regarding bitcoin script is that its access is only limited to the data provided in the locking script and corresponding unlocking script.
 Thus, its scope and capability are greatly underestimated.
 
-sCrypt comes with a powerful contract called ``Tx`` that allows inspection of the **ENTIRE TRANSACTION** containing the contract itself, besides the locking script and unlocking script.
+sCrypt comes with a powerful library called ``Tx`` that allows inspection of the **ENTIRE TRANSACTION** containing the contract itself, besides the locking script and unlocking script.
 It can be regarded as a pseudo opcode ``OP_PUSH_TX`` that pushes the current transaction into the stack, which can be inspected at runtime.
 More precisely, it enables inspection of the preimage used in signature verification defined in `BIP143`_.
 The format of the preimage is as follows:
@@ -133,25 +145,42 @@ As an example, contract ``CheckLockTimeVerify`` ensures coins are timelocked and
     contract CheckLockTimeVerify {
         int matureTime;
 
-        public function spend(bytes sighashPreimage) {
-            // this ensures the preimage is for the current tx
-            require(Tx.checkPreimage(sighashPreimage));
-            
-            // parse nLocktime
-            int l = len(sighashPreimage);
-            int nLocktime = this.fromLEUnsigned(sighashPreimage[l - 8 : l - 4]);
+        public function spend(SigHashPreimage txPreimage) {
+            // using Tx.checkPreimage() to verify txPreimage
+            require(Tx.checkPreimage(txPreimage));
 
-            require(nLocktime >= this.matureTime);
-        }
-        
-        function fromLEUnsigned(bytes b): int {
-            // append positive sign byte. This does not hurt even when sign bit is already positive
-            return unpack(b + b'00');
+            require(SigHash.nLocktime(txPreimage) >= this.matureTime);
         }
     }
 
+
 More details can be found in this article `OP_PUSH_TX`_.
-To customize ECDSA signing, such as choosing ephemeral key, there is a more general version called ``Tx.checkPreimageAdvanced()``. see `Advanced OP_PUSH_TX`_.
+To customize ECDSA signing, such as choosing sighash type, there is a version called ``Tx.checkPreimageSigHashType()``
+that supports custom sighash type. To customize ephemeral key, there is a more general version called ``Tx.checkPreimageAdvanced()``. see `Advanced OP_PUSH_TX`_.
+
+
+Library ``SigHash``
+-----------------------
+sCrypt also provides a ``SigHash`` library to access various fields in the preimage. 
+For example, we usually use ``SigHash.scriptCode`` to access the ``scriptCode`` of the preimage, and use 
+``SigHash.value`` to access the value field of the preimage, which is the value of the number of bitcoins
+spent in this contract.
+
+.. code-block:: solidity
+
+  contract Clone {
+
+      public function unlock(SigHashPreimage txPreimage) {
+          require(Tx.checkPreimage(txPreimage));
+
+          bytes scriptCode = SigHash.scriptCode(txPreimage);
+          int satoshis = SigHash.value(txPreimage);
+          bytes output = Utils.buildOutput(scriptCode, satoshis);
+          require(hash256(output) == SigHash.hashOutputs(txPreimage));
+      }
+  }
+
+
 
 Library ``HashedMap``
 -----------------------
@@ -300,6 +329,32 @@ Most functions of `HashedSet` require an index, ranked by the value's sha256 has
         // this creates a deep copy of the set
         HashedSet<ST> setCopy = new HashedSet(b);
 
+
+Library ``Constants``
+-----------------------
+
+sCrypt defines some commonly used constant values in the library ``Constants``.
+You can use these constants anywhere in your code
+
+    .. code-block:: solidity
+
+      library Constants {
+
+          // number of bytes to denote input sequence
+          static const int InputSeqLen = 4;
+          // number of bytes to denote output value
+          static const int OutputValueLen = 8;
+          // number of bytes to denote a public key (compressed)
+          static const int PubKeyLen = 33;
+          // number of bytes to denote a public key hash
+          static const int PubKeyHashLen = 20;
+          // number of bytes to denote a tx id
+          static const int TxIdLen = 32;
+          // number of bytes to denote a outpoint
+          static const int OutpointLen = 36;
+      }
+
+
 Full List
 ---------
 
@@ -310,44 +365,59 @@ Full List
     * - Contract 
       - Constructor parameters
       - Public function
-    
-    * - P2PKH
-      - Ripemd160 pubKeyHash
-      - spend(Sig sig, PubKey pubKey)
 
-    * - P2PK
-      - PubKey pubKey
-      - spend(Sig sig)
-    
-    * - HashPuzzleX [#]_
-      - Y [#]_ hash
-      - spend(bytes preimage)
+    * - Utils
+      - None
+      - | toLEUnsigned(int n, int l) : bytes
+        | fromLEUnsigned(bytes b) : int
+        | readVarint(bytes b) : bytes
+        | writeVarint(bytes b) : bytes
+        | buildOutput(bytes outputScript, int outputSatoshis) : bytes
+        | buildPublicKeyHashScript(PubKeyHash pubKeyHash) : bytes
+        | buildOpreturnScript(bytes data) : bytes
 
     * - Tx
       - None
-      - checkPreimage(bytes sighashPreimage)
+      - | checkPreimage(SigHashPreimage preimage) : bool
+        | checkPreimageOpt(SigHashPreimage rawTx) : bool
+        | checkPreimageSigHashType(SigHashPreimage txPreimage, SigHashType sigHashType) : bool
+        | checkPreimageAdvanced(SigHashPreimage rawTx, PrivKey privKey, PubKey pubKey, int inverseK, int r, bytes rBigEndian, SigHashType sigHashType) : bool
+
+    * - SigHash
+      - None
+      - | nVersion(SigHashPreimage preimage) : bytes
+        | hashPrevouts(SigHashPreimage preimage) : bytes
+        | hashSequence(SigHashPreimage preimage) : bytes
+        | outpoint(SigHashPreimage preimage) : bytes
+        | scriptCode(SigHashPreimage preimage) : bytes
+        | valueRaw(SigHashPreimage preimage) : bytes
+        | value(SigHashPreimage preimage) : int
+        | nSequenceRaw(SigHashPreimage preimage) : bytes
+        | nSequence(SigHashPreimage preimage) : int
+        | hashOutputs(SigHashPreimage preimage) : bytes
+        | nLocktimeRaw(SigHashPreimage preimage) : bytes
+        | nLocktime(SigHashPreimage preimage) : int
+        | sigHashType(SigHashPreimage preimage) : SigHashType
 
     * - HashedMap<K, V>
       - bytes data
-      - | set(K key, V val, int keyIndex)
-        | canGet(K key, V val, int keyIndex)
-        | delete(K key, int keyIndex)
-        | has(K key, int keyIndex)
-        | clear()
-        | size()
-        | data()
+      - | set(K key, V val, int keyIndex) : bool
+        | canGet(K key, V val, int keyIndex) : bool
+        | delete(K key, int keyIndex) : bool
+        | has(K key, int keyIndex) : bool
+        | clear() : bool
+        | size() : int
+        | data() : bytes
 
     * - HashedSet<V>
       - bytes data
-      - | add(V val, int index)
-        | delete(V val, int index)
-        | has(V val, int index)
-        | clear()
-        | size()
-        | data()
+      - | add(V val, int index) : bool
+        | delete(V val, int index) : bool
+        | has(V val, int index) : bool
+        | clear() : bool
+        | size() : int
+        | data() : bytes
 
-.. [#] ``X`` is hashing function and can be Ripemd160/Sha1/Sha256/Hash160
-.. [#] ``Y`` is hashing function return type and can be Ripemd160/Sha1/Sha256/Ripemd160
 
 .. _BIP143: https://github.com/bitcoin-sv/bitcoin-sv/blob/master/doc/abc/replay-protected-sighash.md
 .. _OP_CLTV: https://en.bitcoin.it/wiki/Timelock#CheckLockTimeVerify
