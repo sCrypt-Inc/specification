@@ -22,7 +22,7 @@ Each contract provides a template for a certain type of contracts (e.g., P2PHK o
 Constructor
 ===========
 Each contract has at most one constructor. It is where contract member variables are initialized. 
-For example, it can initialize the public key hash of a P2PHK contract, or the hash of a secret in a hash puzzle contract.
+For example, it can initialize the public key hash of a P2PKH contract, or the hash of a secret in a hash puzzle contract.
 
 Default Constructor
 -------------------
