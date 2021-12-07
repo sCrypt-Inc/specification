@@ -7,7 +7,7 @@ When a UTXO is spent (i.e., an sCrypt contract public function is called success
 For a contract to keep state and able to be called multiple times while carrying the mutable state, these steps have to be followed.
 
 State Decorator
-==================
+===============
 Declare any property that is part of the state with a decorator ``@state``.
 The state property can be used the same way as a regular property.
 
@@ -23,7 +23,7 @@ The state property can be used the same way as a regular property.
     }
 
 Propagate the State
-======================
+===================
 A contract can keep state across chained transactions by storing it in the locking script.
 In the following example, a contract goes from ``state0`` to ``state1``, and then to ``state2``.
 Input in transaction 1 ``tx1`` is spending UTXO in ``tx0``, and ``tx2`` spending ``tx1``.
