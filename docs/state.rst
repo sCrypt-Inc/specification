@@ -65,3 +65,55 @@ The following is an example contract that records the number of times ``mutate()
             require(hash256(output) == Util.hashOutputs(txPreimage));
         }
     }
+
+Restrictions
+============
+For any public function to access a stateful property, it must include a ``SighashPreimage`` parameter that is validated with ``Tx.checkPreimage*()``, i.e., with :ref:`OP_PUSH_TX<pushtx-label>` .
+This does not apply to any non-public function, including constructors.
+
+.. code-block:: solidity
+
+    contract Counter {
+        @state
+        int counter;
+
+        constructor(int counter) {
+            // OK: not a public function
+            this.counter = counter;
+        }
+        
+        public function increment(SigHashPreimage txPreimage, int amount) {    
+            // OK
+            this.counter++;
+
+            require(Tx.checkPreimage(txPreimage));
+        }
+
+        public function foo(SigHashPreimage txPreimage, int amount) {
+            require(Tx.checkPreimageOpt(txPreimage));
+    
+            // OK
+            this.counter++;
+
+            require(true);
+        }
+
+        public function bar(SigHashPreimage txPreimage) {
+            // Not OK: missing Tx.checkPreimage*()
+            this.counter++;
+
+            require(true);
+        }
+
+        public function baz(int i) {
+            // Not OK: missing SigHashPreimage
+            this.counter++;
+
+            require(true);
+        }
+
+        function baz() : int {
+            // OK: not a public function
+            return this.counter;
+        }
+    }
