@@ -159,6 +159,35 @@ To customize ECDSA signing, such as choosing sighash type, there is a version ca
 that supports custom sighash type. To customize ephemeral key, there is a more general version called ``Tx.checkPreimageAdvanced()``. see `Advanced OP_PUSH_TX`_.
 
 
+ScriptCode of preimage usually contains the entire locking script. The only exception is when there is OP_CODESEPARATOR (OCS) in it. 
+In this case, the scriptCode is the locking script but removing everything up to and including the last executed OCS before `OP_CHECKSIG`_ is executed.
+
+
+.. image::  _static/images/op_codeseparator.png
+    :width: 100%
+    :alt: OP_CODESEPARATOR
+    :align: center
+
+The ``Tx`` library provides a set of OSC version methods to check this preimage that does not contain a complete locking script.
+In many cases, scriptCode, or portion of it, is not needed when using OP_PUSH_TX. OCS can be used to cut its size. 
+For example, in the following contract, only nLocktime, of the whole preimage is needed. We use ``Tx.checkPreimageOCS()``, a variant of the conventional ``Tx.checkPreimage()``. 
+The only difference is that an OCS is inserted right before OP_CHECKSIG within the former. 
+Also note we put ``Tx.checkPreimageOCS()`` as the last statement for maximal optimization.
+
+
+.. code-block:: solidity
+
+  contract CheckLockTimeVerifyOCS {
+      int matureTime;
+
+      public function unlock(SigHashPreimage preimage) {
+          require(SigHash.nLocktime(preimage) > this.matureTime);
+          require(Tx.checkPreimageOCS(preimage));
+      }
+  }
+
+
+
 Library ``SigHash``
 -----------------------
 sCrypt also provides a ``SigHash`` library to access various fields in the preimage. 
@@ -380,8 +409,14 @@ Full List
       - None
       - | checkPreimage(SigHashPreimage preimage) : bool
         | checkPreimageOpt(SigHashPreimage rawTx) : bool
+        | checkPreimageOpt\_(SigHashPreimage rawTx) : bool
         | checkPreimageSigHashType(SigHashPreimage txPreimage, SigHashType sigHashType) : bool
         | checkPreimageAdvanced(SigHashPreimage rawTx, PrivKey privKey, PubKey pubKey, int inverseK, int r, bytes rBigEndian, SigHashType sigHashType) : bool
+        | checkPreimageOCS(SigHashPreimage preimage) : bool
+        | checkPreimageOptOCS(SigHashPreimage rawTx) : bool
+        | checkPreimageOptOCS\_(SigHashPreimage rawTx) : bool
+        | checkPreimageSigHashTypeOCS(SigHashPreimage txPreimage, SigHashType sigHashType) : bool
+        | checkPreimageAdvancedOCS(SigHashPreimage rawTx, PrivKey privKey, PubKey pubKey, int inverseK, int r, bytes rBigEndian, SigHashType sigHashType) : bool
 
     * - SigHash
       - None
@@ -425,4 +460,6 @@ Full List
 .. _Advanced OP_PUSH_TX: https://medium.com/@xiaohuiliu/op-push-tx-3d3d279174c1
 .. _OP_PUSH_TX 技术: https://blog.csdn.net/freedomhero/article/details/107306604
 .. _高级 OP_PUSH_TX 技术: https://blog.csdn.net/freedomhero/article/details/107333738
+.. _OP_CHECKSIG: https://wiki.bitcoinsv.io/index.php/OP_CHECKSIG
+
 
