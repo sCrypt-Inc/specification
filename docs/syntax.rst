@@ -338,15 +338,16 @@ Note there is no ``;`` at the end.
 
     .. code-block:: solidity
 
-      contract TestSeparator {
-          public function equal(int y) {
-              int a = 0;
-              // separator 1
+      contract P2PKH_OCS {
+          Ripemd160 pubKeyHash;
+
+          public function unlock(Sig sig, PubKey pubKey) {
+              // code separator 1
               ***
-              int b = 2;
-              // separator 2
+              require(hash160(pubKey) == this.pubKeyHash);
+              // code separator 2
               *****
-              require(y > 0);
+              require(checkSig(sig, pubKey));
           }
       }
 
