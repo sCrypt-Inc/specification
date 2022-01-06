@@ -9,13 +9,17 @@ For a contract to keep state and able to be called multiple times while carrying
 State Decorator
 ===============
 Declare any property that is part of the state with a decorator ``@state``.
-The state property can be used the same way as a regular property. Note, that an explicit constructor definition isn't allowed when the contract contains state properties.
+The state property can be used the same way as a regular property.
 
 .. code-block:: solidity
 
     contract Counter {
         @state
         int counter;
+        
+        constructor(int counter) {
+            this.counter = counter;
+        }
         
     }
 
