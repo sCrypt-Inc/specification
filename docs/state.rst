@@ -39,7 +39,7 @@ simply call a built-in function ``this.getStateScript()`` to get the locking scr
 It is automatically generated for every stateful contract, i.e., a contract that has at least one property decorated with ``@state``.
 
 Finally, use :ref:`OP_PUSH_TX<pushtx-label>` to ensure the output[s] containing the state go into the current spending transaction.
-The following is an example contract that records the number of times ``mutate()`` have been called.
+The following is an example contract that records the number of times ``increment()`` have been called.
 
 .. code-block:: solidity
 
