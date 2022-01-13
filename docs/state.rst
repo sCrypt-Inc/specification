@@ -61,9 +61,9 @@ The following is an example contract that records the number of times ``incremen
             bytes outputScript = this.getStateScript();
 
             // construct an output from its locking script and satoshi amount
-            bytes output = Util.buildOutput(outputScript, amount);
+            bytes output = Utils.buildOutput(outputScript, amount);
             // only 1 input here
-            require(hash256(output) == Util.hashOutputs(txPreimage));
+            require(hash256(output) == SigHash.hashOutputs(txPreimage));
         }
     }
 
