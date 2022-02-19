@@ -224,6 +224,12 @@ To cast a supertype ``bytes`` to them, a function of the type name must be expli
 
         Ripemd160 r = Ripemd160(b'0011223344556677889999887766554433221100');
 
+* **PubKeyHash** - an alias for `Ripemd160`` type. Usually represent a bitcoin address.
+
+    .. code-block:: solidity
+
+        PubKeyHash aliceAddress = PubKeyHash(b'0011223344556677889999887766554433221100');
+
 * **Sha1** - a SHA-1 hash type.
 
     .. code-block:: solidity
