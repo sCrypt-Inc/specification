@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-21 20:45+0800\n"
+"POT-Creation-Date: 2022-02-21 21:21+0800\n"
 "PO-Revision-Date: 2021-10-07 06:10+0000\n"
 "Last-Translator: qtom zheng <zhfnjust@qq.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
@@ -541,7 +541,28 @@ msgstr "12"
 msgid "``? :``"
 msgstr "``? :``"
 
-#: ../../syntax.rst:454 6cf9eaa66b134fd9aa5b4e448d6b3806
+#: ../../syntax.rst:454 fb3462e167d248ffabf46f23c7d8125c
+msgid "13"
+msgstr "13"
+
+#: ../../syntax.rst:455 ../../syntax.rst:459 a56b7e5bd99a4fc9b5947fce8743e388
+#: 48e8c96ead5c400295780e214c1af5f0
+msgid "``-- ++``"
+msgstr "``-- ++``"
+
+#: ../../syntax.rst:456 825262997c3c40099da35e39fa693a34
+msgid "left (``--a``, ``++a``)"
+msgstr "左（``--a``，``++a``）"
+
+#: ../../syntax.rst:458 da22706f9da64e99944a848e5262bbef
+msgid "14"
+msgstr "14"
+
+#: ../../syntax.rst:460 ea6032051a2f47b5a9f52ce52ba1cf99
+msgid "right (``a--``, ``a++``)"
+msgstr "右 (``a--``, ``a++``)"
+
+#: ../../syntax.rst:462 6cf9eaa66b134fd9aa5b4e448d6b3806
 msgid ""
 "Operator ``&&``, ``||``, and ``? :`` use `short-circuit evaluation "
 "<https://en.wikipedia.org/wiki/Short-circuit_evaluation>`_."
@@ -549,11 +570,11 @@ msgstr ""
 "运算符 ``&&``、``||`` 和 ``? :`` 使用 `短路评估 <https://en.wikipedia.org/wiki/Short-"
 "circuit_evaluation>`_."
 
-#: ../../syntax.rst:457 400e39f0effb4b5a9f38acafe4ffa2bc
+#: ../../syntax.rst:465 400e39f0effb4b5a9f38acafe4ffa2bc
 msgid "Scoping"
 msgstr "作用域"
 
-#: ../../syntax.rst:458 24e050d51c3043078aa8acb378342133
+#: ../../syntax.rst:466 24e050d51c3043078aa8acb378342133
 msgid ""
 "Scoping in sCrypt follows the prevailing scoping rules of C99 and Solidity. "
 "Outer scope variable is shadowed by the inner scope variable of the same "

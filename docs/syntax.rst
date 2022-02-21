@@ -451,6 +451,14 @@ Operators
       - ``? :``
       - right
 
+    * - 13
+      - ``-- ++``
+      - left (``--a``, ``++a``)
+
+    * - 14
+      - ``-- ++``
+      - right (``a--``, ``a++``)
+
 Operator ``&&``, ``||``, and ``? :`` use `short-circuit evaluation <https://en.wikipedia.org/wiki/Short-circuit_evaluation>`_.
 
 Scoping
