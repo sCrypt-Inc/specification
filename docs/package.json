@@ -13,8 +13,8 @@
     "pull": "tx pull -s -r ",
     "postpull": "npm run build:cn",
     "build": "make html",
-    "build:en": "set SPHINXOPTS=-Dlanguage=en && npm run build",
-    "build:cn": "set SPHINXOPTS=-Dlanguage=zh_CN && npm run build",
+    "build:en": "make -e SPHINXOPTS=\"-Dlanguage='en'\" html",
+    "build:cn": "make -e SPHINXOPTS=\"-Dlanguage='zh_CN'\" html",
     "clean": "make clean"
   },
   "author": "",
