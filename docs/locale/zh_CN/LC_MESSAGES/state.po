@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# qtom zheng <zhfnjust@qq.com>, 2021
+# qtom zheng <zhfnjust@qq.com>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 08:29+0800\n"
+"POT-Creation-Date: 2022-02-21 20:28+0800\n"
 "PO-Revision-Date: 2021-10-07 06:10+0000\n"
-"Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
+"Last-Translator: qtom zheng <zhfnjust@qq.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,11 +21,11 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../../state.rst:3 c771bbbef0394f8a9a28c6554b7eb780
+#: ../../state.rst:3 0599856deedb4b09a70e5deebd7eccd5
 msgid "Stateful Contract"
 msgstr "有状态合约"
 
-#: ../../state.rst:5 47f4abe9250c43f78035bfee1477c854
+#: ../../state.rst:5 d68638bf2cea4c748aec2cbab687a859
 msgid ""
 "Bitcoin/sCrypt contract uses Unspent Transaction Output (UTXO) model: a "
 "contract is inside a UTXO, dictating how the bitcoins in the UTXO can be "
@@ -37,21 +37,21 @@ msgstr ""
 "比特币/sCrypt 合约使用未花费交易输出 (UTXO) 模型：合约位于 UTXO 内，决定如何使用 UTXO 中的比特币。当一个 UTXO "
 "被花费（即成功调用 sCrypt 合约公共函数）时，合约终止。对于保持状态并能够在携带可变状态的同时被多次调用的合约，必须遵循以下这些步骤。"
 
-#: ../../state.rst:10 0a63ec26cfe941fabef5c996a2fb2301
+#: ../../state.rst:10 faefd471ad994715a57e9edef02350fa
 msgid "State Decorator"
 msgstr "状态装饰器"
 
-#: ../../state.rst:11 e33538f8c70d48a5b81dac82734d1cc9
+#: ../../state.rst:11 62383441c7fc41b09c61cf691c137345
 msgid ""
 "Declare any property that is part of the state with a decorator ``@state``. "
 "The state property can be used the same way as a regular property."
 msgstr "使用装饰器 ``@state`` 声明属于状态的任何属性。 状态属性可以像普通属性一样使用。"
 
-#: ../../state.rst:26 ff89e8dde1e14d42ad02681b0bae7b78
+#: ../../state.rst:27 ec08c7cd073544b7a2103e726b045720
 msgid "Propagate the State"
 msgstr "传播状态"
 
-#: ../../state.rst:27 8fc2b39a16b04bd1a6adc782debdc58a
+#: ../../state.rst:28 ec0a713979f0449699a84625f8c6dd9b
 msgid ""
 "A contract can keep state across chained transactions by storing it in the "
 "locking script. In the following example, a contract goes from ``state0`` to"
@@ -61,11 +61,11 @@ msgstr ""
 "合约可以通过将其状态存储在锁定脚本中来实现链式交易保持状态。在以下示例中，合约从 ``state0`` 到 ``state1``，然后到 "
 "``state2``。交易 ``tx1`` 的输入花费了 在 ``tx0`` 中的 UTXO，而 ``tx2`` 花费了 ``tx1`` 的 UTXO。"
 
-#: ../../state.rstNone ccc5a434c6e241a594c554ec13f11a88
-msgid "keep state"
+#: ../../state.rstNone 0b05234d74cd475aad8f325ff6e40d38
+msgid "保持状态"
 msgstr "保持状态"
 
-#: ../../state.rst:36 6228b2299d874f6e8f459afc7e62a7c6
+#: ../../state.rst:37 b83557bf44864066ad8132a045786d93
 msgid ""
 "When you are ready to pass the new state into the output[s] in the current "
 "spending transaction, simply call a built-in function "
@@ -77,12 +77,26 @@ msgstr ""
 "当准备好将新状态传递到当前花费UTXO的交易中的输出时，只需调用内置函数 ``this.getStateScript()``，     "
 "即可获取包含最新状态的锁定脚本。编译器为每个有状态合约自动生成改函数，有状态合约至少有一个带有 ``@state`` 修饰的属性。"
 
-#: ../../state.rst:40 d678b5926cc946649611f2039946796d
+#: ../../state.rst:41 a98860e0544f4bb7b7fd42349c0dd6e6
 msgid ""
 "Finally, use :ref:`OP_PUSH_TX<pushtx-label>` to ensure the output[s] "
 "containing the state go into the current spending transaction. The following"
-" is an example contract that records the number of times ``mutate()`` have "
-"been called."
+" is an example contract that records the number of times ``increment()`` "
+"have been called."
 msgstr ""
-"最后，使用 :ref:`OP_PUSH_TX <pushtx-label>` 来确保包含状态的输出进入当前支出交易。以下是一个示例合约，它记录了 "
-"``mutate()`` 被调用的次数。"
+"最后，使用 :ref:`OP_PUSH_TX <pushtx-label>` 确保当前交易的输出包含新的状态。下面是一个示例合约，它记录了 "
+"``increment()`` 被调用的次数。"
+
+#: ../../state.rst:71 4e07790732a344a7acaedbc0aa60e91c
+msgid "Restrictions"
+msgstr "限制"
+
+#: ../../state.rst:72 34eb54d09c664792964a94a99139701c
+msgid ""
+"For any public function to access a stateful property, it must include a "
+"``SighashPreimage`` parameter that is validated with "
+"``Tx.checkPreimage*()``, i.e., with :ref:`OP_PUSH_TX<pushtx-label>` . This "
+"does not apply to any non-public function, including constructors."
+msgstr ""
+"对于任何访问状态属性的公共函数，它必须包含一个通过 ``Tx.checkPreimage*()`` 验证的 ``SighashPreimage`` "
+"参数，即使用 :ref:`OP_PUSH_TX <pushtx-label>`。这不适用于任何非公共函数，包括构造函数。"

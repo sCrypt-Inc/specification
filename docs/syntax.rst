@@ -55,7 +55,7 @@ Basic Types
         int a3 = 55066263022277343669578718895168534326250603453777594175500187360389116729240;
         int a4 = 0xFF8C;
 
-* **bytes** - a variable length array of bytes, whose literals are either in quoted hexadecimal format prefixed by ``b``, or double quoted UTB8 string.
+* **bytes** - a variable length array of bytes, whose literals are either in quoted hexadecimal format prefixed by ``b``, or double quoted UTF8 string.
 
     .. code-block:: solidity
 
