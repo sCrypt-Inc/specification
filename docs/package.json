@@ -5,17 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gettext": ".\\make.bat gettext",
+    "gettext": "make gettext",
     "push:all": "npm run gettext && tx push -s",
     "push": "npm run gettext && tx push -s -r ",
     "pull:all": "tx pull -a",
     "postpull:all": "npm run build:cn",
     "pull": "tx pull -s -r ",
     "postpull": "npm run build:cn",
-    "build": ".\\make.bat html",
+    "build": "make html",
     "build:en": "set SPHINXOPTS=-Dlanguage=en && npm run build",
     "build:cn": "set SPHINXOPTS=-Dlanguage=zh_CN && npm run build",
-    "clean": ".\\make.bat clean"
+    "clean": "make clean"
   },
   "author": "",
   "license": "ISC"
