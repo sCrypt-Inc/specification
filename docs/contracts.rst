@@ -457,7 +457,7 @@ Full List
 .. _BIP143: https://github.com/bitcoin-sv/bitcoin-sv/blob/master/doc/abc/replay-protected-sighash.md
 .. _OP_CLTV: https://en.bitcoin.it/wiki/Timelock#CheckLockTimeVerify
 .. _OP_PUSH_TX: https://medium.com/@xiaohuiliu/op-push-tx-3d3d279174c1
-.. _Advanced OP_PUSH_TX: https://medium.com/@xiaohuiliu/op-push-tx-3d3d279174c1
+.. _Advanced OP_PUSH_TX: https://medium.com/@xiaohuiliu/advanced-op-push-tx-78ce84f69a66
 .. _OP_PUSH_TX 技术: https://blog.csdn.net/freedomhero/article/details/107306604
 .. _高级 OP_PUSH_TX 技术: https://blog.csdn.net/freedomhero/article/details/107333738
 .. _OP_CHECKSIG: https://wiki.bitcoinsv.io/index.php/OP_CHECKSIG
