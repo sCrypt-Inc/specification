@@ -168,7 +168,7 @@ In this case, the scriptCode is the locking script but removing everything up to
     :alt: OP_CODESEPARATOR
     :align: center
 
-The ``Tx`` library provides a set of OSC version methods to check this preimage that does not contain a complete locking script.
+The ``Tx`` library provides a set of OCS version methods to check this preimage that does not contain a complete locking script.
 In many cases, scriptCode, or portion of it, is not needed when using OP_PUSH_TX. OCS can be used to cut its size. 
 For example, in the following contract, only nLocktime, of the whole preimage is needed. We use ``Tx.checkPreimageOCS()``, a variant of the conventional ``Tx.checkPreimage()``. 
 The only difference is that an OCS is inserted right before OP_CHECKSIG within the former. 
