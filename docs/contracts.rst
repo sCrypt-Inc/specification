@@ -409,12 +409,12 @@ Full List
       - None
       - | checkPreimage(SigHashPreimage preimage) : bool
         | checkPreimageOpt(SigHashPreimage rawTx) : bool
-        | checkPreimageOpt\_(SigHashPreimage rawTx) : bool
+        | checkPreimageOpt\_(SigHashPreimage rawTx) : bool      // set sigHashType in ASM
         | checkPreimageSigHashType(SigHashPreimage txPreimage, SigHashType sigHashType) : bool
         | checkPreimageAdvanced(SigHashPreimage rawTx, PrivKey privKey, PubKey pubKey, int inverseK, int r, bytes rBigEndian, SigHashType sigHashType) : bool
         | checkPreimageOCS(SigHashPreimage preimage) : bool
         | checkPreimageOptOCS(SigHashPreimage rawTx) : bool
-        | checkPreimageOptOCS\_(SigHashPreimage rawTx) : bool
+        | checkPreimageOptOCS\_(SigHashPreimage rawTx) : bool   // set sigHashType in ASM
         | checkPreimageSigHashTypeOCS(SigHashPreimage txPreimage, SigHashType sigHashType) : bool
         | checkPreimageAdvancedOCS(SigHashPreimage rawTx, PrivKey privKey, PubKey pubKey, int inverseK, int r, bytes rBigEndian, SigHashType sigHashType) : bool
 
