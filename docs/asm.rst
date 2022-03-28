@@ -80,7 +80,7 @@ Loop
                     OP_ADD
                 }
             }
-            $sum
+            13
             OP_NUMEQUAL
             OP_NIP
         }
@@ -98,10 +98,10 @@ The equivalent sCrypt code is:
                 sum += (i + j);
             }
         }
-        require(sum == 19);
+        require(sum == 0x13);
     }
 
-``i`` and ``j`` are :ref:`Induction variable <induction-var-label>` . ``$sum`` is assembly variable.
+``i`` and ``j`` are :ref:`Induction variables <induction-var-label>` . ``$sum`` is an assembly variable.
 
 
 String Literal
