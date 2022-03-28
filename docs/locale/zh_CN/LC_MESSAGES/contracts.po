@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-07 10:29+0800\n"
+"POT-Creation-Date: 2022-03-28 22:20+0800\n"
 "PO-Revision-Date: 2021-10-07 06:10+0000\n"
 "Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
@@ -22,36 +22,36 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../../contracts.rst:3 ../../contracts.rst:90
-#: 134728ec8b6046b6bb8bdfee69be6f51 b0ddadacffb24a658040cca2222d3811
+#: 76e6fd039a51478c9464b700d95a8d76 1e4e1b37b7114368ade53fb6f85b7996
 msgid "Standard Contracts"
 msgstr "标准合约"
 
-#: ../../contracts.rst:6 25d5e619c2ab44539201c6b8f1948cee
+#: ../../contracts.rst:6 bbdd106e946b469dbe8fafec2d88d1ba
 msgid "Multiple Contracts"
 msgstr "多个合约"
 
-#: ../../contracts.rst:7 8d95b90f59c14935b39e6bad84899e58
+#: ../../contracts.rst:7 c81120c0342e4d15aa39527fbfeffaa7
 msgid ""
 "A single file can define multiple contracts. In this case, the last contract"
 " acts as the main contract and is what gets compiled. Other contracts are "
 "dependencies."
 msgstr "一个文件可以定义多个合约。在这种情况下，最后一个合约作为主合约并且被编译。其他合约是依赖项。"
 
-#: ../../contracts.rst:10 10c7afe45d5741dbb37f26c85cee7976
+#: ../../contracts.rst:10 86261416f4ca4c71bcfd0db742cf2adc
 msgid ""
 "In the following example, a standard P2PKH contract is rewritten using two "
 "other contracts: a hash puzzle contract that checks the public key matches "
 "the public key hash, and a Pay-to-PubKey (P2PK) contract that verifies "
 "signature matches public key."
 msgstr ""
-"在下面这个例子中，标准的P2PKH合约被改写为两个其他合约：一个用来检查公钥和公钥哈希是否匹配的哈希谜题（hash puzzle）合约"
-"，还有一个检查签名和公钥是否匹配的Pay-to-PubKey（P2PK）合约。"
+"在下面这个例子中，标准的P2PKH合约被改写为两个其他合约：一个用来检查公钥和公钥哈希是否匹配的哈希谜题（hash "
+"puzzle）合约，还有一个检查签名和公钥是否匹配的Pay-to-PubKey（P2PK）合约。"
 
-#: ../../contracts.rst:44 15a402754ac041198d6ad6e746c460bf
+#: ../../contracts.rst:44 3f592da2271e4b8ea26be11821339e3a
 msgid "import"
 msgstr "导入（import）"
 
-#: ../../contracts.rst:45 8f939f4bcf3341958e0fb755e89dcb2b
+#: ../../contracts.rst:45 b916f36c16714ee8b426822a767b276e
 msgid ""
 "Alternatively, the contract above can be broken into three files. The "
 "``Pay2PubKeyHash`` contact ``import``\\s other two contracts as "
@@ -61,18 +61,18 @@ msgstr ""
 "或者，可以将上述合约分到三个文件中。 ``Pay2PubKeyHash`` 合约 ``import`` "
 "其他两个合约作为依赖。这就可以重用其他人写的合约，成为构建合约库的基础。"
 
-#: ../../contracts.rst:48 e0a4eea317f4487e92c3f83578c19113
+#: ../../contracts.rst:48 6222e5260856431b913019f826e63318
 msgid ""
 "A contract can be instantiated by ``new``. A ``public`` function can be "
 "called from ``require``, which takes boolean expression as input."
 msgstr ""
 "合约可以通过 ``new`` 来实例化。``require`` 函数的参数是条件表达式， 调用合约的 ``public`` 函数可以作为条件表达式传入。"
 
-#: ../../contracts.rst:68 366f714b888d4f9b9f7301d37a08cae0
+#: ../../contracts.rst:68 5505e8036a1a4a5584787549d1fc303d
 msgid "Library"
 msgstr "Library 库"
 
-#: ../../contracts.rst:69 4fc6664e9799410991499937dd4d0ba5
+#: ../../contracts.rst:69 1f71267acabd45beaf4f74f7a9e5d711
 msgid ""
 "A library is the same with a contract, except it does not contain any public"
 " function. It is only intended to be imported by a contract or other "
@@ -80,18 +80,18 @@ msgid ""
 "frequently used to group related constants and static functions."
 msgstr "库与合约相同，只是它不包含任何公共函数。它仅用于由合约或其他库导入。因此它不能被独立部署和调用。它经常用于对相关常量和静态函数进行分组。"
 
-#: ../../contracts.rst:91 1210614e82c1489fa0d59dbb640ad071
+#: ../../contracts.rst:91 68f362ab136d452cad1495419dbf9865
 msgid ""
 "sCrypt comes with standard libraries that define many commonly used "
 "contracts. They are included by default and do not require explicit "
 "``import`` to be used."
 msgstr "sCrypt自带标准库，里面定义了许多常用的合约。标准库是默认就导入的，不需要写 ``import`` 语句。"
 
-#: ../../contracts.rst:94 159ed79c4e984e26b14a738f51677411
+#: ../../contracts.rst:94 b2fb70eae1994541b3c531285290a02d
 msgid "Library ``Utils``"
 msgstr "``Utils`` 库"
 
-#: ../../contracts.rst:96 40876d3085864fc09897d8cb720b5703
+#: ../../contracts.rst:96 36f60a37b5764cc7a4383e5d57330bdc
 msgid ""
 "The ``Utils`` library provides a set of commonly used utility functions, "
 "such as function ``Utils.fromLEUnsigned`` converts signed integer ``n`` to "
@@ -103,24 +103,24 @@ msgstr ""
 "转换为小端字节序的无符号整数。函数 ``buildOutput(bytes outputScript, int outputSatoshis) : "
 "bytes`` 从其脚本和 satoshi 数量构建 一个 tx 输出。"
 
-#: ../../contracts.rst:100 bc6237b311de4b37acfe38eaef89a52f
+#: ../../contracts.rst:100 2002735eed774814b65d6dec30560fbf
 msgid ""
 "The following example shows usage of the standard library ``Utils`` that "
 "corresponds to ``RabinSignature`` contract."
 msgstr "以下示例显示了如何在 ``RabinSignature`` 合约的中使用标准库的 ``Utils`` 库。"
 
-#: ../../contracts.rst:121 159ed79c4e984e26b14a738f51677411
+#: ../../contracts.rst:121 17f77ceefcce43a49150ca44d23bd912
 msgid "Library ``Tx``"
 msgstr "``Tx`` 库"
 
-#: ../../contracts.rst:122 e11f82af44c54a17bab571543ec0b436
+#: ../../contracts.rst:122 55fd0bba946842af88dbaa7399e47f28
 msgid ""
 "One grave misconception regarding bitcoin script is that its access is only "
 "limited to the data provided in the locking script and corresponding "
 "unlocking script. Thus, its scope and capability are greatly underestimated."
 msgstr "对比特币脚本的一个严重误解是，脚本只能访问锁定脚本以及对应的解锁脚本中提供的数据。因此，脚本的范围和能力被大大低估了。"
 
-#: ../../contracts.rst:125 54c66a7a35694efba0b1384559f7b617
+#: ../../contracts.rst:125 2e8a7900fbcd40e8ab52ccf971311137
 msgid ""
 "sCrypt comes with a powerful library called ``Tx`` that allows inspection of"
 " the **ENTIRE TRANSACTION** containing the contract itself, besides the "
@@ -134,47 +134,47 @@ msgstr ""
 "``OP_PUSH_TX`` ，它可以把当前交易压到栈里，这样就可以在运行时访问了。更准确地说，可以访问的是在签名校验时用到的原像 preimage "
 "，在 `BIP143`_. 中有原像的详细定义。原像的数据格式如下："
 
-#: ../../contracts.rst:130 ac9831805b294d35a5cf6d05d8020923
+#: ../../contracts.rst:130 281ca231a9254c25bbe9269ddff929d5
 msgid "nVersion of the transaction (4-byte little endian)"
 msgstr " nVersion of the transaction  (交易的版本号,  4字节小端)"
 
-#: ../../contracts.rst:131 3b6f1370506340429d2491aac7c126e8
+#: ../../contracts.rst:131 1ea8e73d795d4565b19098462c4629a8
 msgid "hashPrevouts (32-byte hash)"
 msgstr "hashPrevouts (输入的输出点哈希 32字节哈希值)"
 
-#: ../../contracts.rst:132 ca1174f437dd460698c5c2d263f2a31f
+#: ../../contracts.rst:132 516099494f044c0ab3181f355c702e4f
 msgid "hashSequence (32-byte hash)"
 msgstr "hashSequence (序列号哈希 32字节哈希值)"
 
-#: ../../contracts.rst:133 049d8341f97f40aaa162e325c0ebd6a5
+#: ../../contracts.rst:133 310209478e8e4377a09b336ad895f75f
 msgid "outpoint (32-byte hash + 4-byte little endian)"
 msgstr "outpoint (此输入的输出点 32字节哈希值 + 4字节小端）"
 
-#: ../../contracts.rst:134 8c6be3064ec04604ba4041c3705b8523
+#: ../../contracts.rst:134 bcfd96ec0f5544af9e6e59c4432363e0
 msgid "scriptCode of the input (serialized as scripts inside CTxOuts)"
 msgstr "scriptCode of the input (输入对应的UTXO的锁定脚本)"
 
-#: ../../contracts.rst:135 7d708ed958884cab8553f3a4f9e22718
+#: ../../contracts.rst:135 f20e5486eb7648a6aa4dcd9d680e7bcc
 msgid "value of the output spent by this input (8-byte little endian)"
 msgstr "value of the output spent by this input (此输入对应的输出中包含的聪数 8字节小端)"
 
-#: ../../contracts.rst:136 4f8a172c99e4447c8e3f8593c13a1474
+#: ../../contracts.rst:136 e0779277e7b843a09c5c732f7e7b890e
 msgid "nSequence of the input (4-byte little endian)"
 msgstr "nSequence of the input (此输入的序列号 4字节小端)"
 
-#: ../../contracts.rst:137 2b4c7575216b4eacaf62fc78c86ca034
+#: ../../contracts.rst:137 6c49eac07e8a4f40bc48e301aada5444
 msgid "hashOutputs (32-byte hash)"
 msgstr "hashOutputs (输出的哈希 32字节哈希值)"
 
-#: ../../contracts.rst:138 5c2a9b4152e0481292579f4de6c8b1cf
+#: ../../contracts.rst:138 3717617f194c4539b385b9d4122a82cc
 msgid "nLocktime of the transaction (4-byte little endian)"
 msgstr "nLocktime of the transaction (交易的nLocktime 4字节小端)"
 
-#: ../../contracts.rst:139 5403c63d369c42daa7f4a4bd66877722
+#: ../../contracts.rst:139 fcc341bab19e4f8196fd6257eb664744
 msgid "sighash type of the signature (4-byte little endian)"
 msgstr "sighash type of the signature (签名类型 4字节小端)"
 
-#: ../../contracts.rst:141 d0e8952d29e441f08def46a75a8e4096
+#: ../../contracts.rst:141 736a3bfc1bf24ca0bd670e14e7118568
 msgid ""
 "As an example, contract ``CheckLockTimeVerify`` ensures coins are timelocked"
 " and cannot be spent before ``matureTime`` is reached, similar to "
@@ -183,7 +183,7 @@ msgstr ""
 "例如，合约 ``CheckLockTimeVerify`` 确保合约中的币是时间锁定的，并且不能在时间达到 ``matureTime`` "
 "之前花费，类似于 `OP_CLTV`_。"
 
-#: ../../contracts.rst:157 c6d73b9e75434d659cbb472b88f657d4
+#: ../../contracts.rst:157 38ccfc9dd98f4bfbb1ae4218538aa329
 msgid ""
 "More details can be found in this article `OP_PUSH_TX`_. To customize ECDSA "
 "signing, such as choosing sighash type, there is a version called "
@@ -195,7 +195,7 @@ msgstr ""
 "``Tx.checkPreimageSigHashType()`` 的版本，支持自定义 sighash 类型。要自定义临时密钥，有一个更通用的版本，称为"
 " ``Tx.checkPreimageAdvanced()``。请参阅 `高级 OP_PUSH_TX 技术`_。"
 
-#: ../../contracts.rst:162 6c0d3a44f870409dba7b461c3cd6e58c
+#: ../../contracts.rst:162 65197e6c0e8e4894a51bae999a585dc1
 msgid ""
 "ScriptCode of preimage usually contains the entire locking script. The only "
 "exception is when there is OP_CODESEPARATOR (OCS) in it. In this case, the "
@@ -205,13 +205,13 @@ msgstr ""
 "原像的 ScriptCode 通常包含整个锁定脚本。唯一的例外是当其中有 OP_CODESEPARATOR (OCS) "
 "时。在这种情况下，scriptCode 是锁定脚本，但在执行 `OP_CHECKSIG`_ 之前删除包括最后执行的 OCS 之前的所有内容。"
 
-#: ../../contracts.rstNone da8670751a1a4caab31008e50c4acc54
+#: ../../contracts.rstNone b920a2d381e04c4181ffddd6a9f12c38
 msgid "OP_CODESEPARATOR"
 msgstr "OP_CODESEPARATOR"
 
-#: ../../contracts.rst:171 c163674fb2d04d648896e90475fe2d8e
+#: ../../contracts.rst:171 0a7f250b4ed74607bad415def9238f5a
 msgid ""
-"The ``Tx`` library provides a set of OSC version methods to check this "
+"The ``Tx`` library provides a set of OCS version methods to check this "
 "preimage that does not contain a complete locking script. In many cases, "
 "scriptCode, or portion of it, is not needed when using OP_PUSH_TX. OCS can "
 "be used to cut its size. For example, in the following contract, only "
@@ -221,16 +221,12 @@ msgid ""
 " before OP_CHECKSIG within the former. Also note we put "
 "``Tx.checkPreimageOCS()`` as the last statement for maximal optimization."
 msgstr ""
-"``Tx`` 库提供了一组 OSC 版本的方法来检查这种不包含完整锁定脚本的原像。在许多情况下，使用 OP_PUSH_TX 时不需要 "
-"scriptCode 或其中的一部分。 OCS 可用于削减其大小。例如，在下面的合约中，只需要原像的 nLocktime。我们使用 "
-"``Tx.checkPreimageOCS()``，这是传统 ``Tx.checkPreimage()`` 的变体。唯一的区别是 OCS 被插入在前者的"
-" OP_CHECKSIG 之前。另请注意，将 ``Tx.checkPreimageOCS()`` 放在最后一条语句，能够最大程度地优化。"
 
-#: ../../contracts.rst:192 159ed79c4e984e26b14a738f51677411
+#: ../../contracts.rst:192 1f51aead88f64ecd9668c7c1bf16a353
 msgid "Library ``SigHash``"
 msgstr "``SigHash`` 库"
 
-#: ../../contracts.rst:193 e4a76400ef624ed1bb73a629bee8bebf
+#: ../../contracts.rst:193 8375e0640a4243b78bb9965eb57d5566
 msgid ""
 "sCrypt also provides a ``SigHash`` library to access various fields in the "
 "preimage. For example, we usually use ``SigHash.scriptCode`` to access the "
@@ -241,11 +237,11 @@ msgstr ""
 "sCrypt 还提供了一个 ``SigHash`` 库来访问原像中的各个字段。例如，我们通常使用 ``SigHash.scriptCode`` "
 "访问原像的 ``scriptCode`` 字段，使用 ``SigHash.value`` 访问原像的 value 字段，即在此合约中花费的比特币数量。"
 
-#: ../../contracts.rst:215 159ed79c4e984e26b14a738f51677411
+#: ../../contracts.rst:215 0bbe9cd44e70474393fe6e997eedf078
 msgid "Library ``HashedMap``"
 msgstr "``HashedMap`` 库"
 
-#: ../../contracts.rst:217 ea592b8df43548e1b3558e99fd3cf220
+#: ../../contracts.rst:217 fc8943e0f05049cb9017fccfc0e28169
 msgid ""
 "The `HashedMap` library provides a map/hashtable-like data structure. Unique"
 " keys and their corresponding values are hashed before being stored. Most "
@@ -256,22 +252,22 @@ msgstr ""
 "的大多数函数不仅需要一个键，还需要它的索引，按键的哈希升序排列。"
 
 #: ../../contracts.rst:221 ../../contracts.rst:297
-#: 1c404092032e4a89a09aeb899841b3c6 1c404092032e4a89a09aeb899841b3c6
+#: 0b00fc08717c4d519bcda827f01139a7 5dbf45ab8d4a4882ba31d75a677dcaa8
 msgid "**Constructor**"
 msgstr "**构造函数**"
 
-#: ../../contracts.rst:223 61dba7e8b0b84439b5a4b75ddb269623
+#: ../../contracts.rst:223 a0fd781dc3e540b793691e01fc725d86
 msgid ""
 "``HashedMap(bytes data)`` Create an instance of ``HashedMap`` with some "
 "initial data."
 msgstr "``HashedMap(bytes data)`` 使用一些初始数据创建一个 ``HashedMap`` 实例。"
 
 #: ../../contracts.rst:234 ../../contracts.rst:315
-#: 53d63e8f03844b7a9d22d29baa820e4c 53d63e8f03844b7a9d22d29baa820e4c
+#: d721ba97ad674744b01c04bd19dbe706 3cf2bedb16ed46b5a7aea3e5b3f4cd0c
 msgid "**Instance methods**"
 msgstr "**实例方法**"
 
-#: ../../contracts.rst:236 5a1c6582f1ab4f7ebabbba38d215ef52
+#: ../../contracts.rst:236 bc2df016a6cf46838e30176f800de781
 msgid ""
 "``set(K key, V val, int keyIndex) : bool`` Insert or update a (`key`, `val`)"
 " pair with the key index given by `keyIndex`. Returns `true` if successful; "
@@ -280,7 +276,7 @@ msgstr ""
 "``set(K key, V val, int keyIndex) : bool`` 使用给出的键索引 `keyIndex` 插入或更新 (`key`,"
 " `val`) 对。如果成功则返回  `true` ；否则返回 `false` 。"
 
-#: ../../contracts.rst:244 84067550dec0414ca47403837ce276d6
+#: ../../contracts.rst:244 291803c0f6d948e8ab1f8f1f192c0d35
 msgid ""
 "``canGet(K key, V val, int keyIndex): bool`` Check whether we can get a "
 "(`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` "
@@ -289,7 +285,7 @@ msgstr ""
 "``canGet(K key, V val, int keyIndex): bool``  通过键索引 `keyIndex` 检查我们是否可以得到一个 "
 "(`key`, `val`) 对。如果成功则返回 `true` ；否则返回 `false`。"
 
-#: ../../contracts.rst:251 d506e5928f5341cb9f852bf90673e2a1
+#: ../../contracts.rst:251 5dae61304e804214ae68c0b699c9bebf
 msgid ""
 "``has(K key, int keyIndex) : bool`` Check whether `key` exists in the map "
 "and its index is `keyIndex`. Returns `true` if both conditions are met; "
@@ -298,7 +294,7 @@ msgstr ""
 "``has(K key, int keyIndex) : bool`` 检查 HashedMap 中是否存在 `key`，其索引为 "
 "`keyIndex`。如果两个条件都满足，则返回 `true`；否则返回 `false`。"
 
-#: ../../contracts.rst:258 516472437d144395ab12eeca47a9ea09
+#: ../../contracts.rst:258 1776b34696ca48ee99f4038413425a45
 msgid ""
 "``delete(K key, int keyIndex) : bool`` Delete the entry with given `key` and"
 " the key index is `keyIndex`. Returns `true` if successful; otherwise "
@@ -307,26 +303,26 @@ msgstr ""
 "``delete(K key, int keyIndex) : bool`` 删除给定 `key` 的条目，并且键索引是 `keyIndex` "
 "。如果成功则返回`true`；否则返回 `false`。"
 
-#: ../../contracts.rst:265 21d9c29ff361427088e170a9bbef1fba
+#: ../../contracts.rst:265 d29d38a9958b4587bcfa821495dff205
 msgid "``clear() : bool`` Delete all entries of the map."
 msgstr "``clear() : bool`` 删除map的所有条目。"
 
-#: ../../contracts.rst:272 d96e445186ce4e338ea3d105c37c82a9
+#: ../../contracts.rst:272 d81cf77e79eb400eb1705e1bf441621a
 msgid ""
 "``size() : int`` Returns the size of map, i.e. the number of the keys it "
 "contains."
 msgstr "``size() : int`` 返回 HashedMap 的大小，比如它包含的键的数量。"
 
-#: ../../contracts.rst:280 21d9c29ff361427088e170a9bbef1fba
+#: ../../contracts.rst:280 11ce64bcaba54a44b94851f7cc433a43
 msgid ""
 "``data() : bytes`` Returns the internal data representation of the map."
 msgstr "``data() : bytes`` 返回 HashedMap 的序列化数据表示。"
 
-#: ../../contracts.rst:290 5fc6893102a2491f82068dac830151d9
+#: ../../contracts.rst:290 de361a6b2ff04dfda519703884b1219e
 msgid "Library ``HashedSet``"
 msgstr "``HashedSet`` 库"
 
-#: ../../contracts.rst:292 96b1f10b53af4589814af923e76c5860
+#: ../../contracts.rst:292 0f640dbb5fed476cb71ee59e09c07eed
 msgid ""
 "The `HashedSet` library provides a set-like data structure. It can be "
 "regarded as a special `HashedMap` where a value is the same with its key and"
@@ -338,13 +334,13 @@ msgstr ""
 "`HashedMap`，即键值对的值与其键相同，因此被省略。唯一值在存储之前被散列。 `HashedSet` 的大多数函数都需要一个索引，按值的 "
 "sha256 哈希值升序排列。"
 
-#: ../../contracts.rst:299 abffff7878bf45cb9798c52163c8e234
+#: ../../contracts.rst:299 70244511660f4d1dacf9ef1e3a8297dd
 msgid ""
 "``HashedSet(bytes data)`` Create an instance of ``HashedSet`` with some "
 "initial data."
 msgstr "``HashedSet(bytes data)`` 使用初始数据 data 创建一个 ``HashedSet`` 实例。"
 
-#: ../../contracts.rst:317 957561db0c0d4ba883d00c66930f0c6e
+#: ../../contracts.rst:317 c9d4b256a7c846d8bed12e538ddf00c5
 msgid ""
 "``add(E entry, int index) : bool`` Add `entry` to set with the key index "
 "given by `index`. Returns `true` if successful; otherwise returns `false`."
@@ -352,7 +348,7 @@ msgstr ""
 "``add(E entry, int index) : bool`` 添加具有给定 `entry` 项且索引为 `index` "
 "的条目。如果成功则返回“true”；否则返回 `false`。"
 
-#: ../../contracts.rst:324 d032df5e20794e599f4b55ed50383435
+#: ../../contracts.rst:324 b6fdee073fe04868b89bbec7ecc615a3
 msgid ""
 "``has(E entry, int index) : bool`` Check whether `entry` exists in the set "
 "and its index is `index`. Returns `true` if both conditions are met; "
@@ -361,7 +357,7 @@ msgstr ""
 "``has(E entry, int index) : bool`` 检查集合中是否存在具有给定 `entry` 项且索引为 `index` "
 "的条目。如果两个条件都满足，则返回 `true`；否则返回`false`。"
 
-#: ../../contracts.rst:331 1e79ad0670294010a5a57031bafdd14d
+#: ../../contracts.rst:331 665f51b9935c4792b20f5cf156f0ed56
 msgid ""
 "``delete(E entry, int index) : bool`` Delete the entry with given `entry` "
 "and the index is `index`. Returns `true` if successful; otherwise returns "
@@ -370,102 +366,104 @@ msgstr ""
 "``delete(E entry, int index) : bool`` 删除具有给定 `entry` 项且索引为 `index` "
 "的条目。如果成功则返回 `true`；否则返回 `false`。"
 
-#: ../../contracts.rst:338 21d9c29ff361427088e170a9bbef1fba
+#: ../../contracts.rst:338 9a5dd2e996eb42a1ba2d9a594cadc1f2
 msgid "``clear() : bool`` Delete all entries of the set."
 msgstr "``clear() : bool`` 删除集合的所有条目。"
 
-#: ../../contracts.rst:345 d96e445186ce4e338ea3d105c37c82a9
+#: ../../contracts.rst:345 1299265a591647cd9f6634d596529e8e
 msgid ""
 "``size() : int`` Returns the size of set, i.e. the number of the entries it "
 "contains."
 msgstr "``size() : int`` 返回集合的大小，即它包含的条目数。"
 
-#: ../../contracts.rst:352 21d9c29ff361427088e170a9bbef1fba
+#: ../../contracts.rst:352 9d612142f7ec45d59c5e16bf824b41c2
 msgid ""
 "``data() : bytes`` Returns the internal data representation of the set."
 msgstr "``data() : bytes`` 返回集合的内部序列化数据。"
 
-#: ../../contracts.rst:363 159ed79c4e984e26b14a738f51677411
+#: ../../contracts.rst:363 c53346c8f2fb4b07932aa750785f0eb8
 msgid "Library ``Constants``"
 msgstr "``Constants`` 库"
 
-#: ../../contracts.rst:365 dc34af40c7b94805bb4cadb730624826
+#: ../../contracts.rst:365 20fd966bff4645b4aefcea7cf04891cc
 msgid ""
 "sCrypt defines some commonly used constant values in the library "
 "``Constants``. You can use these constants anywhere in your code"
 msgstr "sCrypt 在 ``Constants`` 库中定义了一些常用的常量值。你可以在代码中的任何位置使用这些常量。"
 
-#: ../../contracts.rst:388 f1531513074247cc87f1ff92ced9c248
+#: ../../contracts.rst:388 48d97a00462a4eeea93ca85a48bbce92
 msgid "Full List"
 msgstr "完整列表"
 
-#: ../../contracts.rst:394 9509bbd63ad64b8b90f60f6ef3b65737
+#: ../../contracts.rst:394 e18836ca88b7448383bdca656f37f001
 msgid "Contract"
 msgstr "合约"
 
-#: ../../contracts.rst:395 1c404092032e4a89a09aeb899841b3c6
+#: ../../contracts.rst:395 74639848df29463bbd0cdbc7cdd55c20
 msgid "Constructor parameters"
 msgstr "构造函数参数"
 
-#: ../../contracts.rst:396 2ab447f59b874d65b7fc6f6bdef0da67
+#: ../../contracts.rst:396 ae81b75b4eba4e329e9487bf8af68f99
 msgid "Public function"
 msgstr "公共函数"
 
-#: ../../contracts.rst:398 c9c6db5b59684018a2523b0a25f9168f
+#: ../../contracts.rst:398 ccf250f8a70a43c0932084e3b1415a84
 msgid "Utils"
 msgstr "Utils"
 
 #: ../../contracts.rst:399 ../../contracts.rst:409 ../../contracts.rst:422
-#: c66b62308ad1476db8793bfe9e9146ce c66b62308ad1476db8793bfe9e9146ce
-#: c66b62308ad1476db8793bfe9e9146ce
+#: 57686980509d48d8b11e679d4d819e53 304247535f6d42ecab479dc5ad5dd734
+#: 9e9467011c7943dca5a0bcb4ebbb8cdc
 msgid "None"
 msgstr "None"
 
-#: ../../contracts.rst:0 c57c8a1b8ae5451ebf458ffa2d51ff18
+#: ../../contracts.rst:0 2f209b74e7df47b2bb4b5f57df23770a
 msgid "toLEUnsigned(int n, int l) : bytes"
 msgstr "toLEUnsigned(int n, int l) : bytes"
 
-#: ../../contracts.rst:0 c946ec66245746c59453538198be5251
+#: ../../contracts.rst:0 a0a34a78c3a54337ab2e229df872baf2
 msgid "fromLEUnsigned(bytes b) : int"
 msgstr "fromLEUnsigned(bytes b) : int"
 
-#: ../../contracts.rst:0 efa49ef2d6fd4de4869702ad36d568d8
+#: ../../contracts.rst:0 54eec30351c94b33935ab072e1a396b5
 msgid "readVarint(bytes b) : bytes"
 msgstr "readVarint(bytes b) : bytes"
 
-#: ../../contracts.rst:0 21f68c3ca90c457eabcb26d8cf9d32d3
+#: ../../contracts.rst:0 8dfc74e732e44c83a96b48cfed584a62
 msgid "writeVarint(bytes b) : bytes"
 msgstr "writeVarint(bytes b) : bytes"
 
-#: ../../contracts.rst:0 f3720750cdf84d4a90b42c486bb3ca8f
+#: ../../contracts.rst:0 e0a94e9a8d854b6ab1d4502fd13b260b
 msgid "buildOutput(bytes outputScript, int outputSatoshis) : bytes"
 msgstr "buildOutput(bytes outputScript, int outputSatoshis) : bytes"
 
-#: ../../contracts.rst:0 ac1ea7a35c2142e6be777ed5fba561f4
+#: ../../contracts.rst:0 cda1423946364b9ba9bc2d64c92360bd
 msgid "buildPublicKeyHashScript(PubKeyHash pubKeyHash) : bytes"
 msgstr "buildPublicKeyHashScript(PubKeyHash pubKeyHash) : bytes"
 
-#: ../../contracts.rst:0 93dc492e66e247c18fb9a617c6c9e885
+#: ../../contracts.rst:0 0ac8b3a52dc846cf8c87233643b006db
 msgid "buildOpreturnScript(bytes data) : bytes"
 msgstr "buildOpreturnScript(bytes data) : bytes"
 
-#: ../../contracts.rst:408 a6995085c8d847fcaa277f2d87c8e008
+#: ../../contracts.rst:408 d0472f484e1c4c67b39217d5b4dcdf58
 msgid "Tx"
 msgstr "Tx"
 
-#: ../../contracts.rst:0 167e552e074a46f4b0c0f4b6e3c78349
+#: ../../contracts.rst:0 dcf3e1da16c946b78e731f46b7ac5556
 msgid "checkPreimage(SigHashPreimage preimage) : bool"
 msgstr "checkPreimage(SigHashPreimage preimage) : bool"
 
-#: ../../contracts.rst:0 167e552e074a46f4b0c0f4b6e3c78349
+#: ../../contracts.rst:0 e15a7e36e6254f95a73672fe6c9025ab
 msgid "checkPreimageOpt(SigHashPreimage rawTx) : bool"
 msgstr "checkPreimageOpt(SigHashPreimage rawTx) : bool"
 
-#: ../../contracts.rst:0 167e552e074a46f4b0c0f4b6e3c78349
-msgid "checkPreimageOpt\\_(SigHashPreimage rawTx) : bool"
-msgstr "checkPreimageOpt\\_(SigHashPreimage rawTx) : bool"
+#: ../../contracts.rst:0 a842d9a3f3c8427a9052b704da6a2e0c
+msgid ""
+"checkPreimageOpt\\_(SigHashPreimage rawTx) : bool      // set sigHashType in"
+" ASM"
+msgstr ""
 
-#: ../../contracts.rst:0 acc241052df642b69e94b5c02bfc6427
+#: ../../contracts.rst:0 1ab9183f74f447f2b209c8060c40efd4
 msgid ""
 "checkPreimageSigHashType(SigHashPreimage txPreimage, SigHashType "
 "sigHashType) : bool"
@@ -473,7 +471,7 @@ msgstr ""
 "checkPreimageSigHashType(SigHashPreimage txPreimage, SigHashType "
 "sigHashType) : bool"
 
-#: ../../contracts.rst:0 7fbf824d394a4ddd9aef70f2cfcc0961
+#: ../../contracts.rst:0 23794807b021420b9243ba927151a945
 msgid ""
 "checkPreimageAdvanced(SigHashPreimage rawTx, PrivKey privKey, PubKey pubKey,"
 " int inverseK, int r, bytes rBigEndian, SigHashType sigHashType) : bool"
@@ -481,19 +479,21 @@ msgstr ""
 "checkPreimageAdvanced(SigHashPreimage rawTx, PrivKey privKey, PubKey pubKey,"
 " int inverseK, int r, bytes rBigEndian, SigHashType sigHashType) : bool"
 
-#: ../../contracts.rst:0 167e552e074a46f4b0c0f4b6e3c78349
+#: ../../contracts.rst:0 c154124669fe46ca98842bcd0d5765e0
 msgid "checkPreimageOCS(SigHashPreimage preimage) : bool"
 msgstr "checkPreimageOCS(SigHashPreimage preimage) : bool"
 
-#: ../../contracts.rst:0 167e552e074a46f4b0c0f4b6e3c78349
+#: ../../contracts.rst:0 7bc722ea83a548c8bc1b22f1f4b4afcb
 msgid "checkPreimageOptOCS(SigHashPreimage rawTx) : bool"
 msgstr "checkPreimageOptOCS(SigHashPreimage rawTx) : bool"
 
-#: ../../contracts.rst:0 167e552e074a46f4b0c0f4b6e3c78349
-msgid "checkPreimageOptOCS\\_(SigHashPreimage rawTx) : bool"
-msgstr "checkPreimageOptOCS\\_(SigHashPreimage rawTx) : bool"
+#: ../../contracts.rst:0 6c958c91c4d746fba08f8991e86b54b3
+msgid ""
+"checkPreimageOptOCS\\_(SigHashPreimage rawTx) : bool   // set sigHashType in"
+" ASM"
+msgstr ""
 
-#: ../../contracts.rst:0 acc241052df642b69e94b5c02bfc6427
+#: ../../contracts.rst:0 8a547b258bf547698d9f8f87dfd75b30
 msgid ""
 "checkPreimageSigHashTypeOCS(SigHashPreimage txPreimage, SigHashType "
 "sigHashType) : bool"
@@ -501,7 +501,7 @@ msgstr ""
 "checkPreimageSigHashTypeOCS(SigHashPreimage txPreimage, SigHashType "
 "sigHashType) : bool"
 
-#: ../../contracts.rst:0 7fbf824d394a4ddd9aef70f2cfcc0961
+#: ../../contracts.rst:0 312db8f3fd5440a0817f77f63a36e5b2
 msgid ""
 "checkPreimageAdvancedOCS(SigHashPreimage rawTx, PrivKey privKey, PubKey "
 "pubKey, int inverseK, int r, bytes rBigEndian, SigHashType sigHashType) : "
@@ -511,114 +511,114 @@ msgstr ""
 "pubKey, int inverseK, int r, bytes rBigEndian, SigHashType sigHashType) : "
 "bool"
 
-#: ../../contracts.rst:421 77c35bbf59d84a8f8ea5f4ea101680d2
+#: ../../contracts.rst:421 1c3cf53347e2447581b2eeee708a6ea7
 msgid "SigHash"
 msgstr "SigHash"
 
-#: ../../contracts.rst:0 9592df25a0ea4bd1a16a512dbef00e68
+#: ../../contracts.rst:0 0cc84f450dea49e2ae8f40e9d7a29b58
 msgid "nVersion(SigHashPreimage preimage) : bytes"
 msgstr "nVersion(SigHashPreimage preimage) : bytes"
 
-#: ../../contracts.rst:0 e4a40813db7f4ec3bc4cfe7988063889
+#: ../../contracts.rst:0 01e89e0a5ee34b70bed8ce7bf61ceda3
 msgid "hashPrevouts(SigHashPreimage preimage) : bytes"
 msgstr "hashPrevouts(SigHashPreimage preimage) : bytes"
 
-#: ../../contracts.rst:0 786805094e3147dc9ee2757febdaa56c
+#: ../../contracts.rst:0 b34117daa875413dba7454729dbb93f2
 msgid "hashSequence(SigHashPreimage preimage) : bytes"
 msgstr "hashSequence(SigHashPreimage preimage) : bytes"
 
-#: ../../contracts.rst:0 a3d6e4e4ee034c8abe025b52e3a9f03a
+#: ../../contracts.rst:0 802d2e3402784d5e890e9e6b1ecf31ce
 msgid "outpoint(SigHashPreimage preimage) : bytes"
 msgstr "outpoint(SigHashPreimage preimage) : bytes"
 
-#: ../../contracts.rst:0 55ac593b35a44ad6bddbc05bc64eb9e1
+#: ../../contracts.rst:0 78749d7545e946f6a418a661ed914e32
 msgid "scriptCode(SigHashPreimage preimage) : bytes"
 msgstr "scriptCode(SigHashPreimage preimage) : bytes"
 
-#: ../../contracts.rst:0 796c3de6baef4199a7657dd784ca85dc
+#: ../../contracts.rst:0 4baaf8097047456b8255a989666cd651
 msgid "valueRaw(SigHashPreimage preimage) : bytes"
 msgstr "valueRaw(SigHashPreimage preimage) : bytes"
 
-#: ../../contracts.rst:0 bab89dffd807420ba9508680c5fe8859
+#: ../../contracts.rst:0 36fa39b3278a47e2ba5dc75f21c370c2
 msgid "value(SigHashPreimage preimage) : int"
 msgstr "value(SigHashPreimage preimage) : int"
 
-#: ../../contracts.rst:0 88d460a9c9e348f7a87524d845f7add2
+#: ../../contracts.rst:0 9ad368371725487794a590d6932720a3
 msgid "nSequenceRaw(SigHashPreimage preimage) : bytes"
 msgstr "nSequenceRaw(SigHashPreimage preimage) : bytes"
 
-#: ../../contracts.rst:0 03423b4c9a294a9bbaf8cbf6e10aeb64
+#: ../../contracts.rst:0 8f2cdf3778ae4e16a9e515b33da1956b
 msgid "nSequence(SigHashPreimage preimage) : int"
 msgstr "nSequence(SigHashPreimage preimage) : int"
 
-#: ../../contracts.rst:0 2e54fa13a5e544c8b9b65aaf4ca92e11
+#: ../../contracts.rst:0 88ddcbe75a6545f384a37cc9947903b1
 msgid "hashOutputs(SigHashPreimage preimage) : bytes"
 msgstr "hashOutputs(SigHashPreimage preimage) : bytes"
 
-#: ../../contracts.rst:0 a7a13a813a8e45fba267b8849697f51f
+#: ../../contracts.rst:0 760e6af56bd84eb89b16dd606a1fb04a
 msgid "nLocktimeRaw(SigHashPreimage preimage) : bytes"
 msgstr "nLocktimeRaw(SigHashPreimage preimage) : bytes"
 
-#: ../../contracts.rst:0 bb2e1309f49a43a39337a380456738d0
+#: ../../contracts.rst:0 e6d047479156428ca33fdea462c90bbc
 msgid "nLocktime(SigHashPreimage preimage) : int"
 msgstr "nLocktime(SigHashPreimage preimage) : int"
 
-#: ../../contracts.rst:0 a636016757dd43f995aa595d59aa0e50
+#: ../../contracts.rst:0 4e774df343a149a99a0c0efebae427bd
 msgid "sigHashType(SigHashPreimage preimage) : SigHashType"
 msgstr "sigHashType(SigHashPreimage preimage) : SigHashType"
 
-#: ../../contracts.rst:437 55cf5fdf26734d4ba761d3992dc29e75
+#: ../../contracts.rst:437 c71b8444175a42879fa56fecdbf169f5
 msgid "HashedMap<K, V>"
 msgstr "HashedMap<K, V>"
 
 #: ../../contracts.rst:438 ../../contracts.rst:448
-#: 4cf3a5efbed14713a88e8a9fb394a5c7 4cf3a5efbed14713a88e8a9fb394a5c7
+#: 671ba53e8927486c94882c0cd6b449e0 8a3678368789449f848929deadebba8d
 msgid "bytes data"
 msgstr "bytes data"
 
-#: ../../contracts.rst:0 b99caa06a56647669c285a2d5e30a18c
+#: ../../contracts.rst:0 8b32d5df42d24fda869211ce63665286
 msgid "set(K key, V val, int keyIndex) : bool"
 msgstr "set(K key, V val, int keyIndex) : bool"
 
-#: ../../contracts.rst:0 dd72bf752b5a4ae887349b010a01500e
+#: ../../contracts.rst:0 74c587f9d56045cdb95c720747919d0c
 msgid "canGet(K key, V val, int keyIndex) : bool"
 msgstr "canGet(K key, V val, int keyIndex) : bool"
 
-#: ../../contracts.rst:0 040df4982d35422faa56a1e7662254d5
+#: ../../contracts.rst:0 e84856f8d3d949adade2cd30bffa5b72
 msgid "delete(K key, int keyIndex) : bool"
 msgstr "delete(K key, int keyIndex) : bool"
 
-#: ../../contracts.rst:0 caff9e2b110047e7a3ea736c8aee11e5
+#: ../../contracts.rst:0 0a5b0270e26d4c5589a5a9f05ba61220
 msgid "has(K key, int keyIndex) : bool"
 msgstr "has(K key, int keyIndex) : bool"
 
 #: ../../contracts.rst:0 ../../contracts.rst:0
-#: e9d39df92dff4bba8a328bf46e0f75a8 e9d39df92dff4bba8a328bf46e0f75a8
+#: 294b4c5098ef45e592831ee5436efeb9 ec46bf6959bc44bd908d02ed041f5cf4
 msgid "clear() : bool"
 msgstr "clear() : bool"
 
 #: ../../contracts.rst:0 ../../contracts.rst:0
-#: e7b1f2a4dee64766a84447cf3769f187 e7b1f2a4dee64766a84447cf3769f187
+#: 88d829cb36cc44ed8b1b4e1d39f6ac2c 94358688f7d4493691f85b3521de7a43
 msgid "size() : int"
 msgstr "size() : int"
 
 #: ../../contracts.rst:0 ../../contracts.rst:0
-#: c87b010b31e041759a773feb30a4775b c87b010b31e041759a773feb30a4775b
+#: d76abb493b0349f0ad7c1b8d7698db8a 90b503309d784630beec1394c5543993
 msgid "data() : bytes"
 msgstr "data() : bytes"
 
-#: ../../contracts.rst:447 55cf5fdf26734d4ba761d3992dc29e75
+#: ../../contracts.rst:447 4354d5f0c57a43ee9adfa927ec03753f
 msgid "HashedSet<V>"
 msgstr "HashedSet<V>"
 
-#: ../../contracts.rst:0 e3a3314a30164cbc98610162c6801071
+#: ../../contracts.rst:0 9e0f28213f9d44bdb11746f94965171d
 msgid "add(V val, int index) : bool"
 msgstr "add(V val, int index) : bool"
 
-#: ../../contracts.rst:0 b4485855920c47ea9c481af94248cf73
+#: ../../contracts.rst:0 83589fc7a6d749ff9b123ab3629c88aa
 msgid "delete(V val, int index) : bool"
 msgstr "delete(V val, int index) : bool"
 
-#: ../../contracts.rst:0 3888fa32eada4b4c91abdc6f0e3bdeae
+#: ../../contracts.rst:0 c028fe6fc68b4bf09a60f9a710ea87c3
 msgid "has(V val, int index) : bool"
 msgstr "has(V val, int index) : bool"

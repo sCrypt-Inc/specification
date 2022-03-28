@@ -4,16 +4,16 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# qtom zheng <zhfnjust@qq.com>, 2021
+# qtom zheng <zhfnjust@qq.com>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-09 11:04+0800\n"
+"POT-Creation-Date: 2022-03-28 22:20+0800\n"
 "PO-Revision-Date: 2021-10-07 14:25+0000\n"
-"Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
+"Last-Translator: qtom zheng <zhfnjust@qq.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,11 +21,11 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../../asm.rst:3 8cec999ca56a4635b0eb895d28292f1f
+#: ../../asm.rst:3 b1ba9f39134b442ba0a710ca6a303422
 msgid "Inline Assembly"
 msgstr "内联汇编"
 
-#: ../../asm.rst:4 d611070155fc4a2eb449204dfbac9c9f
+#: ../../asm.rst:4 e10c86465df94f03b6ffb5ec3b3ed4da
 msgid ""
 "Script is a low-level language and acts as assembly for the `Bitcoin Virtual"
 " Machine`_. Usually, developers do not have to deal with it directly and can"
@@ -40,18 +40,18 @@ msgstr ""
 "Script。例如，自定义脚本经过优化，因此比 sCrypt 生成的脚本更高效。或者脚本是使用外部工具（如 `MiniForth "
 "<https://powping.com/posts/95e53a7305ad9d333d072575946d0cfd0d6321f40af40f9c66c70955ada94e58>`_）生成的，需要集成到sCrypt中。"
 
-#: ../../asm.rst:9 ccbc29af4fa54a85a87ccf41eadd9e3c
+#: ../../asm.rst:9 d828bbfca5cf4b739e626a33dc2f6537
 msgid ""
 "Script can be embedded directly into sCrypt source code using assembly "
 "representation. An sCrypt function can be written in Script and called like "
 "a regular sCrypt function."
 msgstr "用汇编表示法可以直接把脚本嵌入到sCrypt源代码中。可以用脚本编写sCrypt函数，并像正常的sCrypt函数一样被调用。"
 
-#: ../../asm.rst:12 5a837f80da9a4d20838780a6ef9bde42
+#: ../../asm.rst:12 17c23002830243d7bb84e2e580bcedc1
 msgid "Calling Convention"
 msgstr "调用约定"
 
-#: ../../asm.rst:13 7c8aa8585ec34302b28dc054d37d1e62
+#: ../../asm.rst:13 0e969c3fceae4e6bb9079493924968c3
 msgid ""
 "For a function to be written in Script, its entire body must be enclosed by "
 "``asm`` mode. Function parameters are on top of the stack, in reverse order "
@@ -65,15 +65,15 @@ msgstr ""
 "foo(int p0, bytes p1, bool p2) : int`` 的函数，``p2`` 位于栈顶，``p1`` 是从栈顶倒数第二个，而 "
 "``p0`` 进入 `asm` 是第三个。当退出 ``asm`` 模式时，需要弹出栈里的所有参数，并把返回值放到栈顶。栈里其他元素保持不变。"
 
-#: ../../asm.rst:18 a3377dc437464863b24295569c54aee5
+#: ../../asm.rst:18 7bb718e6ebcc4d3890f0ae371f297a67
 msgid "Three assembly functions are shown below."
 msgstr "三个汇编函数如下所示。"
 
-#: ../../asm.rst:46 2eb9d8b1ca464ebaa86430596ba74c3a
+#: ../../asm.rst:46 efcb2a4622a84f62999c9ec6175f8a33
 msgid "Assembly Variable"
 msgstr "汇编变量"
 
-#: ../../asm.rst:47 2d0daac188d346a4992c62a6c88c435d
+#: ../../asm.rst:47 14bd7ee6a1e347ba8604a63823531c20
 msgid ""
 "Variables can be used inside ``asm`` mode by prefix ``$``. Unlike the rest "
 "of Script, which is copied verbatim into the final script output, a variable"
@@ -87,15 +87,43 @@ msgstr ""
 "``contractFoo`` 内的函数 ``func`` 中使用了一个变量 ``$var``，它将在最终的脚本输出中显示为 "
 "``$contractFoo.func.var``。"
 
-#: ../../asm.rst:51 feec015146dd4f04b55d609764cb356b
+#: ../../asm.rst:51 18f441f3d4cd43d48e3beec0295a550f
 msgid "An example is shown below."
 msgstr "一个例子如下所示。"
 
-#: ../../asm.rst:66 de6620e85f1f4a28be9d2b1d0939d2bd
+#: ../../asm.rst:66 300bad6dd3b04a4e836e365a850fef86
+msgid "Loop"
+msgstr "循环"
+
+#: ../../asm.rst:68 cd002ea803d7492f9a3aae7dfa77db47
+msgid ":ref:`Loop syntax <loop>` can also be used inside ``asm``."
+msgstr ":ref:`循环语法 <loop>` 也可以在 ``asm`` 中使用。"
+
+#: ../../asm.rst:89 3def06cd97544fddb2ad9a8523942a58
+msgid "The equivalent sCrypt code is:"
+msgstr "等价的 sCrypt 代码是："
+
+#: ../../asm.rst:104 7b6bf015f2754f9ca8fe4cae93ec16a1
+msgid ""
+"``i`` and ``j`` are :ref:`Induction variable <induction-var-label>` . "
+"``$sum`` is assembly variable."
+msgstr "``i`` 和 ``j`` 是 :ref:`归纳变量 <induction-var-label>`。 ``$sum`` 是汇编变量。"
+
+#: ../../asm.rst:108 7f5fb514b9a8462c891ddf2d65b1e6d7
+msgid "String Literal"
+msgstr "字符串"
+
+#: ../../asm.rst:110 d5e4350d861e4a8391036567d4eccd1a
+msgid ""
+"String literal is a double quoted UTF8 string, which can be used inside "
+"``asm``."
+msgstr "字符串是一个双引号 UTF8 字符串，可以在 ``asm`` 中使用。"
+
+#: ../../asm.rst:122 d9d7151a6c324d38948667923c9d8d19
 msgid "Notes"
 msgstr "注意"
 
-#: ../../asm.rst:67 f6bffe6381634a86a196ba99f7344b6c
+#: ../../asm.rst:123 80827b90bd1e42b985bb1804879e3c50
 msgid ""
 "Inline assembly bypasses many features of sCrypt such as type checking. "
 "Extreme caution has to be taken using this advanced feature. Also it is "

@@ -62,6 +62,62 @@ An example is shown below.
         }
     }
 
+Loop
+=========
+
+:ref:`Loop syntax <loop>` can also be used inside ``asm``.
+
+.. code-block:: solidity
+
+    public function unlock(int x) {
+        asm {
+            OP_DUP
+            loop (N) : i {
+                loop (N) : j {
+                    i
+                    j
+                    OP_ADD
+                    OP_ADD
+                }
+            }
+            $sum
+            OP_NUMEQUAL
+            OP_NIP
+        }
+    }
+
+The equivalent sCrypt code is:
+
+
+.. code-block:: solidity
+
+    public function unlock(int x) {
+        int sum = x;
+        loop (N) : i {
+            loop (N) : j {
+                sum += (i + j);
+            }
+        }
+        require(sum == 19);
+    }
+
+``i`` and ``j`` are :ref:`Induction variable <induction-var-label>` . ``$sum`` is assembly variable.
+
+
+String Literal
+==============
+
+String literal is a double quoted UTF8 string, which can be used inside ``asm``.
+
+.. code-block:: solidity
+
+    static function equal(bytes msg) : bool {
+        asm {
+            "你好world! 😊"
+            OP_EQUAL
+        }
+    }
+
 Notes
 =====
 Inline assembly bypasses many features of sCrypt such as type checking. Extreme caution has to be taken using this advanced feature.
