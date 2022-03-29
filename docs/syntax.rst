@@ -397,67 +397,78 @@ Operators
 
 .. list-table::
     :header-rows: 1
-    :widths: 20 20 20
+    :widths: 20 20 30 30
 
     * - Precedence 
       - Operator
       - Associativity 
+      - Note
 
     * - 1
       - ``- ! ~``
       - right
+      - ``~`` only works on bytes
 
     * - 2
       - ``* / %``
       - left
+      -
 
     * - 3
       - ``+ -``
       - left
+      - 
 
     * - 4
-      - ``<< >>``
+      - ``<< >> >>=``
       - left
+      - only works on bytes
 
     * - 5
       - ``< <= > >=``
       - left
+      - 
 
     * - 6
       - ``== !=``
       - left
+      - 
 
     * - 7
-      - ``&``
+      - ``& &=``
       - left
+      - only works on bytes
 
     * - 8
-      - ``^``
+      - ``^ ^=``
       - left
+      - only works on bytes
 
     * - 9
-      - ``|``
+      - ``| |=``
       - left
+      - only works on bytes
 
     * - 10
       - ``&&``
       - left
+      - only works on bool
 
     * - 11
       - ``||``
       - left
+      - only works on bool
 
     * - 12
       - ``? :``
       - right
+      - 
 
     * - 13
       - ``-- ++``
-      - left (``--a``, ``++a``)
-
-    * - 14
-      - ``-- ++``
-      - right (``a--``, ``a++``)
+      - | left (``--a``, ``++a``) 
+        | or right (``a--``, ``a++``)
+      - 
 
 Operator ``&&``, ``||``, and ``? :`` use `short-circuit evaluation <https://en.wikipedia.org/wiki/Short-circuit_evaluation>`_.
 

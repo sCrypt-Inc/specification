@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-28 22:20+0800\n"
+"POT-Creation-Date: 2022-03-29 14:59+0800\n"
 "PO-Revision-Date: 2021-10-07 14:25+0000\n"
 "Last-Translator: qtom zheng <zhfnjust@qq.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
@@ -104,10 +104,8 @@ msgid "The equivalent sCrypt code is:"
 msgstr "等价的 sCrypt 代码是："
 
 #: ../../asm.rst:104 7b6bf015f2754f9ca8fe4cae93ec16a1
-msgid ""
-"``i`` and ``j`` are :ref:`Induction variable <induction-var-label>` . "
-"``$sum`` is assembly variable."
-msgstr "``i`` 和 ``j`` 是 :ref:`归纳变量 <induction-var-label>`。 ``$sum`` 是汇编变量。"
+msgid "``i`` and ``j`` are :ref:`Induction variables <induction-var-label>` ."
+msgstr "``i`` 和 ``j`` 是 :ref:`归纳变量 <induction-var-label>`。"
 
 #: ../../asm.rst:108 7f5fb514b9a8462c891ddf2d65b1e6d7
 msgid "String Literal"

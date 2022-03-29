@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# qtom zheng <zhfnjust@qq.com>, 2021
+# qtom zheng <zhfnjust@qq.com>, 2022
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-28 22:20+0800\n"
 "PO-Revision-Date: 2021-10-07 06:10+0000\n"
-"Last-Translator: qtom zheng <zhfnjust@qq.com>, 2021\n"
+"Last-Translator: qtom zheng <zhfnjust@qq.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -221,6 +221,10 @@ msgid ""
 " before OP_CHECKSIG within the former. Also note we put "
 "``Tx.checkPreimageOCS()`` as the last statement for maximal optimization."
 msgstr ""
+"``Tx`` 库提供了一组 OCS 版本方法来检查这个不包含完整锁定脚本的原像。在许多情况下，使用 OP_PUSH_TX 时不需要 scriptCode"
+" 或只需其一部分。 OCS 可以用来削减它的大小。例如，在下面的合约中，只需要整个原像的 nLocktime。我们使用 "
+"``Tx.checkPreimageOCS()``，传统的 ``Tx.checkPreimage()`` 的变体。唯一的区别是 OCS 是在前者的 "
+"OP_CHECKSIG 之前插入的。另请注意，我们将 ``Tx.checkPreimageOCS()`` 作为最后一条语句以达到最大优化效果。"
 
 #: ../../contracts.rst:192 1f51aead88f64ecd9668c7c1bf16a353
 msgid "Library ``SigHash``"
@@ -462,6 +466,8 @@ msgid ""
 "checkPreimageOpt\\_(SigHashPreimage rawTx) : bool      // set sigHashType in"
 " ASM"
 msgstr ""
+"checkPreimageOpt\\_(SigHashPreimage rawTx) : bool      // set sigHashType in"
+" ASM"
 
 #: ../../contracts.rst:0 1ab9183f74f447f2b209c8060c40efd4
 msgid ""
@@ -492,6 +498,8 @@ msgid ""
 "checkPreimageOptOCS\\_(SigHashPreimage rawTx) : bool   // set sigHashType in"
 " ASM"
 msgstr ""
+"checkPreimageOptOCS\\_(SigHashPreimage rawTx) : bool   // set sigHashType in"
+" ASM"
 
 #: ../../contracts.rst:0 8a547b258bf547698d9f8f87dfd75b30
 msgid ""

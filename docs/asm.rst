@@ -101,7 +101,7 @@ The equivalent sCrypt code is:
         require(sum == 0x13);
     }
 
-``i`` and ``j`` are :ref:`Induction variables <induction-var-label>` . ``$sum`` is an assembly variable.
+``i`` and ``j`` are :ref:`Induction variables <induction-var-label>` .
 
 
 String Literal

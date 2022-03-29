@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-21 21:21+0800\n"
+"POT-Creation-Date: 2022-03-29 14:59+0800\n"
 "PO-Revision-Date: 2021-10-07 06:10+0000\n"
 "Last-Translator: qtom zheng <zhfnjust@qq.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
@@ -428,141 +428,156 @@ msgstr "运算符"
 msgid "Associativity"
 msgstr "关联性"
 
-#: ../../syntax.rst:406 f1c7fc7fd5ef45feab756dafc6a5c707
+#: ../../syntax.rst:405 46cf18ebced34c8996e91528bb9ff4d2
+msgid "Note"
+msgstr "注意"
+
+#: ../../syntax.rst:407 f1c7fc7fd5ef45feab756dafc6a5c707
 msgid "1"
 msgstr "1"
 
-#: ../../syntax.rst:407 e6168524bdef4cdda9d0f178d3c8dd09
+#: ../../syntax.rst:408 e6168524bdef4cdda9d0f178d3c8dd09
 msgid "``- ! ~``"
 msgstr "``- ! ~``"
 
-#: ../../syntax.rst:408 ../../syntax.rst:452 0730558066f24af5917d3359d93b6df9
-#: 47b53c7449b0482fa6f25c9c6426b930
+#: ../../syntax.rst:409 ../../syntax.rst:464 0730558066f24af5917d3359d93b6df9
+#: 0730558066f24af5917d3359d93b6df9
 msgid "right"
 msgstr "右"
 
-#: ../../syntax.rst:410 f26df0bec68641d59acccf2309ed05e3
+#: ../../syntax.rst:410 435e7a035c514d3587dd3a679e25c4ce
+msgid "``~`` only works on bytes"
+msgstr "``~`` 仅适用于字节数组 ``bytes``"
+
+#: ../../syntax.rst:412 f26df0bec68641d59acccf2309ed05e3
 msgid "2"
 msgstr "2"
 
-#: ../../syntax.rst:411 5e02f16a694e4468be3b959bb1c2ea3c
+#: ../../syntax.rst:413 5e02f16a694e4468be3b959bb1c2ea3c
 msgid "``* / %``"
 msgstr "``* / %``"
 
-#: ../../syntax.rst:412 ../../syntax.rst:416 ../../syntax.rst:420
-#: ../../syntax.rst:424 ../../syntax.rst:428 ../../syntax.rst:432
-#: ../../syntax.rst:436 ../../syntax.rst:440 ../../syntax.rst:444
-#: ../../syntax.rst:448 c7852886781243b0a28b554cc64eff8c
-#: b7a68f864f1d4d1a90a1040f612a0893 36d2020eb0134e7d85b651500aed3e07
-#: 8dd1cad5ce904ca89a1599ab93ee9bc0 6fffc7a067b2429c815a39e5db905886
-#: 4baca57163294c919043739889be70c9 4baa6cf89e614caa9c5800d81dc8d29e
-#: 8a6055923218482bb767f7a9545def4c 839e38ce5ef946ca901f40211a4302db
-#: 7fd77a057d5b48a2b86b52d7a82ef1ea
+#: ../../syntax.rst:414 ../../syntax.rst:419 ../../syntax.rst:424
+#: ../../syntax.rst:429 ../../syntax.rst:434 ../../syntax.rst:439
+#: ../../syntax.rst:444 ../../syntax.rst:449 ../../syntax.rst:454
+#: ../../syntax.rst:459 c7852886781243b0a28b554cc64eff8c
+#: c7852886781243b0a28b554cc64eff8c c7852886781243b0a28b554cc64eff8c
+#: 6fffc7a067b2429c815a39e5db905886 4baca57163294c919043739889be70c9
+#: 4baa6cf89e614caa9c5800d81dc8d29e c7852886781243b0a28b554cc64eff8c
+#: c7852886781243b0a28b554cc64eff8c c7852886781243b0a28b554cc64eff8c
+#: c7852886781243b0a28b554cc64eff8c
 msgid "left"
 msgstr "左"
 
-#: ../../syntax.rst:414 9e311c7d849d40d7badcb7c76c39d22d
+#: ../../syntax.rst:417 9e311c7d849d40d7badcb7c76c39d22d
 msgid "3"
 msgstr "3"
 
-#: ../../syntax.rst:415 5d5d90ba694a48b394495e49f47f598d
+#: ../../syntax.rst:418 5d5d90ba694a48b394495e49f47f598d
 msgid "``+ -``"
 msgstr "``+ -``"
 
-#: ../../syntax.rst:418 105343fb764e41aca324cb1640ffa47e
+#: ../../syntax.rst:422 105343fb764e41aca324cb1640ffa47e
 msgid "4"
 msgstr "4"
 
-#: ../../syntax.rst:419 ccbdb2b67e62459fa38bd77968b4ab2a
-msgid "``<< >>``"
-msgstr "``<< >>``"
+#: ../../syntax.rst:423 4c5bcfb605e248a9b4b2e9c0c8a45edd
+msgid "``<< >> >>=``"
+msgstr "``<< >> >>=``"
 
-#: ../../syntax.rst:422 8f47e2572a81494d90702e16e421c765
+#: ../../syntax.rst:425 ../../syntax.rst:440 ../../syntax.rst:445
+#: ../../syntax.rst:450 1ecd4dd7cb5248efbee80f85ca4b079a
+#: 8cdc033874694b728cef0d2d9cc7ff64 a746dc3e52474733aee3e7f53f8d0626
+#: f1d493bf0d2f417bae743d6650f61235
+msgid "only works on bytes"
+msgstr "仅适用于字节数组 ``bytes``"
+
+#: ../../syntax.rst:427 8f47e2572a81494d90702e16e421c765
 msgid "5"
 msgstr "5"
 
-#: ../../syntax.rst:423 4c5bcfb605e248a9b4b2e9c0c8a45edd
+#: ../../syntax.rst:428 4c5bcfb605e248a9b4b2e9c0c8a45edd
 msgid "``< <= > >=``"
 msgstr "``< <= > >=``"
 
-#: ../../syntax.rst:426 2beb328570d240bd815481f8a822d390
+#: ../../syntax.rst:432 2beb328570d240bd815481f8a822d390
 msgid "6"
 msgstr "6"
 
-#: ../../syntax.rst:427 4039cf87541a4395885c6a28338c4907
+#: ../../syntax.rst:433 4039cf87541a4395885c6a28338c4907
 msgid "``== !=``"
 msgstr "``== !=``"
 
-#: ../../syntax.rst:430 a60ca8ba2aac492d8879500592ed5c25
+#: ../../syntax.rst:437 a60ca8ba2aac492d8879500592ed5c25
 msgid "7"
 msgstr "7"
 
-#: ../../syntax.rst:431 06f5ade7ac3342fe9ff3f64344f5c047
-msgid "``&``"
-msgstr "``&``"
+#: ../../syntax.rst:438 4039cf87541a4395885c6a28338c4907
+msgid "``& &=``"
+msgstr "``& &=``"
 
-#: ../../syntax.rst:434 f5f4e5257868440f9df7a5293ebfb2af
+#: ../../syntax.rst:442 f5f4e5257868440f9df7a5293ebfb2af
 msgid "8"
 msgstr "8"
 
-#: ../../syntax.rst:435 61ea15ff1a304b32bffe16248b7669a9
-msgid "``^``"
-msgstr "``^``"
+#: ../../syntax.rst:443 4039cf87541a4395885c6a28338c4907
+msgid "``^ ^=``"
+msgstr "``^ ^=``"
 
-#: ../../syntax.rst:438 7122a7b2440c44b698a2a88747a82db9
+#: ../../syntax.rst:447 7122a7b2440c44b698a2a88747a82db9
 msgid "9"
 msgstr "9"
 
-#: ../../syntax.rst:439 938ffa0b5d8043d29d4e7b6a647dc3ef
-msgid "``|``"
-msgstr "``|``"
+#: ../../syntax.rst:448 4039cf87541a4395885c6a28338c4907
+msgid "``| |=``"
+msgstr "``| |=``"
 
-#: ../../syntax.rst:442 f9039c91da6b4e9e9db7238a3fa134b5
+#: ../../syntax.rst:452 f9039c91da6b4e9e9db7238a3fa134b5
 msgid "10"
 msgstr "10"
 
-#: ../../syntax.rst:443 8c2df8e61bf3440cbe32cf035ca5b56b
+#: ../../syntax.rst:453 8c2df8e61bf3440cbe32cf035ca5b56b
 msgid "``&&``"
 msgstr "``&&``"
 
-#: ../../syntax.rst:446 4b096ff891ff430cbff043335e551c22
+#: ../../syntax.rst:455 ../../syntax.rst:460 85ed7217ef4443fab0c5f9cd54f6c2eb
+#: 61deb48d483e4bf99c28c23d421145ab
+msgid "only works on bool"
+msgstr "仅适用于布尔类型"
+
+#: ../../syntax.rst:457 4b096ff891ff430cbff043335e551c22
 msgid "11"
 msgstr "11"
 
-#: ../../syntax.rst:447 5b2d8cf76bd048109498c803599be803
+#: ../../syntax.rst:458 5b2d8cf76bd048109498c803599be803
 msgid "``||``"
 msgstr "``||``"
 
-#: ../../syntax.rst:450 ca862acdda7044f48f4843f474b0c03b
+#: ../../syntax.rst:462 ca862acdda7044f48f4843f474b0c03b
 msgid "12"
 msgstr "12"
 
-#: ../../syntax.rst:451 154177e931fa4a56880f0ae0caef30b2
+#: ../../syntax.rst:463 154177e931fa4a56880f0ae0caef30b2
 msgid "``? :``"
 msgstr "``? :``"
 
-#: ../../syntax.rst:454 fb3462e167d248ffabf46f23c7d8125c
+#: ../../syntax.rst:467 fb3462e167d248ffabf46f23c7d8125c
 msgid "13"
 msgstr "13"
 
-#: ../../syntax.rst:455 ../../syntax.rst:459 a56b7e5bd99a4fc9b5947fce8743e388
-#: 48e8c96ead5c400295780e214c1af5f0
+#: ../../syntax.rst:468 a56b7e5bd99a4fc9b5947fce8743e388
 msgid "``-- ++``"
 msgstr "``-- ++``"
 
-#: ../../syntax.rst:456 825262997c3c40099da35e39fa693a34
+#: ../../syntax.rst:0 825262997c3c40099da35e39fa693a34
 msgid "left (``--a``, ``++a``)"
 msgstr "左（``--a``，``++a``）"
 
-#: ../../syntax.rst:458 da22706f9da64e99944a848e5262bbef
-msgid "14"
-msgstr "14"
+#: ../../syntax.rst:0 ea6032051a2f47b5a9f52ce52ba1cf99
+msgid "or right (``a--``, ``a++``)"
+msgstr "或右（``a--``, ``a++``）"
 
-#: ../../syntax.rst:460 ea6032051a2f47b5a9f52ce52ba1cf99
-msgid "right (``a--``, ``a++``)"
-msgstr "右 (``a--``, ``a++``)"
-
-#: ../../syntax.rst:462 6cf9eaa66b134fd9aa5b4e448d6b3806
+#: ../../syntax.rst:473 6cf9eaa66b134fd9aa5b4e448d6b3806
 msgid ""
 "Operator ``&&``, ``||``, and ``? :`` use `short-circuit evaluation "
 "<https://en.wikipedia.org/wiki/Short-circuit_evaluation>`_."
@@ -570,11 +585,11 @@ msgstr ""
 "运算符 ``&&``、``||`` 和 ``? :`` 使用 `短路评估 <https://en.wikipedia.org/wiki/Short-"
 "circuit_evaluation>`_."
 
-#: ../../syntax.rst:465 400e39f0effb4b5a9f38acafe4ffa2bc
+#: ../../syntax.rst:476 400e39f0effb4b5a9f38acafe4ffa2bc
 msgid "Scoping"
 msgstr "作用域"
 
-#: ../../syntax.rst:466 24e050d51c3043078aa8acb378342133
+#: ../../syntax.rst:477 24e050d51c3043078aa8acb378342133
 msgid ""
 "Scoping in sCrypt follows the prevailing scoping rules of C99 and Solidity. "
 "Outer scope variable is shadowed by the inner scope variable of the same "
