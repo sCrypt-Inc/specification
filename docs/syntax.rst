@@ -397,80 +397,91 @@ Operators
 
 .. list-table::
     :header-rows: 1
-    :widths: 20 20 30 30
+    :widths: 20 40  20  20
+
+
 
     * - Precedence 
-      - Operator
+      - Operator                      
       - Associativity 
       - Note
-
+    
     * - 1
-      - ``- ! ~``
-      - right
-      - ``~`` only works on bytes
-
+      - ``() ++ -- .``
+      - left-to-right
+      - 
     * - 2
-      - ``* / %``
-      - left
-      -
-
+      - ``[]``
+      - left-to-right
+      - 
     * - 3
-      - ``+ -``
-      - left
+      - ``++ -- - ! ~``
+      - right-to-left
       - 
 
     * - 4
-      - ``<< >> >>=``
-      - left
-      - only works on bytes
+      - ``* / %``
+      - left-to-right
+      -
 
     * - 5
-      - ``< <= > >=``
-      - left
+      - ``+ -``
+      - left-to-right
       - 
 
     * - 6
-      - ``== !=``
-      - left
+      - ``<< >>``
+      - left-to-right
       - 
 
     * - 7
-      - ``& &=``
-      - left
-      - only works on bytes
+      - ``< <= > >=``
+      - left-to-right
+      - 
 
     * - 8
-      - ``^ ^=``
-      - left
-      - only works on bytes
+      - ``== !=``
+      - left-to-right
+      - 
 
     * - 9
-      - ``| |=``
-      - left
-      - only works on bytes
+      - ``&``
+      - left-to-right
+      - If it is two integer with different length, the length will be supplemented before bitwise
 
     * - 10
-      - ``&&``
-      - left
-      - only works on bool
+      - ``^``
+      - left-to-right
+      - Same as ``&``
 
     * - 11
-      - ``||``
-      - left
-      - only works on bool
+      - ``|``
+      - left-to-right
+      - Same as ``&``
 
     * - 12
-      - ``? :``
-      - right
-      - 
+      - ``&&``
+      - left-to-right
+      -
 
     * - 13
-      - ``-- ++``
-      - | left (``--a``, ``++a``) 
-        | or right (``a--``, ``a++``)
+      - ``||``
+      - left-to-right
       - 
 
-Operator ``&&``, ``||``, and ``? :`` use `short-circuit evaluation <https://en.wikipedia.org/wiki/Short-circuit_evaluation>`_.
+    * - 14
+      - ``? :``
+      - right-to-left
+      - 
+
+    * - 15
+      - ``+= -= *= /= %= &= |= ^= <<= >>=``
+      - right-to-left
+      - 
+
+.. Note:: 
+    - Operator ``&&``, ``||``, and ``? :`` use `short-circuit evaluation <https://en.wikipedia.org/wiki/Short-circuit_evaluation>`_.
+    - After performing bitwise on integers, such as operator ``&``, ``|``, ``^``, and ``~``, the compiler uses ``OP_BIN2NUM`` to compress the results.
 
 Scoping
 =======
