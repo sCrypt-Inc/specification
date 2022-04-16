@@ -432,7 +432,7 @@ Operators
     * - 6
       - ``<< >>``
       - left-to-right
-      - 
+      - Shift count should be non-negative number, otherwise it fails at runtime
 
     * - 7
       - ``< <= > >=``

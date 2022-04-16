@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-15 22:04+0800\n"
+"POT-Creation-Date: 2022-04-16 14:41+0800\n"
 "PO-Revision-Date: 2021-10-07 06:10+0000\n"
 "Last-Translator: qtom zheng <zhfnjust@qq.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
@@ -447,9 +447,9 @@ msgstr "``() ++ -- .``"
 #: ca5e1c9a9441423f8ef911fd55a563b7 680502f83ff749d49b9037b778ad8891
 #: 267a03592e5643dabbbf902644a40817 f70ae0d509e444cdaeb9495d539e200f
 #: fdce8fcd0fed483289663730a2cc4a1c 2839376d62a5436bb754a250407a6eba
-#: 9174196e74344e22b1933945453bd17a eb0dcc9d9c2b4b1e90d5156d3d2506c6
-#: 6ca4e493ec51415a913310e7b14d5d32 6d0d9bec73be4995a80dfd327f27dc06
-#: c504c47bf2484a1984694e890a1ea114 ea3774a2b6bd4eaeaf3d80f36c50adac
+#: 2839376d62a5436bb754a250407a6eba 2839376d62a5436bb754a250407a6eba
+#: 2839376d62a5436bb754a250407a6eba 2839376d62a5436bb754a250407a6eba
+#: 2839376d62a5436bb754a250407a6eba 2839376d62a5436bb754a250407a6eba
 msgid "left-to-right"
 msgstr "左到右"
 
@@ -471,9 +471,9 @@ msgstr "``++ -- - ! ~``"
 
 #: ../../syntax.rst:419 ../../syntax.rst:474 ../../syntax.rst:479
 #: 72bf4e37a229459bb04c0c3ae7185798 154f474cb7b341e9bf6232243c2dca3c
-#: a310ada281fb4be88294795db86c65ab
+#: 154f474cb7b341e9bf6232243c2dca3c
 msgid "right-to-left"
-msgstr "right-to-left"
+msgstr "右到左"
 
 #: ../../syntax.rst:422 105343fb764e41aca324cb1640ffa47e
 msgid "4"
@@ -498,6 +498,11 @@ msgstr "6"
 #: ../../syntax.rst:433 4c5bcfb605e248a9b4b2e9c0c8a45edd
 msgid "``<< >>``"
 msgstr "``<< >>``"
+
+#: ../../syntax.rst:435 d2aec691a0214452a089fe376aa04698
+msgid ""
+"Shift count should be non-negative number, otherwise it fails at runtime"
+msgstr "移动的位数必须是非负数，否则将在运行时失败"
 
 #: ../../syntax.rst:437 a60ca8ba2aac492d8879500592ed5c25
 msgid "7"
@@ -538,7 +543,7 @@ msgid "``^``"
 msgstr "``^``"
 
 #: ../../syntax.rst:455 ../../syntax.rst:460 c6a9adbbb5c345e6906ad66c374e468c
-#: b5884b9e379c4da38c2d06e0b5ad4de8
+#: c6a9adbbb5c345e6906ad66c374e468c
 msgid "Same as ``&``"
 msgstr "与 ``&`` 相同"
 
