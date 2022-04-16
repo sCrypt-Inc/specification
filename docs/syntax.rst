@@ -432,7 +432,7 @@ Operators
     * - 6
       - ``<< >>``
       - left-to-right
-      - Shift count should be non-negative number, otherwise it fails at runtime
+      - The number of bits to shift must be non-negative, otherwise evaluation fails immediately
 
     * - 7
       - ``< <= > >=``
@@ -447,7 +447,7 @@ Operators
     * - 9
       - ``&``
       - left-to-right
-      - If it is two integer with different length, the length will be supplemented before bitwise
+      - In the case of two integers with different length, the shorter one with be expanded first to be the same legnth with the longer one using `num2bin`
 
     * - 10
       - ``^``
