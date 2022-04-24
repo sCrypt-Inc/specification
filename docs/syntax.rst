@@ -104,14 +104,11 @@ An array is a fixed-size list of values of the same basic type.
         int d = a[2];
         a[1] = -4;
         int idx = 2;
-        // variable index is allowed when reading an array
+        // read
         d = a[idx];
         d = arr2D[idx][1];
-        // variable index is disallowed when writing into an array
+        // write
         a[idx] = 2;
-        // only a compile-time constant (CTC) can be used as an index when writing
-        a[2] = 2;
-        a[N] = 3; // N is a CTC
         // assign to an array variable
         a = arr2D[1];
         // b is a new copy and the same as a
