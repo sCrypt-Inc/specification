@@ -404,6 +404,7 @@ Full List
         | buildOutput(bytes outputScript, int outputSatoshis) : bytes
         | buildPublicKeyHashScript(PubKeyHash pubKeyHash) : bytes
         | buildOpreturnScript(bytes data) : bytes
+        | isFirstCall(SigHashPreimage preimage) : bool // return whether is the first call of series public function calls in stateful contract
 
     * - Tx
       - None
