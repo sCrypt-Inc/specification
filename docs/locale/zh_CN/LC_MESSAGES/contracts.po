@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sCrypt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-28 22:20+0800\n"
+"POT-Creation-Date: 2022-05-26 22:58+0800\n"
 "PO-Revision-Date: 2021-10-07 06:10+0000\n"
 "Last-Translator: qtom zheng <zhfnjust@qq.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/scrypt-1/teams/121283/zh_CN/)\n"
@@ -255,7 +255,7 @@ msgstr ""
 "`HashedMap` 库提供了一种类似于哈希表的数据结构。唯一键和它们对应的值在存储之前被散列。 `HashedMap` "
 "的大多数函数不仅需要一个键，还需要它的索引，按键的哈希升序排列。"
 
-#: ../../contracts.rst:221 ../../contracts.rst:297
+#: ../../contracts.rst:221 ../../contracts.rst:312
 #: 0b00fc08717c4d519bcda827f01139a7 5dbf45ab8d4a4882ba31d75a677dcaa8
 msgid "**Constructor**"
 msgstr "**构造函数**"
@@ -266,158 +266,179 @@ msgid ""
 "initial data."
 msgstr "``HashedMap(bytes data)`` 使用一些初始数据创建一个 ``HashedMap`` 实例。"
 
-#: ../../contracts.rst:234 ../../contracts.rst:315
-#: d721ba97ad674744b01c04bd19dbe706 3cf2bedb16ed46b5a7aea3e5b3f4cd0c
+#: ../../contracts.rst:234 c6ec3d12d0494dabab10343b37a0b749
+msgid "**SortedItem**"
+msgstr "**SortedItem**"
+
+#: ../../contracts.rst:236 f30ab31220ae4f699be02980d8ab6ce0
+msgid ""
+"``SortedItem<T>`` is a generic struct which holds an `item` whose type is "
+"`T` and its corresponding order value `idx`."
+msgstr "``SortedItem <T>`` 是一个通用结构体，它包含一个类型为 `T` 的 `item` 及 一个键索引  `idx`。"
+
+#: ../../contracts.rst:245 2b1e3e64f901473784853345ed61d44e
+msgid ""
+"For most functions of `HashedMap`, a parameter named `keyWithIdx` of this "
+"type is required. It means that the `key` and its corresponding `keyIndex` "
+"should always be provided togather."
+msgstr ""
+"`HashedMap` 的大部分函数，都需要一个名为 `keyWithIdx` 的这种类型的参数。这意味着 `key` 及其对应的 `keyIndex`"
+" 应该始终一起提供。"
+
+#: ../../contracts.rst:248 ../../contracts.rst:330
+#: d721ba97ad674744b01c04bd19dbe706 d721ba97ad674744b01c04bd19dbe706
 msgid "**Instance methods**"
 msgstr "**实例方法**"
 
-#: ../../contracts.rst:236 bc2df016a6cf46838e30176f800de781
+#: ../../contracts.rst:250 bc2df016a6cf46838e30176f800de781
 msgid ""
-"``set(K key, V val, int keyIndex) : bool`` Insert or update a (`key`, `val`)"
-" pair with the key index given by `keyIndex`. Returns `true` if successful; "
-"otherwise returns `false`."
+"``set(SortedItem<K> keyWithIdx, V val) : bool`` Insert or update a (`key`, "
+"`val`) pair with the key index given by `keyIndex`. Returns `true` if "
+"successful; otherwise returns `false`."
 msgstr ""
-"``set(K key, V val, int keyIndex) : bool`` 使用给出的键索引 `keyIndex` 插入或更新 (`key`,"
-" `val`) 对。如果成功则返回  `true` ；否则返回 `false` 。"
+"``set(SortedItem <K> keyWithIdx, V val) : bool`` 使用 `keyIndex` 给定的键索引插入或更新 "
+"(`key`, `val`) 对。如果成功，则返回 `true` ；否则返回 `false` 。"
 
-#: ../../contracts.rst:244 291803c0f6d948e8ab1f8f1f192c0d35
+#: ../../contracts.rst:258 291803c0f6d948e8ab1f8f1f192c0d35
 msgid ""
-"``canGet(K key, V val, int keyIndex): bool`` Check whether we can get a "
-"(`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` "
+"``canGet(SortedItem<K> keyWithIdx, V val): bool`` Check whether we can get a"
+" (`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` "
 "if successful; otherwise returns `false`."
 msgstr ""
-"``canGet(K key, V val, int keyIndex): bool``  通过键索引 `keyIndex` 检查我们是否可以得到一个 "
-"(`key`, `val`) 对。如果成功则返回 `true` ；否则返回 `false`。"
+"``canGet(SortedItem <K> keyWithIdx, V val): bool`` 检查是否存在 (`key`, `val`) 对， "
+"`keyIndex` 是键索引。如果成功，则返回 `true` ；否则返回 `false` 。"
 
-#: ../../contracts.rst:251 5dae61304e804214ae68c0b699c9bebf
+#: ../../contracts.rst:265 5dae61304e804214ae68c0b699c9bebf
 msgid ""
-"``has(K key, int keyIndex) : bool`` Check whether `key` exists in the map "
-"and its index is `keyIndex`. Returns `true` if both conditions are met; "
+"``has(SortedItem<K> keyWithIdx) : bool`` Check whether `key` exists in the "
+"map and its index is `keyIndex`. Returns `true` if both conditions are met; "
 "otherwise returns `false`."
 msgstr ""
-"``has(K key, int keyIndex) : bool`` 检查 HashedMap 中是否存在 `key`，其索引为 "
-"`keyIndex`。如果两个条件都满足，则返回 `true`；否则返回 `false`。"
+"``has(SortedItem <K> keyWithIdx) : bool`` 检查map中是否存在 `key`，其键索引为 "
+"`keyIndex`。如果两个条件都满足，则返回 `true` ；否则返回 `false`。"
 
-#: ../../contracts.rst:258 1776b34696ca48ee99f4038413425a45
+#: ../../contracts.rst:272 1776b34696ca48ee99f4038413425a45
 msgid ""
-"``delete(K key, int keyIndex) : bool`` Delete the entry with given `key` and"
-" the key index is `keyIndex`. Returns `true` if successful; otherwise "
-"returns `false`."
+"``delete(SortedItem<K> keyWithIdx) : bool`` Delete the entry with given "
+"`key` and the key index is `keyIndex`. Returns `true` if successful; "
+"otherwise returns `false`."
 msgstr ""
-"``delete(K key, int keyIndex) : bool`` 删除给定 `key` 的条目，并且键索引是 `keyIndex` "
-"。如果成功则返回`true`；否则返回 `false`。"
+"``delete(SortedItem <K> keyWithIdx) : bool`` 删除给定 `key` 的条目，键索引是 "
+"`keyIndex`。如果成功，则返回 `true`；否则返回 `false` 。"
 
-#: ../../contracts.rst:265 d29d38a9958b4587bcfa821495dff205
+#: ../../contracts.rst:279 d29d38a9958b4587bcfa821495dff205
 msgid "``clear() : bool`` Delete all entries of the map."
 msgstr "``clear() : bool`` 删除map的所有条目。"
 
-#: ../../contracts.rst:272 d81cf77e79eb400eb1705e1bf441621a
+#: ../../contracts.rst:286 d81cf77e79eb400eb1705e1bf441621a
 msgid ""
 "``size() : int`` Returns the size of map, i.e. the number of the keys it "
 "contains."
 msgstr "``size() : int`` 返回 HashedMap 的大小，比如它包含的键的数量。"
 
-#: ../../contracts.rst:280 11ce64bcaba54a44b94851f7cc433a43
+#: ../../contracts.rst:294 11ce64bcaba54a44b94851f7cc433a43
 msgid ""
 "``data() : bytes`` Returns the internal data representation of the map."
 msgstr "``data() : bytes`` 返回 HashedMap 的序列化数据表示。"
 
-#: ../../contracts.rst:290 de361a6b2ff04dfda519703884b1219e
+#: ../../contracts.rst:304 de361a6b2ff04dfda519703884b1219e
 msgid "Library ``HashedSet``"
 msgstr "``HashedSet`` 库"
 
-#: ../../contracts.rst:292 0f640dbb5fed476cb71ee59e09c07eed
+#: ../../contracts.rst:306 0f640dbb5fed476cb71ee59e09c07eed
 msgid ""
 "The `HashedSet` library provides a set-like data structure. It can be "
 "regarded as a special `HashedMap` where a value is the same with its key and"
 " is thus omitted. Unique values are hashed before being stored. Most "
 "functions of `HashedSet` require an index, ranked by the value's sha256 hash"
-" in ascending order."
+" in ascending order. Similar to `HashedMap`, these functions also use "
+"`SortedItem` type parameter."
 msgstr ""
-"`HashedSet` 库提供了一个类似集合的数据结构。它可以被视为一个特殊的 "
-"`HashedMap`，即键值对的值与其键相同，因此被省略。唯一值在存储之前被散列。 `HashedSet` 的大多数函数都需要一个索引，按值的 "
-"sha256 哈希值升序排列。"
+"`HashedSet` 库提供了一个类似集合的数据结构。它可以看作是一个特殊的 "
+"`HashedMap`，其中一个值与其键相同，因此被省略。唯一值在存储之前经过哈希处理。 `HashedSet` 的大多数函数都需要一个索引，按值的 "
+"sha256 哈希值升序排列。与 `HashedMap` 类似，这些函数也使用 `SortedItem` 类型参数。"
 
-#: ../../contracts.rst:299 70244511660f4d1dacf9ef1e3a8297dd
+#: ../../contracts.rst:314 70244511660f4d1dacf9ef1e3a8297dd
 msgid ""
 "``HashedSet(bytes data)`` Create an instance of ``HashedSet`` with some "
 "initial data."
 msgstr "``HashedSet(bytes data)`` 使用初始数据 data 创建一个 ``HashedSet`` 实例。"
 
-#: ../../contracts.rst:317 c9d4b256a7c846d8bed12e538ddf00c5
+#: ../../contracts.rst:332 c9d4b256a7c846d8bed12e538ddf00c5
 msgid ""
-"``add(E entry, int index) : bool`` Add `entry` to set with the key index "
-"given by `index`. Returns `true` if successful; otherwise returns `false`."
-msgstr ""
-"``add(E entry, int index) : bool`` 添加具有给定 `entry` 项且索引为 `index` "
-"的条目。如果成功则返回“true”；否则返回 `false`。"
-
-#: ../../contracts.rst:324 b6fdee073fe04868b89bbec7ecc615a3
-msgid ""
-"``has(E entry, int index) : bool`` Check whether `entry` exists in the set "
-"and its index is `index`. Returns `true` if both conditions are met; "
-"otherwise returns `false`."
-msgstr ""
-"``has(E entry, int index) : bool`` 检查集合中是否存在具有给定 `entry` 项且索引为 `index` "
-"的条目。如果两个条件都满足，则返回 `true`；否则返回`false`。"
-
-#: ../../contracts.rst:331 665f51b9935c4792b20f5cf156f0ed56
-msgid ""
-"``delete(E entry, int index) : bool`` Delete the entry with given `entry` "
-"and the index is `index`. Returns `true` if successful; otherwise returns "
+"``add(SortedItem<E> entryWithIdx) : bool`` Add `entry` to set with the key "
+"index given by `index`. Returns `true` if successful; otherwise returns "
 "`false`."
 msgstr ""
-"``delete(E entry, int index) : bool`` 删除具有给定 `entry` 项且索引为 `index` "
-"的条目。如果成功则返回 `true`；否则返回 `false`。"
+"``add(SortedItem <E> entryWithIdx) : bool`` 添加 `entry` 以使用 `index` "
+"给出的键索引进行设置。如果成功，则返回 `true`；否则返回 `false` 。"
 
-#: ../../contracts.rst:338 9a5dd2e996eb42a1ba2d9a594cadc1f2
+#: ../../contracts.rst:339 b6fdee073fe04868b89bbec7ecc615a3
+msgid ""
+"``has(SortedItem<E> entryWithIdx) : bool`` Check whether `entry` exists in "
+"the set and its index is `index`. Returns `true` if both conditions are met;"
+" otherwise returns `false`."
+msgstr ""
+"`has(SortedItem <E> entryWithIdx) : bool` 检查集合中是否存在 `entry` 条目，其键索引为 `index`"
+" 。如果两个条件都满足，则返回 `true`；否则返回 `false` 。"
+
+#: ../../contracts.rst:346 665f51b9935c4792b20f5cf156f0ed56
+msgid ""
+"``delete(SortedItem<E> entryWithIdx) : bool`` Delete the entry with given "
+"`entry` and the index is `index`. Returns `true` if successful; otherwise "
+"returns `false`."
+msgstr ""
+"``delete(SortedItem <E> entryWithIdx) : bool`` 删除给定 `entry` 条目，键索引为 `index` "
+"。如果成功，则返回 `true` ；否则返回 `false` 。"
+
+#: ../../contracts.rst:353 9a5dd2e996eb42a1ba2d9a594cadc1f2
 msgid "``clear() : bool`` Delete all entries of the set."
 msgstr "``clear() : bool`` 删除集合的所有条目。"
 
-#: ../../contracts.rst:345 1299265a591647cd9f6634d596529e8e
+#: ../../contracts.rst:360 1299265a591647cd9f6634d596529e8e
 msgid ""
 "``size() : int`` Returns the size of set, i.e. the number of the entries it "
 "contains."
 msgstr "``size() : int`` 返回集合的大小，即它包含的条目数。"
 
-#: ../../contracts.rst:352 9d612142f7ec45d59c5e16bf824b41c2
+#: ../../contracts.rst:367 9d612142f7ec45d59c5e16bf824b41c2
 msgid ""
 "``data() : bytes`` Returns the internal data representation of the set."
 msgstr "``data() : bytes`` 返回集合的内部序列化数据。"
 
-#: ../../contracts.rst:363 c53346c8f2fb4b07932aa750785f0eb8
+#: ../../contracts.rst:378 c53346c8f2fb4b07932aa750785f0eb8
 msgid "Library ``Constants``"
 msgstr "``Constants`` 库"
 
-#: ../../contracts.rst:365 20fd966bff4645b4aefcea7cf04891cc
+#: ../../contracts.rst:380 20fd966bff4645b4aefcea7cf04891cc
 msgid ""
 "sCrypt defines some commonly used constant values in the library "
 "``Constants``. You can use these constants anywhere in your code"
 msgstr "sCrypt 在 ``Constants`` 库中定义了一些常用的常量值。你可以在代码中的任何位置使用这些常量。"
 
-#: ../../contracts.rst:388 48d97a00462a4eeea93ca85a48bbce92
+#: ../../contracts.rst:403 48d97a00462a4eeea93ca85a48bbce92
 msgid "Full List"
 msgstr "完整列表"
 
-#: ../../contracts.rst:394 e18836ca88b7448383bdca656f37f001
+#: ../../contracts.rst:409 e18836ca88b7448383bdca656f37f001
 msgid "Contract"
 msgstr "合约"
 
-#: ../../contracts.rst:395 74639848df29463bbd0cdbc7cdd55c20
+#: ../../contracts.rst:410 74639848df29463bbd0cdbc7cdd55c20
 msgid "Constructor parameters"
 msgstr "构造函数参数"
 
-#: ../../contracts.rst:396 ae81b75b4eba4e329e9487bf8af68f99
+#: ../../contracts.rst:411 ae81b75b4eba4e329e9487bf8af68f99
 msgid "Public function"
 msgstr "公共函数"
 
-#: ../../contracts.rst:398 ccf250f8a70a43c0932084e3b1415a84
+#: ../../contracts.rst:413 ccf250f8a70a43c0932084e3b1415a84
 msgid "Utils"
 msgstr "Utils"
 
-#: ../../contracts.rst:399 ../../contracts.rst:409 ../../contracts.rst:422
-#: 57686980509d48d8b11e679d4d819e53 304247535f6d42ecab479dc5ad5dd734
-#: 9e9467011c7943dca5a0bcb4ebbb8cdc
+#: ../../contracts.rst:414 ../../contracts.rst:425 ../../contracts.rst:438
+#: 57686980509d48d8b11e679d4d819e53 57686980509d48d8b11e679d4d819e53
+#: 57686980509d48d8b11e679d4d819e53
 msgid "None"
 msgstr "None"
 
@@ -449,7 +470,15 @@ msgstr "buildPublicKeyHashScript(PubKeyHash pubKeyHash) : bytes"
 msgid "buildOpreturnScript(bytes data) : bytes"
 msgstr "buildOpreturnScript(bytes data) : bytes"
 
-#: ../../contracts.rst:408 d0472f484e1c4c67b39217d5b4dcdf58
+#: ../../contracts.rst:0 e29d9fe3af1046a682fbd6fde0309476
+msgid ""
+"isFirstCall(SigHashPreimage preimage) : bool // return whether is the first "
+"call of series public function calls in stateful contract"
+msgstr ""
+"isFirstCall(SigHashPreimage preimage) : bool // return whether is the first "
+"call of series public function calls in stateful contract"
+
+#: ../../contracts.rst:424 d0472f484e1c4c67b39217d5b4dcdf58
 msgid "Tx"
 msgstr "Tx"
 
@@ -519,7 +548,7 @@ msgstr ""
 "pubKey, int inverseK, int r, bytes rBigEndian, SigHashType sigHashType) : "
 "bool"
 
-#: ../../contracts.rst:421 1c3cf53347e2447581b2eeee708a6ea7
+#: ../../contracts.rst:437 1c3cf53347e2447581b2eeee708a6ea7
 msgid "SigHash"
 msgstr "SigHash"
 
@@ -575,58 +604,58 @@ msgstr "nLocktime(SigHashPreimage preimage) : int"
 msgid "sigHashType(SigHashPreimage preimage) : SigHashType"
 msgstr "sigHashType(SigHashPreimage preimage) : SigHashType"
 
-#: ../../contracts.rst:437 c71b8444175a42879fa56fecdbf169f5
+#: ../../contracts.rst:453 c71b8444175a42879fa56fecdbf169f5
 msgid "HashedMap<K, V>"
 msgstr "HashedMap<K, V>"
 
-#: ../../contracts.rst:438 ../../contracts.rst:448
-#: 671ba53e8927486c94882c0cd6b449e0 8a3678368789449f848929deadebba8d
+#: ../../contracts.rst:454 ../../contracts.rst:464
+#: 671ba53e8927486c94882c0cd6b449e0 671ba53e8927486c94882c0cd6b449e0
 msgid "bytes data"
 msgstr "bytes data"
 
-#: ../../contracts.rst:0 8b32d5df42d24fda869211ce63665286
-msgid "set(K key, V val, int keyIndex) : bool"
-msgstr "set(K key, V val, int keyIndex) : bool"
+#: ../../contracts.rst:0 20614f2b077545ebb488c20501f7c92c
+msgid "set(SortedItem<K> keyWithIdx, V val) : bool"
+msgstr "set(SortedItem<K> keyWithIdx, V val) : bool"
 
-#: ../../contracts.rst:0 74c587f9d56045cdb95c720747919d0c
-msgid "canGet(K key, V val, int keyIndex) : bool"
-msgstr "canGet(K key, V val, int keyIndex) : bool"
+#: ../../contracts.rst:0 b062e93fb62a4f56a8e5061b2c2db2cb
+msgid "canGet(SortedItem<K> keyWithIdx, V val) : bool"
+msgstr "canGet(SortedItem<K> keyWithIdx, V val) : bool"
 
 #: ../../contracts.rst:0 e84856f8d3d949adade2cd30bffa5b72
-msgid "delete(K key, int keyIndex) : bool"
-msgstr "delete(K key, int keyIndex) : bool"
+msgid "delete(SortedItem<K> keyWithIdx) : bool"
+msgstr "delete(SortedItem<K> keyWithIdx) : bool"
 
 #: ../../contracts.rst:0 0a5b0270e26d4c5589a5a9f05ba61220
-msgid "has(K key, int keyIndex) : bool"
-msgstr "has(K key, int keyIndex) : bool"
+msgid "has(SortedItem<K> keyWithIdx) : bool"
+msgstr "has(SortedItem<K> keyWithIdx) : bool"
 
 #: ../../contracts.rst:0 ../../contracts.rst:0
-#: 294b4c5098ef45e592831ee5436efeb9 ec46bf6959bc44bd908d02ed041f5cf4
+#: 294b4c5098ef45e592831ee5436efeb9 294b4c5098ef45e592831ee5436efeb9
 msgid "clear() : bool"
 msgstr "clear() : bool"
 
 #: ../../contracts.rst:0 ../../contracts.rst:0
-#: 88d829cb36cc44ed8b1b4e1d39f6ac2c 94358688f7d4493691f85b3521de7a43
+#: 88d829cb36cc44ed8b1b4e1d39f6ac2c 88d829cb36cc44ed8b1b4e1d39f6ac2c
 msgid "size() : int"
 msgstr "size() : int"
 
 #: ../../contracts.rst:0 ../../contracts.rst:0
-#: d76abb493b0349f0ad7c1b8d7698db8a 90b503309d784630beec1394c5543993
+#: d76abb493b0349f0ad7c1b8d7698db8a d76abb493b0349f0ad7c1b8d7698db8a
 msgid "data() : bytes"
 msgstr "data() : bytes"
 
-#: ../../contracts.rst:447 4354d5f0c57a43ee9adfa927ec03753f
+#: ../../contracts.rst:463 4354d5f0c57a43ee9adfa927ec03753f
 msgid "HashedSet<V>"
 msgstr "HashedSet<V>"
 
-#: ../../contracts.rst:0 9e0f28213f9d44bdb11746f94965171d
-msgid "add(V val, int index) : bool"
-msgstr "add(V val, int index) : bool"
+#: ../../contracts.rst:0 0100206e4c9b4ae08b5064991c9e3896
+msgid "add(SortedItem<V> entryWithIdx) : bool"
+msgstr "add(SortedItem<V> entryWithIdx) : bool"
 
-#: ../../contracts.rst:0 83589fc7a6d749ff9b123ab3629c88aa
-msgid "delete(V val, int index) : bool"
-msgstr "delete(V val, int index) : bool"
+#: ../../contracts.rst:0 e84856f8d3d949adade2cd30bffa5b72
+msgid "delete(SortedItem<V> entryWithIdx) : bool"
+msgstr "delete(SortedItem<V> entryWithIdx) : bool"
 
-#: ../../contracts.rst:0 c028fe6fc68b4bf09a60f9a710ea87c3
-msgid "has(V val, int index) : bool"
-msgstr "has(V val, int index) : bool"
+#: ../../contracts.rst:0 9ff8fa834c924e2faa1b6bf5c77ccd50
+msgid "has(SortedItem<V> entryWithIdx) : bool"
+msgstr "has(SortedItem<V> entryWithIdx) : bool"

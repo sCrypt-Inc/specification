@@ -231,9 +231,9 @@ Most functions of `HashedMap` require not only a key, but also its index, ranked
         // key and value types cannot be omitted since they cannot be inferred
         auto map2 = new HashedMap<int, int>(b'');
 
-**`SortedItem`**
+**SortedItem**
 
-`SortedItem<T>` is a generic struct which holds an `item` whose type is `T` and its corresponding order value `idx`.
+``SortedItem<T>`` is a generic struct which holds an `item` whose type is `T` and its corresponding order value `idx`.
 
   .. code-block:: solidity
 
