@@ -231,36 +231,50 @@ Most functions of `HashedMap` require not only a key, but also its index, ranked
         // key and value types cannot be omitted since they cannot be inferred
         auto map2 = new HashedMap<int, int>(b'');
 
+**`SortedItem`**
+
+`SortedItem<T>` is a generic struct which holds an `item` whose type is `T` and its corresponding order value `idx`.
+
+  .. code-block:: solidity
+
+    struct SortedItem<T> {
+      T item;
+      int idx;
+    }
+
+For most functions of `HashedMap`, a parameter named `keyWithIdx` of this type is required.
+It means that the `key` and its corresponding `keyIndex` should always be provided togather.
+
 **Instance methods**
 
-* ``set(K key, V val, int keyIndex) : bool``
+* ``set(SortedItem<K> keyWithIdx, V val) : bool``
   Insert or update a (`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` if successful; otherwise returns `false`.
 
     .. code-block:: solidity
 
-        require(map.set(b'1234', 1, 0)); // insert
-        require(map.set(b'1234', 2, 0)); // update it
+        require(map.set({b'1234', 0}, 1)); // insert
+        require(map.set({b'1234', 0}, 2)); // update it
 
-* ``canGet(K key, V val, int keyIndex): bool``
+* ``canGet(SortedItem<K> keyWithIdx, V val): bool``
   Check whether we can get a (`key`, `val`) pair with the key index given by `keyIndex`. Returns `true` if successful; otherwise returns `false`.
 
     .. code-block:: solidity
 
-        require(map.canGet(b'1234', 2, 0));
+        require(map.canGet({b'1234', 0}, 2));
 
-* ``has(K key, int keyIndex) : bool``
+* ``has(SortedItem<K> keyWithIdx) : bool``
   Check whether `key` exists in the map and its index is `keyIndex`. Returns `true` if both conditions are met; otherwise returns `false`.
 
     .. code-block:: solidity
 
-        require(map.has(b'1234', 0));
+        require(map.has({b'1234', 0}));
 
-* ``delete(K key, int keyIndex) : bool``
+* ``delete(SortedItem<K> keyWithIdx) : bool``
   Delete the entry with given `key` and the key index is `keyIndex`. Returns `true` if successful; otherwise returns `false`.
 
     .. code-block:: solidity
 
-        require(map.delete(b'1234', 0));
+        require(map.delete({b'1234', 0}));
 
 * ``clear() : bool``
   Delete all entries of the map.
@@ -293,6 +307,7 @@ The `HashedSet` library provides a set-like data structure.
 It can be regarded as a special `HashedMap` where a value is the same with its key and is thus omitted.
 Unique values are hashed before being stored.
 Most functions of `HashedSet` require an index, ranked by the value's sha256 hash in ascending order.
+Similar to `HashedMap`, these functions also use `SortedItem` type parameter.
 
 **Constructor**
 
@@ -314,26 +329,26 @@ Most functions of `HashedSet` require an index, ranked by the value's sha256 has
 
 **Instance methods**
 
-* ``add(E entry, int index) : bool``
+* ``add(SortedItem<E> entryWithIdx) : bool``
   Add `entry` to set with the key index given by `index`. Returns `true` if successful; otherwise returns `false`.
 
     .. code-block:: solidity
 
-        require(set.add(b'1234', 0));
+        require(set.add({b'1234', 0}));
 
-* ``has(E entry, int index) : bool``
+* ``has(SortedItem<E> entryWithIdx) : bool``
   Check whether `entry` exists in the set and its index is `index`. Returns `true` if both conditions are met; otherwise returns `false`.
 
     .. code-block:: solidity
 
-        require(set.has(b'1234', 0));
+        require(set.has({b'1234', 0}));
 
-* ``delete(E entry, int index) : bool``
+* ``delete(SortedItem<E> entryWithIdx) : bool``
   Delete the entry with given `entry` and the index is `index`. Returns `true` if successful; otherwise returns `false`.
 
     .. code-block:: solidity
 
-        require(set.delete(b'1234', 0));
+        require(set.delete({b'1234', 0}));
 
 * ``clear() : bool``
   Delete all entries of the set.
@@ -437,19 +452,19 @@ Full List
 
     * - HashedMap<K, V>
       - bytes data
-      - | set(K key, V val, int keyIndex) : bool
-        | canGet(K key, V val, int keyIndex) : bool
-        | delete(K key, int keyIndex) : bool
-        | has(K key, int keyIndex) : bool
+      - | set(SortedItem<K> keyWithIdx, V val) : bool
+        | canGet(SortedItem<K> keyWithIdx, V val) : bool
+        | delete(SortedItem<K> keyWithIdx) : bool
+        | has(SortedItem<K> keyWithIdx) : bool
         | clear() : bool
         | size() : int
         | data() : bytes
 
     * - HashedSet<V>
       - bytes data
-      - | add(V val, int index) : bool
-        | delete(V val, int index) : bool
-        | has(V val, int index) : bool
+      - | add(SortedItem<V> entryWithIdx) : bool
+        | delete(SortedItem<V> entryWithIdx) : bool
+        | has(SortedItem<V> entryWithIdx) : bool
         | clear() : bool
         | size() : int
         | data() : bytes

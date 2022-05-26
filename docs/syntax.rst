@@ -160,24 +160,27 @@ The ``auto`` keyword specifies that the type of the variable, of basic type, dec
 Type Aliases
 ------------
 Type aliases create a new name for a type. It does not actually create a new type, it merely creates a new name to refer to that type.
+Note the right side of the declaration should not be an unspecified generic struct type.
 
     .. code-block:: solidity
 
         type Age = int;
         type Coordinate = int[2];
+        type A = ST<int>; // this is fine.
+        type B = ST; // this is not allowd.
 
 Generics/Generic Types
 ----------------------
-A generic type is a parameterized type. It allows a library to work over a variety of types rather than a single one.
-Users can consume these libraries and use their own concrete types.
+A generic type is a parameterized type. It allows a library / struct to work over a variety of types rather than a single one.
+Users can consume these libraries / structs and use their own concrete types.
 
 * **Declare Generic Types**
 
-Generic types can only be declared at library level and used within the library's scope. 
+Generic types can be declared at library level and used within the library's scope, or struct level and used inside.
 
     .. code-block:: solidity
 
-        // declare two generic type variables: K & V
+        // declare a library with two generic type variables: K & V
         library HashedMap<K, V> {
 
           // use them as function parameters' type
@@ -187,13 +190,22 @@ Generic types can only be declared at library level and used within the library'
 
         }
 
+        // declare a struct with two generic type variables: T & P
+        struct ST<T, P> {
+          T x;
+          P y;
+        }
+
 * **Instantiate Generic Types**
 
     .. code-block:: solidity
 
+        // initialize a library with generics
         HashedMap<bytes, int> map = new HashedMap();
-        map.set(b'01', 1, 0);
-        map.set(2, 1, 1); // this will throw semantic error for the first argument's type `int`, which expects `bytes` 
+
+        // initialize a struct with generics
+        ST<int, bytes> st = {1, b'02'}; 
+
 
 Domain Subtypes
 ===============
