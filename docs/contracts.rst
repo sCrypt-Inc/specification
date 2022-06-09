@@ -243,7 +243,7 @@ Most functions of `HashedMap` require not only a key, but also its index, ranked
     }
 
 For most functions of `HashedMap`, a parameter named `keyWithIdx` of this type is required.
-It means that the `key` and its corresponding `keyIndex` should always be provided togather.
+It means that the `key` and its corresponding `keyIndex` should always be provided together.
 
 **Instance methods**
 
