@@ -2,7 +2,7 @@
 IDEs
 ====
 
-There are currently two IDEs available.
+There are currently three IDEs available.
 
 Desktop IDE
 -----------
@@ -12,11 +12,26 @@ A `boilerplate project <https://github.com/scrypt-sv/boilerplate>`_ is a good ba
 
 Here is a `document`_ on how to use this IDE.
 
-Web IDE
--------
+
+Studio
+--------------
 A browser-based IDE can be found at `scrypt.studio <http://scrypt.studio>`_.
 It is for quick learning of sCrypt immediately without any installation and suitable only for small contracts.
 Currently, it does not support importing contracts.
+
+
+Playground
+-----------
+
+
+`The sCrypt Playground <https://playground.scrypt.io/>`_  combines the full power of the desktop IDE and the convenience of the sCrypt Studio. 
+It fosters the entire lifecycle of contract development entirely in your browser, including developing, deploying and managing sCrypt smart contracts. 
+It offers the exactly same advanced features as the desktop IDE, since it is simply VSCode running in a browser. It requires no setup and acts also as a playground for learning and teaching sCrypt.
+
+
+
+
+
 
 
 .. _document: https://scrypt-ide.readthedocs.io/en/latest

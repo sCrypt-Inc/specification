@@ -26,8 +26,8 @@ msgid "IDEs"
 msgstr "集成开发环境"
 
 #: ../../ide.rst:5 34d81c80908b4bebaf194472b25fa1ab
-msgid "There are currently two IDEs available."
-msgstr "目前有两种 IDE 可用。"
+msgid "There are currently three IDEs available."
+msgstr "目前有三种 IDE 可用。"
 
 #: ../../ide.rst:8 15fbc8a777b643e195cc493fd37014ce
 msgid "Desktop IDE"
@@ -52,11 +52,12 @@ msgstr ""
 msgid "Here is a `document`_ on how to use this IDE."
 msgstr "这是关于如何使用此 IDE 的 `文档`_ 。"
 
-#: ../../ide.rst:16 23ea08233293479886f800d4d6ca1867
-msgid "Web IDE"
-msgstr "Web IDE"
+#: ../../ide.rst:17
+#: face280b6d834091b61e4fd70f38e06f
+msgid "Studio"
+msgstr ""
 
-#: ../../ide.rst:17 8c884462b4f547bc9038dc02908a4295
+#: ../../ide.rst:18 8c884462b4f547bc9038dc02908a4295
 msgid ""
 "A browser-based IDE can be found at `scrypt.studio <http://scrypt.studio>`_."
 " It is for quick learning of sCrypt immediately without any installation and"
@@ -65,3 +66,15 @@ msgid ""
 msgstr ""
 "`scrypt.studio <http://scrypt.studio>`_ "
 "是一个基于浏览器的IDE。无需任何安装即可快速学习sCrypt，仅适用于小型合约。目前不支持导入合约功能。"
+
+
+#: ../../ide.rst:24
+#: aa9890bfbc234816995c3fd2f9b4fa1a
+msgid "Playground"
+msgstr ""
+
+#: ../../ide.rst:27
+#: a67cf33e24a142b5ba090ef9944c859a
+msgid "`The sCrypt Playground <https://playground.scrypt.io/>`_  combines the full power of the desktop IDE and the convenience of the sCrypt Studio. It fosters the entire lifecycle of contract development entirely in your browser, including developing, deploying and managing sCrypt smart contracts. It offers the exactly same advanced features as the desktop IDE, since it is simply VSCode running in a browser. It requires no setup and acts also as a playground for learning and teaching sCrypt."
+msgstr "`sCrypt Playground <https://playground.scrypt.io/>`_ 结合了桌面IDE的全部功能和sCrypt Studio的便利性。 它完全在您的浏览器中促进合约开发的整个生命周期，包括开发、部署和管理 sCrypt 智能合约。 它提供与桌面 IDE 完全相同的高级功能，因为它只是在浏览器中运行的 VSCode。 它不需要任何设置，也可以作为学习和教授 sCrypt 的游乐场。"
+
