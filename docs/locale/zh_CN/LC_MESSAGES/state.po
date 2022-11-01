@@ -87,6 +87,34 @@ msgstr ""
 "最后，使用 :ref:`OP_PUSH_TX <pushtx-label>` 确保当前交易的输出包含新的状态。下面是一个示例合约，它记录了 "
 "``increment()`` 被调用的次数。"
 
+
+
+#: ../../state.rst:67
+#: b8529b11de294601a74ef7c6a53caf38
+msgid "You can also use ``this.updateState()`` or  ``this.updateStateSigHashType()``  to ensure that the output containing the state goes into the current spend transaction. This functions implement the following steps:"
+msgstr "您还可以使用 ``this.updateState()`` 或 ``this.updateStateSigHashType()`` 来确保包含状态的输出进入当前的支出交易。 该函数执行以下步骤："
+
+#: ../../state.rst:70
+#: 2687ef63fe294787ad1998babef8a7ce
+msgid "Check the transaction preimage"
+msgstr "检查交易原像"
+
+#: ../../state.rst:71
+#: d3af24bf91004dc29db2e76dd3051906
+msgid "Get the locking script containing the latest stateful properties"
+msgstr "获取包含最新状态属性的锁定脚本"
+
+#: ../../state.rst:72
+#: e6a33eab0d98443cbc57a507e241f798
+msgid "Construct an output from its locking script and satoshi amount"
+msgstr "从其锁定脚本和 satoshi 数量构造一个输出"
+
+#: ../../state.rst:73
+#: 5e9d14d7aecb48d082b63ae37d775df0
+msgid "Ensure the current transaction contains the output above by checking the hash of the output"
+msgstr "通过检查输出的哈希确保当前交易包含上面的输出"
+
+
 #: ../../state.rst:71 4e07790732a344a7acaedbc0aa60e91c
 msgid "Restrictions"
 msgstr "限制"
@@ -95,8 +123,8 @@ msgstr "限制"
 msgid ""
 "For any public function to access a stateful property, it must include a "
 "``SighashPreimage`` parameter that is validated with "
-"``Tx.checkPreimage*()``, i.e., with :ref:`OP_PUSH_TX<pushtx-label>` . This "
+"``Tx.checkPreimage()``, i.e., with :ref:`OP_PUSH_TX<pushtx-label>` . This "
 "does not apply to any non-public function, including constructors."
 msgstr ""
-"对于任何访问状态属性的公共函数，它必须包含一个通过 ``Tx.checkPreimage*()`` 验证的 ``SighashPreimage`` "
+"对于任何访问状态属性的公共函数，它必须包含一个通过 ``Tx.checkPreimage()`` 验证的 ``SighashPreimage`` "
 "参数，即使用 :ref:`OP_PUSH_TX <pushtx-label>`。这不适用于任何非公共函数，包括构造函数。"

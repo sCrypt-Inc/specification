@@ -46,10 +46,6 @@ The following is an example contract that records the number of times ``incremen
     contract Counter {
         @state
         int counter;
-
-        constructor(int counter) {
-            this.counter = counter;
-        }
         
         public function increment(SigHashPreimage txPreimage, int amount) {
             require(Tx.checkPreimage(txPreimage));
@@ -67,9 +63,35 @@ The following is an example contract that records the number of times ``incremen
         }
     }
 
+
+You can also use ``this.updateState()`` or  ``this.updateStateSigHashType()``  to ensure that the output containing the state goes into the current spend transaction.
+This functions implement the following steps:
+
+* Check the transaction preimage
+* Get the locking script containing the latest stateful properties
+* Construct an output from its locking script and satoshi amount
+* Ensure the current transaction contains the output above by checking the hash of the output
+
+.. code-block:: solidity
+
+    contract Counter {
+        @state
+        int counter;
+        
+        public function increment(SigHashPreimage txPreimage, int amount) {
+            // mutate state
+            this.counter++;
+
+            require(this.updateState(txPreimage, amount));
+
+            // using updateStateSigHashType if you want to custom signature type, default is SigHash.ALL | SigHash.FORKID
+            // require(this.updateStateSigHashType(txPreimage, amount, SigHash.SINGLE | SigHash.FORKID));
+        }
+    }
+
 Restrictions
 ============
-For any public function to access a stateful property, it must include a ``SighashPreimage`` parameter that is validated with ``Tx.checkPreimage*()``, i.e., with :ref:`OP_PUSH_TX<pushtx-label>` .
+For any public function to access a stateful property, it must include a ``SighashPreimage`` parameter that is validated with ``Tx.checkPreimage()``, i.e., with :ref:`OP_PUSH_TX<pushtx-label>` .
 This does not apply to any non-public function, including constructors.
 
 .. code-block:: solidity
