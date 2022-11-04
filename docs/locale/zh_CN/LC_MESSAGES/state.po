@@ -47,73 +47,56 @@ msgid ""
 "The state property can be used the same way as a regular property."
 msgstr "使用装饰器 ``@state`` 声明属于状态的任何属性。 状态属性可以像普通属性一样使用。"
 
-#: ../../state.rst:27 ec08c7cd073544b7a2103e726b045720
-msgid "Propagate the State"
-msgstr "传播状态"
 
-#: ../../state.rst:28 ec0a713979f0449699a84625f8c6dd9b
-msgid ""
-"A contract can keep state across chained transactions by storing it in the "
-"locking script. In the following example, a contract goes from ``state0`` to"
-" ``state1``, and then to ``state2``. Input in transaction 1 ``tx1`` is "
-"spending UTXO in ``tx0``, and ``tx2`` spending ``tx1``."
-msgstr ""
-"合约可以通过将其状态存储在锁定脚本中来实现链式交易保持状态。在以下示例中，合约从 ``state0`` 到 ``state1``，然后到 "
-"``state2``。交易 ``tx1`` 的输入花费了 在 ``tx0`` 中的 UTXO，而 ``tx2`` 花费了 ``tx1`` 的 UTXO。"
+#: ../../state.rst:27
+#: ec08c7cd073544b7a2103e726b045720
+msgid "Update the State"
+msgstr "更新状态"
+
+#: ../../state.rst:28
+#: ec0a713979f0449699a84625f8c6dd9b
+msgid "A contract can keep state across chained transactions by storing it in the locking script. In the following example, a contract goes from ``state0`` to ``state1``, and then to ``state2``. Input in transaction 1 ``tx1`` is spending UTXO in ``tx0``, and ``tx2`` spending ``tx1``."
+msgstr "合约可以通过将状态存储在锁定脚本中来跨链式交易保持状态。 在以下示例中，合约从 ``state0`` 到 ``state1``，然后到 ``state2``。 交易 1 ``tx1`` 中的输入是在 ``tx0`` 中花费 UTXO，而 ``tx2`` 花费 ``tx1``。"
 
 #: ../../state.rstNone 0b05234d74cd475aad8f325ff6e40d38
-msgid "保持状态"
+msgid "keep state"
 msgstr "保持状态"
 
-#: ../../state.rst:37 b83557bf44864066ad8132a045786d93
-msgid ""
-"When you are ready to pass the new state into the output[s] in the current "
-"spending transaction, simply call a built-in function "
-"``this.getStateScript()`` to get the locking script containing the latest "
-"stateful properties. It is automatically generated for every stateful "
-"contract, i.e., a contract that has at least one property decorated with "
-"``@state``."
-msgstr ""
-"当准备好将新状态传递到当前花费UTXO的交易中的输出时，只需调用内置函数 ``this.getStateScript()``，     "
-"即可获取包含最新状态的锁定脚本。编译器为每个有状态合约自动生成改函数，有状态合约至少有一个带有 ``@state`` 修饰的属性。"
 
-#: ../../state.rst:41 a98860e0544f4bb7b7fd42349c0dd6e6
-msgid ""
-"Finally, use :ref:`OP_PUSH_TX<pushtx-label>` to ensure the output[s] "
-"containing the state go into the current spending transaction. The following"
-" is an example contract that records the number of times ``increment()`` "
-"have been called."
-msgstr ""
-"最后，使用 :ref:`OP_PUSH_TX <pushtx-label>` 确保当前交易的输出包含新的状态。下面是一个示例合约，它记录了 "
-"``increment()`` 被调用的次数。"
+#: ../../state.rst:37
+#: 6377bea40ccf4eff88e23c0038cfac32
+msgid "When you are ready to pass the new state into the next UTXO, simply call built-in function ``this.updateState()`` with two arguments: - `txPreimage`: it is the :ref:`preimage<pushtx-label>` of the current spending transaction. It must only have one output and have the new state in it. - `amount`: the number of satoshis in that single output."
+msgstr "当你准备好将新状态传递到下一个 UTXO 时，只需使用两个参数调用内置函数 ``this.updateState()``： - `txPreimage`：它是 :ref:`preimage<pushtx-label>` 当前支出交易。 它必须只有一个输出并且其中包含新状态。 - `amount`：单个输出中的 `satoshis` 数量。"
 
 
+
+#: ../../state.rst:41
+#: 942be7093f0e4102b99d5fe5037a86eb
+msgid "The function is automatically generated for every stateful contract, i.e., a contract that has at least one property decorated with ``@state``. Use ``updateStateSigHashType`` if you need a customed sighash type, different from the default of ``SigHash.ALL | SigHash.FORKID``."
+msgstr "该函数是为每个有状态合约自动生成的，即，一个合约至少有一个用 ``@state`` 修饰的属性。 如果你需要自定义的 `sighash` 类型，请使用 ``updateStateSigHashType``，不同于默认的 ``SigHash.ALL | SigHash.FORKID``。"
+
+
+
+#: ../../state.rst:44
+#: a98860e0544f4bb7b7fd42349c0dd6e6
+msgid "The following is an example contract that records the number of times ``increment()`` have been called."
+msgstr "下面是一个示例合约，它记录了 ``increment()`` 被调用的次数。"
+
+
+#: ../../state.rst:65
+#: 1b47b930fa25419b805cb6eb103a797e
+msgid "Advanced"
+msgstr "高级"
 
 #: ../../state.rst:67
-#: b8529b11de294601a74ef7c6a53caf38
-msgid "You can also use ``this.updateState()`` or  ``this.updateStateSigHashType()``  to ensure that the output containing the state goes into the current spend transaction. This functions implement the following steps:"
-msgstr "您还可以使用 ``this.updateState()`` 或 ``this.updateStateSigHashType()`` 来确保包含状态的输出进入当前的支出交易。 该函数执行以下步骤："
+#: b83557bf44864066ad8132a045786d93
+msgid "If you ever need to have more fine-grained control of the state, e.g., having multiple outputs in the spending transaction, you call another built-in function ``this.getStateScript()`` to get the locking script containing the latest stateful properties."
+msgstr "如果你需要对状态进行更细粒度的控制，例如，在支出交易中有多个输出，你可以调用另一个内置函数 ``this.getStateScript()`` 来获取包含最新状态属性的锁定脚本。"
 
 #: ../../state.rst:70
-#: 2687ef63fe294787ad1998babef8a7ce
-msgid "Check the transaction preimage"
-msgstr "检查交易原像"
-
-#: ../../state.rst:71
-#: d3af24bf91004dc29db2e76dd3051906
-msgid "Get the locking script containing the latest stateful properties"
-msgstr "获取包含最新状态属性的锁定脚本"
-
-#: ../../state.rst:72
-#: e6a33eab0d98443cbc57a507e241f798
-msgid "Construct an output from its locking script and satoshi amount"
-msgstr "从其锁定脚本和 satoshi 数量构造一个输出"
-
-#: ../../state.rst:73
-#: 5e9d14d7aecb48d082b63ae37d775df0
-msgid "Ensure the current transaction contains the output above by checking the hash of the output"
-msgstr "通过检查输出的哈希确保当前交易包含上面的输出"
-
+#: a98860e0544f4bb7b7fd42349c0dd6e6
+msgid "Next, you use :ref:`OP_PUSH_TX<pushtx-label>` to ensure the output[s] containing the state go into the current spending transaction. It is equivalent to the contract above using ``this.updateState()``."
+msgstr "接下来，你使用 :ref:`OP_PUSH_TX<pushtx-label>` 来确保包含新状态的输出进入当前的支出交易。 它相当于上面使用 ``this.updateState()`` 的合约。"
 
 #: ../../state.rst:71 4e07790732a344a7acaedbc0aa60e91c
 msgid "Restrictions"
