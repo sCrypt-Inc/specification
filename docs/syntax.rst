@@ -88,7 +88,7 @@ An array is a fixed-size list of values of the same basic type.
         // a == [0, 0, 0]
         int[3] a = repeat(0, 3);
         // arr2D == [[0, 0, 0], [0, 0, 0]]
-        int[2][3] arr2D = repeat(0, 2);
+        int[2][3] arr2D = repeat(a, 2);
         int[4] flags = [false, true, false, true]
         // set all flags to be false
         flags = repeat(false, 4);
