@@ -417,75 +417,75 @@ Operators
     
     * - 1
       - ``() ++ -- .``
-      - left-to-right
+      - left
       - 
     * - 2
       - ``[]``
-      - left-to-right
+      - left
       - 
     * - 3
       - ``++ -- - ! ~``
-      - right-to-left
+      - right
       - 
 
     * - 4
       - ``* / %``
-      - left-to-right
+      - left
       -
 
     * - 5
       - ``+ -``
-      - left-to-right
+      - left
       - 
 
     * - 6
       - ``<< >>``
-      - left-to-right
+      - left
       - The number of bits to shift must be non-negative, otherwise evaluation fails immediately
 
     * - 7
       - ``< <= > >=``
-      - left-to-right
+      - left
       - 
 
     * - 8
       - ``== !=``
-      - left-to-right
+      - left
       - 
 
     * - 9
       - ``&``
-      - left-to-right
+      - left
       - In the case of two integers with different length, the shorter one with be expanded first to be the same legnth with the longer one using `num2bin`
 
     * - 10
       - ``^``
-      - left-to-right
+      - left
       - Same as ``&``
 
     * - 11
       - ``|``
-      - left-to-right
+      - left
       - Same as ``&``
 
     * - 12
       - ``&&``
-      - left-to-right
+      - left
       -
 
     * - 13
       - ``||``
-      - left-to-right
+      - left
       - 
 
     * - 14
       - ``? :``
-      - right-to-left
+      - right
       - 
 
     * - 15
       - ``+= -= *= /= %= &= |= ^= <<= >>=``
-      - right-to-left
+      - right
       - 
 
 .. Note:: 

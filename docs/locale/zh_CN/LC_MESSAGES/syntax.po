@@ -452,8 +452,8 @@ msgstr "``() ++ -- .``"
 #: 2839376d62a5436bb754a250407a6eba 2839376d62a5436bb754a250407a6eba
 #: 2839376d62a5436bb754a250407a6eba 2839376d62a5436bb754a250407a6eba
 #: 2839376d62a5436bb754a250407a6eba 2839376d62a5436bb754a250407a6eba
-msgid "left-to-right"
-msgstr "左到右"
+msgid "left"
+msgstr "左"
 
 #: ../../syntax.rst:422 f26df0bec68641d59acccf2309ed05e3
 msgid "2"
@@ -474,8 +474,8 @@ msgstr "``++ -- - ! ~``"
 #: ../../syntax.rst:428 ../../syntax.rst:483 ../../syntax.rst:488
 #: 72bf4e37a229459bb04c0c3ae7185798 154f474cb7b341e9bf6232243c2dca3c
 #: 154f474cb7b341e9bf6232243c2dca3c
-msgid "right-to-left"
-msgstr "右到左"
+msgid "right"
+msgstr "右"
 
 #: ../../syntax.rst:431 105343fb764e41aca324cb1640ffa47e
 msgid "4"
