@@ -605,6 +605,11 @@ msgid ""
 msgstr ""
 "在对整数执行按位运算后，例如运算符 ``&``、``|``、``^`` 和 ``~``，编译器使用 ``OP_BIN2NUM`` 压缩运算结果。"
 
+#: ../../syntax.rst:494 3d47e57894ba4361ad8c381df0e80042
+msgid "Regardless of whether it is a positive number or a negative number, both are is stored in the `Sign-Magnitude <https://en.wikipedia.org/wiki/Signed_number_representations>`_ format, which is different from the `two's complement <https://en.wikipedia.org/wiki/Signed_number_representations>`_ format used by the computer. If the operands participating in the operation are all positive numbers, the result of the operation is consistent with two's complement's bitwise operator. (except ``~``). Otherwise, the operation results may be inconsistent."
+msgstr "不管是正数还是负数，都是以 `原码 <https://en.wikipedia.org/wiki/Signed_number_representations>`_ 格式存储的，区别于计算机使用的 `补码 <https://en.wikipedia.org/wiki/Signed_number_representations>`_ 格式。 如果参与运算的操作数都是正数，则运算结果与补码的按位运算符一致。 （除了 ``~``）。 否则，运行结果可能会不一致。"
+
+
 #: ../../syntax.rst:496 400e39f0effb4b5a9f38acafe4ffa2bc
 msgid "Scoping"
 msgstr "作用域"

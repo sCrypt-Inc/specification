@@ -491,6 +491,10 @@ Operators
 .. Note:: 
     - Operator ``&&``, ``||``, and ``? :`` use `short-circuit evaluation <https://en.wikipedia.org/wiki/Short-circuit_evaluation>`_.
     - After performing bitwise on integers, such as operator ``&``, ``|``, ``^``, and ``~``, the compiler uses ``OP_BIN2NUM`` to compress the results.
+    - Regardless of whether it is a positive number or a negative number, both are is stored in the `Sign-Magnitude <https://en.wikipedia.org/wiki/Signed_number_representations>`_ format, 
+      which is different from the `two's complement <https://en.wikipedia.org/wiki/Signed_number_representations>`_ format used by the computer.  
+      If the operands participating in the operation are all positive numbers, the result of the operation is consistent with two's complement's bitwise operator. 
+      (except ``~``). Otherwise, the operation results may be inconsistent.
 
 Scoping
 =======
