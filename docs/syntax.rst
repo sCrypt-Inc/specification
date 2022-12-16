@@ -349,7 +349,7 @@ exit()
 
 Code Separator
 ==============
-Three or more ``*`` in a line inserts an `OP_CODESEPARATOR <https://en.bitcoin.it/wiki/OP_CHECKSIG#How_it_works>`_. It is used to exclude what comes before (and including itself) it from being part of the signature.
+Three or more ``*`` in a line inserts an `OP_CODESEPARATOR <https://en.bitcoin.it/wiki/OP_CHECKSIG#How_it_works>`_. It is used to exclude what comes before it (including itself), from being part of the signature.
 Note there is no ``;`` at the end.
 
     .. code-block:: solidity
