@@ -4,6 +4,11 @@
 
 # Required
 version: 2
+  
+python:
+  version: 3.7
+  install:
+    - requirements: docs/requirements.txt  # Adjust the path to where your requirements.txt file is
 
 # Set the OS, Python version and other tools you might need
 build:
