@@ -6,7 +6,7 @@ The sCrypt Language Reference
     :alt: sCrypt logo
     :align: center
     
-.. deprecated:: **Notice**: The sCrypt language has transitioned to a TypeScript-based SDK for an improved developer experience. Please refer to the updated documentation and resources at `https://docs.scrypt.io <https://docs.scrypt.io>`_ to learn more.
+.. attention:: The sCrypt language has transitioned to a TypeScript-based SDK for an improved developer experience. Please refer to the updated documentation and resources at `https://docs.scrypt.io <https://docs.scrypt.io>`_ to learn more.
 
 sCrypt (pronounced “ess crypt”) is a high-level smart contract language for Bitcoin SV.
 Bitcoin supports smart contract with its Forth-like stack based Script language. 
