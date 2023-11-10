@@ -54,6 +54,8 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_extra_path = ['robots.txt']
+
 # support solidity
 from sphinx.highlighting import lexers
 from pygments_lexer_solidity import SolidityLexer
